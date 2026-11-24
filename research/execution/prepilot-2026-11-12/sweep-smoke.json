@@ -1,0 +1,320 @@
+{
+  "jobs": {
+    "DP02/feature/baseline": {
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible": [
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 7.949379354999999,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "4bc86edddb46afa0004300e80f6450a6857909f2a7608e41ae6ef26d40f9cb15"
+        }
+      ],
+      "final": [
+        {
+          "task": "DP02",
+          "completed": true,
+          "acceptance": false,
+          "preservation": true,
+          "jointSuccess": false,
+          "elapsedSeconds": 161.449796269,
+          "results": [
+            {
+              "id": "U-P1-direct-route-non-admin-and-anonymous",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "U-A-role-all",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:123:18"
+            },
+            {
+              "id": "U-A-role-user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:123:18"
+            },
+            {
+              "id": "U-A-role-admin",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:123:18"
+            },
+            {
+              "id": "U-A-native-get-control-submit-and-reload",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:135:16"
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "TimeoutError",
+              "location": "at /evaluator/final-check.cjs:150:76"
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=ADMIN",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "TimeoutError",
+              "location": "at /evaluator/final-check.cjs:150:76"
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=invalid",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "TimeoutError",
+              "location": "at /evaluator/final-check.cjs:150:76"
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=admin&role=user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "TimeoutError",
+              "location": "at /evaluator/final-check.cjs:150:76"
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=user&role=user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "TimeoutError",
+              "location": "at /evaluator/final-check.cjs:150:76"
+            },
+            {
+              "id": "U-A-empty-selection-keeps-controls-and-zero-total",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:158:18"
+            },
+            {
+              "id": "U-P2-unfiltered-session-aggregates-and-date-order",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "U-P3-no-token-in-admin-output",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "U-P4-read-only-directory",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "P-orders-unchanged",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "P-browser-no-uncaught-runtime-errors",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "fixture-cleanup",
+              "kind": "instrument",
+              "pass": true
+            }
+          ],
+          "check_sha256": "20078c4672dda5d7f8a8ddf38cb1bd8c7c74aee74517b93002c08530d396bf17"
+        }
+      ],
+      "basic": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      },
+      "instrument_version": "prepilot-v1",
+      "started": "2026-11-12T05:50:49Z",
+      "validated": true
+    },
+    "DP02/feature/reference": {
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "reference",
+      "visible": [
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 8.065389686,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "4bc86edddb46afa0004300e80f6450a6857909f2a7608e41ae6ef26d40f9cb15"
+        }
+      ],
+      "final": [
+        {
+          "task": "DP02",
+          "completed": true,
+          "acceptance": true,
+          "preservation": true,
+          "jointSuccess": true,
+          "elapsedSeconds": 12.453718087,
+          "results": [
+            {
+              "id": "U-P1-direct-route-non-admin-and-anonymous",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "U-A-role-all",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-role-user",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-role-admin",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-native-get-control-submit-and-reload",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=ADMIN",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=invalid",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=admin&role=user",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=user&role=user",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-A-empty-selection-keeps-controls-and-zero-total",
+              "kind": "acceptance",
+              "pass": true
+            },
+            {
+              "id": "U-P2-unfiltered-session-aggregates-and-date-order",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "U-P3-no-token-in-admin-output",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "U-P4-read-only-directory",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "P-orders-unchanged",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "P-browser-no-uncaught-runtime-errors",
+              "kind": "preservation",
+              "pass": true
+            },
+            {
+              "id": "fixture-cleanup",
+              "kind": "instrument",
+              "pass": true
+            }
+          ],
+          "check_sha256": "4052bc602ec9dc3318b1c05843d173fca2f233dcaf09e1ca7038926e0f310da1"
+        }
+      ],
+      "basic": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      },
+      "instrument_version": "prepilot-v1",
+      "started": "2026-11-12T05:54:43Z",
+      "validated": true
+    }
+  },
+  "status": "superseded-development-instrumentation",
+  "versions": {
+    "visible": "fd59ad03ba623af0c244458355f91587efd6e6aa640760a5913567556731a0d9",
+    "final": "20078c4672dda5d7f8a8ddf38cb1bd8c7c74aee74517b93002c08530d396bf17"
+  },
+  "note": "Checker coverage expanded after initial smoke jobs; a later visible invocation timed out before a result was written. These jobs do not count toward release qualification."
+}

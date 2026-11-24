@@ -1,0 +1,129 @@
+diff --git a/src/app/dashboard/billing/history/page.tsx b/src/app/dashboard/billing/history/page.tsx
+index 80b260d..4dfaa63 100755
+--- a/src/app/dashboard/billing/history/page.tsx
++++ b/src/app/dashboard/billing/history/page.tsx
+@@ -1,4 +1,4 @@
+-import { desc, eq } from 'drizzle-orm';
++import { and, desc, eq } from 'drizzle-orm';
+ import { ArrowLeft, ReceiptText } from 'lucide-react';
+ import Link from 'next/link';
+ import { db } from '@/database/db';
+@@ -11,6 +11,17 @@ const STRINGS = {
+   pageSubtitle: 'Review your transactions and invoices',
+   emptyTitle: 'No transactions yet',
+   emptyBody: 'Your transactions will appear here after you purchase a subscription',
++  filteredEmptyTitle: 'No transactions with this status',
++  filteredEmptyBody: 'Try another status or view all transactions.',
++  statusFilter: 'Filter by status',
++  applyFilter: 'Apply filter',
++  allStatuses: 'All statuses',
++  statuses: {
++    pending: 'Pending',
++    completed: 'Paid',
++    cancelled: 'Cancelled',
++    expired: 'Expired',
++  },
+   selectPlan: 'Select a plan',
+   tableHeaders: {
+     transactionCode: 'Transaction ID',
+@@ -22,13 +33,29 @@ const STRINGS = {
+   backLink: 'Back',
+ } as const;
+ 
+-export default async function BillingHistoryPage() {
++const ORDER_STATUSES = ['pending', 'completed', 'cancelled', 'expired'] as const;
++type OrderStatusFilter = (typeof ORDER_STATUSES)[number];
++
++function parseStatusFilter(value: string | string[] | undefined): OrderStatusFilter | undefined {
++  if (typeof value !== 'string' || !ORDER_STATUSES.includes(value as OrderStatusFilter)) {
++    return undefined;
++  }
++
++  return value as OrderStatusFilter;
++}
++
++export default async function BillingHistoryPage({
++  searchParams,
++}: {
++  searchParams: Promise<{ status?: string | string[] }>;
++}) {
++  const query = await searchParams;
++  const status = parseStatusFilter(query.status);
+   const session = await requireAuth();
+   const userId = session.user.id;
+ 
+-  // Get all user orders
+   const userOrders = await db.query.orders.findMany({
+-    where: eq(orders.userId, userId),
++    where: and(eq(orders.userId, userId), status ? eq(orders.status, status) : undefined),
+     with: { plan: true },
+     orderBy: [desc(orders.createdAt)],
+   });
+@@ -40,17 +67,59 @@ export default async function BillingHistoryPage() {
+         <p className="text-zinc-500 dark:text-zinc-400">{STRINGS.pageSubtitle}</p>
+       </div>
+ 
++      <form action="/dashboard/billing/history" method="get" className="flex flex-wrap items-end gap-3">
++        <div className="space-y-1">
++          <label htmlFor="status" className="text-sm font-medium">
++            {STRINGS.statusFilter}
++          </label>
++          <select
++            id="status"
++            name="status"
++            defaultValue={status ?? ''}
++            className="block rounded-lg border bg-card px-3 py-2 text-sm"
++          >
++            <option value="">{STRINGS.allStatuses}</option>
++            {ORDER_STATUSES.map((orderStatus) => (
++              <option key={orderStatus} value={orderStatus}>
++                {STRINGS.statuses[orderStatus]}
++              </option>
++            ))}
++          </select>
++        </div>
++        <button
++          type="submit"
++          className="rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-accent"
++        >
++          {STRINGS.applyFilter}
++        </button>
++      </form>
++
+       {userOrders.length === 0 ? (
+         <div className="flex flex-col items-center justify-center rounded-xl border bg-card p-12 text-center">
+           <ReceiptText className="h-12 w-12 text-muted-foreground/50" />
+-          <h3 className="mt-4 text-lg font-medium">{STRINGS.emptyTitle}</h3>
+-          <p className="mt-1 text-sm text-muted-foreground">{STRINGS.emptyBody}</p>
+-          <Link
+-            href="/dashboard/billing"
+-            className="mt-6 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+-          >
+-            {STRINGS.selectPlan}
+-          </Link>
++          {status ? (
++            <>
++              <h3 className="mt-4 text-lg font-medium">{STRINGS.filteredEmptyTitle}</h3>
++              <p className="mt-1 text-sm text-muted-foreground">{STRINGS.filteredEmptyBody}</p>
++              <Link
++                href="/dashboard/billing/history"
++                className="mt-6 rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-accent"
++              >
++                {STRINGS.allStatuses}
++              </Link>
++            </>
++          ) : (
++            <>
++              <h3 className="mt-4 text-lg font-medium">{STRINGS.emptyTitle}</h3>
++              <p className="mt-1 text-sm text-muted-foreground">{STRINGS.emptyBody}</p>
++              <Link
++                href="/dashboard/billing"
++                className="mt-6 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
++              >
++                {STRINGS.selectPlan}
++              </Link>
++            </>
++          )}
+         </div>
+       ) : (
+         <div className="rounded-lg border">

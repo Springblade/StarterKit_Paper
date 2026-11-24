@@ -1,0 +1,26 @@
+node:internal/modules/cjs/loader:1564
+  const err = new Error(message);
+              ^
+
+Error: Cannot find module 'server-only'
+Require stack:
+- /workspace/src/features/billing/process-sepay-payload.ts
+- /workspace/scripts/replacement-billing.ts
+    at node:internal/modules/cjs/loader:1564:15
+    at T._resolveFilename (file:///workspace/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:14889)
+    at nextResolveSimple (/workspace/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-BOkp8V6j.cjs:10:1017)
+    at /workspace/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-BOkp8V6j.cjs:9:4388
+    at /workspace/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-BOkp8V6j.cjs:9:3818
+    at resolveTsPaths (/workspace/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-BOkp8V6j.cjs:10:770)
+    at Module._resolveFilename (/workspace/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-BOkp8V6j.cjs:10:1155)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+    at defaultResolve (node:internal/modules/cjs/loader:1199:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/workspace/src/features/billing/process-sepay-payload.ts',
+    '/workspace/scripts/replacement-billing.ts'
+  ]
+}
+
+Node.js v24.22.2

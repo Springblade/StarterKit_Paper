@@ -1,0 +1,229 @@
+{
+  "date": "2026-11-10",
+  "scope": "targeted primary-source comparison, not systematic search",
+  "searches": [
+    {
+      "query": "\"Precedent or Intent\" coding agents",
+      "results": [
+        {
+          "url": "https://arxiv.org/abs/2610.38244",
+          "title": "[2610.38244] Precedent or Intent? What Coding Agents ...",
+          "description": "# Title:Precedent or Intent? What Coding Agents Follow When Evolving Existing Code\nWe investigate this question through bidirectional, controlled experiments in purpose-built repositories, followed by validation in real-world open-source repositories.\n\n## Access Paper:\n### Bookmark\n[![BibSonomy](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2610.38244&description=Precedent%20or%20Intent?%20What%20Coding%20Agents%20Follow%20When%20Evolving%20Existing%20Code) [![Reddit](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2610.38244&title=Precedent%20or%20Intent?%20What%20Coding%20Agents%20Follow%20When%20Evolving%20Existing%20Code)",
+          "position": 1,
+          "source": "web"
+        },
+        {
+          "url": "https://x.com/ComputerPapers/status/2116202223390568467",
+          "title": "Software Engineering Papers",
+          "description": "Precedent or Intent? What Coding Agents Follow When Evolving Existing Code Haichao Zhu, Geyang Xu, Zhaorui Yang, Jiyuan Wang, Qian Zhang ...",
+          "position": 2,
+          "source": "web"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.38244v1",
+          "title": "Precedent or Intent?What Coding Agents Follow When ...",
+          "description": "Precedent or Intent? What Coding Agents Follow When Evolving Existing Code ... coding agents decide whether to follow existing code or new ...",
+          "position": 3,
+          "source": "web"
+        },
+        {
+          "url": "https://www.themoonlight.io/en/review/precedent-or-intent-what-coding-agents-follow-when-evolving-existing-code",
+          "title": "[Literature Review] Precedent or Intent? What Coding ...",
+          "description": "[Literature Review] Precedent or Intent? What Coding Agents Follow When Evolving Existing Code. AIExplore how repository context ...",
+          "position": 4,
+          "source": "web"
+        }
+      ]
+    },
+    {
+      "query": "\"Constraint Decay\" \"Code Generation\"",
+      "results": [
+        {
+          "url": "https://arxiv.org/abs/2605.06445",
+          "title": "The Fragility of LLM Agents in Backend Code Generation",
+          "description": "by F Dente · 2026 · Cited by 10 — Constraint Decay: The Fragility of LLM Agents in Backend Code Generation. Authors:Francesco Dente, Dario Satriani, Paolo Papotti.",
+          "position": 1,
+          "source": "web"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=48256912",
+          "title": "The Fragility of LLM Agents in Back End Code Generation",
+          "description": "|  |  | [Constraint Decay: The Fragility of LLM Agents in Back End Code Generation](https://arxiv.org/abs/2605.06445) ( [arxiv.org](https://news.ycombinator.com/from?site=arxiv.org)) |\n\n|  |  |  |\n|-|-|-|\n| ![](https://news.ycombinator.com/s.gif) |  | [jdlshore](https://news.ycombinator.com/user?id=jdlshore) [5 months ago](https://news.ycombinator.com/item?id=48257705) | [prev](https://news.ycombinator.com/item?id=48256912#48262627) | [next](https://news.ycombinator.com/item?id=48256912#48257683)[–]<br>“Our systematic study exposes a phenomenon of constraint decay in LLM-based coding agents. While current models excel at unconstrained generation, their performance drops when forced to navigate explicit architectural rules. For end-users, this dichotomy implies that agents are reliable for rapid prototyping but remain unreliable for production-grade backend development.”<br>One major weakness of this study is that they didn’t fully test frontier models for cost reasons, so the specific performance results should be taken with a grain of salt. But the overall conclusion that models degrade when both behavior and architecture must be correct is interesting, and something to keep an eye on. |  |",
+          "position": 2,
+          "source": "web"
+        },
+        {
+          "url": "https://openreview.net/forum?id=asOnjdmxYE",
+          "title": "The Fragility of LLM Agents in Backend Code Generation",
+          "description": "by F Dente · Cited by 10 — Constraint decay: The Fragility of LLM Agents in Backend Code Generation. Download PDF · Francesco Dente, Dario Satriani, Paolo Papotti.",
+          "position": 3,
+          "source": "web"
+        },
+        {
+          "url": "https://www.alphaxiv.org/abs/2605.06445v1",
+          "title": "Constraint Decay: The Fragility of LLM Agents in Backend Code ...",
+          "description": "Constraint Decay: The Fragility of LLM Agents in Backend Code Generation ... code generation under loose specifications. However, production-grade software ...",
+          "position": 4,
+          "source": "web"
+        }
+      ]
+    },
+    {
+      "query": "\"FeatureArc\" coding \"verification\"",
+      "results": [
+        {
+          "url": "https://arxiv.org/html/2610.37434v1",
+          "title": "Benchmarking Coding Agents on Evolving Features",
+          "description": "# FeatureArc: Benchmarking Coding Agents on Evolving Features\n## III Benchmark Construction\n### III-GBenchmark Characteristics\nRequirements-grounded verification.",
+          "position": 1,
+          "source": "web"
+        },
+        {
+          "url": "https://academy.dair.ai/papers?topic=Code",
+          "title": "AI Papers of the Week",
+          "description": "FeatureArc: Benchmarking Coding Agents on Evolving Features. Yunlong Wang ... SWE-VERIFIER: Selective Verification for Cost-Efficient Coding Agents.",
+          "position": 2,
+          "source": "web"
+        },
+        {
+          "url": "https://www.catalyzex.com/author/Songyuanyi%20Lu",
+          "title": "Songyuanyi Lu",
+          "description": "FeatureArc: Benchmarking Coding Agents on Evolving Features. View Code Notebook Code for Similar Papers: Code for Similar Papers Add code ... verification.",
+          "position": 3,
+          "source": "web"
+        },
+        {
+          "url": "https://www.researchgate.net/scientific-contributions/Zhichao-Hu-2293757801",
+          "title": "Zhichao Hu's research works | Tencent, Shenzhen and ...",
+          "description": "Zhichao Hu's 33 research items with 29 citations and 522 reads, including: FeatureArc: Benchmarking Coding Agents on Evolving Features. ... verification. A ...",
+          "position": 4,
+          "source": "web"
+        }
+      ]
+    },
+    {
+      "query": "coding agents repository layout test verification tools Mehta",
+      "results": [
+        {
+          "url": "https://momentic.ai/blog/quality-layer-for-ai-generated-code",
+          "title": "What Is the Quality Layer for AI-Generated Code?",
+          "description": "# The Quality Layer for AI-Generated Code: Which Test Tools Work With Coding Agents\n## TL;DR\n[Try Momentic](https://momentic.ai/) when you want your coding agent to author in-repository tests, run them, and read structured failure evidence.\n\n## What to look for in a quality layer for coding agents\nYou should own and review test definitions in your repository.\n\n## FAQs\nMomentic stores plain-English YAML tests in your repository and returns failure evidence to the coding agent.",
+          "position": 1,
+          "source": "web"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/gnmehta_aiagents-aiengineering-github-activity-7511491256544497664-D7a_",
+          "title": "GitHub Repositories for AI Agent Development",
+          "description": "It sits between AI coding agents and their tools, removes unnecessary output, keeps important errors, and stores the original output for later.",
+          "position": 2,
+          "source": "web"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=S_by2xdhHTk",
+          "title": "Give Your Coding Agent a Real Workspace: Tools, Tests, Git & ...",
+          "description": "# Give Your Coding Agent a Real Workspace: Tools, Tests, Git & MCP\n## Give Your Coding Agent a Real Workspace: Tools, Tests, Git & MCP\nA strong model with weak tools produces confident plans that never get executed, while a well-equipped agent can verify its own work by running code and tests.",
+          "position": 3,
+          "source": "web"
+        },
+        {
+          "url": "https://www.minitap.ai/magazine/ai-coding-agents-automated-testing",
+          "title": "AI Coding Agents: Who's Testing the Code? (2026)",
+          "description": "## A Field Guide to Leading AI Coding Agents in 2026\nClaude Code sits in between, favored on large, unfamiliar repos.",
+          "position": 4,
+          "source": "web"
+        }
+      ]
+    },
+    {
+      "query": "\"coding agents\" \"repository layout\" experiment",
+      "results": [
+        {
+          "url": "https://aaif.io/blog/writing-an-effective-agents-md",
+          "title": "Writing an Effective AGENTS.md for Coding Agents",
+          "description": "# Writing an effective AGENTS.md\n## What problem is AGENTS.md solving?\nThe experiment covered one repository and one agent, so it is useful evidence rather than a general benchmark.\n\n## A worked example\n```\n# AGENTS.md\n\nThis is the Acme Platform repository.\n\nFollow the existing coding style.\nRun tests before submitting changes.\nDo not edit generated files.\nKeep changes focused.\n```\n\n## A practical starting template\n```\n# AGENTS.md\n\n## Repository layout\n\n<!-- Include only locations or boundaries that are not obvious. -->\n\n`src/...`:\n`tests/...`:\n```",
+          "position": 1,
+          "source": "web"
+        },
+        {
+          "url": "https://opensource.adobe.com/ai-repo-harness-guide/05-How-Agents-Navigate/",
+          "title": "How Agents Navigate - Repository Harnesses for AI Coding Agents",
+          "description": "Repository Harnesses for AI Coding Agents. How ... test ... Chapter 06 shows what this pattern looks like applied across a full reference repository layout.",
+          "position": 2,
+          "source": "web"
+        },
+        {
+          "url": "https://github.com/codeprakhar25/context-files-coding-agents",
+          "title": "context-files-coding-agents",
+          "description": "# Do Context Files Help Coding Agents?\n## Repository layout\n[Permalink: Repository layout](https://github.com/codeprakhar25/context-files-coding-agents#repository-layout)\n\n```\nharness/                 # the experiment engine\n  agent.py               #   ClaudeCodeAgent + CodexCLIAgent (stream parsing, watchdog)\n  runner.py              #   per-cell orchestration, strategy application, history pruning\n  config.py              #   run configuration / knobs\n  context.py             #   strategy injection: none / always_on / selective\n  generate_wiki.py       #   builds the retrieval wiki for the `selective` strategy\n  evaluate.py            #   Tier-C gold-test evaluation pipeline\n  tools.py, db.py, logger.py\n  task_generator*.py     #   build benchmark tasks from merged PRs\npod/                     # cloud-pod bring-up + DEFENSE-IN-DEPTH safety layer\n                         #   egress lock, push-deny hooks, verify_lock gate\ntasks/                   # benchmark task specifications (JSON)\ndata/\n  results_summary.csv    # aggregated per-cell outcomes (no raw transcripts)\n  experiment_full.db     # raw per-run/per-turn data, 291-run ablation\n  probe_codex.db, probe_claude.db   # raw data, 36-cell probe\n  README.md              #   column dictionary + reproduce snippet\npaper/                   # data/key_numbers.md — provenance for every number in the paper\nanalyze.py, power_analysis.py, efficiency_analysis.py, ...   # analysis scripts\nAGENTS.md                # OpShin's own context file — the artifact injected under\n                         #   `always_on`/`selective` for the OpShin task set\n```\n\nrequest): cloned target repositories, raw agent transcripts (`*.jsonl`), and external datasets. `experiment_full.db`, `probe_codex.db`, and `probe_claude.db` (generated diffs, per-run/per-turn metrics) are released in `data/`. See `.gitignore`.\n\n## Citing\n```\n@misc{khatri2026contextfiles,\n  title  = {Do Context Files Help Coding Agents? A Two-Agent Ablation Study on Real Repositories},\n  author = {Khatri, Prakhar},\n  year   = {2026},\n  eprint = {2607.27250},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.SE},\n  url    = {https://arxiv.org/abs/2607.27250}\n}\n```",
+          "position": 3,
+          "category": "github",
+          "source": "web"
+        },
+        {
+          "url": "https://promptessor.com/blog/best-agentsmd-examples-for-codex-cursor-and-ai-coding-agents-in-2026",
+          "title": "Best AGENTS.md Examples and Templates for AI Coding ...",
+          "description": "`AGENTS.md` provides a predictable place to store repository-specific guidance for AI coding agents.\n\n## How AGENTS.md Works\n1. The coding agent opens or enters a repository.",
+          "position": 4,
+          "source": "web"
+        }
+      ]
+    },
+    {
+      "query": "\"feature-based\" \"layered\" \"LLM\" code",
+      "results": [
+        {
+          "url": "https://www.linkedin.com/posts/lakehal-abdeldjalil-software-ai-engineer_how-we-structure-a-project-as-it-starts-getting-activity-7504695296686489600-bX9d",
+          "title": "Frontend Development Project Structure: Layered vs Feature- ...",
+          "description": "... code. feature-based architecture makes ... Frontend Development Project Structure: Layered vs Feature-Based ... LLM): Great for pure reasoning or general ...",
+          "position": 1,
+          "source": "web"
+        },
+        {
+          "url": "https://apxml.com/courses/prompt-engineering-llm-application-development/chapter-8-application-development-considerations/structuring-llm-application-code",
+          "title": "Structuring LLM Application Code",
+          "description": "LLM Interaction: Code dedicated to making requests to the LLM API (e.g., OpenAI ... layered or feature-based structure is beneficial: advanced_llm_app ...",
+          "position": 2,
+          "source": "web"
+        },
+        {
+          "url": "https://forum.cursor.com/t/vsa-vertical-slice-architecture-for-complex-projects/75360",
+          "title": "VSA: Vertical Slice Architecture for complex projects - Guides",
+          "description": "... LLM, less complexity for ourselves. Bigger context is not your ... layered> <vertical>Feature-based vertical organization</vertical> ...",
+          "position": 3,
+          "source": "web"
+        },
+        {
+          "url": "https://www.mdpi.com/2673-2688/7/4/142",
+          "title": "Mapping the LLM Landscape: A Cross-Family Survey of ...",
+          "description": "by D Bhati · 2026 · Cited by 20 — Interactive feature-based side-by-side comparison of two LLMs in the LLM GPT ... Layered safety measures include content moderation, response filtering ...",
+          "position": 4,
+          "source": "web"
+        }
+      ]
+    },
+    {
+      "query": "\"coding agents\" \"regression tests\" \"controlled\"",
+      "results": [
+        {
+          "url": "https://opendatascience.com/the-safe-agent-blueprint-testing-and-guardrails-for-coding-agents/",
+          "title": "The Safe Agent Blueprint: Regression Tests and Guardrails for ...",
+          "description": "The Safe Agent Blueprint: Regression Tests and Guardrails for Coding Agents ... Regression tests ... Generation is one step inside a controlled process.",
+          "position": 1,
+          "source": "web"
+        },
+        {
+          "url": "https://www.flagsmith.com/blog/regression-testing",
+          "title": "Regression Testing: Your Safety Net Before Code Reaches ...",
+          "description": "... regression tests run against a known, controlled application state. This ... Feature flags and AI: a technical guide to using AI coding agents and ...",
+          "position": 2,
+          "source": "web"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Five scoped primary full texts read; verification HTML unavailable, PDF used.",
+    "Three artifact READMEs/landing pages inspected; no full artifact reproduction.",
+    "No exact-overlap search result does not establish novelty."
+  ]
+}

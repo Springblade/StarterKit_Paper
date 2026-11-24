@@ -1,0 +1,6 @@
+Already up to date
+Done in 316ms using pnpm v11.7.0
+$ tsc --noEmit
+src/app/api/admin/role/route.ts(5,32): error TS2339: Property 'role' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; email: string; emailVerified: boolean; name: string; image?: string | null | undefined; }'.
+src/app/api/admin/role/route.ts(9,24): error TS2339: Property 'setRole' does not exist on type 'InferAPI<Prettify<{ readonly ok: StrictEndpoint<"/ok", { method: "GET"; metadata: { openapi: { description: string; responses: { "200": { description: string; content: { "application/json": { schema: { type: "object"; properties: { ok: { type: string; description: string; }; }; required: string[]; }; }; }; }; }; }; ...'.
+[ELIFECYCLE] Command failed with exit code 2.

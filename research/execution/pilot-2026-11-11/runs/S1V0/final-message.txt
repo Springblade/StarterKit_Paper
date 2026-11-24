@@ -1,0 +1,3 @@
+Implemented the GET status filter in [page.tsx](/workspace/src/app/dashboard/billing/history/page.tsx). It preserves the authenticated user scope and newest-first ordering, treats missing, empty, invalid, or repeated `status` values as “All statuses,” and shows a no-match message with a link to the full history.
+
+Checks passed: `pnpm check-types`, `pnpm test:run` (14 tests), and `pnpm build`. The build reported missing Google OAuth credentials, but completed successfully.

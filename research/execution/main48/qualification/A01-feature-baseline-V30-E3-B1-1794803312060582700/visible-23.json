@@ -1,0 +1,48 @@
+{
+  "task": "DP03",
+  "completed": true,
+  "pass": true,
+  "browser": "Chromium / Playwright 1.58.2",
+  "elapsedSeconds": 4.2111243620000005,
+  "results": [
+    {
+      "id": "VP-A1-existing-update-only-caller",
+      "pass": true,
+      "elapsedSeconds": 0.034219446999999945
+    },
+    {
+      "id": "VP-A2-protected-field-mass-assignment",
+      "pass": true,
+      "elapsedSeconds": 0.0486130270000001
+    },
+    {
+      "id": "VP-A2-anonymous-existing-write-denied",
+      "pass": true,
+      "elapsedSeconds": 0.019887332000000014
+    },
+    {
+      "id": "VP-A3-existing-update-and-settings-refresh",
+      "pass": true,
+      "elapsedSeconds": 1.2215645179999999
+    },
+    {
+      "id": "VP-A4-existing-display-name-is-text",
+      "pass": true,
+      "elapsedSeconds": 1.143084348
+    },
+    {
+      "id": "VP-A5-settings-requires-authentication",
+      "pass": true,
+      "elapsedSeconds": 1.0725386170000002
+    },
+    {
+      "id": "VP-identity-and-order-preservation",
+      "pass": true,
+      "elapsedSeconds": 0.004330527000000074
+    },
+    {
+      "id": "fixture-cleanup",
+      "pass": true
+    }
+  ]
+}

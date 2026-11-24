@@ -1,0 +1,29 @@
+diff --git a/src/services/billing/payment-content.ts b/src/services/billing/payment-content.ts
+index 671095d..8a32ac7 100755
+--- a/src/services/billing/payment-content.ts
++++ b/src/services/billing/payment-content.ts
+@@ -10,19 +10,11 @@ import { OrderCodePrefix } from '@/types/billing';
+  * Format: "SK aBc12345" -> "aBc12345"
+  */
+ export function extractOrderCode(content: string): string | null {
+-  const trimmed = content.trim();
+-
+-  if (!trimmed.startsWith(OrderCodePrefix)) {
+-    return null;
+-  }
+-
+-  const code = trimmed.slice(OrderCodePrefix.length).trim();
+-
+-  if (!code || code.length < 5 || code.length > 50) {
+-    return null;
+-  }
+-
+-  return code;
++  const tokens = content.trim().split(/\s+/);
++  const markers = tokens.flatMap((t,i) => t === OrderCodePrefix ? [i] : []);
++  if (markers.length !== 1) return null;
++  const code = tokens[markers[0]! + 1];
++  return code && /^[A-Za-z0-9_-]{5,50}$/.test(code) ? code : null;
+ }
+ 
+ /**

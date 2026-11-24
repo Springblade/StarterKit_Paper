@@ -1,0 +1,105 @@
+{
+  "task": "DP03",
+  "completed": true,
+  "acceptance": true,
+  "preservation": true,
+  "jointSuccess": true,
+  "elapsedSeconds": 12.102841268,
+  "results": [
+    {
+      "id": "A-A1-labelled-form-submission-trim-and-refresh",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 1.6296071550000002
+    },
+    {
+      "id": "A-A2-boundary-one",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 0.8956712039999998
+    },
+    {
+      "id": "A-A2-boundary-eighty-unicode",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 0.8848448440000002
+    },
+    {
+      "id": "A-A3-server-rejects-empty",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 0.8354188709999999
+    },
+    {
+      "id": "A-A3-server-rejects-whitespace",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 0.844350246
+    },
+    {
+      "id": "A-A3-server-rejects-81-bmp",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 0.835140512
+    },
+    {
+      "id": "A-A3-server-rejects-81-unicode",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 0.8467941489999994
+    },
+    {
+      "id": "A-A4-own-target-and-protected-fields-through-actual-write",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 0.8538576039999998
+    },
+    {
+      "id": "A-A5-anonymous-new-write-denied",
+      "kind": "acceptance",
+      "pass": true,
+      "elapsedSeconds": 0.008502183000000513
+    },
+    {
+      "id": "A-P3-stored-name-safe-on-existing-settings",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 0.776755502
+    },
+    {
+      "id": "A-P4-identity-and-sign-in-preserved",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 0.8182466670000013
+    },
+    {
+      "id": "A-P5-existing-settings-anonymous-denied",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 0.772918619
+    },
+    {
+      "id": "A-P6-existing-order-status-and-history-ownership",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 1.5039483520000012
+    },
+    {
+      "id": "P-orders-unchanged",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 0.0016265779999994265
+    },
+    {
+      "id": "P-browser-no-uncaught-runtime-errors",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 0.00008981499999936205
+    },
+    {
+      "id": "fixture-cleanup",
+      "kind": "instrument",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+/api/auth/get-session 200
+/auth/sign-in 200
+/auth/sign-up 200
+/auth/reset-password 200
+/dashboard 200
+/dashboard/settings 200
+/dashboard/admin/users 200
+/dashboard/billing 200

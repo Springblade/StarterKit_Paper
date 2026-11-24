@@ -1,0 +1,89 @@
+{
+  "task": "A04",
+  "layout": "feature",
+  "variant": "fault",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "6c0d7cc81e803793e406fda333ee6cb8455f2048f168e902e283087ac661e969",
+    "hidden": "9eac635179fa13418725c6af808f8cd36732429686e2046c6ff59f9b2355c227",
+    "visible": "b8ca5218cb9c849cfefc36a70749268e533f083a7ca67cc24f93fe74c3306106",
+    "runtime": "edc893f6227fe07c937f178c48d5c20762329488ed2597e7489d0f6131d57db0",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "93fa6e65dfd0af6de3362f3e3acbcb98463f16d1e874ccec04ba6e7d13cbfc77",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\A04-feature-fault-V1-E1-B1-1794798434306380400",
+  "visible": [
+    {
+      "completed": true,
+      "pass": false,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "A04",
+      "completed": true,
+      "acceptance": false,
+      "preservation": false,
+      "jointSuccess": false,
+      "results": [
+        {
+          "id": "EA-old-short-credential-and-identity",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EA-new-signup-boundaries-verification-no-autosignin",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Expected values to be strictly equal:\n\nfalse !== true\n"
+        },
+        {
+          "id": "EA-new-real-signup-form",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-new-reset-token-retention-on-short-and-single-use",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-old-expired-reset-max-identity",
+          "kind": "preservation",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "The expression evaluated to a falsy value:\n\n  assert.ok((await api('reset-password',{token:await token(),newPassword:'m'.repeat(128)})).ok())\n"
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

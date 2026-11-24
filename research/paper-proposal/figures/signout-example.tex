@@ -1,0 +1,17 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\node[box] (confirm) at (0,0) {Sign-out dialog opens. Cancel keeps the session.};
+\node[note,below=2mm of confirm] (action) {User confirms sign-out};
+\node[box,text width=5.8cm,minimum height=16mm] (reference) at (-3.55,-2.35)
+  {\textbf{(a) Reference patch}\\Session ends. Sign-in required.};
+\node[box,text width=5.8cm,minimum height=16mm,draw=studyorange,fill=studyorange!5] (regression) at (3.55,-2.35)
+  {\textbf{(b) Deliberate regression}\\Session stays active.};
+\draw[arrow] (action.south west) -- (reference.north);
+\draw[arrow] (action.south east) -- (regression.north);
+\node[note,below=2mm of reference] {Dialog check passes \quad Preservation passes};
+\node[note,below=2mm of regression] {Dialog check passes \quad \textbf{Preservation fails}};
+\end{tikzpicture}
+\caption{Both prepared patches display the sign-out dialog. The preservation check detects the patch that leaves the session active after confirmation.}
+\label{fig:signout-example}
+\end{figure}

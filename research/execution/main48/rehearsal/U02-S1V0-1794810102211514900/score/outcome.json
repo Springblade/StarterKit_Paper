@@ -1,0 +1,81 @@
+{
+  "task": "U02",
+  "cell": "S1V0",
+  "completed": true,
+  "model_calls": 0,
+  "forbidden_dependency_changes": [],
+  "lockfile_changed": false,
+  "V1": {
+    "task": "DP02",
+    "completed": true,
+    "pass": true,
+    "browser": "Chromium / Playwright 1.58.2",
+    "elapsedSeconds": 5.928212694,
+    "results": [
+      {
+        "id": "VP-U1-admin-only-direct-route",
+        "pass": true,
+        "elapsedSeconds": 3.5356318979999997
+      },
+      {
+        "id": "VP-U2-unfiltered-rows-counts-order",
+        "pass": true,
+        "elapsedSeconds": 0.998195369
+      },
+      {
+        "id": "VP-U3-no-session-token-disclosure",
+        "pass": true,
+        "elapsedSeconds": 0.7748055169999998
+      },
+      {
+        "id": "VP-identity-and-order-preservation",
+        "pass": true,
+        "elapsedSeconds": 0.0029742800000003627
+      },
+      {
+        "id": "fixture-cleanup",
+        "pass": true
+      }
+    ]
+  },
+  "E": {
+    "task": "U02",
+    "completed": true,
+    "acceptance": true,
+    "preservation": true,
+    "jointSuccess": true,
+    "assessable": true,
+    "results": [
+      {
+        "id": "EU-old-directory-access-no-token",
+        "kind": "preservation",
+        "pass": true
+      },
+      {
+        "id": "EU2-new-discover-detail-session-records",
+        "kind": "acceptance",
+        "pass": true
+      },
+      {
+        "id": "EU2-new-direct-permission-and-missing-target",
+        "kind": "acceptance",
+        "pass": true
+      },
+      {
+        "id": "EU-old-protected-fields-and-order-state",
+        "kind": "preservation",
+        "pass": true
+      }
+    ]
+  },
+  "V0": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "V0_reused_from": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\ledger-U02-feature-reference-V20-E20-B1.json",
+  "assessable": true,
+  "jointSuccess": true
+}

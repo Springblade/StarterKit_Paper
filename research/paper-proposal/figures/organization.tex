@@ -1,0 +1,13 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\node[note] at (3,0.5) {(a) Layer-based organization, $S=0$};
+\node[note] at (10.4,0.5) {(b) Feature-based organization, $S=1$};
+\node[box,text width=5.3cm,anchor=north west,align=left] at (0,0) {\texttt{components/}\\\quad OrderSearch, RoleFilter\\[3pt]\texttt{actions/}\\\quad listOrders, listUsers\\[3pt]\texttt{validation/}\\\quad orderQuery, roleQuery};
+\node[box,text width=5.3cm,anchor=north west,align=left] at (7.4,0) {\texttt{features/billing/}\\\quad OrderSearch, listOrders\\\quad orderQuery\\[3pt]\texttt{features/auth/}\\\quad RoleFilter, listUsers\\\quad roleQuery};
+\draw[arrow,<->] (6.2,-1.35)--(7.1,-1.35);
+\node[note,text width=13cm] at (6.7,-3.8) {Same behavior and dependencies; changed paths and grouping.\\Framework routes remain valid in both variants.};
+\end{tikzpicture}
+\caption{The organization intervention changes how related source modules are grouped. Names illustrate the planned transformation, not a completed repository refactor or a list of required implementation files. Neither variant is presumed superior.}
+\label{fig:organization}
+\end{figure}

@@ -1,0 +1,423 @@
+{
+  "purpose": "pre-run information audit; no agent invocation; not a new main-study analysis choice",
+  "date": "2026-11-15",
+  "versions": {
+    "python": "3.13.3",
+    "numpy": "2.3.5",
+    "scipy": "1.16.3"
+  },
+  "counterexample_check": {
+    "N": 48,
+    "n_each_marginal_side": 24,
+    "hypothetical_assumptions": [
+      "independent homogeneous Bernoulli observations",
+      "one S effect only; V effect and interaction zero",
+      "no task heterogeneity, batch drift or missing data",
+      "two-sided Fisher test at alpha0.05 and0.025; .025 is per-test Bonferroni allowance, not simulated Holm",
+      "p0=.5-d/2 and p1=.5+d/2",
+      "exact enumeration of25x25 possible count pairs; no Monte Carlo error",
+      "this is not an upper/lower power bound over possible methods and not a calibrated factorial protocol"
+    ],
+    "powers": [
+      {
+        "difference_pp": 0,
+        "p0": 0.5,
+        "p1": 0.5,
+        "two_sided_fisher_rejection_alpha_005": 0.029366862480188195,
+        "two_sided_fisher_rejection_alpha_0025": 0.0133634840690391
+      },
+      {
+        "difference_pp": 10.0,
+        "p0": 0.45,
+        "p1": 0.55,
+        "two_sided_fisher_rejection_alpha_005": 0.07040915755465774,
+        "two_sided_fisher_rejection_alpha_0025": 0.037861545179482904
+      },
+      {
+        "difference_pp": 20.0,
+        "p0": 0.4,
+        "p1": 0.6,
+        "two_sided_fisher_rejection_alpha_005": 0.21475727403351202,
+        "two_sided_fisher_rejection_alpha_0025": 0.13775113914415335
+      },
+      {
+        "difference_pp": 30.0,
+        "p0": 0.35,
+        "p1": 0.65,
+        "two_sided_fisher_rejection_alpha_005": 0.47018548184585446,
+        "two_sided_fisher_rejection_alpha_0025": 0.35264549729902395
+      },
+      {
+        "difference_pp": 40.0,
+        "p0": 0.3,
+        "p1": 0.7,
+        "two_sided_fisher_rejection_alpha_005": 0.7496430546821161,
+        "two_sided_fisher_rejection_alpha_0025": 0.6428012044216767
+      },
+      {
+        "difference_pp": 50.0,
+        "p0": 0.25,
+        "p1": 0.75,
+        "two_sided_fisher_rejection_alpha_005": 0.929627399494137,
+        "two_sided_fisher_rejection_alpha_0025": 0.8770856668959861
+      }
+    ]
+  },
+  "two_trials_per_cell_illustration": [
+    {
+      "successes": 0,
+      "runs": 2,
+      "iid_binomial_exact95": [
+        0.0,
+        0.841886116991607
+      ]
+    },
+    {
+      "successes": 1,
+      "runs": 2,
+      "iid_binomial_exact95": [
+        0.01257911709367899,
+        0.987420882906321
+      ]
+    },
+    {
+      "successes": 2,
+      "runs": 2,
+      "iid_binomial_exact95": [
+        0.15811388300839305,
+        1.0
+      ]
+    }
+  ],
+  "existing_Hoeffding_simultaneous_halfwidth": 0.42729900902226736,
+  "comparison_limits": [
+    "Fisher is only an illustrative sensitivity check, not adopted as the main test",
+    "changing method could improve power; specific result cannot show all methods need more runs",
+    "fixed-task sessions may be conditionally independent; the six tasks limit transfer rather than making N=6 for every claim",
+    "two observed successes do not establish success probability1"
+  ],
+  "existing_DP03_constructed_fault_audit": [
+    {
+      "case": "DP03/feature/fault-no-server-validation",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/feature/fault-no-persistence",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/feature/fault-no-ui-refresh",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/feature/fault-utf16",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/feature/fault-no-trim",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/feature/fault-unsafe-name",
+      "visible_all_pass": false,
+      "hidden_acceptance_all_pass": true,
+      "hidden_preservation_all_pass": false,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/feature/fault-foreign-write",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/feature/fault-protected-field",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": false,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/layered/fault-no-server-validation",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/layered/fault-no-persistence",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/layered/fault-no-ui-refresh",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/layered/fault-utf16",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/layered/fault-no-trim",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/layered/fault-unsafe-name",
+      "visible_all_pass": false,
+      "hidden_acceptance_all_pass": true,
+      "hidden_preservation_all_pass": false,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/layered/fault-foreign-write",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": true,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    },
+    {
+      "case": "DP03/layered/fault-protected-field",
+      "visible_all_pass": true,
+      "hidden_acceptance_all_pass": false,
+      "hidden_preservation_all_pass": false,
+      "V0_exit_codes": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      }
+    }
+  ],
+  "existing_reference_metrics": {
+    "DP02": {
+      "reference": {
+        "source_files_S0": 1,
+        "source_files_S1": 1,
+        "parent_directories_S0": 1,
+        "parent_directories_S1": 1,
+        "different_path_logical_modules": 0,
+        "relocated_existing_logical_modules": 0,
+        "new_layout_specific_modules": 0,
+        "changed_framework_routes_at_identical_paths": 1,
+        "root": "src",
+        "mapping": {
+          "src/app/dashboard/admin/users/page.tsx": "src/app/dashboard/admin/users/page.tsx"
+        }
+      },
+      "alternative": {
+        "source_files_S0": 1,
+        "source_files_S1": 1,
+        "parent_directories_S0": 1,
+        "parent_directories_S1": 1,
+        "different_path_logical_modules": 0,
+        "relocated_existing_logical_modules": 0,
+        "new_layout_specific_modules": 0,
+        "changed_framework_routes_at_identical_paths": 1,
+        "root": "src",
+        "mapping": {
+          "src/app/dashboard/admin/users/page.tsx": "src/app/dashboard/admin/users/page.tsx"
+        }
+      }
+    },
+    "DP03": {
+      "reference": {
+        "source_files_S0": 3,
+        "source_files_S1": 3,
+        "parent_directories_S0": 3,
+        "parent_directories_S1": 3,
+        "different_path_logical_modules": 2,
+        "relocated_existing_logical_modules": 0,
+        "new_layout_specific_modules": 2,
+        "changed_framework_routes_at_identical_paths": 1,
+        "root": "src",
+        "mapping": {
+          "src/app/dashboard/settings/page.tsx": "src/app/dashboard/settings/page.tsx",
+          "src/features/auth/actions/update-display-name.ts": "src/actions/auth/update-display-name.ts",
+          "src/features/auth/types/profile.ts": "src/types/auth/profile.ts"
+        }
+      },
+      "alternative": {
+        "source_files_S0": 4,
+        "source_files_S1": 4,
+        "parent_directories_S0": 4,
+        "parent_directories_S1": 4,
+        "different_path_logical_modules": 2,
+        "relocated_existing_logical_modules": 0,
+        "new_layout_specific_modules": 2,
+        "changed_framework_routes_at_identical_paths": 2,
+        "root": "src",
+        "mapping": {
+          "src/app/dashboard/settings/page.tsx": "src/app/dashboard/settings/page.tsx",
+          "src/features/auth/components/display-name-form.tsx": "src/components/auth/display-name-form.tsx",
+          "src/app/api/profile/display-name/route.ts": "src/app/api/profile/display-name/route.ts",
+          "src/features/auth/types/profile.ts": "src/types/auth/profile.ts"
+        }
+      }
+    }
+  },
+  "current_proposed_main_tasks": [
+    {
+      "task": "MT-A01",
+      "qualification": "P0-P3-technical-checks-completed",
+      "readiness": "main-plan-pending-qualification-freeze-and-release",
+      "planned_runs": 8
+    },
+    {
+      "task": "MT-U02",
+      "qualification": "not-started",
+      "readiness": "main-plan-pending-qualification-freeze-and-release",
+      "planned_runs": 8
+    },
+    {
+      "task": "MT-A03",
+      "qualification": "not-started",
+      "readiness": "main-plan-pending-qualification-freeze-and-release",
+      "planned_runs": 8
+    },
+    {
+      "task": "MT-B03",
+      "qualification": "not-started",
+      "readiness": "main-plan-pending-qualification-freeze-and-release",
+      "planned_runs": 8
+    },
+    {
+      "task": "MT-U03",
+      "qualification": "not-started",
+      "readiness": "main-plan-pending-qualification-freeze-and-release",
+      "planned_runs": 8
+    },
+    {
+      "task": "MT-B04",
+      "qualification": "not-started",
+      "readiness": "main-plan-pending-qualification-freeze-and-release",
+      "planned_runs": 8
+    }
+  ],
+  "provenance": {
+    "research/execution/prepilot-2026-11-12/sweep-faults.json": "32e3823777dd39f5bf24f8ce6bd3d4ec73d9c4d962bab990808bff9b08137a6d",
+    "research/execution/prepilot-2026-11-12/reference-metrics.json": "47aca0eaaf7c0cf5a59ac40ba6f25e40ea808adcde40d818e14829349269ad90",
+    "research/execution/main-task-candidates-v1.csv": "6aa9e5a370818847d2c965314a39cac107f22b7b663d08c4885630ddc115851a"
+  },
+  "reproduction": {
+    "statistical_recipe": "For a,b=0..24 compute scipy.stats.fisher_exact([[a,24-a],[b,24-b]],alternative=two-sided).pvalue. Weight each rejection by binom.pmf(a,24,0.5-d/2)*binom.pmf(b,24,0.5+d/2), sum for d=0,.1,.2,.3,.4,.5. Cell intervals: scipy.stats.binomtest(k,2).proportion_ci(.95,method=exact), k=0,1,2. Fault rows are extracts of existing sweep-faults.json.",
+    "self_checks": "symmetry, mass1, null error<=alpha, identical table p1, extreme table p<1e-10, narrower alpha gives fewer rejections, CP lower for2/2 equals sqrt(.025), six tasks sum48; passed"
+  }
+}

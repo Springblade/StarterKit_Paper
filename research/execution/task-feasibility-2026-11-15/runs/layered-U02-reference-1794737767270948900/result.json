@@ -1,0 +1,20 @@
+{
+  "phase": "reference",
+  "modelCalls": 0,
+  "completed": true,
+  "pass": true,
+  "baselineModified": false,
+  "browserAndRealDB": true,
+  "results": [
+    {
+      "id": "U02-browser-detail-and-aggregate",
+      "pass": true,
+      "seconds": 12.704
+    },
+    {
+      "id": "U02-direct-access-and-missing-account",
+      "pass": true,
+      "seconds": 4.176
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{"id":"preservation-standard-QR-mixed-case","pass":false,"error":"Expected values to be strictly equal:\n+ actual - expected\n\n+ 'abc12345'\n- 'AbC12345'\n"}
+{"id":"acceptance-token-grammar","pass":false,"error":"Expected values to be strictly equal:\n+ actual - expected\n\n+ 'abc12345'\n- 'AbC12345'\n"}
+{"id":"preservation-standard-payment-through-webhook","pass":false,"error":"Expected values to be strictly equal:\n+ actual - expected\n\n+ 'pending'\n- 'completed'\n"}
+{"id":"acceptance-embedded-payment-through-shared-processor","pass":false,"error":"duplicate key value violates unique constraint \"orders_user_plan_pending_idx\""}

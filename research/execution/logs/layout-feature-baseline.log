@@ -1,0 +1,14 @@
+Already up to date
+Done in 84ms using pnpm v11.7.0
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.orders.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.11 C:/Users/wayad/Documents/Paper/research/execution/layouts/feature
+
+
+ Test Files  1 passed (1)
+      Tests  10 passed | 5 skipped (15)
+   Start at  17:22:16
+   Duration  11.53s (transform 153ms, setup 0ms, import 3.24s, tests 8.05s, environment 0ms)
+

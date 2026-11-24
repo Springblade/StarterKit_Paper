@@ -1,0 +1,48 @@
+Already up to date
+Done in 369ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.20.0.3:3107
+- Environments: .env
+✓ Ready in 340ms
+
+ GET / 200 in 1626ms (next.js: 1472ms, application-code: 154ms)
+2026-11-16T07:27:24.293Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:27:24.845Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:27:24.866Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/auth/get-session 200 in 1953ms (next.js: 1932ms, application-code: 22ms)
+2026-11-16T07:27:26.186Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:27:26.285Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in 200 in 1432ms (next.js: 1246ms, application-code: 185ms)
+ GET /auth/sign-up 200 in 484ms (next.js: 432ms, application-code: 52ms)
+2026-11-16T07:27:27.345Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/reset-password 200 in 567ms (next.js: 373ms, application-code: 194ms)
+ GET /auth/sign-in?redirectTo=/dashboard 200 in 67ms (next.js: 3ms, application-code: 64ms)
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 44ms (next.js: 2ms, application-code: 42ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 75ms (next.js: 3ms, application-code: 72ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing 200 in 32ms (next.js: 1940µs, application-code: 30ms)
+ POST /api/sepay/webhook 200 in 737ms (next.js: 690ms, application-code: 48ms)
+ POST /api/sepay/webhook 200 in 6ms (next.js: 1678µs, application-code: 4ms)
+ POST /api/sepay/webhook 200 in 35ms (next.js: 2ms, application-code: 33ms)
+ POST /api/sepay/webhook 200 in 11ms (next.js: 2ms, application-code: 8ms)
+ POST /api/sepay/webhook 401 in 12ms (next.js: 3ms, application-code: 9ms)
+ GET /api/cron/sepay-poll 200 in 498ms (next.js: 477ms, application-code: 21ms)
+ POST /api/sepay/webhook 200 in 14ms (next.js: 1427µs, application-code: 12ms)
+ POST /api/sepay/webhook 200 in 8ms (next.js: 1779µs, application-code: 6ms)
+ POST /api/sepay/webhook 200 in 16ms (next.js: 1580µs, application-code: 14ms)
+ POST /api/sepay/webhook 200 in 15ms (next.js: 1493µs, application-code: 13ms)
+ POST /api/sepay/webhook 200 in 16ms (next.js: 1679µs, application-code: 14ms)
+ POST /api/sepay/webhook 200 in 17ms (next.js: 1746µs, application-code: 15ms)
+ POST /api/sepay/webhook 200 in 14ms (next.js: 1550µs, application-code: 13ms)
+ POST /api/sepay/webhook 200 in 19ms (next.js: 1565µs, application-code: 17ms)
+ POST /api/sepay/webhook 200 in 22ms (next.js: 2ms, application-code: 20ms)
+ POST /api/sepay/webhook 200 in 30ms (next.js: 4ms, application-code: 26ms)
+ GET /api/cron/sepay-poll 200 in 38ms (next.js: 1615µs, application-code: 36ms)
+ POST /api/sepay/webhook 200 in 21ms (next.js: 4ms, application-code: 16ms)
+ POST /api/sepay/webhook 200 in 25ms (next.js: 8ms, application-code: 18ms)
+ GET /api/cron/sepay-poll 200 in 31ms (next.js: 2ms, application-code: 29ms)
+ POST /api/sepay/webhook 200 in 21ms (next.js: 4ms, application-code: 16ms)
+ POST /api/sepay/webhook 200 in 25ms (next.js: 8ms, application-code: 17ms)
+ GET /api/cron/sepay-poll 200 in 30ms (next.js: 2ms, application-code: 28ms)
+ POST /api/sepay/webhook 200 in 15ms (next.js: 1780µs, application-code: 14ms)
+ POST /api/sepay/webhook 200 in 19ms (next.js: 4ms, application-code: 15ms)

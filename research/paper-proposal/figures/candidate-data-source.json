@@ -1,0 +1,46 @@
+{
+  "source": "research/smartkit-task-audit-v0.csv",
+  "classification": "billing source path versus user administration",
+  "records": [
+    {
+      "task_id": "SK-T01",
+      "domain": "Billing",
+      "origin": "constructed_candidate",
+      "status": "unvalidated"
+    },
+    {
+      "task_id": "SK-T02",
+      "domain": "Billing",
+      "origin": "constructed_candidate",
+      "status": "unvalidated"
+    },
+    {
+      "task_id": "SK-T03",
+      "domain": "Billing",
+      "origin": "constructed_candidate",
+      "status": "unvalidated"
+    },
+    {
+      "task_id": "SK-T04",
+      "domain": "User administration",
+      "origin": "constructed_candidate",
+      "status": "unvalidated"
+    },
+    {
+      "task_id": "SK-T05",
+      "domain": "Billing",
+      "origin": "constructed_candidate",
+      "status": "unvalidated"
+    },
+    {
+      "task_id": "SK-T06",
+      "domain": "Billing",
+      "origin": "constructed_candidate",
+      "status": "unvalidated"
+    }
+  ],
+  "counts": {
+    "Billing": 5,
+    "User administration": 1
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "runner_sha256": "da712dbb90db040b847c1e05802d51ea343cb24ec24a1303e18a764fb4e84612",
+  "prior_runner": "pilot-v1.py.txt",
+  "change": "TCP readiness and database-log preservation only; packages, model, task, timeout and allocation unchanged."
+}

@@ -1,0 +1,58 @@
+{
+  "task": "U02",
+  "layout": "feature",
+  "variant": "alternative",
+  "binding": {
+    "package": "a88f162076251566495d57f70de855b1cd6bd98fb195171f3ec2d89fb4492243",
+    "hidden": "c6752550d6cef80aa387ea6c0c4fafd400b4a544793cb6204ef185bcb72c6fef",
+    "visible": "be77e1a6c160d9e59058f28c2c960e8739ec8b07ae9f5d5c7d8d06ac837183a7",
+    "runtime": "b22c0e6bddc196dea84ee9b8880aefc865aa554cbadb28a095a067c52dd32f6f",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "7bbe4f0f20047040213220f630f7d5bf0db16bc9028c6ea8676d4dff45d08343",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\U02-feature-alternative-V1-E1-B1-1794757962406940700",
+  "visible": [
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": false,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 75.32106490299999,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": false,
+          "errorClass": "TimeoutError",
+          "elapsedSeconds": 34.987147621000005
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 4.193670279999991
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 2.190180834999992
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.015923113999990163
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [],
+  "basic": {},
+  "model_calls": 0,
+  "passed": false,
+  "cleanup_volumes_removed": true
+}

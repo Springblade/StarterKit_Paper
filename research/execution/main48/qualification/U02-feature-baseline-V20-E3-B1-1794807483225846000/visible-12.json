@@ -1,0 +1,33 @@
+{
+  "task": "DP02",
+  "completed": true,
+  "pass": true,
+  "browser": "Chromium / Playwright 1.58.2",
+  "elapsedSeconds": 3.5405711230000003,
+  "results": [
+    {
+      "id": "VP-U1-admin-only-direct-route",
+      "pass": true,
+      "elapsedSeconds": 1.5732421859999999
+    },
+    {
+      "id": "VP-U2-unfiltered-rows-counts-order",
+      "pass": true,
+      "elapsedSeconds": 0.7650781279999996
+    },
+    {
+      "id": "VP-U3-no-session-token-disclosure",
+      "pass": true,
+      "elapsedSeconds": 0.7269370520000003
+    },
+    {
+      "id": "VP-identity-and-order-preservation",
+      "pass": true,
+      "elapsedSeconds": 0.0016431000000002314
+    },
+    {
+      "id": "fixture-cleanup",
+      "pass": true
+    }
+  ]
+}

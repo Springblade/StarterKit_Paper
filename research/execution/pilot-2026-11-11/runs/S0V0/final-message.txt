@@ -1,0 +1,3 @@
+Implemented the payment history status filter in [page.tsx](/workspace/src/app/dashboard/billing/history/page.tsx). It uses the shared status schema, preserves valid selections in the URL, filters only the authenticated user’s orders, and shows a no-match message with a link to all orders.
+
+Checks passed: `pnpm check-types`, `pnpm test:run` (14 tests), and `pnpm build`. The build logged warnings that the Google provider credentials are not configured.

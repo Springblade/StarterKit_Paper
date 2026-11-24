@@ -1,0 +1,6 @@
+{"id":"preservation-existing-short-password-login","pass":true}
+{"id":"acceptance-browser-minimums","pass":true}
+{"id":"acceptance-registration-boundaries","pass":true}
+{"id":"acceptance-reset-boundaries-and-preservation-max128","pass":true}
+{"id":"preservation-reset-maximum128","pass":true}
+{"id":"preservation-invalid-token-no-write-and-identity","pass":true}

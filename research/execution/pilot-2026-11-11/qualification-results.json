@@ -1,0 +1,30 @@
+[
+  {
+    "layout": "feature",
+    "stage": "baseline",
+    "acceptance": false,
+    "preservation": true,
+    "checks": 29
+  },
+  {
+    "layout": "feature",
+    "stage": "reference",
+    "acceptance": true,
+    "preservation": true,
+    "checks": 29
+  },
+  {
+    "layout": "layered",
+    "stage": "baseline",
+    "acceptance": false,
+    "preservation": true,
+    "checks": 29
+  },
+  {
+    "layout": "layered",
+    "stage": "reference",
+    "acceptance": true,
+    "preservation": true,
+    "checks": 29
+  }
+]

@@ -1,0 +1,5 @@
+Already up to date
+Done in 349ms using pnpm v11.7.0
+$ tsc --noEmit
+src/services/billing/payment-content.ts(16,23): error TS2532: Object is possibly 'undefined'.
+[ELIFECYCLE] Command failed with exit code 2.

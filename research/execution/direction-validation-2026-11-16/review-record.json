@@ -1,0 +1,17 @@
+{
+  "review_completed_utc": "2026-11-16T09:10:20.597988+00:00",
+  "verdict": "Accept with Revisions; bounded empirical extension only; pivot not selected",
+  "main48_freeze_unchanged": true,
+  "main48_start_release_present": false,
+  "new_experimental_model_calls": 0,
+  "external_runtime_qualified": false,
+  "sensitivity_scope": "hypothetical exact enumeration; no empirical effects",
+  "files": {
+    "assessment.md": "0bf52d4a710cc67c7ad0d830cd4a17b88a8e0cb48367558cb6b9d0b90570cda7",
+    "design-sensitivity.json": "cccb005c31f642b7449e24831f8727d38871d67eff707e94f953f06419adcf28",
+    "design-sensitivity.py": "3e2037dba0dae0db6e85469ed32ea549a335f326cd9f949fb567ad37ba67bc39",
+    "literature-review.md": "d8d8fa4d61541257bb1ebff405678ac1798e1c0a7dd91c5e6d03dcee7dd7bb50",
+    "method-sources.json": "1541bb1a292f9c669617d6a705e75d132f3974a8a6e360feb83b9ec9e8c1cb3e",
+    "scope.json": "a115d9c0dc3379086a77c7587bea997647f1add291cfdcd92e6023cdcb0ec360"
+  }
+}

@@ -1,0 +1,38 @@
+Already up to date
+Done in 480ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (webpack)
+- Local:         http://localhost:3107
+- Network:       http://172.19.0.3:3107
+- Environments: .env
+✓ Ready in 282ms
+
+○ Compiling / ...
+ GET / 200 in 5.0s (next.js: 4.8s, application-code: 268ms)
+○ Compiling /api/auth/[...all] ...
+2026-11-15T10:23:40.432Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:23:41.105Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 4.9s (next.js: 4.8s, application-code: 117ms)
+ POST /api/auth/sign-in/email 200 in 80ms (next.js: 8ms, application-code: 72ms)
+ POST /api/auth/sign-in/email 200 in 86ms (next.js: 1252µs, application-code: 85ms)
+ POST /api/auth/sign-in/email 200 in 72ms (next.js: 1319µs, application-code: 71ms)
+2026-11-15T10:23:42.055Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:23:42.066Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+2026-11-15T10:23:41.891Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/profile/password 400 in 723ms (next.js: 554ms, application-code: 169ms)
+ POST /api/profile/password 400 in 4ms (next.js: 1140µs, application-code: 3ms)
+ POST /api/profile/password 400 in 4ms (next.js: 1146µs, application-code: 3ms)
+ POST /api/profile/password 400 in 4ms (next.js: 1195µs, application-code: 3ms)
+ POST /api/profile/password 401 in 6ms (next.js: 1225µs, application-code: 5ms)
+○ Compiling proxy ...
+2026-11-15T10:23:46.540Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:23:48.255Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:23:48.331Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/settings 200 in 2.3s (next.js: 1531ms, proxy.ts: 436ms, application-code: 312ms)
+ POST /api/profile/password 303 in 187ms (next.js: 6ms, application-code: 180ms)
+2026-11-15T10:23:50.814Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/settings?password=saved 200 in 234ms (next.js: 2ms, proxy.ts: 193ms, application-code: 39ms)
+2026-11-15T10:23:51.884Z WARN [Better Auth]: Invalid password
+ POST /api/auth/sign-in/email 401 in 121ms (next.js: 32ms, application-code: 89ms)
+ POST /api/auth/sign-in/email 200 in 105ms (next.js: 1391µs, application-code: 103ms)
+ GET /api/auth/get-session 200 in 8ms (next.js: 1946µs, application-code: 6ms)
+2026-11-15T10:23:52.581Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret

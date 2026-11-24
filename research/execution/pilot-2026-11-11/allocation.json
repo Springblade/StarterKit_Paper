@@ -1,0 +1,10 @@
+{
+  "seed": 20261111,
+  "order": [
+    "S0V0",
+    "S1V0",
+    "S0V1",
+    "S1V1"
+  ],
+  "purpose": "development smoke pilot, one session per cell; no inferential effect estimate"
+}

@@ -1,0 +1,183 @@
+{"task": "DP02", "layout": "feature", "variant": "fault-ignore-filter", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-ignore-filter", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-ignore-filter", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-ignore-filter", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-ignore-filter", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-ignore-filter", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP02", "layout": "feature", "variant": "fault-ignore-filter", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["U-A-role-user", "U-A-role-admin", "U-A-empty-selection-keeps-controls-and-zero-total"]}
+{"task": "DP02", "layout": "feature", "variant": "fault-hardcode-role", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-hardcode-role", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-hardcode-role", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-hardcode-role", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-hardcode-role", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-hardcode-role", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP02", "layout": "feature", "variant": "fault-hardcode-role", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["U-A-role-admin"]}
+{"task": "DP02", "layout": "feature", "variant": "fault-total", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-total", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-total", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-total", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-total", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-total", "suite": "visible", "round": 1, "pass": false, "failed": ["VP-U2-unfiltered-rows-counts-order"]}
+{"task": "DP02", "layout": "feature", "variant": "fault-total", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": false, "failed": ["U-A-role-all", "U-A-role-user", "U-A-role-admin", "U-A-empty-selection-keeps-controls-and-zero-total", "U-P2-unfiltered-session-aggregates-and-date-order"]}
+{"task": "DP02", "layout": "feature", "variant": "fault-admin-access", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-admin-access", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-admin-access", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-admin-access", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-admin-access", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-admin-access", "suite": "visible", "round": 1, "pass": false, "failed": ["VP-U1-admin-only-direct-route"]}
+{"task": "DP02", "layout": "feature", "variant": "fault-admin-access", "suite": "final", "round": 1, "completed": true, "acceptance": true, "preservation": false, "failed": ["U-P1-direct-route-non-admin-and-anonymous"]}
+{"task": "DP02", "layout": "feature", "variant": "fault-session-count", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-session-count", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-session-count", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-session-count", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-session-count", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "feature", "variant": "fault-session-count", "suite": "visible", "round": 1, "pass": false, "failed": ["VP-U2-unfiltered-rows-counts-order"]}
+{"task": "DP02", "layout": "feature", "variant": "fault-session-count", "suite": "final", "round": 1, "completed": true, "acceptance": true, "preservation": false, "failed": ["U-P2-unfiltered-session-aggregates-and-date-order"]}
+{"task": "DP02", "layout": "layered", "variant": "fault-ignore-filter", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-ignore-filter", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-ignore-filter", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-ignore-filter", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-ignore-filter", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-ignore-filter", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP02", "layout": "layered", "variant": "fault-ignore-filter", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["U-A-role-user", "U-A-role-admin", "U-A-empty-selection-keeps-controls-and-zero-total"]}
+{"task": "DP02", "layout": "layered", "variant": "fault-hardcode-role", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-hardcode-role", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-hardcode-role", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-hardcode-role", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-hardcode-role", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-hardcode-role", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP02", "layout": "layered", "variant": "fault-hardcode-role", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["U-A-role-admin"]}
+{"task": "DP02", "layout": "layered", "variant": "fault-total", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-total", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-total", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-total", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-total", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-total", "suite": "visible", "round": 1, "pass": false, "failed": ["VP-U2-unfiltered-rows-counts-order"]}
+{"task": "DP02", "layout": "layered", "variant": "fault-total", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": false, "failed": ["U-A-role-all", "U-A-role-user", "U-A-role-admin", "U-A-empty-selection-keeps-controls-and-zero-total", "U-P2-unfiltered-session-aggregates-and-date-order"]}
+{"task": "DP02", "layout": "layered", "variant": "fault-admin-access", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-admin-access", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-admin-access", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-admin-access", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-admin-access", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-admin-access", "suite": "visible", "round": 1, "pass": false, "failed": ["VP-U1-admin-only-direct-route"]}
+{"task": "DP02", "layout": "layered", "variant": "fault-admin-access", "suite": "final", "round": 1, "completed": true, "acceptance": true, "preservation": false, "failed": ["U-P1-direct-route-non-admin-and-anonymous"]}
+{"task": "DP02", "layout": "layered", "variant": "fault-session-count", "basic": "check-types", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-session-count", "basic": "test:run", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-session-count", "basic": "build", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-session-count", "basic": "test:billing", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-session-count", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP02", "layout": "layered", "variant": "fault-session-count", "suite": "visible", "round": 1, "pass": false, "failed": ["VP-U2-unfiltered-rows-counts-order"]}
+{"task": "DP02", "layout": "layered", "variant": "fault-session-count", "suite": "final", "round": 1, "completed": true, "acceptance": true, "preservation": false, "failed": ["U-P2-unfiltered-session-aggregates-and-date-order"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-server-validation", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-server-validation", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-server-validation", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-server-validation", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-server-validation", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-server-validation", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-server-validation", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A1-labelled-form-submission-trim-and-refresh", "A-A3-server-rejects-empty", "A-A3-server-rejects-whitespace", "A-A3-server-rejects-81-bmp", "A-A3-server-rejects-81-unicode"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-persistence", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-persistence", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-persistence", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-persistence", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-persistence", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-persistence", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-persistence", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A1-labelled-form-submission-trim-and-refresh", "A-A2-boundary-one", "A-A2-boundary-eighty-unicode"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-ui-refresh", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-ui-refresh", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-ui-refresh", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-ui-refresh", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-ui-refresh", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-ui-refresh", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-ui-refresh", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A1-labelled-form-submission-trim-and-refresh"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-utf16", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-utf16", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-utf16", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-utf16", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-utf16", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-utf16", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "feature", "variant": "fault-utf16", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A2-boundary-eighty-unicode"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-trim", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-trim", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-trim", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-trim", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-trim", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-trim", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "feature", "variant": "fault-no-trim", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A1-labelled-form-submission-trim-and-refresh", "A-A3-server-rejects-whitespace"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-unsafe-name", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-unsafe-name", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-unsafe-name", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-unsafe-name", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-unsafe-name", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-unsafe-name", "suite": "visible", "round": 1, "pass": false, "failed": ["VP-A4-existing-display-name-is-text"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-unsafe-name", "suite": "final", "round": 1, "completed": true, "acceptance": true, "preservation": false, "failed": ["A-P3-stored-name-safe-on-existing-settings"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-foreign-write", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-foreign-write", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-foreign-write", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-foreign-write", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-foreign-write", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-foreign-write", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "feature", "variant": "fault-foreign-write", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A4-own-target-and-protected-fields-through-actual-write"]}
+{"task": "DP03", "layout": "feature", "variant": "fault-protected-field", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-protected-field", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-protected-field", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-protected-field", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-protected-field", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "feature", "variant": "fault-protected-field", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "feature", "variant": "fault-protected-field", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": false, "failed": ["A-A4-own-target-and-protected-fields-through-actual-write", "A-P4-identity-and-sign-in-preserved"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-server-validation", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-server-validation", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-server-validation", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-server-validation", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-server-validation", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-server-validation", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-server-validation", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A1-labelled-form-submission-trim-and-refresh", "A-A3-server-rejects-empty", "A-A3-server-rejects-whitespace", "A-A3-server-rejects-81-bmp", "A-A3-server-rejects-81-unicode"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-persistence", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-persistence", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-persistence", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-persistence", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-persistence", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-persistence", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-persistence", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A1-labelled-form-submission-trim-and-refresh", "A-A2-boundary-one", "A-A2-boundary-eighty-unicode"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-ui-refresh", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-ui-refresh", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-ui-refresh", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-ui-refresh", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-ui-refresh", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-ui-refresh", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-ui-refresh", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A1-labelled-form-submission-trim-and-refresh"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-utf16", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-utf16", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-utf16", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-utf16", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-utf16", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-utf16", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "layered", "variant": "fault-utf16", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A2-boundary-eighty-unicode"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-trim", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-trim", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-trim", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-trim", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-trim", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-trim", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "layered", "variant": "fault-no-trim", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A1-labelled-form-submission-trim-and-refresh", "A-A3-server-rejects-whitespace"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-unsafe-name", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-unsafe-name", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-unsafe-name", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-unsafe-name", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-unsafe-name", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-unsafe-name", "suite": "visible", "round": 1, "pass": false, "failed": ["VP-A4-existing-display-name-is-text"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-unsafe-name", "suite": "final", "round": 1, "completed": true, "acceptance": true, "preservation": false, "failed": ["A-P3-stored-name-safe-on-existing-settings"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-foreign-write", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-foreign-write", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-foreign-write", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-foreign-write", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-foreign-write", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-foreign-write", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "layered", "variant": "fault-foreign-write", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": true, "failed": ["A-A4-own-target-and-protected-fields-through-actual-write"]}
+{"task": "DP03", "layout": "layered", "variant": "fault-protected-field", "basic": "check-types", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-protected-field", "basic": "test:run", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-protected-field", "basic": "build", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-protected-field", "basic": "test:billing", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-protected-field", "basic": "test:sepay-qr-url", "exit": 0}
+{"task": "DP03", "layout": "layered", "variant": "fault-protected-field", "suite": "visible", "round": 1, "pass": true, "failed": []}
+{"task": "DP03", "layout": "layered", "variant": "fault-protected-field", "suite": "final", "round": 1, "completed": true, "acceptance": false, "preservation": false, "failed": ["A-A4-own-target-and-protected-fields-through-actual-write", "A-P4-identity-and-sign-in-preserved"]}
+Qualification sweep passed: faults

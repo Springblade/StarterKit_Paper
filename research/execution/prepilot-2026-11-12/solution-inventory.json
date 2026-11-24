@@ -1,0 +1,23 @@
+{
+  "DP02": [
+    "reference",
+    "alternative",
+    "fault-ignore-filter",
+    "fault-hardcode-role",
+    "fault-total",
+    "fault-admin-access",
+    "fault-session-count"
+  ],
+  "DP03": [
+    "reference",
+    "alternative",
+    "fault-no-server-validation",
+    "fault-no-persistence",
+    "fault-no-ui-refresh",
+    "fault-utf16",
+    "fault-no-trim",
+    "fault-unsafe-name",
+    "fault-foreign-write",
+    "fault-protected-field"
+  ]
+}

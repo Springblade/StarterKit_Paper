@@ -1,0 +1,11 @@
+--- reference/page.tsx
++++ wrong-status/page.tsx
+@@ -41,7 +41,7 @@
+ 
+   // A status filter must always retain the ownership restriction.
+   const userOrders = await db.query.orders.findMany({
+-    where: and(eq(orders.userId, userId), status ? eq(orders.status, status) : undefined),
++    where: and(eq(orders.userId, userId), status ? eq(orders.status, 'pending') : undefined),
+     with: { plan: true },
+     orderBy: [desc(orders.createdAt)],
+   });

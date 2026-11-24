@@ -1,0 +1,10 @@
+Already up to date
+Done in 325ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (webpack)
+- Local:         http://localhost:3107
+- Network:       http://172.19.0.3:3107
+- Environments: .env
+✓ Ready in 321ms
+
+○ Compiling / ...
+ GET / 200 in 3.7s (next.js: 3.5s, application-code: 140ms)

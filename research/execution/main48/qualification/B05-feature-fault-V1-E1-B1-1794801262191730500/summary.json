@@ -1,0 +1,84 @@
+{
+  "task": "B05",
+  "layout": "feature",
+  "variant": "fault",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "ce7b1505ea19f2242d161a057ce07b15c424c71f6f2ec02bc41144a4cbf9db25",
+    "hidden": "7dbcb289501cf29a32f1b7be2d0c7d1c37c037ef3cf9541972410e57acf14cd9",
+    "visible": "4305f5d3e186c22af0298dac3ae84371d9b597c92669adb4a1096805d259a5b1",
+    "runtime": "edc893f6227fe07c937f178c48d5c20762329488ed2597e7489d0f6131d57db0",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "1e5c2f9f11d9a4fac215496d31edf9e09b34d924cb4aee1a1789a8dd05e67319",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\B05-feature-fault-V1-E1-B1-1794801262191730500",
+  "visible": [
+    {
+      "completed": true,
+      "pass": false,
+      "results": [
+        {
+          "id": "VP-existing-checkout-transfer-format",
+          "pass": false,
+          "errorClass": "AssertionError"
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "B05",
+      "completed": true,
+      "acceptance": true,
+      "preservation": false,
+      "jointSuccess": false,
+      "results": [
+        {
+          "id": "E-old-checkout-preserves-standard-transfer-content",
+          "kind": "preservation",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "The expression evaluated to a falsy value:\n\n  assert.ok((await page.locator('body').innerText()).includes('SK '+row[0].code))\n"
+        },
+        {
+          "id": "E-old-standard-webhook-retry",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-standard-cron-and-signature",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-mismatch-terminal-outbound",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-new-embedded-webhook-and-cron",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "E-new-reject-ambiguous-invalid-and-wrong-case",
+          "kind": "acceptance",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

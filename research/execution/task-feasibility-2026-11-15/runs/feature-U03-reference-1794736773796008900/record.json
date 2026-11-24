@@ -1,0 +1,27 @@
+{
+  "layout": "feature",
+  "phase": "reference",
+  "task": "U03",
+  "model_calls": 0,
+  "started": "2026-11-15T09:59:33Z",
+  "runner_sha256": "0f5c091b63ef9e7516007896afead9a1b4c1ee17cdac4faaf9317cbcd451e5ca",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "passed",
+  "db_volumes": [
+    "fc4ef75ee81560287d54f34d838c67f2d78cec99454882b917fd433db0eb60c3"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 323ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "solution_files": {
+    "src/app/dashboard/admin/users/page.tsx": "4503889f0aee4ff43231a8c57dd2043acd2967cd1f4efb742b9393dd5b0fe003",
+    "src/app/api/admin/role/route.ts": "410c161ebaba2f16937600577eac57d7023eb742c8d4ea58c7411d74c097eea5"
+  },
+  "probe_sha256": "bdd3bd4e8576da44cd702b3dcde4f05880110f0e3662c67cf95f256d66b626bf",
+  "typecheck_exit": 0,
+  "probe_exit": 0,
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T10:00:15Z"
+}

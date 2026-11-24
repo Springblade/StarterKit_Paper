@@ -1,0 +1,34 @@
+[
+  {
+    "kit": "nextjs-saas-starter",
+    "task": "profile",
+    "repeat": 1,
+    "alternate_layout": true,
+    "variant": "baseline",
+    "common_basic": true,
+    "stored_normalized": false,
+    "visible_legacy_name_preserved": true,
+    "heldout_legacy_name_preserved": true,
+    "patch_sha256": null,
+    "public_package_checks": true,
+    "alternative": false
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "task": "profile",
+    "repeat": 1,
+    "alternate_layout": true,
+    "variant": "reference",
+    "common_basic": true,
+    "stored_normalized": true,
+    "visible_legacy_name_preserved": true,
+    "heldout_legacy_name_preserved": true,
+    "patch_sha256": {
+      "features/auth/actions.ts": "92d1edbe45a911cb43a7dc79a83b9f34e29f28f3dea44d05e4fd5d9e71abdda4",
+      "features/auth/login.tsx": "d2ddd8713d8ac8f94283c31df14b12ccf5a9d1cad845348ce9f8ef81695b4d1e",
+      "app/(dashboard)/layout.tsx": "260acf8d1f7550e2a29df4bbaa07a23dafafddf538cb73aa28df94cc8f0a477d"
+    },
+    "public_package_checks": true,
+    "alternative": true
+  }
+]

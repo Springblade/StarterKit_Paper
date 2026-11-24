@@ -1,0 +1,8 @@
+{
+  "purpose": "development diagnostic only; not qualification or a model run",
+  "runtime_source_sha256": "edc893f6227fe07c937f178c48d5c20762329488ed2597e7489d0f6131d57db0",
+  "probe_sha256": "44e8aa89bed600cc2985eebf5bb4cd1aa55502ec6c104b4fc3ab46eb7ff3ccf2",
+  "package_manifest_sha256": "ce7b1505ea19f2242d161a057ce07b15c424c71f6f2ec02bc41144a4cbf9db25",
+  "solution_manifest_sha256": "321a569cf8c98ed7ca4108ebf8ec6b315f2ab08d533cfdf3f5319eb94e0edd54",
+  "runtime_override": "turbopack"
+}

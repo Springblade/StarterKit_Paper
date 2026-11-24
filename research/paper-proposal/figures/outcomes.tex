@@ -1,0 +1,15 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\node[note] at (4,1.2) {Preservation fails};
+\node[note] at (10,1.2) {Preservation passes};
+\node[note,text width=2.2cm] at (0,-0.1) {Acceptance\\fails};
+\node[note,text width=2.2cm] at (0,-1.8) {Acceptance\\passes};
+\node[box,text width=4.1cm,minimum height=11mm] at (4,0) {Feature requirement fails\\with regression};
+\node[box,text width=4.1cm,minimum height=11mm] at (10,0) {Feature requirement fails\\No checked regression};
+\node[box,text width=4.1cm,minimum height=11mm,draw=studyorange,fill=studyorange!5] at (4,-1.8) {Feature works\\with regression};
+\node[box,text width=4.1cm,minimum height=11mm,draw=studygreen,fill=studygreen!6] at (10,-1.8) {Both components pass};
+\end{tikzpicture}
+\caption{Acceptance and preservation outcomes}
+\label{fig:outcomes}
+\end{figure}

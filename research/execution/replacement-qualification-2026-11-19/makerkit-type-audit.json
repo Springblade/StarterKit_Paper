@@ -1,0 +1,32 @@
+[
+  {
+    "layout": 0,
+    "bundled_variant": "baseline",
+    "typecheck": true
+  },
+  {
+    "layout": 0,
+    "bundled_variant": "reference",
+    "typecheck": true
+  },
+  {
+    "layout": 0,
+    "bundled_variant": "regression",
+    "typecheck": true
+  },
+  {
+    "layout": 1,
+    "bundled_variant": "baseline",
+    "typecheck": true
+  },
+  {
+    "layout": 1,
+    "bundled_variant": "reference",
+    "typecheck": true
+  },
+  {
+    "layout": 1,
+    "bundled_variant": "regression",
+    "typecheck": true
+  }
+]

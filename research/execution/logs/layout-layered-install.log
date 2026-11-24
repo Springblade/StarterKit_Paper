@@ -1,0 +1,58 @@
+✓ Lockfile passes supply-chain policies (verified 74d ago)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +324
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 324, reused 315, downloaded 0, added 2
+Progress: resolved 324, reused 320, downloaded 0, added 72
+Progress: resolved 324, reused 322, downloaded 0, added 157
+Progress: resolved 324, reused 323, downloaded 0, added 222
+Progress: resolved 324, reused 323, downloaded 0, added 277
+Progress: resolved 324, reused 323, downloaded 0, added 317
+Progress: resolved 324, reused 324, downloaded 0, added 320
+Progress: resolved 324, reused 324, downloaded 0, added 321
+Progress: resolved 324, reused 324, downloaded 0, added 323
+Progress: resolved 324, reused 324, downloaded 0, added 324
+Progress: resolved 324, reused 324, downloaded 0, added 324, done
+
+dependencies:
++ bcryptjs 3.0.3
++ better-auth 1.6.25
++ clsx 2.1.1
++ dotenv 17.4.2
++ drizzle-kit 0.31.10
++ drizzle-orm 0.45.2
++ lucide-react 1.31.0
++ nanoid 6.0.0
++ next 16.2.12
++ next-themes 0.4.6
++ pg 8.22.0
++ react 18.3.1
++ react-dom 18.3.1
++ react-email 6.9.1
++ resend 6.18.1
++ tailwind-merge 3.6.0
++ zod 4.4.3
+
+devDependencies:
++ @better-auth/drizzle-adapter 1.6.25
++ @biomejs/biome 2.5.6
++ @tailwindcss/postcss 4.3.3
++ @testing-library/jest-dom 7.0.1
++ @testing-library/react 16.3.2
++ @testing-library/user-event 14.6.6
++ @types/bcryptjs 3.0.0
++ @types/node 26.0.1
++ @types/pg 8.20.0
++ @types/react 18.3.31
++ @types/react-dom 18.3.7
++ @vitejs/plugin-react 6.1.0
++ @vitest/ui 4.1.11
++ happy-dom 20.11.8
++ jsdom 30.0.1
++ tailwindcss 4.3.3
++ tsx 4.22.4
++ typescript 5.7.3
++ vitest 4.1.11
+
+Done in 17.2s using pnpm v11.7.0

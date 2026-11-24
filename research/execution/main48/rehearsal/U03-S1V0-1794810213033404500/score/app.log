@@ -1,0 +1,60 @@
+Already up to date
+Done in 372ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.20.0.3:3107
+- Environments: .env
+✓ Ready in 297ms
+
+ GET / 200 in 1401ms (next.js: 1260ms, application-code: 140ms)
+2026-11-16T06:24:06.995Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T06:24:07.540Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T06:24:07.562Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/auth/get-session 200 in 1652ms (next.js: 1630ms, application-code: 22ms)
+2026-11-16T06:24:08.801Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T06:24:08.899Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in 200 in 1345ms (next.js: 1171ms, application-code: 175ms)
+ GET /auth/sign-up 200 in 467ms (next.js: 412ms, application-code: 55ms)
+2026-11-16T06:24:10.016Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/reset-password 200 in 640ms (next.js: 427ms, application-code: 213ms)
+ GET /auth/sign-in?redirectTo=/dashboard 200 in 63ms (next.js: 1824µs, application-code: 62ms)
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 71ms (next.js: 2ms, application-code: 69ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 64ms (next.js: 1539µs, application-code: 63ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing 200 in 31ms (next.js: 2ms, application-code: 29ms)
+ POST /api/auth/sign-in/email 200 in 117ms (next.js: 8ms, application-code: 110ms)
+ POST /api/auth/sign-in/email 200 in 79ms (next.js: 2ms, application-code: 76ms)
+2026-11-16T06:24:12.048Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/admin/users 307 in 1257ms (next.js: 792ms, proxy.ts: 4ms, application-code: 460ms)
+ GET /auth/sign-in 307 in 64ms (next.js: 1902µs, application-code: 62ms)
+ GET /dashboard 200 in 459ms (next.js: 404ms, proxy.ts: 4ms, application-code: 51ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 28ms (next.js: 1623µs, application-code: 27ms)
+ GET /dashboard/admin/users 200 in 222ms (next.js: 1481µs, proxy.ts: 2ms, application-code: 219ms)
+ GET /dashboard/admin/users 200 in 74ms (next.js: 3ms, proxy.ts: 4ms, application-code: 68ms)
+ POST /api/auth/sign-in/email 200 in 90ms (next.js: 8ms, application-code: 82ms)
+ POST /api/auth/sign-in/email 200 in 74ms (next.js: 1614µs, application-code: 72ms)
+ POST /api/auth/sign-in/email 200 in 69ms (next.js: 1419µs, application-code: 68ms)
+ GET /dashboard/admin/users 307 in 110ms (next.js: 1764µs, proxy.ts: 3ms, application-code: 106ms)
+ GET /auth/sign-in 307 in 100ms (next.js: 1726µs, application-code: 99ms)
+ GET /dashboard 200 in 37ms (next.js: 2ms, proxy.ts: 3ms, application-code: 32ms)
+2026-11-16T06:24:18.036Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 25ms (next.js: 1532µs, application-code: 23ms)
+ GET /dashboard/admin/users 200 in 58ms (next.js: 1996µs, proxy.ts: 2ms, application-code: 54ms)
+ GET /dashboard/admin/users 200 in 60ms (next.js: 1694µs, proxy.ts: 2ms, application-code: 56ms)
+ POST /api/admin/role 303 in 574ms (next.js: 550ms, application-code: 25ms)
+ GET /dashboard/admin/users 200 in 51ms (next.js: 1661µs, proxy.ts: 2ms, application-code: 47ms)
+ GET /dashboard/admin/users 200 in 53ms (next.js: 2ms, proxy.ts: 3ms, application-code: 48ms)
+ POST /api/auth/sign-in/email 200 in 103ms (next.js: 12ms, application-code: 90ms)
+ GET /dashboard/admin/users 200 in 79ms (next.js: 3ms, proxy.ts: 3ms, application-code: 74ms)
+2026-11-16T06:24:23.351Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/admin/set-role 200 in 25ms (next.js: 8ms, application-code: 17ms)
+ POST /api/admin/role 403 in 13ms (next.js: 1696µs, application-code: 11ms)
+ POST /api/auth/sign-in/email 200 in 85ms (next.js: 1818µs, application-code: 83ms)
+ GET /dashboard/admin/users 307 in 72ms (next.js: 3ms, proxy.ts: 3ms, application-code: 66ms)
+ GET /auth/sign-in 307 in 52ms (next.js: 1568µs, application-code: 51ms)
+ GET /dashboard 200 in 37ms (next.js: 3ms, proxy.ts: 3ms, application-code: 32ms)
+2026-11-16T06:24:24.246Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/admin/role 403 in 11ms (next.js: 1420µs, application-code: 10ms)
+ POST /api/admin/role 403 in 5ms (next.js: 1240µs, application-code: 4ms)
+ POST /api/admin/role 400 in 11ms (next.js: 1357µs, application-code: 10ms)
+ POST /api/admin/role 403 in 11ms (next.js: 1452µs, application-code: 9ms)
+ POST /api/admin/role 403 in 3ms (next.js: 1226µs, application-code: 2ms)

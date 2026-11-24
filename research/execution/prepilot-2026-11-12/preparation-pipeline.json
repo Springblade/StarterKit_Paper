@@ -1,0 +1,45 @@
+{
+  "kind": "no-model-preparation",
+  "stages": [
+    {
+      "command": [
+        "sweep.py",
+        "--phase",
+        "faults"
+      ],
+      "returncode": 0,
+      "log": "finish-sweep.log"
+    },
+    {
+      "command": [
+        "pilot.py",
+        "rehearse"
+      ],
+      "returncode": 0,
+      "log": "finish-pilot.log"
+    },
+    {
+      "command": [
+        "preflight-selfcheck.py"
+      ],
+      "returncode": 0,
+      "log": "finish-preflight-selfcheck.log"
+    },
+    {
+      "command": [
+        "audit-and-freeze.py"
+      ],
+      "returncode": 0,
+      "log": "finish-audit-and-freeze.log"
+    },
+    {
+      "command": [
+        "pilot.py",
+        "audit"
+      ],
+      "returncode": 0,
+      "log": "finish-pilot.log"
+    }
+  ],
+  "status": "passed-awaiting-author-pilot-release"
+}

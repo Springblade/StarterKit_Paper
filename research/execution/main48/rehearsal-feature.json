@@ -1,0 +1,182 @@
+{
+  "A01/S1V0": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "a2148b0e5bc6c332b71da4acd58d9fc4b977d0fe1ce24102a27558897cb7b6e3",
+      "package": "a6a51b6dde5df54876dcc3d79c13a7323bb5a084b6b65304c4f0c8a3bcb19091",
+      "solution": "832ba581c32f0eebdf9f453c4e6df1fc0dc6c451324bfdddaea6a23d564927c7",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\A01-S1V0-1794809717447649200",
+    "model_calls": 0
+  },
+  "A01/S1V1": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "a2148b0e5bc6c332b71da4acd58d9fc4b977d0fe1ce24102a27558897cb7b6e3",
+      "package": "47ccb8ba822c0589493078c4a57831b606abddc07f5f7c2bb9071931ac4958e8",
+      "solution": "832ba581c32f0eebdf9f453c4e6df1fc0dc6c451324bfdddaea6a23d564927c7",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\A01-S1V1-1794809778237432400",
+    "model_calls": 0
+  },
+  "A04/S1V0": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "635ffde497fcff083473cdedc9ec4bd7c38a5e2138661adc95c6d69c230c27b2",
+      "package": "06e0406c065bb1860caf1ffe6fe974c210f958efe2c0c953cb979eb7edc5badb",
+      "solution": "13cbcdd727d302bfa5562a86e75a516f7aab2957ec4670070bdf9f48afea0718",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\A04-S1V0-1794809838963510300",
+    "model_calls": 0
+  },
+  "A04/S1V1": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "635ffde497fcff083473cdedc9ec4bd7c38a5e2138661adc95c6d69c230c27b2",
+      "package": "9470798266ee4d90ea50452c13f4573330a68c2b3efa9bd9df13de33d1b0c146",
+      "solution": "13cbcdd727d302bfa5562a86e75a516f7aab2957ec4670070bdf9f48afea0718",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\A04-S1V1-1794809887493394900",
+    "model_calls": 0
+  },
+  "B05/S1V0": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "ac815342ed39387407447b976e00272fb9cd3a00878565ed94e0dc8c64840978",
+      "package": "eb369eb145e8951ef6e7ec65078cc0e6fe10e01a96c0f8e5e4e00c0ab78b2a01",
+      "solution": "321a569cf8c98ed7ca4108ebf8ec6b315f2ab08d533cfdf3f5319eb94e0edd54",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\B05-S1V0-1794809929694110100",
+    "model_calls": 0
+  },
+  "B05/S1V1": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "ac815342ed39387407447b976e00272fb9cd3a00878565ed94e0dc8c64840978",
+      "package": "ce7b1505ea19f2242d161a057ce07b15c424c71f6f2ec02bc41144a4cbf9db25",
+      "solution": "321a569cf8c98ed7ca4108ebf8ec6b315f2ab08d533cfdf3f5319eb94e0edd54",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\B05-S1V1-1794809977457421800",
+    "model_calls": 0
+  },
+  "B06/S1V0": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "ac815342ed39387407447b976e00272fb9cd3a00878565ed94e0dc8c64840978",
+      "package": "28e42c50cf4ec7f6eb6e8a5025dac7f7e7273d636e64b597703f84ba80ca85d4",
+      "solution": "e477aa13b99fbffce2742c099c606cc3a4944d431e53bd42bfbd7a2658f96cda",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\B06-S1V0-1794810023228600400",
+    "model_calls": 0
+  },
+  "B06/S1V1": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "ac815342ed39387407447b976e00272fb9cd3a00878565ed94e0dc8c64840978",
+      "package": "b7bbc9ade7df33f647ae9829e15ba4ab35980e3b2bb55dc43e48b09a7b7b1c3f",
+      "solution": "e477aa13b99fbffce2742c099c606cc3a4944d431e53bd42bfbd7a2658f96cda",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\B06-S1V1-1794810063538465500",
+    "model_calls": 0
+  },
+  "U02/S1V0": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "535f896b10753fec475eb8a514c422b70c4426bf8e81d2fd38a98e9d50df4f47",
+      "package": "b8e440a73174bad41be4e28f0fecff503925a937fbafe7692721338faa651a18",
+      "solution": "c7b4bc9c7a5ea35f8ab217d2f2b63d76988da88efbd20915683cbe5c2839e951",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\U02-S1V0-1794810102211514900",
+    "model_calls": 0
+  },
+  "U02/S1V1": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "535f896b10753fec475eb8a514c422b70c4426bf8e81d2fd38a98e9d50df4f47",
+      "package": "567a869199c5435e61d3a0cfa4083b0f0f2a6b2b3be4e338ee22df143ea476e6",
+      "solution": "c7b4bc9c7a5ea35f8ab217d2f2b63d76988da88efbd20915683cbe5c2839e951",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\U02-S1V1-1794810158768443700",
+    "model_calls": 0
+  },
+  "U03/S1V0": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "535f896b10753fec475eb8a514c422b70c4426bf8e81d2fd38a98e9d50df4f47",
+      "package": "d1bf1ab30870e86f4a69718c75e04d14ac00d26a05251083ac16deb35e767017",
+      "solution": "f6c019f18b1504003832195ceae61099da2578e942e6f910b47a1f74af643ea4",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\U03-S1V0-1794810213033404500",
+    "model_calls": 0
+  },
+  "U03/S1V1": {
+    "passed": true,
+    "binding": {
+      "collector": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+      "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+      "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+      "hidden": "535f896b10753fec475eb8a514c422b70c4426bf8e81d2fd38a98e9d50df4f47",
+      "package": "ead71888993041211d754f3d431122086ed569f6efc31ba562c0932a47cee4cf",
+      "solution": "f6c019f18b1504003832195ceae61099da2578e942e6f910b47a1f74af643ea4",
+      "image": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17"
+    },
+    "kind": "no-model-reference-capture-reset-score",
+    "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\rehearsal\\U03-S1V1-1794810267000118300",
+    "model_calls": 0
+  }
+}

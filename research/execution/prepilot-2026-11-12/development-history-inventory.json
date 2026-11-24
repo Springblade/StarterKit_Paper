@@ -1,0 +1,195 @@
+{
+  "kind": "all-preparation-attempts-including-instrument-revisions",
+  "attempts": [
+    {
+      "folder": "DP02-feature-alternative",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "alternative",
+      "visible_rounds": 0,
+      "final_rounds": 0,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-alternative-1794466120220559100",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "alternative",
+      "visible_rounds": 3,
+      "final_rounds": 3,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-baseline",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible_rounds": 1,
+      "final_rounds": 1,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-baseline-1794463600766974400",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible_rounds": 20,
+      "final_rounds": 3,
+      "incomplete": 1,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-baseline-1794464122871402100",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible_rounds": 20,
+      "final_rounds": 3,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-baseline-1794464593094887100",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible_rounds": 7,
+      "final_rounds": 0,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-baseline-1794465388361566500",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible_rounds": 20,
+      "final_rounds": 3,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-reference",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "reference",
+      "visible_rounds": 1,
+      "final_rounds": 1,
+      "incomplete": 0,
+      "visible_unexpected": 1
+    },
+    {
+      "folder": "DP02-feature-reference-1794462883611096900",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "reference",
+      "visible_rounds": 1,
+      "final_rounds": 1,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-reference-1794464308502527300",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "reference",
+      "visible_rounds": 20,
+      "final_rounds": 6,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-feature-reference-1794465618114256200",
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "reference",
+      "visible_rounds": 20,
+      "final_rounds": 20,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-layered-alternative",
+      "task": "DP02",
+      "layout": "layered",
+      "variant": "alternative",
+      "visible_rounds": 3,
+      "final_rounds": 3,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-layered-baseline",
+      "task": "DP02",
+      "layout": "layered",
+      "variant": "baseline",
+      "visible_rounds": 20,
+      "final_rounds": 3,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP02-layered-reference",
+      "task": "DP02",
+      "layout": "layered",
+      "variant": "reference",
+      "visible_rounds": 20,
+      "final_rounds": 20,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP03-feature-alternative",
+      "task": "DP03",
+      "layout": "feature",
+      "variant": "alternative",
+      "visible_rounds": 1,
+      "final_rounds": 1,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP03-feature-baseline-1794467098858319300",
+      "task": "DP03",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible_rounds": 1,
+      "final_rounds": 0,
+      "incomplete": 0,
+      "visible_unexpected": 1
+    },
+    {
+      "folder": "DP03-feature-baseline-1794467740261831800",
+      "task": "DP03",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible_rounds": 1,
+      "final_rounds": 0,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    },
+    {
+      "folder": "DP03-feature-fault-unsafe-name",
+      "task": "DP03",
+      "layout": "feature",
+      "variant": "fault-unsafe-name",
+      "visible_rounds": 1,
+      "final_rounds": 1,
+      "incomplete": 0,
+      "visible_unexpected": null
+    },
+    {
+      "folder": "DP03-feature-reference",
+      "task": "DP03",
+      "layout": "feature",
+      "variant": "reference",
+      "visible_rounds": 1,
+      "final_rounds": 1,
+      "incomplete": 0,
+      "visible_unexpected": 0
+    }
+  ]
+}

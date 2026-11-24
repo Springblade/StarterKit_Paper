@@ -1,0 +1,1062 @@
+{
+  "build_results": [
+    {
+      "layout": "feature",
+      "scope": "combined A04/B05/B06 reference overlay, not individual independent-task builds",
+      "exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-build-feature-1794756706658679000",
+      "model_calls": 0
+    },
+    {
+      "layout": "layered",
+      "scope": "combined A04/B05/B06 reference overlay, not individual independent-task builds",
+      "exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-build-layered-1794756739857184800",
+      "model_calls": 0
+    }
+  ],
+  "model_calls": 0,
+  "release_authorized": false,
+  "verdict": "hold-model-collection; bounded-feasibility-and-old-behavior-fault-evidence-positive",
+  "replacement_correct_cases": 12,
+  "replacement_fault_cases_detected": 6,
+  "replacement_baseline_cases": 6,
+  "admin_old_behavior_correct_cases": 6,
+  "admin_shared_guard_fault_cases": 4,
+  "admin_distinct_fault_templates": 1,
+  "baseline_manifest_records_unchanged": 284,
+  "V0": "Unchanged supplied package basic suite: 4 files / 14 tests. Not every upstream SmartKit test.",
+  "V1_scope": "Candidate preservation assertion subset; not a frozen visible package or independent hidden evaluator.",
+  "gate_status": {
+    "G1": "stronger source exposure for replacements; no measured agent navigation effect",
+    "G2": "old-behavior differential detection demonstrated in bounded probes; A01 uses prior evidence",
+    "G3": "partial; no frozen solution-independent hidden evaluator, full cron transport or declared reliability rounds for replacements",
+    "G4": "conditional scoped case-study rationale only; no demonstrated S/V effect or publication guarantee"
+  },
+  "limitations": [
+    "The two replacement implementations largely share algorithms; expression-level alternatives do not establish broad oracle validity.",
+    "Reference-specific direct imports complement HTTP probes; they cannot alone grade arbitrary valid agent implementations.",
+    "B06 live concurrent responses are diagnostic: baseline can return completed twice; this is not evidence of duplicate entitlement grants.",
+    "Development attempts and corrected probe errors remain archived separately; do not count them as reliability repetitions.",
+    "Admin check applies old DP02 directory obligations and one shared requireAdmin fault; this does not qualify all new U02/U03 behavior.",
+    "Fresh container per layout; variants share runtime with task source reset, not one fresh runtime per variant.",
+    "Replacement fault application sources can be regenerated from the runner; reset overwrote some archived fault overlay paths. Do not claim exact fault-source snapshots for those paths."
+  ],
+  "source_evidence": [
+    {
+      "task": "A04",
+      "feature_path": "src/features/auth/auth.config.ts",
+      "layered_path": "src/services/auth/auth.config.ts"
+    },
+    {
+      "task": "B05",
+      "feature_path": "src/features/billing/payment-content.ts",
+      "layered_path": "src/services/billing/payment-content.ts"
+    },
+    {
+      "task": "B06",
+      "feature_path": "src/features/billing/process-order-completion.ts",
+      "layered_path": "src/services/billing/process-order-completion.ts"
+    }
+  ],
+  "replacement_matrix": [
+    {
+      "probe_sha256": "5ac303d980a415c72d431ec5da6a5a29919939a2dfe7c19b6ebfd545c022049c",
+      "layout": "feature",
+      "task": "A04",
+      "variant": "baseline",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\A04-baseline.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "acceptance-browser-minimums",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\n'8' !== '12'\n"
+        },
+        {
+          "id": "acceptance-registration-boundaries",
+          "pass": false,
+          "error": "registration length 11\n\ntrue !== false\n"
+        },
+        {
+          "id": "acceptance-reset-boundaries-and-preservation-max128",
+          "pass": false,
+          "error": "reset length 11\n\ntrue !== false\n"
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "5ac303d980a415c72d431ec5da6a5a29919939a2dfe7c19b6ebfd545c022049c",
+      "layout": "feature",
+      "task": "A04",
+      "variant": "reference",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\A04-reference.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "acceptance-browser-minimums",
+          "pass": true
+        },
+        {
+          "id": "acceptance-registration-boundaries",
+          "pass": true
+        },
+        {
+          "id": "acceptance-reset-boundaries-and-preservation-max128",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "5ac303d980a415c72d431ec5da6a5a29919939a2dfe7c19b6ebfd545c022049c",
+      "layout": "feature",
+      "task": "A04",
+      "variant": "alternative",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\A04-alternative.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "acceptance-browser-minimums",
+          "pass": true
+        },
+        {
+          "id": "acceptance-registration-boundaries",
+          "pass": true
+        },
+        {
+          "id": "acceptance-reset-boundaries-and-preservation-max128",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "5ac303d980a415c72d431ec5da6a5a29919939a2dfe7c19b6ebfd545c022049c",
+      "layout": "feature",
+      "task": "A04",
+      "variant": "fault",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\A04-fault.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "acceptance-browser-minimums",
+          "pass": true
+        },
+        {
+          "id": "acceptance-registration-boundaries",
+          "pass": false,
+          "error": "registration length 128\n\nfalse !== true\n"
+        },
+        {
+          "id": "acceptance-reset-boundaries-and-preservation-max128",
+          "pass": false,
+          "error": "reset length 128\n\nfalse !== true\n"
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "fa89af3f6ff96551fd60dbecb1c1ea7fb562710e7f3b56fba32e1bc003cb63f7",
+      "layout": "feature",
+      "task": "B05",
+      "variant": "baseline",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\B05-baseline.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-standard-QR-mixed-case",
+          "pass": true
+        },
+        {
+          "id": "acceptance-token-grammar",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\nnull !== 'AbC12345'\n"
+        },
+        {
+          "id": "preservation-standard-payment-through-webhook",
+          "pass": true
+        },
+        {
+          "id": "acceptance-embedded-payment-through-shared-processor",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'ignored'\n- 'completed'\n"
+        }
+      ]
+    },
+    {
+      "probe_sha256": "fa89af3f6ff96551fd60dbecb1c1ea7fb562710e7f3b56fba32e1bc003cb63f7",
+      "layout": "feature",
+      "task": "B05",
+      "variant": "reference",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\B05-reference.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-standard-QR-mixed-case",
+          "pass": true
+        },
+        {
+          "id": "acceptance-token-grammar",
+          "pass": true
+        },
+        {
+          "id": "preservation-standard-payment-through-webhook",
+          "pass": true
+        },
+        {
+          "id": "acceptance-embedded-payment-through-shared-processor",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "fa89af3f6ff96551fd60dbecb1c1ea7fb562710e7f3b56fba32e1bc003cb63f7",
+      "layout": "feature",
+      "task": "B05",
+      "variant": "alternative",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\B05-alternative.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-standard-QR-mixed-case",
+          "pass": true
+        },
+        {
+          "id": "acceptance-token-grammar",
+          "pass": true
+        },
+        {
+          "id": "preservation-standard-payment-through-webhook",
+          "pass": true
+        },
+        {
+          "id": "acceptance-embedded-payment-through-shared-processor",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "fa89af3f6ff96551fd60dbecb1c1ea7fb562710e7f3b56fba32e1bc003cb63f7",
+      "layout": "feature",
+      "task": "B05",
+      "variant": "fault",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\B05-fault.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-standard-QR-mixed-case",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'abc12345'\n- 'AbC12345'\n"
+        },
+        {
+          "id": "acceptance-token-grammar",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'abc12345'\n- 'AbC12345'\n"
+        },
+        {
+          "id": "preservation-standard-payment-through-webhook",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'pending'\n- 'completed'\n"
+        },
+        {
+          "id": "acceptance-embedded-payment-through-shared-processor",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'ignored'\n- 'completed'\n"
+        }
+      ]
+    },
+    {
+      "probe_sha256": "fa89af3f6ff96551fd60dbecb1c1ea7fb562710e7f3b56fba32e1bc003cb63f7",
+      "layout": "feature",
+      "task": "B06",
+      "variant": "baseline",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\B06-baseline.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-live-completion-and-audit",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-before-cleanup-no-entitlement",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'ignored'\n"
+        },
+        {
+          "id": "acceptance-exact-expiry-server-clock",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'ignored'\n"
+        },
+        {
+          "id": "acceptance-expired-through-signed-webhook",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'expired'\n"
+        },
+        {
+          "id": "preservation-mismatch-terminal-outbound",
+          "pass": true
+        },
+        {
+          "id": "acceptance-cleanup-race-and-distinct-payments",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'expired'\n"
+        },
+        {
+          "id": "diagnostic-concurrent-live-payments-one-completion",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\n2 !== 1\n"
+        }
+      ]
+    },
+    {
+      "probe_sha256": "fa89af3f6ff96551fd60dbecb1c1ea7fb562710e7f3b56fba32e1bc003cb63f7",
+      "layout": "feature",
+      "task": "B06",
+      "variant": "reference",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\B06-reference.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-live-completion-and-audit",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-before-cleanup-no-entitlement",
+          "pass": true
+        },
+        {
+          "id": "acceptance-exact-expiry-server-clock",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-through-signed-webhook",
+          "pass": true
+        },
+        {
+          "id": "preservation-mismatch-terminal-outbound",
+          "pass": true
+        },
+        {
+          "id": "acceptance-cleanup-race-and-distinct-payments",
+          "pass": true
+        },
+        {
+          "id": "diagnostic-concurrent-live-payments-one-completion",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "fa89af3f6ff96551fd60dbecb1c1ea7fb562710e7f3b56fba32e1bc003cb63f7",
+      "layout": "feature",
+      "task": "B06",
+      "variant": "alternative",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\B06-alternative.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-live-completion-and-audit",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-before-cleanup-no-entitlement",
+          "pass": true
+        },
+        {
+          "id": "acceptance-exact-expiry-server-clock",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-through-signed-webhook",
+          "pass": true
+        },
+        {
+          "id": "preservation-mismatch-terminal-outbound",
+          "pass": true
+        },
+        {
+          "id": "acceptance-cleanup-race-and-distinct-payments",
+          "pass": true
+        },
+        {
+          "id": "diagnostic-concurrent-live-payments-one-completion",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "fa89af3f6ff96551fd60dbecb1c1ea7fb562710e7f3b56fba32e1bc003cb63f7",
+      "layout": "feature",
+      "task": "B06",
+      "variant": "fault",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794756306013000100\\B06-fault.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-live-completion-and-audit",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'ignored'\n- 'completed'\n"
+        },
+        {
+          "id": "acceptance-expired-before-cleanup-no-entitlement",
+          "pass": true
+        },
+        {
+          "id": "acceptance-exact-expiry-server-clock",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-through-signed-webhook",
+          "pass": true
+        },
+        {
+          "id": "preservation-mismatch-terminal-outbound",
+          "pass": true
+        },
+        {
+          "id": "acceptance-cleanup-race-and-distinct-payments",
+          "pass": true
+        },
+        {
+          "id": "diagnostic-concurrent-live-payments-one-completion",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\n0 !== 1\n"
+        }
+      ]
+    },
+    {
+      "probe_sha256": "5ac303d980a415c72d431ec5da6a5a29919939a2dfe7c19b6ebfd545c022049c",
+      "layout": "layered",
+      "task": "A04",
+      "variant": "baseline",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\A04-baseline.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "acceptance-browser-minimums",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\n'8' !== '12'\n"
+        },
+        {
+          "id": "acceptance-registration-boundaries",
+          "pass": false,
+          "error": "registration length 11\n\ntrue !== false\n"
+        },
+        {
+          "id": "acceptance-reset-boundaries-and-preservation-max128",
+          "pass": false,
+          "error": "reset length 11\n\ntrue !== false\n"
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "5ac303d980a415c72d431ec5da6a5a29919939a2dfe7c19b6ebfd545c022049c",
+      "layout": "layered",
+      "task": "A04",
+      "variant": "reference",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\A04-reference.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "acceptance-browser-minimums",
+          "pass": true
+        },
+        {
+          "id": "acceptance-registration-boundaries",
+          "pass": true
+        },
+        {
+          "id": "acceptance-reset-boundaries-and-preservation-max128",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "5ac303d980a415c72d431ec5da6a5a29919939a2dfe7c19b6ebfd545c022049c",
+      "layout": "layered",
+      "task": "A04",
+      "variant": "alternative",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\A04-alternative.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "acceptance-browser-minimums",
+          "pass": true
+        },
+        {
+          "id": "acceptance-registration-boundaries",
+          "pass": true
+        },
+        {
+          "id": "acceptance-reset-boundaries-and-preservation-max128",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "5ac303d980a415c72d431ec5da6a5a29919939a2dfe7c19b6ebfd545c022049c",
+      "layout": "layered",
+      "task": "A04",
+      "variant": "fault",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\A04-fault.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "acceptance-browser-minimums",
+          "pass": true
+        },
+        {
+          "id": "acceptance-registration-boundaries",
+          "pass": false,
+          "error": "registration length 128\n\nfalse !== true\n"
+        },
+        {
+          "id": "acceptance-reset-boundaries-and-preservation-max128",
+          "pass": false,
+          "error": "reset length 128\n\nfalse !== true\n"
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "0fbf5892d12931f2021bbb1b6a21fa026a2d71893ea35164a6d5cb27690a096d",
+      "layout": "layered",
+      "task": "B05",
+      "variant": "baseline",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\B05-baseline.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-standard-QR-mixed-case",
+          "pass": true
+        },
+        {
+          "id": "acceptance-token-grammar",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\nnull !== 'AbC12345'\n"
+        },
+        {
+          "id": "preservation-standard-payment-through-webhook",
+          "pass": true
+        },
+        {
+          "id": "acceptance-embedded-payment-through-shared-processor",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'ignored'\n- 'completed'\n"
+        }
+      ]
+    },
+    {
+      "probe_sha256": "0fbf5892d12931f2021bbb1b6a21fa026a2d71893ea35164a6d5cb27690a096d",
+      "layout": "layered",
+      "task": "B05",
+      "variant": "reference",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\B05-reference.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-standard-QR-mixed-case",
+          "pass": true
+        },
+        {
+          "id": "acceptance-token-grammar",
+          "pass": true
+        },
+        {
+          "id": "preservation-standard-payment-through-webhook",
+          "pass": true
+        },
+        {
+          "id": "acceptance-embedded-payment-through-shared-processor",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "0fbf5892d12931f2021bbb1b6a21fa026a2d71893ea35164a6d5cb27690a096d",
+      "layout": "layered",
+      "task": "B05",
+      "variant": "alternative",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\B05-alternative.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-standard-QR-mixed-case",
+          "pass": true
+        },
+        {
+          "id": "acceptance-token-grammar",
+          "pass": true
+        },
+        {
+          "id": "preservation-standard-payment-through-webhook",
+          "pass": true
+        },
+        {
+          "id": "acceptance-embedded-payment-through-shared-processor",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "0fbf5892d12931f2021bbb1b6a21fa026a2d71893ea35164a6d5cb27690a096d",
+      "layout": "layered",
+      "task": "B05",
+      "variant": "fault",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\B05-fault.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-standard-QR-mixed-case",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'abc12345'\n- 'AbC12345'\n"
+        },
+        {
+          "id": "acceptance-token-grammar",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'abc12345'\n- 'AbC12345'\n"
+        },
+        {
+          "id": "preservation-standard-payment-through-webhook",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'pending'\n- 'completed'\n"
+        },
+        {
+          "id": "acceptance-embedded-payment-through-shared-processor",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'ignored'\n- 'completed'\n"
+        }
+      ]
+    },
+    {
+      "probe_sha256": "0fbf5892d12931f2021bbb1b6a21fa026a2d71893ea35164a6d5cb27690a096d",
+      "layout": "layered",
+      "task": "B06",
+      "variant": "baseline",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\B06-baseline.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-live-completion-and-audit",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-before-cleanup-no-entitlement",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'ignored'\n"
+        },
+        {
+          "id": "acceptance-exact-expiry-server-clock",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'ignored'\n"
+        },
+        {
+          "id": "acceptance-expired-through-signed-webhook",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'expired'\n"
+        },
+        {
+          "id": "preservation-mismatch-terminal-outbound",
+          "pass": true
+        },
+        {
+          "id": "acceptance-cleanup-race-and-distinct-payments",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'expired'\n"
+        },
+        {
+          "id": "diagnostic-concurrent-live-payments-one-completion",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\n2 !== 1\n"
+        }
+      ]
+    },
+    {
+      "probe_sha256": "0fbf5892d12931f2021bbb1b6a21fa026a2d71893ea35164a6d5cb27690a096d",
+      "layout": "layered",
+      "task": "B06",
+      "variant": "reference",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\B06-reference.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-live-completion-and-audit",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-before-cleanup-no-entitlement",
+          "pass": true
+        },
+        {
+          "id": "acceptance-exact-expiry-server-clock",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-through-signed-webhook",
+          "pass": true
+        },
+        {
+          "id": "preservation-mismatch-terminal-outbound",
+          "pass": true
+        },
+        {
+          "id": "acceptance-cleanup-race-and-distinct-payments",
+          "pass": true
+        },
+        {
+          "id": "diagnostic-concurrent-live-payments-one-completion",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "0fbf5892d12931f2021bbb1b6a21fa026a2d71893ea35164a6d5cb27690a096d",
+      "layout": "layered",
+      "task": "B06",
+      "variant": "alternative",
+      "probe_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\B06-alternative.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-live-completion-and-audit",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-before-cleanup-no-entitlement",
+          "pass": true
+        },
+        {
+          "id": "acceptance-exact-expiry-server-clock",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-through-signed-webhook",
+          "pass": true
+        },
+        {
+          "id": "preservation-mismatch-terminal-outbound",
+          "pass": true
+        },
+        {
+          "id": "acceptance-cleanup-race-and-distinct-payments",
+          "pass": true
+        },
+        {
+          "id": "diagnostic-concurrent-live-payments-one-completion",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "probe_sha256": "0fbf5892d12931f2021bbb1b6a21fa026a2d71893ea35164a6d5cb27690a096d",
+      "layout": "layered",
+      "task": "B06",
+      "variant": "fault",
+      "probe_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756455953564100\\B06-fault.log",
+      "model_calls": 0,
+      "checks": [
+        {
+          "id": "preservation-live-completion-and-audit",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'ignored'\n- 'completed'\n"
+        },
+        {
+          "id": "acceptance-expired-before-cleanup-no-entitlement",
+          "pass": true
+        },
+        {
+          "id": "acceptance-exact-expiry-server-clock",
+          "pass": true
+        },
+        {
+          "id": "acceptance-expired-through-signed-webhook",
+          "pass": true
+        },
+        {
+          "id": "preservation-mismatch-terminal-outbound",
+          "pass": true
+        },
+        {
+          "id": "acceptance-cleanup-race-and-distinct-payments",
+          "pass": true
+        },
+        {
+          "id": "diagnostic-concurrent-live-payments-one-completion",
+          "pass": false,
+          "error": "Expected values to be strictly equal:\n\n0 !== 1\n"
+        }
+      ]
+    }
+  ],
+  "admin_matrix": [
+    {
+      "layout": "feature",
+      "task": "baseline",
+      "variant": "baseline",
+      "preservation_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "feature",
+      "task": "U02",
+      "variant": "reference",
+      "preservation_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "feature",
+      "task": "U02",
+      "variant": "fault",
+      "preservation_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "feature",
+      "task": "U03",
+      "variant": "reference",
+      "preservation_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "feature",
+      "task": "U03",
+      "variant": "fault",
+      "preservation_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "layered",
+      "task": "baseline",
+      "variant": "baseline",
+      "preservation_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "layered",
+      "task": "U02",
+      "variant": "reference",
+      "preservation_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "layered",
+      "task": "U02",
+      "variant": "fault",
+      "preservation_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "layered",
+      "task": "U03",
+      "variant": "reference",
+      "preservation_exit": 0,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+      "model_calls": 0
+    },
+    {
+      "layout": "layered",
+      "task": "U03",
+      "variant": "fault",
+      "preservation_exit": 1,
+      "basic_exit": 0,
+      "type_exit": 0,
+      "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+      "model_calls": 0
+    }
+  ],
+  "raw_replacement_results": "research\\execution\\task-feasibility-2026-11-15\\replacement-results-1794756305953791300.json",
+  "raw_admin_results": "research\\execution\\task-feasibility-2026-11-15\\admin-preservation-results-1794756417513119800.json"
+}

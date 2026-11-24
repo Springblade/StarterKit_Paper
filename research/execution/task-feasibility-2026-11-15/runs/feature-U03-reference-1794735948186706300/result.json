@@ -1,0 +1,28 @@
+{
+  "phase": "reference",
+  "modelCalls": 0,
+  "completed": true,
+  "pass": false,
+  "baselineModified": false,
+  "browserAndRealDB": true,
+  "results": [
+    {
+      "id": "U03-browser-change-role",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "seconds": 8.28
+    },
+    {
+      "id": "U03-server-boundaries",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "seconds": 3.358
+    },
+    {
+      "id": "U03-current-server-role-and-fresh-target-permissions",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "seconds": 3.478
+    }
+  ]
+}

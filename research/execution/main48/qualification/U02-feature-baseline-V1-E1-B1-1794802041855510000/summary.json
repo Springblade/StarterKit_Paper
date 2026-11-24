@@ -1,0 +1,101 @@
+{
+  "task": "U02",
+  "layout": "feature",
+  "variant": "baseline",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "3c426c3689a24432389074267670b21ac3533553de2293cf3706d7dd0599c6ed",
+    "hidden": "25e7f40d8c54a2fe942b6ed818ed312f7dfd8f66b9faa22a9be35b9d4f447dad",
+    "visible": "af48f9df6720b3b80d67a4376c470cef610470a70aa8da334ed269b84999b9c5",
+    "runtime": "edc893f6227fe07c937f178c48d5c20762329488ed2597e7489d0f6131d57db0",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": null,
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\U02-feature-baseline-V1-E1-B1-1794802041855510000",
+  "visible": [
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 9.702563908999998,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 6.755678392
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.9869564910000008
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.8917447149999989
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0032125419999993027
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "U02",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "assessable": true,
+      "results": [
+        {
+          "id": "EU-old-directory-access-no-token",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EU2-new-discover-detail-session-records",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Detail link is missing",
+          "assessable": true
+        },
+        {
+          "id": "EU2-new-direct-permission-and-missing-target",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Detail path not discoverable",
+          "assessable": true
+        },
+        {
+          "id": "EU-old-protected-fields-and-order-state",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

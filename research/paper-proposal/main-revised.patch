@@ -1,0 +1,377 @@
+--- main.tex
++++ main-revised.tex
+@@ -33,57 +33,59 @@
+ \setlength{\parskip}{3pt}
+ \setlength{\parindent}{1em}
+ \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+-\title{Repository Organization and Behavioral Verification\\for Agent-Driven SaaS Feature Extension}
++\title{Repository Organization and Behavioral Verification\\for Agent-Driven SaaS Feature Extension:\\A Controlled SmartKit Case Study}
+ \author{Do Hoang Trieu\\Vietnamese--German University}
+-\date{}
++\date{Research draft with development-pilot results, 11 November 2026}
+ \begin{document}
+ \maketitle
+ \begin{abstract}
+-Extending an existing application requires a coding agent to implement new behavior while preserving requirements that remain in force. A starter kit can influence this process through the organization of its code and the checks available during implementation. We propose a controlled study of these two design choices using SmartKit, a Next.js SaaS starter kit developed in a preceding bachelor thesis. A $2\times2$ design will compare feature-based and layer-based organization, each with and without an additional behavioral verification package. All conditions will share task requirements, initial application behavior, and execution budgets. Independent acceptance and preservation checks will determine joint success; component outcomes and execution costs will be reported separately. The study will qualify matched repository variants, validate task-specific evaluators, and use a separate development pilot before freezing the main protocol. No new experimental results are reported. The intended contribution is evidence about specific starter-kit interventions and their limits, supported by traceable tasks and reproducible run artifacts.
++Coding agents extending an application must implement new behavior while preserving existing requirements. We describe a controlled SmartKit case study that varies repository organization and access to a supplied behavioral verification package in a $2\times2$ design. The planned main comparison holds task requirements, initial application behavior, ordinary tool permissions, and execution budgets constant. Joint success requires passing separate acceptance and preservation checks. Development qualification produced two repository variants and an executable history-filter task. A smoke pilot then completed one fresh agent session per condition; all four patches passed the final evaluator's 16 acceptance and 13 preservation checks. These observations establish feasibility for this development task within the checked scope. They do not support comparative effect estimates or conclusions about other tasks. The main task set, execution configuration, sample size, and uncertainty procedure remain unfrozen. The intended contribution is a bounded estimate of organization and verification-package effects in SmartKit, accompanied by execution records and reproducible artifacts.
+ \end{abstract}
+ 
+ \section{Introduction}
+-Consider a request to add order search to an existing SaaS application. An implementation could return the requested orders and still expose records belonging to another user if the change omits an ownership restriction. Figure~\ref{fig:motivation} illustrates this hypothetical example, not an observed SmartKit incident. Evaluating a feature change requires both acceptance criteria for the new functionality and checks for existing requirements that the change must preserve.
++An order-search feature can return matching records and still violate an application's access policy. If a patch omits an ownership restriction, another user's matching order may appear in the result. Figure~\ref{fig:motivation} illustrates this hypothetical scenario. Evaluating the change therefore requires acceptance criteria for search and preservation checks for access restrictions. No such SmartKit incident is claimed here.
+ 
+ \input{figures/motivating-example}
+ 
+-Repository-level evaluation makes this distinction operational. SWE-bench asks systems to modify real repositories from issue descriptions and evaluates the resulting patches~\cite{jimenez2024swebench}; SWE-Bench Pro broadens the setting to longer, multi-file engineering tasks~\cite{deng2025swepro}. These benchmarks establish realistic task settings, while our proposed intervention study asks how alternative organizations of the same application affect behavior under matched requirements.
+-
+-The preceding thesis developed SmartKit, a Next.js starter kit with authentication, billing, and email components, and examined coding-assistant adherence to repository conventions~\cite{trieu2026thesis}. Its evaluation emphasized artifacts such as file placement, type and schema usage, and required components. These measurements address whether generated code follows the intended conventions. They leave a separate question: do specific starter-kit design choices help an agent complete a change without introducing regressions?
+-
+-Recent work makes this question more precise. Repository instructions do not consistently improve task success across evaluated settings~\cite{gloaguen2026agents}. Existing code and its placement can influence agents' implementation decisions~\cite{zhu2026precedent}. Structural requirements have also been evaluated alongside executable behavior in backend generation~\cite{dente2026constraint}. Consequently, a comparison that bundles SmartKit's layout, instructions, examples, and tests would provide limited evidence about which design choice caused an observed difference.
+-
+-We propose manipulating repository organization and access to an additional behavioral verification package within the same application. The central outcome is joint success: a patch satisfies the requested behavior and preserves the applicable existing behavior under an independent evaluator. This formulation permits feature completion and preservation to fail separately and avoids treating compliance with the author's preferred paths as evidence of correctness.
+-
+-The planned study has two research products: a matched comparison of concrete repository and verification interventions, and an auditable collection of tasks, evaluators, and agent traces. Their scientific value depends on baseline qualification and comparison with the closest prior artifacts. We make no claim of priority for studying repository layout, tests, or joint correctness. The initial scope is a controlled SmartKit case study; broader claims require independent replication.
+-
+-\section{Related work}
++Repository-level benchmarks evaluate patches against existing applications. SWE-bench uses real issue descriptions~\cite{jimenez2024swebench}, and SWE-Bench Pro includes longer engineering tasks spanning multiple files~\cite{deng2025swepro}. These settings motivate evaluating a feature change through its behavior in the application. A controlled comparison can then ask whether changing the repository supplied to an agent affects its ability to satisfy the same requirements.
++
++SmartKit is a Next.js starter kit with authentication, billing, and email components, developed in the preceding thesis~\cite{trieu2026thesis}. That evaluation examined coding-assistant adherence to conventions, including file placement, type and schema usage, and required components. The present study asks whether concrete starter-kit design choices affect an agent's ability to complete a feature change while preserving applicable behavior.
++
++Prior work gives reasons to examine repository organization and verification separately. Repository instructions have mixed effects on task success~\cite{gloaguen2026agents}; existing code and its placement can affect implementation decisions~\cite{zhu2026precedent}; and structural requirements can affect performance alongside executable behavior~\cite{dente2026constraint}. Bundling layout, instructions, examples, and tests would make an observed difference difficult to attribute to a particular intervention.
++
++We compare feature-based and layer-based source organization, each with and without an additional package of runnable checks for existing behavior. The primary endpoint is joint success: a patch passes both acceptance and preservation checks in a final evaluator withheld from the agent. Task requirements and ordinary tool permissions are shared across conditions, including permission to write and run tests. The verification intervention changes access to the supplied package.
++
++FeatureArc and CodeThread already evaluate new and retained behavior, and controlled verification-surface studies examine agents' available tools~\cite{wang2026featurearc,patel2026codethread,mehta2026verification}. Our question concerns a matched organization-by-package comparison within the same initial application. Its value as an extension or purposeful replication still requires comparison with the closest versioned artifacts. The factorial design and joint endpoint alone establish no novelty claim.
++
++The intended contribution is an estimate of these two concrete intervention effects within a qualified SmartKit task set, with uncertainty and execution costs. This draft reports completed development qualification and a four-session smoke pilot, then specifies the remaining main-study design. Main-study outcomes are not yet available. Conclusions about other repositories or human maintenance require separate evidence.
++
++\section{Background and related work}
+ \subsection{Repository-level agents and patch evaluation}
+-SWE-agent studies the interface through which a model navigates files, edits code, and executes programs~\cite{yang2024sweagent}. Agentless separates localization, repair, and patch validation, showing that a simpler workflow is a meaningful comparator~\cite{xia2024agentless}. Together with SWE-bench and SWE-Bench Pro~\cite{jimenez2024swebench,deng2025swepro}, these studies motivate treating the harness, task specification, and execution environment as part of the evaluated system. We will hold them fixed when estimating repository interventions. We do not propose a new agent architecture or infer that a more complex workflow must perform better.
++SWE-agent studies how an interface supports file navigation, editing, and execution~\cite{yang2024sweagent}. Agentless separates localization, repair, and patch validation in a simpler workflow~\cite{xia2024agentless}. Together with SWE-bench and SWE-Bench Pro~\cite{jimenez2024swebench,deng2025swepro}, these studies make the harness and execution environment part of the system being evaluated. Holding those elements fixed allows the main comparison to focus on repository interventions.
+ 
+ \subsection{Repository context and implementation choices}
+-Parnas's account of modular decomposition connects module boundaries to the design decisions they hide and the changes they localize~\cite{parnas1972modules}. This provides a rationale for examining change locality, but does not establish that feature folders improve agent performance. Moreover, feature-based grouping alone does not demonstrate information hiding. Our comparison manipulates a concrete source organization while preserving the checked application contracts.
+-
+-Gloaguen et al. distinguish LLM-generated from developer-written context files: generated files generally reduced resolution rates, while developer-written files had a small positive average difference from no context that was not statistically significant in their reported comparison~\cite{gloaguen2026agents}. This mixed evidence supports controlling instruction exposure, not assuming that all repository guidance is ineffective. Zhu et al. manipulate repository precedents and task instructions; their results show that placement can affect implementation choice~\cite{zhu2026precedent}. Their local-versus-sibling comparison also changes task relatedness, so it does not isolate proximity alone. Our organization intervention similarly includes changes to locality, imports, and traversal exposure.
+-
+-Context exposure also has a broader precedent. Liu et al. show positional sensitivity in long-context question answering and retrieval~\cite{liu2024lost}. Those tasks differ from repository editing, so their findings motivate logging exposure and traversal rather than predicting an organization effect. The direct repository-level evidence remains the relevant basis for the proposed comparison.
++Parnas connects module decomposition to hidden design decisions and the changes they localize~\cite{parnas1972modules}. This motivates examining where an agent encounters code relevant to a change. Feature folders alone do not establish information hiding or predict better agent performance. The intervention here is a recorded relocation of modules and import updates that preserves the checked application contracts.
++
++Gloaguen et al. report different outcomes for LLM-generated and developer-written context files. Generated files generally reduced resolution rates; developer-written files had a small positive average difference from no context that was not statistically significant in their comparison~\cite{gloaguen2026agents}. Instruction exposure therefore needs explicit control. Zhu et al. show that repository precedents and placement can influence implementation choice~\cite{zhu2026precedent}. Their local-versus-sibling contrast also changes task relatedness. Our layout contrast likewise includes locality, import paths, and traversal exposure, so a result would concern the implemented organization as a whole.
++
++Liu et al. find positional sensitivity in long-context question answering and retrieval~\cite{liu2024lost}. Those tasks differ from repository editing. Their findings motivate recording exposure and traversal; they provide no direct prediction for the SmartKit layout comparison.
+ 
+ \subsection{Constraints and downstream software evolution}
+-Constraint Decay evaluates backend tasks using behavioral tests and static verifiers, finding that accumulated structural requirements can reduce performance~\cite{dente2026constraint}. Thus, evaluating functionality together with constraints is already established. Our candidate extension concerns matched starter-kit variants and preservation during feature changes.
+-
+-CodeThread compares subsequent agent performance on human and agent implementations and finds that traditional maintainability metrics do not fully explain downstream differences~\cite{patel2026codethread}. This supports evaluating later behavior directly, but provides no direct estimate of the proposed layout intervention. Evidence from human maintenance also needs separate interpretation: Borg et al. find no systematic downstream maintainability advantage or disadvantage in their human software-evolution setting~\cite{borg2026echoes}. Our study measures autonomous agent performance under fixed budgets, not developer productivity or human maintenance effort.
+-
+-FeatureArc evaluates successive extensions of a feature in a persistent agent session, using checks for new and existing behavior~\cite{wang2026featurearc}. Its preservation endpoint is close to ours. Our intended distinction is a matched organization-by-verification intervention on fresh sessions, rather than a benchmark of accumulated multi-stage changes. Separately, Mehta studies controlled changes to agents' verification tools when building web applications~\cite{mehta2026verification}. Our package targets specified preservation behavior during extension of an existing application. Both are recent preprints; the final novelty claim still requires comparing their artifacts with our implemented conditions.
++Constraint Decay combines behavioral tests with static verifiers and finds that accumulated structural requirements can reduce performance in backend tasks~\cite{dente2026constraint}. This establishes a precedent for evaluating functionality alongside constraints. SmartKit's comparison instead targets matched source organizations and preservation during feature extension.
++
++CodeThread compares subsequent agent performance on human and agent implementations. Traditional maintainability metrics do not fully explain the downstream differences it reports~\cite{patel2026codethread}. This supports measuring later behavior directly. Borg et al. find no systematic downstream maintainability advantage or disadvantage in their human software-evolution setting~\cite{borg2026echoes}. The distinction between human and agent workloads limits how those findings can inform a fixed-budget autonomous-agent experiment.
++
++FeatureArc evaluates successive extensions in a persistent agent session with checks for new and existing behavior~\cite{wang2026featurearc}. The proposed SmartKit study uses fresh sessions for a matched organization-by-verification intervention. Mehta varies verification tools during web-application construction; its behavioral arm lets the model author tests and invoke a test-running tool~\cite{mehta2026verification}. SmartKit supplies project-specific preservation checks while keeping ordinary tool permissions common. These recent preprints are close comparators, and the distinction in setting still needs a versioned artifact audit before the contribution is finalized.
+ 
+ \subsection{Validity of executable evaluation}
+-The test-oracle problem concerns deciding whether observed behavior is correct, with specifications, contracts, and domain knowledge providing possible evidence~\cite{barr2015oracle}. Executing more tests does not by itself resolve that problem. EvalPlus demonstrates that strengthening code-generation test suites can expose previously undetected incorrect programs and change model rankings~\cite{liu2023evalplus}. Our evaluator therefore needs a defensible requirement basis and qualification against valid and faulty implementations.
+-
+-Inozemtseva and Holmes find low to moderate coverage--effectiveness correlations after controlling test-suite size in their Java study~\cite{inozemtseva2014coverage}. Just et al. report a relationship between mutant detection and real-fault detection in their evaluated systems~\cite{just2014mutants}, while Zhao et al. show that the usefulness of coverage and mutation scores for LLM-generated tests depends on the testing setting~\cite{zhao2026coverage}. These findings support using mutation checks as diagnostic evidence with stated limits. They do not justify replacing behavioral contracts with a coverage target.
+-
+-Feedback use is a separate design issue. Reflexion studies agents that use linguistic reflections on feedback to guide subsequent trials~\cite{shinn2023reflexion}. Our package supplies runnable behavioral checks within a trial and does not implement that memory mechanism. The distinction matters because evidence for feedback-based agents does not establish the effect of the proposed SmartKit package. An artifact-level comparison with the closest studies remains necessary before presenting the resulting intervention as a distinct contribution.
+-
+-\section{Research questions and candidate mechanisms}
+-The study asks:
++An executable check needs a defensible account of correct behavior. The test-oracle literature identifies specifications, contracts, and domain knowledge as possible sources~\cite{barr2015oracle}. EvalPlus shows that stronger test suites can expose incorrect generated programs and change model rankings~\cite{liu2023evalplus}. These findings motivate qualifying the SmartKit evaluator against both valid alternatives and faulty implementations.
++
++Inozemtseva and Holmes find low to moderate correlations between coverage and effectiveness after controlling suite size in their Java study~\cite{inozemtseva2014coverage}. Just et al. report a relationship between mutant detection and real-fault detection in the evaluated systems~\cite{just2014mutants}. Zhao et al. find that the usefulness of coverage and mutation scores for LLM-generated tests depends on the testing setting~\cite{zhao2026coverage}. Mutation checks can therefore provide diagnostic evidence about the evaluator, with behavioral contracts remaining the basis for correctness.
++
++Reflexion uses linguistic reflection on feedback to guide subsequent trials~\cite{shinn2023reflexion}. SmartKit supplies runnable checks within a trial, without implementing that memory mechanism. Whether an agent uses the supplied checks and repairs the behavior they expose is a process question to examine in the execution trace.
++
++\section{Research questions}
++The main study is intended to answer three questions:
+ \begin{samepage}
+ \begin{enumerate}
+ \item[RQ1.] Which failures occur when agents implement the selected feature changes, considering new behavior and preservation separately?
+@@ -92,90 +94,100 @@
+ \end{enumerate}
+ \end{samepage}
+ 
+-The organization hypothesis is that locating related feature components together may reduce omissions when a change spans several consumers. Evidence consistent with this mechanism would include fewer missed dependencies, supported by traces and evaluator failures. Correct localization followed by faulty implementation would weaken that explanation. Trace evidence alone cannot establish a causal mediation effect.
+-
+-The verification hypothesis is that runnable checks may expose errors that an agent can repair within its remaining budget. We will examine whether agents invoke the checks, what feedback they receive, and whether subsequent patches address the reported behavior. Access may also consume time or distract an agent. An interaction is plausible if code localization changes how effectively feedback is used, but its direction is an open question. Null and adverse effects remain valid outcomes.
+-
+-\section{Study design}
++Locating related feature components together may reduce omissions when a change spans several consumers. Fewer missed dependencies, supported by traces and evaluator failures, would be consistent with this proposed mechanism. Correct localization followed by faulty implementation would weaken that explanation. Trace evidence alone cannot establish causal mediation.
++
++Runnable checks may expose errors that an agent can repair within its remaining budget. Traces will record check invocation, feedback, and subsequent changes. Running checks also consumes time and may distract the agent. The interaction's direction is open, and null or adverse outcomes remain valid. The analysis plan treats the two marginal intervention effects as primary summaries, with conditional effects and interaction reported as secondary contrasts relevant to RQ2 and RQ3.
++
++\section{Method and experimental setup}
+ \subsection{Application and matched variants}
+-SmartKit will provide the initial experimental substrate. We will freeze a documented baseline release after confirming its relationship to the thesis implementation and qualifying its build, runtime, and specified business behavior. Exact revision identifiers and environment details will be recorded in the companion artifact manifest. Existing defects will be recorded and resolved or explicitly excluded from the tested contracts before the baseline is frozen.
+-
+-We will construct a layer-based variant from the feature-based application (Figure~\ref{fig:organization}). The transformation will preserve domain logic and dependencies while relocating modules and updating imports and exports. A transformation manifest will record every change. Both variants must produce the same initial outcomes on the shared behavioral evaluator. This establishes equivalence within the checked contracts; it does not prove semantic equivalence for every possible execution.
+-
+-The layer-based organization must be a coherent alternative reviewed before agent outcomes are available. It must not deliberately scatter related code or remove useful examples. Where framework conventions constrain placement, both variants will respect those conventions. The causal contrast concerns these two implemented organizations, not a universal effect of software architecture.
+-
+-\input{figures/organization}
++SmartKit provides the application under study. Preparation repaired migration and development-fixture defects and exercised authentication, order ownership, status reads, and cancellation under recorded test conditions. Both organizations use this repaired baseline. Its exact correspondence with the defended thesis version remains unverified. The companion manifests record revisions, repair patches, and environment details; each retained main-task contract will require qualification before release freeze.
++
++The two snapshots differ in source grouping (Figure~\ref{fig:organization}). Feature-based organization groups domain modules by feature. Layer-based organization groups them first by technical role, such as components, actions, hooks, and services, then by domain. Here, layer-based denotes this role-first grouping; it makes no claim to implement Clean Architecture. Framework-required routes and database definitions retain their locations. The transformation manifest records module relocation and import/export updates. Section~\ref{sec:qualification-results} reports the shared checks, whose scope bounds the evidence for comparability.
++
++For the main study, the transformation will be audited for coherent grouping, retained examples, and compliance with framework placement rules before main outcomes are available. Deliberately scattering code would undermine the intended contrast. Any causal estimate will concern these two implemented organizations within the selected tasks and execution conditions.
++
++\input{figures/organization-revised}
+ 
+ \subsection{Experimental conditions}
+ Let $S=0$ denote layer-based organization and $S=1$ feature-based organization. Let $V=0$ denote common basic checks and $V=1$ the same checks plus a behavioral verification package. Figure~\ref{fig:factorial} defines the four conditions and the within-factor comparisons.
+ 
+ \input{figures/factorial}
+ 
+-The basic checks will have equivalent invocation and behavioral scope across layouts. Their exact inventory will be recorded during qualification; we will not weaken existing checks to increase the treatment contrast. The additional package will contain runnable checks and controlled fixtures for specified existing behavior, ported to both layouts. Its contents will be fixed before the main experiment. All task requirements will be available in every condition.
+-
+-Before freezing the intervention, each added check will be mapped to an existing behavioral contract and to a plausible regression that the basic suite does not already detect. Redundant checks may remain for execution convenience, but will not count as additional behavioral coverage. The visible and final suites will use separately authored cases; hidden cases will not be parameter copies of the visible fixtures. A treatment manifest will record files, commands, fixture access, and check runtime in each condition.
+-
+-The verification intervention supplies executable examples as well as execution feedback. Its estimand is therefore the effect of access to that package. Isolating execution feedback from information content would require an additional control with equivalent information. That question is outside the initial factorial design.
+-
+-Every condition will receive the same task specification and resource limits. Repository instructions will describe the relevant layout without prescribing superiority or asking the control agent to reconstruct SmartKit's feature organization. Layout-specific path descriptions will be documented. Parent instructions, editor rules, persistent memory, and harness defaults will be controlled, and the instructions actually loaded will be archived. The final evaluator will remain outside the agent workspace.
++The basic checks will have equivalent invocation and behavioral scope across layouts. Existing checks will remain intact. The additional package will supply runnable preservation checks and controlled fixtures ported to both layouts. Its inventory will be fixed before the main experiment. Every condition will receive all task requirements. The completed smoke pilot used the concrete inventory described in Section~\ref{sec:pilot-setup}; the main inventory remains to be frozen.
++
++Qualification will map each additional check to an existing behavioral contract and a plausible regression missed by the basic suite. Redundant checks may remain for execution convenience, without counting as additional behavioral coverage. Visible and final suites will use separately authored cases with different fixture structures. The treatment manifest will record files, commands, fixture access, and check runtime by condition.
++
++The package supplies executable examples as well as execution feedback. The estimand is the effect of access to this combined package. Isolating feedback from information content would require another control carrying equivalent information, beyond the initial factorial design.
++
++Task specifications, ordinary tool permissions, and resource limits will be shared across conditions. Agents may write and run their own checks at either verification level. Repository instructions will describe the assigned layout neutrally, with path differences documented. Parent instructions, editor rules, persistent memory, and harness defaults will be controlled, and loaded instructions archived. Final evaluation will occur outside the agent workspace after the session.
+ 
+ \subsection{Task construction and provenance}
+-Tasks will extend an existing application. Each task card will identify its starting snapshot, requirement source, requested behavior, applicable preservation requirements, and intentional changes to existing behavior. Historical issues or pull requests will be preferred when they can be reproduced. Author-constructed tasks will be labeled as such and accompanied by a practical rationale.
+-
+-The existing task audit contains six constructed candidates, all unvalidated. Figure~\ref{fig:candidate_data} summarizes this actual planning inventory: five candidates concern billing and one concerns administration of user accounts. These counts describe candidate coverage, not agent performance or an admitted benchmark. Qualification must establish that each feature is absent from the starting state, that its requirements are clear, and that feasible correct implementations exist. Task discovery must address the domain imbalance before claiming coverage of the application. Table~\ref{tab:tasks} gives illustrative specifications.
++Tasks will extend existing authentication/authorization, billing, and user-administration functionality. The planned pool includes localized changes and changes spanning workflows, without prescribing a file count or solution architecture. Each task card will state the starting snapshot, provenance, requested behavior, preservation requirements, and intentionally changed behavior. Reproducible historical issues or pull requests are preferred where available. Constructed tasks will be labeled and given a practical rationale.
++
++The original audit recorded six unvalidated constructed candidates, five in billing and one in user administration (Figure~\ref{fig:candidate_data}). A derivative history-filter task has since completed development qualification and the smoke pilot; it is excluded from main outcomes. The inventory is a historical planning record. Main-task admission still requires evidence that the feature is absent from the starting state, requirements are clear, and correct implementations are feasible. Table~\ref{tab:tasks} separates the completed development example from proposed work.
+ 
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=0.92\linewidth]{figures/candidate-data.pdf}
+-\caption{The current task inventory is concentrated in billing: five of six candidates. Counts are derived from the local task audit; every candidate is author-constructed and unvalidated. They are not experimental observations, and their distribution is not a target allocation for the main study.}
++\caption{Historical candidate inventory: five billing candidates and one user-administration candidate, all recorded as constructed and unvalidated in the original audit. A derivative history-filter task was subsequently used for development qualification. Counts are not agent observations or a target allocation for the main study.}
+ \label{fig:candidate_data}
+ \end{figure}
+ 
+ \begin{table}[ht]
+ \small
+ \renewcommand{\arraystretch}{1.16}
+-\caption{Constructed task candidates requiring specification and validation.}
++\caption{Constructed task examples and current status. Historical candidates and proposed development work are kept distinct from an admitted main-study set.}
+ \label{tab:tasks}
+ \begin{tabularx}{\linewidth}{@{}p{0.25\linewidth}YY@{}}
+ \toprule
+-Proposed change & Candidate preservation contract & Unresolved specification\\
++Proposed change & Preservation contract & Status\\
+ \midrule
+-History-page status filter & Retain ownership restrictions and unfiltered behavior & UI contract; existing action filter; empty results\\
+-Order-code search & Retain ownership checks and payment-code behavior & Exact or prefix matching; case handling\\
+-Admin role filter & Retain authorization for reading user records & Allowed roles and access policy\\
+-Batch cancellation & Preserve ownership and state restrictions & Atomic versus partial success\\
++History-page status filter & Retain ownership restrictions and unfiltered behavior & Qualified; smoke pilot complete; development only\\
++Admin role filter & Retain admin authorization and per-user session counts & Proposed expanded-pilot task; qualification pending\\
++Display-name editing & Update only the caller's name; retain role and email & Reuse option retained; contract/qualification pending\\
++Other-session revocation & Retain current and foreign sessions; protect tokens & Conditional reuse option; spike/qualification pending\\
++Order-code search & Retain ownership and payment-code behavior & Historical candidate; matching rules unresolved\\
++Batch cancellation & Preserve ownership and state restrictions & Historical candidate; atomicity unresolved; not in proposed next pilot\\
+ \bottomrule
+ \end{tabularx}
+ \end{table}
+ 
+-Preservation requirements need support from agreed specifications, existing tests, or confirmed domain rules. The current implementation alone is insufficient when intended behavior is ambiguous. Hidden checks may conceal test inputs, but must not introduce secret business requirements. Changes explicitly authorized by a new task will be excluded from the preservation contract.
+-
+-A source inspection already refines the status-filter candidate: an existing order-list action accepts a status parameter, whereas the inspected history page queries the signed-in user's orders directly and exposes no filter control. The candidate therefore concerns a history-page interaction and its data path, not inventing backend filtering. The action and page do not currently establish the same access contract; reusing the action without checking authorization could change the page's behavior. These are static source observations, not demonstrated runtime defects. The task remains unqualified until its intended behavior and evaluator are validated.
+-
+-Task cards, reference solutions, and evaluators will be completed before main runs. Development tasks used to revise the instruments will remain separate from the main task set. Inclusion and exclusion decisions will record their reasons, including ambiguous requirements, inaccessible dependencies, and potential solution leakage through repository history. Agentless's analysis of problematic issue descriptions and exposed ground-truth patches provides a concrete precedent for auditing these risks~\cite{xia2024agentless}.
++Preservation requirements need support from agreed specifications, existing tests, or confirmed domain rules. Implementation alone provides insufficient guidance when intended behavior is ambiguous. Final checks may conceal inputs, while all business requirements remain public to the agent. A task's authorized behavior changes will be excluded from its preservation contract.
++
++Source inspection refined the history-filter task: an existing order-list action accepted a status parameter, while the starting history page queried the signed-in user's orders directly and exposed no filter control. The task concerned the page interaction and data path. The action and page did not establish identical access contracts in that inspection, so reuse required an authorization check. These static observations motivated qualification; they were not evidence of an observed runtime defect. The resulting development task now has a validated contract and evaluator within the scope reported in Results.
++
++Main-task cards, reference solutions, and evaluators will be completed before collection. Development tasks used to revise the instruments will remain separate. Inclusion and exclusion logs will record ambiguity, inaccessible dependencies, and possible solution leakage through repository history. Agentless's analysis of problematic issue descriptions and exposed ground-truth patches motivates this audit~\cite{xia2024agentless}. The proposed pilot tasks cover admin filtering, profile editing, and session revocation; none has yet been run by an agent in this expanded pilot.
++
++Profile editing and session revocation retain a conditional main-task reuse option. Before pilot, author-confirmed contracts, snapshots, checks, fixtures, reference hashes, execution caps, and inclusion rules must be frozen; session revocation also requires a feasible spike without baseline changes. Tasks completing pilot unchanged remain eligible regardless of pilot success, failure, or time. Substantive post-exposure revisions make a task development-only. Main outcomes require fresh sessions, with pilot records kept separate and prior exposure disclosed. The two tasks share the Settings surface but have distinct profile-update and session-lifecycle families; conclusions will concern the declared tasks and configurations, without claiming transfer to unseen tasks.
+ 
+ \subsection{Evaluator qualification}
+-Each evaluator will check new behavior and preservation independently (Figure~\ref{fig:evaluation}). Before admission, the unchanged baseline must pass preservation checks and fail at least one required acceptance check. A reference patch must pass both groups in each layout. A structurally different valid solution must also be accepted, while plausible faulty implementations must fail the relevant checks. This qualification addresses oracle validity~\cite{barr2015oracle} and test insufficiency~\cite{liu2023evalplus}. Deliberately introduced faults validate the instrument; they are not observations of agent behavior.
+-
+-Qualification will include repeated executions of unchanged fixtures, valid alternatives, and faulty variants to identify flaky checks. Reviewers will classify failures from task requirements without condition labels where feasible. Evaluator independence means withholding its cases and execution from the agent; it does not remove shared-author bias or make acceptance and preservation statistically independent. Qualification disagreements and the number of checked variants will be reported.
++Each evaluator will assess acceptance and preservation separately (Figure~\ref{fig:evaluation}). The unchanged baseline must pass preservation and fail at least one required acceptance check. Reference patches must pass both groups in each layout. Qualification also requires accepting a structurally different valid solution and rejecting plausible faulty implementations. These checks address oracle validity~\cite{barr2015oracle} and test insufficiency~\cite{liu2023evalplus}. Deliberate faults provide instrument-validation evidence and are recorded separately from agent errors.
++
++Repeated executions of unchanged fixtures, valid alternatives, and faulty variants will check for flakiness. The author is working alone, and independent review is currently unavailable. Self-checks and assistant checks will be recorded as such. Here, evaluator independence means that final cases and execution are withheld from the agent. Shared-author bias remains, and acceptance and preservation are not assumed statistically independent. Qualification records will retain discrepant outcomes and the number of variants checked.
+ 
+ \input{figures/evaluation}
+ 
+-Checks will operate at the level needed for the property. Database ownership, uniqueness, and state transitions require suitable integration fixtures. A mock of the persistence operation cannot establish the behavior of the real transaction. Browser or HTTP checks will cover affected interfaces where necessary. Services, data, and clocks will be reset between trials. Payment and email integrations will use controlled fixtures or test environments.
+-
+-Build and runtime outcomes will be retained separately. A successful build does not establish correct interaction behavior. Conversely, source paths, schema presence, and the number of generated tests will not determine functional success. Agent edits to visible tests cannot change the evaluator's criteria.
+-
+-\subsection{Allocation and execution}
+-The experimental unit will be a fresh agent session in an isolated workspace, assigned a task, condition, and fixed model/harness configuration. Conditions will be blocked by task and model/harness, with run order randomized within each block using an archived allocation seed. Every trial will reset application state and agent memory. Repetitions on the same task will remain identified as dependent observations.
+-
+-For each repetition block, all four conditions will be scheduled in randomized order. Provider outages, execution batch, and any model-version change will be logged; a changed model will define a new configuration rather than silently continuing the same comparison. Reference patches, development solutions, and hidden tests will be removed from reachable repository history and external mounts before agent access. The freeze will specify both wall-time and token limits and a common termination rule. Effects will be interpreted under those limits, including time spent running the verification package.
+-
+-The main protocol will fix prompts, dependencies, tool permissions, termination rules, and total execution limits. Interface design can affect agent behavior~\cite{yang2024sweagent}, so the harness will be held fixed within each comparison. Verification runs consume the same total budget as other tool use. If several models are feasible, primary estimates will be reported separately for each model/harness. Exact model identifiers, provider versions where available, and execution dates will be recorded.
+-
+-All attempts will be retained. Agent timeouts and failed implementations will count as outcomes under the allocated budget. Infrastructure failures will follow a separate, predefined adjudication and rerun rule, with original attempts preserved. We will not rerun unsuccessful patches selectively.
+-
+-\section{Outcomes and analysis plan}
+-\subsection{Primary and secondary outcomes}
++Checks will operate at the level needed for each property. Database ownership, uniqueness, and state transitions require integration fixtures that exercise the relevant persistence behavior. Browser checks will be needed for interaction-dependent contracts; HTTP checks cover only the behavior observable through those requests. Services, data, and clocks will be reset between trials. Payment and email integrations will use controlled fixtures or test environments.
++
++Build and runtime outcomes will be retained separately from functional checks. Source paths, schema presence, and generated-test counts will not determine functional success. The final evaluator's criteria remain fixed if an agent edits visible tests.
++
++\subsection{Completed smoke-pilot setup}\label{sec:pilot-setup}
++The development smoke pilot ran on 11 November 2026 using the history-page status-filter task, identified as DEV-HISTORY-STATUS-01. Four fresh sessions covered the four conditions once each. Every session requested GPT-6 Luna (\texttt{gpt-6-luna}), High reasoning, and Standard speed by default through Codex CLI 0.166.0. Wall time ran from CLI invocation to completion, with a 900-second cap. No token cap was specified for this smoke test. The configuration is a development setting, and the model alias does not certify immutable backend weights.
++
++V0 retained upstream unit/component tests, TypeScript checking, build commands, and ordinary scripts. V1 added ten runnable preservation checks for ownership/history, status access, anonymous access, and cancellation restrictions. Both levels received identical task requirements and could create their own tests. The visible package excluded the development feature-acceptance checks. The withheld final evaluator used 29 separately authored checks, comprising 16 acceptance and 13 preservation checks, with different fixture structures.
++
++Each session ran in a fresh unprivileged container with its own PostgreSQL database and no host research mounts, Docker socket, or prior repository history. The common image used Node 24, pnpm 11.7.0, and dependencies from the same lockfile. The application was started before model timing began. Final patches were captured and evaluated in clean containers without agent credentials. Seed 20261111 fixed the serial order S0V0, S1V0, S0V1, S1V1 before model execution. The protocol and manifests retain the allocation, environment identifiers, and isolation checks.
++
++\subsection{Planned main-study allocation and execution}
++The main-study experimental unit will be a fresh agent session assigned a task, condition, and fixed model/harness configuration. Conditions will be blocked by task and model/harness, with an archived seed determining randomized order within repetition blocks. Application state and agent memory will reset between trials. Repetitions of a task will remain identified as dependent observations.
++
++Every repetition block will include all four conditions. Logs will identify provider outages, execution batches, and detected model-version changes. A changed model will define a separate configuration. Reference solutions and final tests will be excluded from agent-reachable history and mounts. The frozen protocol will specify wall-time and token limits and a common termination rule, including the time agents spend running verification checks.
++
++Prompts, dependencies, tool permissions, and harness settings will be fixed within a comparison because interface design can affect agent behavior~\cite{yang2024sweagent}. If multiple models are feasible, estimates will remain separate by model/harness. Requested identifiers, provider versions where exposed, and execution dates will be retained.
++
++All attempts will be retained. Agent timeouts and failed implementations will count as outcomes under the allocated budget. Infrastructure failures will follow a predefined adjudication and rerun policy with original records preserved. Unsuccessful agent patches will not receive selective reruns.
++
++\subsection{Outcomes}
+ For task $t$, condition $(s,v)$, and repetition $r$, let $A_{tsvr}$ and $P_{tsvr}$ record acceptance and preservation status, respectively. Each is pass, fail, or unassessable. The primary endpoint is
+ \begin{equation}\label{eq:joint}
+ Y_{tsvr}=\mathbf{1}\{A_{tsvr}=\mathrm{pass}\ \land\ P_{tsvr}=\mathrm{pass}\}.
+@@ -183,15 +195,15 @@
+ Equation~\eqref{eq:joint} defines joint success. Figure~\ref{fig:outcomes} distinguishes the four possible assessed outcomes without implying their expected frequencies.
+ 
+ \input{figures/outcomes}
+-A pass means success within the evaluator's stated scope. An agent-caused build or runtime failure that prevents required behavior from being checked will yield joint failure, with the failure stage recorded. Unassessable components will remain explicit in component summaries. Those summaries will use all attempts with a resolved evaluator outcome as their denominator and separately report pass, fail, and unassessable counts; they will not silently drop unassessable attempts. An independently confirmed infrastructure failure has a missing outcome until the predefined rerun policy resolves it, rather than an assumed agent failure.
+-
+-Secondary outcomes will include acceptance and preservation results, failure stage, elapsed time, token usage, reported cost, and revision count. We will show the distribution of feature failures and regressions, including cases where the new feature passes but preservation fails. Cost and latency describe agent execution in this setting and will not be converted into estimates of human productivity.
+-
+-After data collection, the planned result figures will show task-balanced joint success with uncertainty intervals for each condition, paired task-level differences between conditions, and cost distributions including failed attempts. Outcome-category frequencies will distinguish feature failures from regressions. These displays require archived trial data and are not populated in this proposal.
+-
+-Failure analysis will use evaluator evidence and traces to distinguish omitted behavior, incorrect changes, and failures to use available feedback. A second reviewer, if available, will independently examine a sample under a recorded coding guide. Disagreements and unavailable evidence will remain visible; an LLM-generated explanation alone will not establish a root cause.
+-
+-\subsection{Contrasts and uncertainty}
++A pass denotes success within the stated evaluator scope. An agent-caused build or runtime failure that prevents required behavior from being checked will yield joint failure, with the stage recorded. Component summaries will retain pass, fail, and unassessable counts and use all attempts with a resolved evaluator outcome as their denominator. An infrastructure failure confirmed through the recorded adjudication procedure has a missing outcome until the rerun policy resolves it.
++
++Secondary outcomes will include component results, failure stage, elapsed time, token usage, reported cost where available, and revision count. Feature failures and regressions will remain distinguishable, including patches that pass acceptance but fail preservation. Execution cost and latency describe the agent setting; they provide no direct estimate of human productivity.
++
++The main Results will report task-balanced joint success with uncertainty intervals, paired task-level differences, and execution-cost distributions including failed attempts. Outcome-category counts will distinguish feature failures from regressions. These displays require main-study data and are not populated in this draft.
++
++Failure analysis will use evaluator evidence and traces to classify omitted behavior, incorrect changes, and unused feedback under a recorded coding guide. Independent second coding is currently unavailable. Labels will be reported as author-coded, with uncertain cases retained. An LLM-generated explanation alone will not establish a root cause.
++
++\subsection{Planned contrasts and uncertainty}
+ Within a model/harness configuration, define the task-balanced success probability over the frozen set of $T$ eligible tasks as
+ \begin{equation}\label{eq:task_mean}
+ p_{sv}=\frac{1}{T}\sum_{t=1}^{T}\Pr(Y_{tsvr}=1\mid t,s,v).
+@@ -213,30 +225,84 @@
+ 
+ Repeated stochastic runs require distribution-aware analysis rather than comparisons of single executions; Arcuri and Briand discuss this issue for randomized software-engineering algorithms~\cite{arcuri2014statistics}. Primary uncertainty will concern repeated agent executions conditional on the frozen tasks. The freeze will select an interval procedure suitable for binary cell outcomes, explicitly handling all-pass and all-fail cells and possible batch dependence. Resampling tasks answers a different question about variation across tasks and will be a secondary sensitivity analysis only, with its exchangeability assumption stated. Constructed convenience tasks do not become a representative random sample because a bootstrap is applied. Closely related task variants will be grouped into families for that analysis. Analyses restricted to patches that build will remain supplementary because that restriction can select different subsets across conditions.
+ 
+-The number of tasks and repetitions is not yet fixed. A separate development pilot will assess evaluator reliability, execution cost, and plausible variability. Before main runs, a precision study will examine plausible baseline success rates, task heterogeneity, boundary cells, and the planned resource limits. Its success criterion will be a prespecified interval width for the primary effects, chosen for a practically meaningful decision rather than copied from a pilot's observed effect. The freeze must settle sample size, interval method, primary model/harness, and missing-outcome policy; until then this is a design proposal, not a confirmatory-ready protocol. More repetitions on a few tasks cannot substitute for task diversity. The interaction will remain exploratory unless its precision is separately justified. A wide interval around a null estimate will not establish equivalence.
+-
+-\section{Feasibility and reproducibility}
+-The study is currently at the design stage. Neither the matched layouts nor the candidate tasks have been validated end to end. No fresh pilot or confirmatory data are available. The preceding thesis's pilot artifacts are no longer available and will not be reconstructed from reported scores or reused to estimate intervention effects.
+-
+-Work will proceed through baseline qualification, task and evaluator construction, matched-condition validation, and a development pilot. The main task set and analysis choices will then be frozen in a dated protocol. Any preregistration must precede inspection of main outcomes. If the variants cannot satisfy the same checked contracts, the organization intervention will be revised before agent comparisons. If prior artifacts already answer the same question, the study will be positioned as a replication or narrowed to a demonstrable extension.
+-
+-Figure~\ref{fig:data_flow} defines the planned data records and aggregation path. Each attempt will link its task and condition to a versioned environment, loaded instructions, prompts, traces, patch, evaluator outputs, and resource log. Original attempts will remain identifiable after reruns or exclusions. Reference solutions and hidden checks will be separated from agent-accessible material during collection. Release scope will depend on source licenses and permission to redistribute task materials. Test data will replace personal records and service credentials.
++Task and repetition counts remain open. An expanded development pilot will assess evaluator reliability, execution cost, and plausible variability across additional tasks. Before main runs, precision planning will examine plausible success rates, task heterogeneity, all-pass/all-fail cells, and available resources. The criterion will be a prespecified interval width for a practically meaningful primary effect, chosen independently of the pilot's observed difference. Freeze must settle sample size, interval method, primary model/harness, and missing-outcome policy. More repetitions on a few tasks cannot substitute for task diversity.
++
++If feasible resources cannot support sufficiently precise primary estimates, the study will adopt an explicitly exploratory scope before main collection. The interaction remains exploratory unless its precision is separately justified. Wide intervals around a null estimate do not establish equivalence. The current protocol is a design proposal, with no claim of confirmatory readiness or preregistration.
++
++\subsection{Artifacts and reproducibility}
++The completed development archive links each attempt to its condition, requested model configuration, environment, prompt, trace, final patch, check outputs, and resource log. The planned main-study records extend this structure to multiple tasks and repetitions (Figure~\ref{fig:data_flow}). Original attempts will remain identifiable after reruns or exclusions. The preceding thesis's pilot artifacts are unavailable; its reported scores will not be reconstructed or reused as intervention-effect data.
++
++Public release is a preparation target for task specifications, evaluator code, configuration, analysis scripts, and results with sensitive material removed. Source licenses and redistribution permissions will determine the SmartKit source-release scope. The author will review the concrete package before publication. Test fixtures replace personal records, and credential material will be excluded from released traces and archives. No public release is claimed in this draft.
+ 
+ \input{figures/data-flow}
+ 
++\section{Results}\label{sec:results}
++The available results concern development qualification and one smoke-pilot task. Main-study collection has not begun. Check counts describe evaluator cases; the four model sessions describe attempts on one task.
++
++\subsection{Baseline and evaluator qualification}\label{sec:qualification-results}
++Both repository organizations passed TypeScript checking, production compilation, and the same 14 existing unit/component tests. In the initial layout qualification, each unsolved snapshot passed ten baseline integration checks using local HTTP requests and PostgreSQL. Applying the corresponding history-filter reference yielded 15 passing integration checks in each layout. After removing the reference, the ten baseline checks passed again. This established comparability within those exercised contracts.
++
++The initial development evaluator rejected three deliberately faulty filter implementations and accepted a correct alternative. History and status checks used real HTTP sessions. Direct server-action checks used real SQL with session lookup and cache invalidation stubbed. These observations establish sensitivity to the exercised faults; they do not qualify browser interaction or production database connectivity.
++
++The subsequent smoke-pilot evaluator was qualified separately before model execution. Both unsolved baselines passed preservation and failed acceptance. Both reference implementations passed both components. The V1 package passed all ten visible checks on each unsolved baseline. Its final 29-check evaluator remained unchanged from qualification through scoring. The initial ten/15-check layout checks and the later 29-check pilot evaluator are separate instruments.
++
++\subsection{Smoke-pilot outcomes}\label{sec:pilot-results}
++All four agent sessions completed within the allocated wall-time cap and produced patches that passed the final evaluator (Table~\ref{tab:pilot}). Neither an agent timeout nor an unsuccessful agent outcome occurred. The two V1 session records each contained one invocation of the supplied behavioral-check command. Invocation establishes use of the command; it does not establish that its feedback changed a patch.
++
++\begin{table}[htbp]
++\centering
++\small
++\renewcommand{\arraystretch}{1.15}
++\caption{Development smoke-pilot observations on one history-filter task, one session per condition. Each final patch passed all 16 acceptance and 13 preservation checks. Wall time covers agent execution, excluding application setup and final evaluation. These observations are descriptive and are excluded from main-study outcomes.}
++\label{tab:pilot}
++\begin{tabular}{@{}lllllr@{}}
++\toprule
++Cell & Organization & Package & Acceptance & Preservation & Time (s)\\
++\midrule
++S0V0 & Layer-based & Basic & Pass & Pass & 141.27\\
++S1V0 & Feature-based & Basic & Pass & Pass & 101.61\\
++S0V1 & Layer-based & Additional & Pass & Pass & 99.66\\
++S1V1 & Feature-based & Additional & Pass & Pass & 100.11\\
++\bottomrule
++\end{tabular}
++\end{table}
++
++One S1V0 database-setup attempt failed before model invocation. Its record was retained and adjudicated separately, and the readiness check was changed to TCP before a setup-only retry. No unsuccessful agent patch was selectively rerun. The archived evidence suggests a readiness-check issue, but the missing database log from the failed setup prevents a definitive cause assignment.
++
++The final evaluator exercised HTTP/DOM behavior and persisted orders. It did not execute browser interaction or hydration, or directly retest cancellation through browser/server-action transport. The V1 cancellation checks used session/cache stubs. Preservation pass is therefore restricted to the final checks actually performed. Provider token-usage events were archived without conversion to API charges or remaining subscription allowance.
++
++\subsection{Status of the research questions}
++For RQ1, no acceptance or preservation failures were observed among the four evaluated patches. This provides no characterization of failure patterns on a broader task set. For RQ2 and RQ3, one session per condition on a single development task is insufficient to support comparative effect estimates. The recorded times remain descriptive; they establish no layout or package cost advantage.
++
++The next evidence needed is qualification and pilot coverage beyond the history-filter workflow, followed by a frozen main task set and analysis plan. Proposed admin filtering, display-name editing, and session revocation remain unrun pilot candidates. No main-study effect estimate, interval, or hypothesis test is reported here.
++
+ \section{Discussion and threats to validity}
+-The proposed design can estimate the effect of concrete starter-kit interventions within qualified tasks. It cannot establish that feature-based organization is universally preferable. Moving modules changes import paths and the evidence an agent encounters; those changes are part of the intervention. Neutral instructions and a transformation manifest reduce accidental confounding, but do not decompose locality from every other aspect of repository organization.
+-
+-The verification comparison also has a defined boundary. Its additional tests expose examples and consume execution resources, so a positive result would support the package under the stated budget. It would not identify feedback as the sole cause. An adverse result could arise from execution overhead, distracting examples, or ineffective repair. Trace analysis can help distinguish these explanations without converting them into proven mechanisms.
+-
+-The author developed SmartKit and will help construct the tasks and evaluator. This creates a risk of favoring familiar paths or requirements. Path-independent outcomes, alternative valid solutions, and independent review where feasible will address specific parts of that risk. Evaluator sensitivity remains limited to the tested contracts, even after these checks.
+-
+-One repository and a billing-heavy candidate pool limit external validity. Initial conclusions must name the evaluated task set, snapshot, model/harness, and budget. Replication on an independently selected repository would test whether an observed effect transfers beyond SmartKit. A separate human study would be needed to assess maintainability for developers. Neither transfer nor human productivity follows automatically from higher joint success in this experiment.
++\subsection{What the development evidence establishes}
++The completed workflow connects a public contract to isolated execution and post-session scoring in all four conditions. This supports further instrument development. Whether organization or supplied checks improve success across the intended workload remains open.
++
++The present evidence provides a local feasibility record for a comparison motivated by prior work on new and retained behavior, repository context, and verification access. Positioning the study as an extension or purposeful replication requires the closest artifact-level comparisons. Insufficient additional understanding would lead to a documented narrowing of the question or contribution before main collection.
++
++\subsection{Intervention interpretation}
++Relocation changes import paths and the evidence an agent encounters. Neutral instructions and a transformation manifest reduce accidental confounding, while leaving locality and traversal exposure combined. Any effect would apply to these two organizations under the recorded conditions.
++
++The verification intervention combines examples, feedback, and runtime overhead. An adverse result could reflect overhead, distracting examples, or ineffective repair. Traces may distinguish these interpretations. Isolating feedback would require an information-matched control.
++
++\subsection{Evaluator scope and author involvement}
++The author's involvement in SmartKit, task construction, and evaluation can favor familiar requirements or paths. Path-independent checks and valid/faulty alternatives address specific evaluator weaknesses. Independent review and second coding are currently unavailable, leaving shared-author bias unresolved. Assistant checks provide no independent scholarly review.
++
++HTTP/DOM checks and session/cache stubs leave browser/authentication behavior partly untested. New tasks need contract-appropriate checks. Session revocation specifically requires qualification of next-request invalidation before expanded-pilot admission.
++
++\subsection{Task coverage, uncertainty, and transfer}
++The billing-heavy inventory includes related history-workflow tasks, so equal task weighting could overweight one family. Domain/family records and sensitivity checks will support a bounded interpretation. Proposed profile and session tasks add development coverage only after qualification.
++
++Conclusions will name the evaluated tasks, snapshot, model/harness, and budget. Another independently selected repository would test transfer beyond SmartKit; developer maintenance requires a human study.
++
++Caching, infrastructure, and model drift may affect timing. With no repetitions within a cell, the smoke pilot cannot characterize that variation. Main precision planning must account for repetition and batch dependence. Insufficient feasible precision will lead to an exploratory scope declared before collection, with inconclusive estimates reported as such.
+ 
+ \section{Conclusion}
+-We propose a controlled study of repository organization and behavioral verification during agent-driven SaaS feature extension. SmartKit provides an existing application from which matched conditions can be constructed, while independent acceptance and preservation checks define the outcome. The next empirical step is to qualify the baseline and task evaluators. Conclusions about intervention effects will require fresh, fully archived trials under a frozen protocol.
+-
+-\clearpage
++Development qualification and a four-session smoke pilot established an executable workflow for comparing SmartKit source organization and supplied behavioral checks on one history-filter task. Every pilot patch passed the final evaluator within its stated coverage. Comparative effects on extension success, preservation, and cost remain unanswered. Task qualification and precision planning must precede a frozen main protocol and fresh trials. A traceable study archive is being prepared for reproducibility, with public release subject to redistribution rights and author review.
++
++\FloatBarrier
+ \bibliographystyle{abbrvnat}
+ \begingroup
+ \small

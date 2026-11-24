@@ -1,0 +1,50 @@
+Already up to date
+Done in 317ms using pnpm v11.7.0
+$ tsx scripts/ensure-server-only-shim.ts
+Installed server-only shim at node_modules/server-only/
+$ tsx scripts/test-billing-scenarios.ts
+
+🧪 Billing Scenario Test Harness
+
+Base URL: http://localhost:3107
+Webhook URL: http://localhost:3107/api/sepay/webhook
+
+Setting up test fixtures...
+
+Running scenarios...
+
+  ✓ Scenario 3: Idempotency: PASS
+  ✓ Scenario 4: Invalid signature: PASS
+  ✓ Scenario 5: Amount mismatch: PASS
+  ✓ Scenario 6: Order expiry: PASS
+  ✓ Scenario 7: User cancel: PASS
+  ✓ Scenario 8: Cross-user security: PASS
+  ✓ Scenario 9: Duplicate purchase: PASS
+  ✓ Scenario 11: Concurrent pending order: PASS
+  ✓ Regression: wrapped pending conflict mapping: PASS
+  ✓ Scenario 12: Webhook + cron race: PASS
+  ✓ Scenario 10: SQL injection / XSS: PASS
+
+Cleaning up test data...
+
+📊 Summary
+
+  PASS: 11
+  FAIL: 0
+  SKIP: 0
+
+📋 Manual scenarios (require dev setup):
+
+  Scenario 1 — Happy path:
+    1. Login as test user → /dashboard/billing
+    2. Click "Mua" → scan QR → chuyển khoản thật
+    3. Wait ~10s → verify order completed, /dashboard/billing/history shows payment
+
+  Scenario 2 — Webhook miss + polling:
+    1. Block webhook URL (e.g., disable in SePay dashboard)
+    2. Chuyển khoản → order stays pending
+    3. Wait 5-10 min for cron → order completes
+
+
+✅ All auto-tested scenarios passed.
+

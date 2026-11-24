@@ -1,0 +1,15 @@
+{
+  "layout": "feature",
+  "phase": "baseline",
+  "model_calls": 0,
+  "started": "2026-11-15T09:26:24Z",
+  "runner_sha256": "c04b487a4afbd40cae62e3f33a512a6565d86b07952d29e4fc21fa21c68fd2bd",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "infrastructure-error",
+  "db_volumes": [
+    "c30024dcdc22d3c68809084edff63627fdbc8ba24e975f235a14b1a29200346b"
+  ],
+  "errorClass": "RuntimeError",
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T09:26:41Z"
+}

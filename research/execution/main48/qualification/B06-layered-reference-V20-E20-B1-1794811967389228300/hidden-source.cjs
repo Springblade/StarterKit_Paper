@@ -1,0 +1,44 @@
+// Withheld end-to-end oracle: HTTP/DB only; no application-module imports.
+const {createRequire}=require('node:module'),req=createRequire('/workspace/package.json');req('dotenv').config({quiet:true});
+const {Pool}=req('pg'),{randomUUID,createHmac}=require('node:crypto'),assert=require('node:assert/strict'),fs=require('node:fs');
+const db=new Pool({connectionString:process.env.DATABASE_URL}),base='http://localhost:3107',task=process.env.CHECK_TASK;
+const user=randomUUID(),plan=randomUUID(),checkoutPlan=randomUUID(),orders=[],txids=[],results=[];let serial=Math.floor(Math.random()*1e9);
+const sql=(q,p=[])=>db.query(q,p);
+async function check(id,kind,fn){try{await fn();results.push({id,kind,pass:true});}catch(e){if(e.name==='FixtureGenerationError')throw e;results.push({id,kind,pass:false,errorClass:e.name,message:e.message});}console.log(JSON.stringify(results.at(-1)));}
+async function order(expiry,status='pending',code='Qr_'+randomUUID().replaceAll('-','').slice(0,9)){
+ await sql("UPDATE orders SET status='cancelled' WHERE user_id=$1 AND status='pending'",[user]);
+ await sql('UPDATE orders SET code=$1 WHERE code=$2 AND user_id=$3',['Archived_'+randomUUID(),code,user]);
+ const id=randomUUID();orders.push(id);await sql('INSERT INTO orders(id,code,user_id,plan_id,amount_vnd,status,expires_at) VALUES($1,$2,$3,$4,73000,$5,$6)',[id,code,user,plan,status,new Date(expiry)]);return{id,code};
+}
+function payload(o,content='SK '+o.code,amount=73000){const id=++serial;txids.push(String(id));return{id,gateway:'synthetic',transactionDate:new Date().toISOString(),accountNumber:'fixture',content,transferType:'in',transferAmount:amount,reference:'local',description:''};}
+async function webhook(p,valid=true){const raw=JSON.stringify(p),stamp=String(Math.floor(Date.now()/1000)),sign=createHmac('sha256',process.env.SEPAY_WEBHOOK_SECRET).update(stamp+'.'+raw).digest('hex');const r=await fetch(base+'/api/sepay/webhook',{method:'POST',headers:{'content-type':'application/json','x-sepay-timestamp':stamp,'x-sepay-signature':valid?'sha256='+sign:'bad'},body:raw});assert.equal(r.status,valid?200:401);return r.json();}
+async function cron(p){fs.writeFileSync('/tmp/study-sepay-fixture.json',JSON.stringify([p]));const before=fs.existsSync('/tmp/study-sepay-calls.jsonl')?fs.readFileSync('/tmp/study-sepay-calls.jsonl','utf8').split('\n').length:0;const r=await fetch(base+'/api/cron/sepay-poll',{headers:{authorization:'Bearer '+process.env.CRON_SECRET}});assert.equal(r.status,200);assert.ok(fs.readFileSync('/tmp/study-sepay-calls.jsonl','utf8').split('\n').length>before,'actual cron requested synthetic upstream');return r.json();}
+async function state(o){return(await sql('SELECT status,completed_at FROM orders WHERE id=$1',[o.id])).rows[0];}
+async function audit(p,o){const rows=(await sql('SELECT order_id FROM payment_transactions WHERE sepay_transaction_id=$1',[String(p.id)])).rows;assert.equal(rows.length,1);assert.equal(rows[0].order_id,o.id);}
+async function main(){
+ assert.equal(new URL(process.env.DATABASE_URL).hostname,'pilot-db');assert.ok(['B05','B06'].includes(task));
+ try{
+  await sql('INSERT INTO "user"(id,name,email,email_verified,role) VALUES($1,\'Hidden payer\',$2,true,\'user\')',[user,user+'@local.invalid']);await sql('INSERT INTO plans(id,name,price_vnd) VALUES($1,\'Hidden plan\',73000)',[plan]);
+  if(task==='B05')await check('E-old-checkout-preserves-standard-transfer-content','preservation',async()=>{
+   const {hashPassword}=await import(req.resolve('better-auth/crypto'));const password='IndependentCheckout12';await sql('INSERT INTO account(id,user_id,account_id,provider_id,password) VALUES($1,$2,$2,\'credential\',$3)',[randomUUID(),user,await hashPassword(password)]);await sql('INSERT INTO plans(id,name,price_vnd) VALUES($1,\'Checkout plan\',83000)',[checkoutPlan]);
+   const {chromium}=require('/opt/behavior/node_modules/playwright'),browser=await chromium.launch({headless:true,args:['--no-sandbox']});try{const c=await browser.newContext();assert.equal((await c.request.post(base+'/api/auth/sign-in/email',{headers:{Origin:base},data:{email:user+'@local.invalid',password}})).status(),200);const page=await c.newPage();page.setDefaultNavigationTimeout(60000);let covered=false;for(let attempt=0;attempt<8;attempt++){await page.goto(base+'/dashboard/billing?plan='+checkoutPlan,{waitUntil:'networkidle'});const row=(await sql('SELECT id,code FROM orders WHERE user_id=$1 AND plan_id=$2 AND status=\'pending\'',[user,checkoutPlan])).rows;assert.equal(row.length,1);orders.push(row[0].id);assert.ok((await page.locator('body').innerText()).includes('SK '+row[0].code));if(/[A-Z]/.test(row[0].code)){covered=true;break;}}if(!covered){const e=new Error('No uppercase input code generated');e.name='FixtureGenerationError';throw e;}}finally{await browser.close();}
+  });
+  await check('E-old-standard-webhook-retry','preservation',async()=>{const o=await order(Date.now()+7200000),p=payload(o);await webhook(p);assert.equal((await state(o)).status,'completed');await webhook(p);await audit(p,o);});
+  await check('E-old-standard-cron-and-signature','preservation',async()=>{const o=await order(Date.now()+7200000),p=payload(o);await webhook(p,false);assert.equal((await state(o)).status,'pending');await cron(p);assert.equal((await state(o)).status,'completed');await audit(p,o);});
+  await check('E-old-mismatch-terminal-outbound','preservation',async()=>{const o=await order(Date.now()+7200000);await webhook(payload(o,undefined,1));assert.equal((await state(o)).status,'pending');const p=payload(o);p.transferType='out';await webhook(p);assert.equal((await state(o)).status,'pending');for(const status of ['cancelled','expired','completed']){await sql('UPDATE orders SET status=$1 WHERE id=$2',[status,o.id]);await webhook(payload(o));assert.equal((await state(o)).status,status);}});
+  if(task==='B05'){
+   await check('E-new-embedded-webhook-and-cron','acceptance',async()=>{for(const send of [webhook,cron]){for(const code of ['Ab_3-9Z','x'.repeat(5),'Y'.repeat(50)]){const o=await order(Date.now()+7200000,'pending',code);const p=payload(o,'REF\tSK\n'+code+' BANK');await send(p);assert.equal((await state(o)).status,'completed');await audit(p,o);}}});
+   await check('E-new-reject-ambiguous-invalid-and-wrong-case','acceptance',async()=>{for(const send of [webhook,cron]){for(const content of ['SK 1234','SK '+ 'z'.repeat(51),'sk Ab_3-9Z','SK Ab_3-9Z SK xxxxx','SK bad!xx','SK']){const o=await order(Date.now()+7200000,'pending','Ab_3-9Z'),p=payload(o,content);await send(p);assert.equal((await state(o)).status,'pending');}}});
+  }else{
+   await check('E-new-expired-webhook-linked-audit','acceptance',async()=>{const o=await order(Date.now()-10000),p=payload(o);await webhook(p);assert.deepEqual(await state(o),{status:'expired',completed_at:null});await audit(p,o);});
+   await check('E-new-equal-boundary-and-live-boundary','acceptance',async()=>{const now=Date.now();fs.writeFileSync('/tmp/study-clock.json',JSON.stringify({now}));try{for(const delta of [0,3600000]){const o=await order(now+delta),p=payload(o);await webhook(p);assert.equal((await state(o)).status,delta?'completed':'expired');}}finally{fs.writeFileSync('/tmp/study-clock.json','null');}});
+   await check('E-new-cleanup-concurrent-with-expired-webhooks','acceptance',async()=>{for(let i=0;i<3;i++){const o=await order(Date.now()-1000),a=payload(o),b=payload(o);await Promise.all([webhook(a),webhook(b),cron(payload(o))]);assert.deepEqual(await state(o),{status:'expired',completed_at:null});}});
+   await check('E-new-two-live-transaction-responses','acceptance',async()=>{const o=await order(Date.now()+7200000);const values=await Promise.all([webhook(payload(o)),webhook(payload(o))]);assert.ok(values.filter(x=>x.status==='completed').length<=1,'At most one response may report completion');assert.equal((await state(o)).status,'completed');});
+  }
+ }finally{
+  fs.writeFileSync('/tmp/study-clock.json','null');fs.writeFileSync('/tmp/study-sepay-fixture.json','[]');
+  await sql('DELETE FROM payment_transactions WHERE order_id=ANY($1::text[]) OR sepay_transaction_id=ANY($2::text[])',[orders,txids]);await sql('DELETE FROM orders WHERE user_id=$1',[user]);await sql('DELETE FROM plans WHERE id=ANY($1::text[])',[[plan,checkoutPlan]]);await sql('DELETE FROM "user" WHERE id=$1',[user]);await db.end();
+ }
+ const preservation=results.filter(x=>x.kind==='preservation').every(x=>x.pass),acceptance=results.filter(x=>x.kind==='acceptance').every(x=>x.pass);const out={task,completed:true,acceptance,preservation,jointSuccess:acceptance&&preservation,results};fs.writeFileSync(process.env.CHECK_OUTPUT||'/evaluator/final.json',JSON.stringify(out));console.log(JSON.stringify(out));if(!out.jointSuccess)process.exitCode=1;
+}
+main().catch(e=>{console.error(e);process.exitCode=2;});

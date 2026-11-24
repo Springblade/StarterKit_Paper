@@ -1,0 +1,82 @@
+{
+  "DP02/S0V0": {
+    "passed": true,
+    "task": "DP02",
+    "cell": "S0V0",
+    "kind": "reference-pipeline-rehearsal-no-model",
+    "account_credentials_supplied": false,
+    "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+    "package_manifest_sha256": "9d607ec44b57f8257ac38836d30244e81f2686dd93776eb29c9c2d9f7f7e5c04",
+    "folder": "rehearsal/DP02/S0V0"
+  },
+  "DP02/S0V1": {
+    "passed": true,
+    "task": "DP02",
+    "cell": "S0V1",
+    "kind": "reference-pipeline-rehearsal-no-model",
+    "account_credentials_supplied": false,
+    "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+    "package_manifest_sha256": "4d840a851b9a979c29dcb9dbf7e13d0f281b1d23488d2a08e53417bd4e9ac74f",
+    "folder": "rehearsal/DP02/S0V1"
+  },
+  "DP02/S1V0": {
+    "passed": true,
+    "task": "DP02",
+    "cell": "S1V0",
+    "kind": "reference-pipeline-rehearsal-no-model",
+    "account_credentials_supplied": false,
+    "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+    "package_manifest_sha256": "96ade5e5772870547788dafc1733a3a31b0c8bc50f9aaa7384f2c5e2127ae136",
+    "folder": "rehearsal/DP02/S1V0"
+  },
+  "DP02/S1V1": {
+    "passed": true,
+    "task": "DP02",
+    "cell": "S1V1",
+    "kind": "reference-pipeline-rehearsal-no-model",
+    "account_credentials_supplied": false,
+    "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+    "package_manifest_sha256": "45816f774284fabb4a41e75222897cbbac4f64a31f774b7f660e6389dcd76671",
+    "folder": "rehearsal/DP02/S1V1"
+  },
+  "DP03/S0V0": {
+    "passed": true,
+    "task": "DP03",
+    "cell": "S0V0",
+    "kind": "reference-pipeline-rehearsal-no-model",
+    "account_credentials_supplied": false,
+    "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+    "package_manifest_sha256": "82f461269a8c1bdd96835c07bfae87d9c4e64b6fc72e4189ad8adbf7b0162a3c",
+    "folder": "rehearsal/DP03/S0V0"
+  },
+  "DP03/S0V1": {
+    "passed": true,
+    "task": "DP03",
+    "cell": "S0V1",
+    "kind": "reference-pipeline-rehearsal-no-model",
+    "account_credentials_supplied": false,
+    "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+    "package_manifest_sha256": "27a171407de057a2bef22f74bc6db667b349a71634364e01c75e3279806ccd58",
+    "folder": "rehearsal/DP03/S0V1"
+  },
+  "DP03/S1V0": {
+    "passed": true,
+    "task": "DP03",
+    "cell": "S1V0",
+    "kind": "reference-pipeline-rehearsal-no-model",
+    "account_credentials_supplied": false,
+    "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+    "package_manifest_sha256": "06d9073bbab3edef74149d45fb9235816d3a3922d20e561edab0c922270f13c2",
+    "folder": "rehearsal/DP03/S1V0"
+  },
+  "DP03/S1V1": {
+    "passed": true,
+    "task": "DP03",
+    "cell": "S1V1",
+    "kind": "reference-pipeline-rehearsal-no-model",
+    "account_credentials_supplied": false,
+    "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+    "package_manifest_sha256": "f5524a3f37063e1b2fc5b59198f33ca17404f524d343a55c106d496c945f11c3",
+    "folder": "rehearsal/DP03/S1V1"
+  }
+}

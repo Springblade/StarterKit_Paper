@@ -1,0 +1,27 @@
+{
+  "layout": "feature",
+  "phase": "reference",
+  "task": "B03",
+  "model_calls": 0,
+  "started": "2026-11-15T10:04:49Z",
+  "runner_sha256": "0f5c091b63ef9e7516007896afead9a1b4c1ee17cdac4faaf9317cbcd451e5ca",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "passed",
+  "db_volumes": [
+    "28585e293a9e8883ca401dbed246f119af7c614fd0de507854b701de7187535c"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 328ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "solution_files": {
+    "src/app/dashboard/billing/page.tsx": "b7d6ed93029f93742c347c26c3c37da45c9f9c0128ce0bb22d10514bfab2d5bc",
+    "src/app/dashboard/billing/history/page.tsx": "16d121cb2b7d739a5817a92f49a468615569e5ae8e06a7ce40e61484e4f6e710"
+  },
+  "probe_sha256": "bdd3bd4e8576da44cd702b3dcde4f05880110f0e3662c67cf95f256d66b626bf",
+  "typecheck_exit": 0,
+  "probe_exit": 0,
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T10:05:42Z"
+}

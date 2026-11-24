@@ -1,0 +1,247 @@
+{
+  "query": "\"github.com/nextjs/saas-starter\" in:readme fork:false",
+  "url": "https://api.github.com/search/repositories?q=%22github.com%2Fnextjs%2Fsaas-starter%22+in%3Areadme+fork%3Afalse&sort=stars&per_page=30",
+  "total_count": 592,
+  "items": [
+    {
+      "full_name": "nextjs/saas-starter",
+      "description": "Get started quickly with Next.js, Postgres, Stripe, and shadcn/ui.",
+      "stargazers_count": 16253,
+      "html_url": "https://github.com/nextjs/saas-starter",
+      "fork": false,
+      "pushed_at": "2025-12-11T22:35:37Z"
+    },
+    {
+      "full_name": "vercel/nextjs-subscription-payments",
+      "description": "Clone, deploy, and fully customize a SaaS subscription application with Next.js.",
+      "stargazers_count": 7708,
+      "html_url": "https://github.com/vercel/nextjs-subscription-payments",
+      "fork": false,
+      "pushed_at": "2025-01-23T15:21:43Z"
+    },
+    {
+      "full_name": "noel319/Saas_demo",
+      "description": "SaaS Demo Project.",
+      "stargazers_count": 17,
+      "html_url": "https://github.com/noel319/Saas_demo",
+      "fork": false,
+      "pushed_at": "2025-03-17T01:12:56Z"
+    },
+    {
+      "full_name": "Luxuzhou/nextjs-saas-shipkit",
+      "description": null,
+      "stargazers_count": 12,
+      "html_url": "https://github.com/Luxuzhou/nextjs-saas-shipkit",
+      "fork": false,
+      "pushed_at": "2026-03-11T00:07:09Z"
+    },
+    {
+      "full_name": "fsdev0108/SAAS-starter",
+      "description": null,
+      "stargazers_count": 11,
+      "html_url": "https://github.com/fsdev0108/SAAS-starter",
+      "fork": false,
+      "pushed_at": "2025-10-26T12:53:18Z"
+    },
+    {
+      "full_name": "AnwarAndargie/WorkForceSyncSaas",
+      "description": null,
+      "stargazers_count": 4,
+      "html_url": "https://github.com/AnwarAndargie/WorkForceSyncSaas",
+      "fork": false,
+      "pushed_at": "2025-09-06T19:41:47Z"
+    },
+    {
+      "full_name": "Sudhanshu-Bharti/sqeulizer",
+      "description": null,
+      "stargazers_count": 3,
+      "html_url": "https://github.com/Sudhanshu-Bharti/sqeulizer",
+      "fork": false,
+      "pushed_at": "2025-07-07T06:43:30Z"
+    },
+    {
+      "full_name": "Rhysmalcolm13/aremcee-main",
+      "description": null,
+      "stargazers_count": 3,
+      "html_url": "https://github.com/Rhysmalcolm13/aremcee-main",
+      "fork": false,
+      "pushed_at": "2025-04-10T04:03:05Z"
+    },
+    {
+      "full_name": "ahmhabib01/next-js-saas-starter",
+      "description": null,
+      "stargazers_count": 2,
+      "html_url": "https://github.com/ahmhabib01/next-js-saas-starter",
+      "fork": false,
+      "pushed_at": "2025-10-17T13:54:48Z"
+    },
+    {
+      "full_name": "develper21/payment-getway",
+      "description": "Next.js TypeScript subscription starter integrating Stripe and Supabase. Features secure auth, webhook routes, DB migrations, reusable UI components, and account & pricing flows\u2014ideal for launching subscription-based apps quickly.",
+      "stargazers_count": 2,
+      "html_url": "https://github.com/develper21/payment-getway",
+      "fork": false,
+      "pushed_at": "2026-11-07T10:09:19Z"
+    },
+    {
+      "full_name": "johncarlo177/Next-Supabase.Payment-subscription",
+      "description": null,
+      "stargazers_count": 2,
+      "html_url": "https://github.com/johncarlo177/Next-Supabase.Payment-subscription",
+      "fork": false,
+      "pushed_at": "2025-09-15T02:26:51Z"
+    },
+    {
+      "full_name": "yohanGithubs/fittrack",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/yohanGithubs/fittrack",
+      "fork": false,
+      "pushed_at": "2025-02-01T04:04:49Z"
+    },
+    {
+      "full_name": "lucy-sees/next-saas-starter",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/lucy-sees/next-saas-starter",
+      "fork": false,
+      "pushed_at": "2025-01-26T19:26:31Z"
+    },
+    {
+      "full_name": "Huangdaxia-del/tutor-website",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/Huangdaxia-del/tutor-website",
+      "fork": false,
+      "pushed_at": "2026-07-03T08:42:48Z"
+    },
+    {
+      "full_name": "reyaansharora26/next-js-saas-starter",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/reyaansharora26/next-js-saas-starter",
+      "fork": false,
+      "pushed_at": "2025-09-13T14:04:06Z"
+    },
+    {
+      "full_name": "iZoom786/saas",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/iZoom786/saas",
+      "fork": false,
+      "pushed_at": "2025-10-28T01:33:07Z"
+    },
+    {
+      "full_name": "MananPatel-1/rogueplay",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/MananPatel-1/rogueplay",
+      "fork": false,
+      "pushed_at": "2026-01-17T09:48:49Z"
+    },
+    {
+      "full_name": "itsmdshahin/ai-resume-saas",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/itsmdshahin/ai-resume-saas",
+      "fork": false,
+      "pushed_at": "2025-07-01T15:42:20Z"
+    },
+    {
+      "full_name": "quickliqi/contractor-generator",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/quickliqi/contractor-generator",
+      "fork": false,
+      "pushed_at": "2025-09-02T22:01:27Z"
+    },
+    {
+      "full_name": "oussama-boukhachem/agentic-cicd-demo",
+      "description": "CI/CD demo: Next.js SaaS starter, Docker, GHCR, agentic E2E test stage",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/oussama-boukhachem/agentic-cicd-demo",
+      "fork": false,
+      "pushed_at": "2026-10-29T15:04:11Z"
+    },
+    {
+      "full_name": "ngoiyaeric/Stripe-credits-subs",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/ngoiyaeric/Stripe-credits-subs",
+      "fork": false,
+      "pushed_at": "2025-07-29T14:35:57Z"
+    },
+    {
+      "full_name": "PhuongDongIOT/checkin-checkout",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/PhuongDongIOT/checkin-checkout",
+      "fork": false,
+      "pushed_at": "2025-07-07T06:59:33Z"
+    },
+    {
+      "full_name": "iZoom786/saas-starter",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/iZoom786/saas-starter",
+      "fork": false,
+      "pushed_at": "2025-10-26T19:45:48Z"
+    },
+    {
+      "full_name": "bylava995/saas-starter",
+      "description": "Get started quickly with Next.js, Postgres, Stripe, and shadcn/ui.",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/bylava995/saas-starter",
+      "fork": false,
+      "pushed_at": "2025-07-23T07:17:12Z"
+    },
+    {
+      "full_name": "Acadbek/stanstore",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/Acadbek/stanstore",
+      "fork": false,
+      "pushed_at": "2026-04-27T04:53:37Z"
+    },
+    {
+      "full_name": "GeoSelect/GeoSelect_GH-saas-starter",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/GeoSelect/GeoSelect_GH-saas-starter",
+      "fork": false,
+      "pushed_at": "2026-01-13T22:02:38Z"
+    },
+    {
+      "full_name": "silverthreadlabs/bloggen-auth-starter-supabase-",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/silverthreadlabs/bloggen-auth-starter-supabase-",
+      "fork": false,
+      "pushed_at": "2025-07-10T13:20:57Z"
+    },
+    {
+      "full_name": "Frank-Fan-AU/CL-Master",
+      "description": "cover letter master",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/Frank-Fan-AU/CL-Master",
+      "fork": false,
+      "pushed_at": "2025-06-15T06:31:37Z"
+    },
+    {
+      "full_name": "ilusion-dev/buyplans",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/ilusion-dev/buyplans",
+      "fork": false,
+      "pushed_at": "2025-04-08T22:27:18Z"
+    },
+    {
+      "full_name": "DreamSky-dev/next.js-payment",
+      "description": null,
+      "stargazers_count": 1,
+      "html_url": "https://github.com/DreamSky-dev/next.js-payment",
+      "fork": false,
+      "pushed_at": "2025-07-02T09:15:37Z"
+    }
+  ]
+}

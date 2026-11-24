@@ -1,0 +1,8 @@
+{"id":"A01-A03-baseline-ui-gap","pass":true,"seconds":7.306,"profileFormMissing":true,"currentPasswordFormMissing":true,"backendNotClaimedMissing":true}
+{"id":"B03-baseline-resume-missing","pass":true,"seconds":7.956,"resumeQueryIgnored":true,"orderUnchanged":true}
+{"id":"B04-baseline-receipt-missing","pass":true,"seconds":0.99,"receiptRouteStatus":404}
+{"id":"U02-U03-baseline-ui-gap","pass":true,"seconds":1.928,"roleControlsMissing":true,"detailRouteStatus":404}
+{"id":"U03-existing-role-api-denies-ordinary-anonymous","pass":true,"seconds":0.069}
+{"id":"U03-promotion-demotion-fresh-and-cached-session","pass":true,"seconds":4.495,"oldCachedReadRole":"admin","currentDBRole":"user","oldCachedWriteStatus":403,"freshLoginAdminDataDenied":true}
+{"id":"A03-existing-password-api-authentication-and-preservation","pass":true,"seconds":0.557,"wrongCurrentRejected":true,"oldPasswordRejected":true,"newPasswordWorks":true,"identityOrdersPreserved":true}
+{"id":"baseline-role-api-self-demotion-scope","pass":true,"seconds":0.023,"status":200,"selfDemotionAllowed":true,"interpretation":"Existing API behavior only; new UI must enforce its own declared rule without repairing baseline"}

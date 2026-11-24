@@ -1,0 +1,25 @@
+{
+  "phase": "alternative",
+  "modelCalls": 0,
+  "completed": true,
+  "pass": true,
+  "baselineModified": false,
+  "browserAndRealDB": true,
+  "results": [
+    {
+      "id": "B03-browser-resume-same-order",
+      "pass": true,
+      "seconds": 20.239
+    },
+    {
+      "id": "B03-foreign-expired-and-terminal-denial",
+      "pass": true,
+      "seconds": 4.907
+    },
+    {
+      "id": "B03-existing-purchase-status-and-cancel",
+      "pass": true,
+      "seconds": 3.595
+    }
+  ]
+}

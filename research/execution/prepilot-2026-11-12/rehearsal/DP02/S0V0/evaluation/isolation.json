@@ -1,0 +1,9 @@
+{
+  "no_host_mounts": true,
+  "no_docker_socket": true,
+  "private_pid_namespace": true,
+  "fresh_single_commit": true,
+  "image_id": "sha256:7f1b8dd2822186013546c8c142df009eecd485cbfa6c9b7802ea26e3e801fe49",
+  "network": "smartkit-dry-dp02-s0v0-score-net",
+  "dev_bundler": "webpack"
+}

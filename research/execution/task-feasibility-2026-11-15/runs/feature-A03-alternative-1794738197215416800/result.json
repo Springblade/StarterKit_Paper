@@ -1,0 +1,20 @@
+{
+  "phase": "alternative",
+  "modelCalls": 0,
+  "completed": true,
+  "pass": true,
+  "baselineModified": false,
+  "browserAndRealDB": true,
+  "results": [
+    {
+      "id": "A03-server-invalid-input-preserves-credential",
+      "pass": true,
+      "seconds": 0.762
+    },
+    {
+      "id": "A03-browser-change-and-signin",
+      "pass": true,
+      "seconds": 9.758
+    }
+  ]
+}

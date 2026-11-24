@@ -1,0 +1,3 @@
+Implemented the status filter on the payment history page. The GET form preserves valid selections; missing, empty, invalid, and repeated `status` parameters show all of the current user’s orders. A filter with no matches shows a message and a link to all orders. Existing ordering and order details are preserved.
+
+Checks passed: `pnpm check-types`, `pnpm test:run` (14 tests), `pnpm test:behavior` (10 tests), and `pnpm build`. The build reported warnings that Google auth credentials are not configured.

@@ -1,0 +1,87 @@
+{
+  "method": "app-server model/list + account/rateLimits/read; no thread or turn created",
+  "checked": "2026-11-16T07:31:00Z",
+  "target": "gpt-6-luna",
+  "matched_models": [
+    {
+      "id": "gpt-6-luna",
+      "model": "gpt-6-luna",
+      "upgrade": null,
+      "upgradeInfo": null,
+      "availabilityNux": null,
+      "displayName": "GPT-6-Luna",
+      "description": "Fast and affordable model for easier tasks.",
+      "modelSpecialty": null,
+      "hidden": false,
+      "supportedReasoningEfforts": [
+        {
+          "reasoningEffort": "low",
+          "description": "Fast responses with lighter reasoning"
+        },
+        {
+          "reasoningEffort": "medium",
+          "description": "Balances speed and reasoning depth for everyday tasks"
+        },
+        {
+          "reasoningEffort": "high",
+          "description": "Greater reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "xhigh",
+          "description": "Extra high reasoning depth for complex problems"
+        },
+        {
+          "reasoningEffort": "max",
+          "description": "Maximum reasoning depth for the hardest problems"
+        }
+      ],
+      "defaultReasoningEffort": "medium",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "supportsPersonality": false,
+      "multiAgentVersion": "v2",
+      "additionalSpeedTiers": [
+        "fast"
+      ],
+      "serviceTiers": [
+        {
+          "id": "priority",
+          "name": "Fast",
+          "description": "1.5x speed"
+        }
+      ],
+      "defaultServiceTier": null,
+      "availableAccessPrograms": {
+        "cyber": [
+          "standard"
+        ]
+      },
+      "isDefault": false
+    }
+  ],
+  "error": null,
+  "rate_limits": {
+    "codex": {
+      "limitId": "codex",
+      "normalModelSlug": null,
+      "primary": {
+        "usedPercent": 40,
+        "windowDurationMins": 300,
+        "resetsAt": 1794827428
+      },
+      "secondary": {
+        "usedPercent": 6,
+        "windowDurationMins": 10080,
+        "resetsAt": 1795414228
+      },
+      "rateLimitReachedType": null,
+      "spendControlReached": false
+    }
+  },
+  "rate_limit_error": null,
+  "model_calls": 0,
+  "documentation": "https://learn.chatgpt.com/docs/app-server",
+  "rate_limits_checked": "2026-11-16T07:30:13Z"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "variant": "ignore-filter",
+    "exit_code": 1,
+    "expected_pass": false,
+    "assertion_failure": true,
+    "expected_result_observed": true
+  },
+  {
+    "variant": "remove-owner",
+    "exit_code": 1,
+    "expected_pass": false,
+    "assertion_failure": true,
+    "expected_result_observed": true
+  },
+  {
+    "variant": "wrong-status",
+    "exit_code": 1,
+    "expected_pass": false,
+    "assertion_failure": true,
+    "expected_result_observed": true
+  },
+  {
+    "variant": "correct-in-memory-filter",
+    "exit_code": 0,
+    "expected_pass": true,
+    "assertion_failure": false,
+    "expected_result_observed": true
+  }
+]

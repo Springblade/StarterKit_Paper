@@ -1,0 +1,800 @@
+{
+  "task": "U02",
+  "layout": "feature",
+  "variant": "baseline",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "567a869199c5435e61d3a0cfa4083b0f0f2a6b2b3be4e338ee22df143ea476e6",
+    "hidden": "535f896b10753fec475eb8a514c422b70c4426bf8e81d2fd38a98e9d50df4f47",
+    "visible": "af48f9df6720b3b80d67a4376c470cef610470a70aa8da334ed269b84999b9c5",
+    "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": null,
+    "visible_rounds": 20,
+    "hidden_rounds": 3,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\U02-feature-baseline-V20-E3-B1-1794807483225846000",
+  "visible": [
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 5.473959788,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 3.214639823
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.9404763929999994
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7497324709999994
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016106899999995222
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5385847530000003,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.578421124
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7802042309999997
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7206463130000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0014597709999998188
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 4.479387277000001,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.6295601899999999
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7682337750000001
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7189210470000003
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.003022949000000153
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5923346519999995,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.6042183369999998
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7891457139999998
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.72939102
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.001416541000000052
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.532529793,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.591921648
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7708527640000002
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7226287440000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016406460000002881
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.608594392,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.659845464
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7617592110000001
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7206667050000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.001442435999999816
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5642260759999997,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.591080477
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7827786420000002
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.727467283
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0017095130000002428
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.496243837,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.554935419
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.761408382
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7227027130000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0024473360000001774
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.596453901,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.643169094
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7621126640000002
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7311881740000004
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0022162929999999504
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.507311064,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.5523680819999999
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.775114955
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7215482259999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0018867450000002463
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.53570634,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.5523910370000003
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7747813340000003
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7366960280000003
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.001351545999999871
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5802076539999996,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.5878390739999997
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.776856808
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7230718899999997
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.003943801000000349
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5405711230000003,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.5732421859999999
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7650781279999996
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7269370520000003
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016431000000002314
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.567587002,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.6204081229999998
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7601075409999999
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7262484509999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0018435990000002676
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5643518280000004,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.560466181
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7610386670000002
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7228606970000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0018154780000004392
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.518060171,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.5607345479999999
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7685937910000002
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7376470240000004
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0015928050000002258
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5241030290000004,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.568030909
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7658939450000003
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7212454120000003
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0015104550000000928
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5135844670000003,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.566306215
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7665530039999999
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7219182049999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016263460000000122
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5767166770000003,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.5771650799999997
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.779530753
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7425602570000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0019807889999997313
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.5461528369999997,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.5596787140000001
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7795698179999999
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7228490099999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016439040000000205
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "U02",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "assessable": true,
+      "results": [
+        {
+          "id": "EU-old-directory-access-no-token",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EU2-new-discover-detail-session-records",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Detail link is missing",
+          "assessable": true
+        },
+        {
+          "id": "EU2-new-direct-permission-and-missing-target",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Detail path not discoverable",
+          "assessable": true
+        },
+        {
+          "id": "EU-old-protected-fields-and-order-state",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "U02",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "assessable": true,
+      "results": [
+        {
+          "id": "EU-old-directory-access-no-token",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EU2-new-discover-detail-session-records",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Detail link is missing",
+          "assessable": true
+        },
+        {
+          "id": "EU2-new-direct-permission-and-missing-target",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Detail path not discoverable",
+          "assessable": true
+        },
+        {
+          "id": "EU-old-protected-fields-and-order-state",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "U02",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "assessable": true,
+      "results": [
+        {
+          "id": "EU-old-directory-access-no-token",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EU2-new-discover-detail-session-records",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Detail link is missing",
+          "assessable": true
+        },
+        {
+          "id": "EU2-new-direct-permission-and-missing-target",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Detail path not discoverable",
+          "assessable": true
+        },
+        {
+          "id": "EU-old-protected-fields-and-order-state",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

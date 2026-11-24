@@ -1,0 +1,18 @@
+[
+  {
+    "container": "smartkit-admin-preserve-layered-119800-db",
+    "volumes": [
+      "ff025acf99eda3b6832f47cd68de00644f79817612ba3cea7162ef003ba007a4"
+    ],
+    "container_removed": true,
+    "volumes_removed": true
+  },
+  {
+    "container": "smartkit-replacement-layered-3791300-db",
+    "volumes": [
+      "8a39b08cf3e7ee2b99b9e5c837782b0ac7fcc63b6119cd0c5a3b3fe9959ed99a"
+    ],
+    "container_removed": true,
+    "volumes_removed": true
+  }
+]

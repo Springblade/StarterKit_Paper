@@ -1,0 +1,360 @@
+{
+  "status": "candidate_schedule",
+  "model_calls": 0,
+  "qualified_cases": 72,
+  "revisions": {
+    "nextjs-saas-starter": "6e33e58b1e553a41fe22e6b941a7229a002de361",
+    "makerkit-lite": "9ff430df9c58516add0136bd01ed800ce551675e"
+  },
+  "seed": 20261119,
+  "evidence": {
+    "nextjs-cases.json": "c711fe8ffffce09b1bece3993013cfae33ced144ab70acf5268e0a94a1e8198c",
+    "nextjs-profile.json": "1dc9af4ac3f0de4f6cc0bd16eed641c1150e43945ccd1ccb01da027f424b94ce",
+    "makerkit-cases.json": "1fd88656ecbaf39dfc3252384ac64c5a19322ed2cc2edd0e6bc8e3e573bc90cd",
+    "nextjs-rehearsal.json": "e7a7a62eb989dabdae8a26a5568888cf53b6e1d54638abde57d24050dd08d1b0",
+    "makerkit-rehearsal.json": "f26d007ddc568a2694ac2ae4eb8cfccd7fe2d5a8c063ed735a7003ceca7d47fc",
+    "makerkit-type-audit.json": "56a57dc6d65bb128a2c04fb1fa45aaac2b10d84e92e9f241e979a6acb9ae4d0f",
+    "task-cards.md": "0d5ce0eec5f3461d1c7fe6a29e1ebf2baebf14bc39ecc46128c8d316c673148a",
+    "study_basic.py": "a8dab8e01e2a420f4b8de2cf78c8610a7bfb5fc07746017d3ff8dbe50dd19a00",
+    "study_preservation.py": "31dc838d2c28b88096114a7acb59f40d18cae5f9923588eb89778cc0480aa35b",
+    "package-audit.json": "16639d1730a5927d49f320fa98fcbac8d429055cf9fc64eb6384448639445e62"
+  },
+  "slots": [
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "profile",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "profile",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "profile",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "profile",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "profile",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "profile",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "profile",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "profile",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "profile",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "profile",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "profile",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "profile",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "signout",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "signout",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "signout",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "signout",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "signout",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "signout",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "signout",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "signout",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "profile",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "profile",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "profile",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "makerkit-lite",
+      "task": "profile",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "task": "U03",
+  "layout": "feature",
+  "variant": "alternative",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "ead71888993041211d754f3d431122086ed569f6efc31ba562c0932a47cee4cf",
+    "hidden": "535f896b10753fec475eb8a514c422b70c4426bf8e81d2fd38a98e9d50df4f47",
+    "visible": "af48f9df6720b3b80d67a4376c470cef610470a70aa8da334ed269b84999b9c5",
+    "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "139bf79dd6e1becd011433c2aa967ea1c864ece9f2a18bdc4a71de79bef0c5a4",
+    "visible_rounds": 3,
+    "hidden_rounds": 3,
+    "basic": true,
+    "candidate_setup": "pre-overlaid-start-v1"
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\U03-feature-alternative-V3-E3-B1-1794808476567554700",
+  "visible": [
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 5.218476304,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 3.021873334
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.9160958559999994
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.75611305
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016956530000006751
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.559003387,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.575050256
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7828131880000001
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.746335638
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0013689650000001166
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.521372738,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": true,
+          "elapsedSeconds": 1.5813816859999998
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.7689861380000003
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.7179368979999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.001610548000000108
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "U03",
+      "completed": true,
+      "acceptance": true,
+      "preservation": true,
+      "jointSuccess": true,
+      "assessable": true,
+      "results": [
+        {
+          "id": "EU-old-directory-access-no-token",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-browser-promotion-persistence",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-current-authority-and-fresh-session",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-replayed-boundaries-through-real-transport",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU-old-protected-fields-and-order-state",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "U03",
+      "completed": true,
+      "acceptance": true,
+      "preservation": true,
+      "jointSuccess": true,
+      "assessable": true,
+      "results": [
+        {
+          "id": "EU-old-directory-access-no-token",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-browser-promotion-persistence",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-current-authority-and-fresh-session",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-replayed-boundaries-through-real-transport",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU-old-protected-fields-and-order-state",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "U03",
+      "completed": true,
+      "acceptance": true,
+      "preservation": true,
+      "jointSuccess": true,
+      "assessable": true,
+      "results": [
+        {
+          "id": "EU-old-directory-access-no-token",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-browser-promotion-persistence",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-current-authority-and-fresh-session",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-replayed-boundaries-through-real-transport",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU-old-protected-fields-and-order-state",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

@@ -1,0 +1,1 @@
+const fs=require('node:fs'),read=fs.readFileSync;fs.readFileSync=function(path,...args){const data=read.call(this,path,...args);if(String(path).includes('/.next/')&&String(path).endsWith('.json')&&data.length===0)console.error('EMPTY_NEXT_MANIFEST '+path+' '+new Error().stack);return data;};

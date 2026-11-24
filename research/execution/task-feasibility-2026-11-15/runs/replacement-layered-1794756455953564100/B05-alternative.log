@@ -1,0 +1,4 @@
+{"id":"preservation-standard-QR-mixed-case","pass":true}
+{"id":"acceptance-token-grammar","pass":true}
+{"id":"preservation-standard-payment-through-webhook","pass":true}
+{"id":"acceptance-embedded-payment-through-shared-processor","pass":true}

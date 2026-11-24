@@ -1,0 +1,62 @@
+Already up to date
+Done in 380ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (webpack)
+- Local:         http://localhost:3107
+- Network:       http://172.20.0.3:3107
+- Environments: .env
+✓ Ready in 352ms
+
+○ Compiling / ...
+ GET / 200 in 4.7s (next.js: 4.5s, application-code: 178ms)
+○ Compiling /api/sepay/webhook ...
+2026-11-15T15:49:28.697Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+⨯ Error: Failed query: update "orders" set "status" = CASE WHEN "orders"."expires_at" <= $1 THEN 'expired'::order_status ELSE 'completed'::order_status END, "completed_at" = CASE WHEN "orders"."expires_at" <= $2 THEN NULL ELSE $3 END where ("orders"."code" = $4 and "orders"."status" = $5 and "orders"."amount_vnd" = $6) returning "id", "code", "user_id", "plan_id", "amount_vnd", "status", "expires_at", "created_at", "completed_at"
+params: Sun Nov 15 2026 15:49:28 GMT+0000 (Coordinated Universal Time),Sun Nov 15 2026 15:49:28 GMT+0000 (Coordinated Universal Time),Sun Nov 15 2026 15:49:28 GMT+0000 (Coordinated Universal Time),Vis_29570192,pending,42000
+    at async eval (src/features/billing/process-order-completion.ts:38:21)
+    at async POST (src/app/api/sepay/webhook/route.ts:76:18)
+  36 |     const clock = await tx.execute<{now:Date}>(sql`SELECT clock_timestamp() AS now`);
+  37 |     const decisionTime = new Date(clock.rows[0]!.now);
+> 38 |     const updated = await tx.update(orders).set({
+     |                     ^
+  39 |       status: sql`CASE WHEN ${orders.expiresAt} <= ${decisionTime} THEN 'expired'::order_s...
+  40 |       completedAt: sql`CASE WHEN ${orders.expiresAt} <= ${decisionTime} THEN NULL ELSE ${d...
+  41 |     }).where(and(eq(orders.code,orderCode),eq(orders.status,'pending'),eq(orders.amountVnd... {
+  query: `update "orders" set "status" = CASE WHEN "orders"."expires_at" <= $1 THEN 'expired'::order_status ELSE 'completed'::order_status END, "completed_at" = CASE WHEN "orders"."expires_at" <= $2 THEN NULL ELSE $3 END where ("orders"."code" = $4 and "orders"."status" = $5 and "orders"."amount_vnd" = $6) returning "id", "code", "user_id", "plan_id", "amount_vnd", "status", "expires_at", "created_at", "completed_at"`,
+  params: [
+    2026-11-15T15:49:28.762Z,
+    2026-11-15T15:49:28.762Z,
+    2026-11-15T15:49:28.762Z,
+    'Vis_29570192',
+    'pending',
+    '42000'
+  ],
+  [cause]: error: column "completed_at" is of type timestamp without time zone but expression is of type text
+      at async eval (src/features/billing/process-order-completion.ts:38:21)
+      at async POST (src/app/api/sepay/webhook/route.ts:76:18)
+    36 |     const clock = await tx.execute<{now:Date}>(sql`SELECT clock_timestamp() AS now`);
+    37 |     const decisionTime = new Date(clock.rows[0]!.now);
+  > 38 |     const updated = await tx.update(orders).set({
+       |                     ^
+    39 |       status: sql`CASE WHEN ${orders.expiresAt} <= ${decisionTime} THEN 'expired'::order_s...
+    40 |       completedAt: sql`CASE WHEN ${orders.expiresAt} <= ${decisionTime} THEN NULL ELSE ${d...
+    41 |     }).where(and(eq(orders.code,orderCode),eq(orders.status,'pending'),eq(orders.amountVnd... {
+    length: 218,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: 'You will need to rewrite or cast the expression.',
+    position: '152',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_target.c',
+    line: '586',
+    routine: 'transformAssignedExpr'
+  }
+}
+ POST /api/sepay/webhook 500 in 6.9s (next.js: 6.6s, application-code: 290ms)

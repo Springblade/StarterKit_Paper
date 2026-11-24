@@ -1,0 +1,63 @@
+Already up to date
+Done in 332ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (webpack)
+- Local:         http://localhost:3107
+- Network:       http://172.19.0.3:3107
+- Environments: .env
+✓ Ready in 267ms
+
+ GET / 200 in 3.2s (next.js: 3.1s, application-code: 121ms)
+○ Compiling /api/auth/[...all] ...
+2026-11-15T10:05:08.133Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:08.690Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 4.1s (next.js: 4.0s, application-code: 119ms)
+ POST /api/auth/sign-in/email 200 in 438ms (next.js: 8ms, application-code: 431ms)
+2026-11-15T10:05:09.390Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 187ms (next.js: 2ms, application-code: 185ms)
+ POST /api/auth/sign-in/email 200 in 108ms (next.js: 10ms, application-code: 99ms)
+2026-11-15T10:05:10.034Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+○ Compiling proxy ...
+2026-11-15T10:05:14.794Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:15.946Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:16.008Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 1747ms (next.js: 1000ms, proxy.ts: 453ms, application-code: 295ms)
+2026-11-15T10:05:17.291Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+○ Compiling /dashboard/billing ...
+2026-11-15T10:05:24.864Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:24.935Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 8.0s (next.js: 7.4s, proxy.ts: 232ms, application-code: 343ms)
+2026-11-15T10:05:25.980Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:26.145Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:26.157Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ POST /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 361ms (next.js: 1959µs, proxy.ts: 174ms, application-code: 185ms)
+  └─ ƒ checkOrderStatus("a0b04200-5b48-4df5-9139-a6ade84374b1") in 30ms features/billing/actions/check-order-status.ts
+ POST /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 10ms (next.js: 1834µs, proxy.ts: 3ms, application-code: 5ms)
+  └─ ƒ generatePaymentQRAction("F-77b5a6b5-417d-4695-b751-2040402c1078", 95000) in 0ms features/billing/actions/generate-payment-qr.ts
+ GET /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 48ms (next.js: 1848µs, proxy.ts: 3ms, application-code: 43ms)
+ POST /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 16ms (next.js: 1476µs, proxy.ts: 4ms, application-code: 11ms)
+  └─ ƒ checkOrderStatus("a0b04200-5b48-4df5-9139-a6ade84374b1") in 6ms features/billing/actions/check-order-status.ts
+ POST /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 12ms (next.js: 2ms, proxy.ts: 5ms, application-code: 5ms)
+  └─ ƒ generatePaymentQRAction("F-77b5a6b5-417d-4695-b751-2040402c1078", 95000) in 0ms features/billing/actions/generate-payment-qr.ts
+ GET /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 54ms (next.js: 1699µs, proxy.ts: 3ms, application-code: 49ms)
+ GET /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 59ms (next.js: 1406µs, proxy.ts: 4ms, application-code: 54ms)
+ GET /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 46ms (next.js: 1787µs, proxy.ts: 4ms, application-code: 39ms)
+ GET /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 48ms (next.js: 1533µs, proxy.ts: 3ms, application-code: 44ms)
+ GET /dashboard/billing?order=a0b04200-5b48-4df5-9139-a6ade84374b1 200 in 41ms (next.js: 1260µs, proxy.ts: 3ms, application-code: 37ms)
+ GET /dashboard/billing?plan=f162d216-017d-46f0-8b5b-9bfaa166061c 200 in 60ms (next.js: 1503µs, proxy.ts: 3ms, application-code: 55ms)
+ POST /dashboard/billing?plan=f162d216-017d-46f0-8b5b-9bfaa166061c 200 in 15ms (next.js: 1650µs, proxy.ts: 3ms, application-code: 10ms)
+  └─ ƒ checkOrderStatus("409fb519-ccda-453d-8e29-4ed032f67dbd") in 6ms features/billing/actions/check-order-status.ts
+ POST /dashboard/billing?plan=f162d216-017d-46f0-8b5b-9bfaa166061c 200 in 9ms (next.js: 1545µs, proxy.ts: 3ms, application-code: 4ms)
+  └─ ƒ generatePaymentQRAction("-nulxgNN", 95000) in 0ms features/billing/actions/generate-payment-qr.ts
+2026-11-15T10:05:35.001Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:35.747Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:35.767Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/409fb519-ccda-453d-8e29-4ed032f67dbd/status 200 in 1770ms (next.js: 1738ms, application-code: 32ms)
+ GET /api/orders/409fb519-ccda-453d-8e29-4ed032f67dbd/status 404 in 23ms (next.js: 14ms, application-code: 9ms)
+2026-11-15T10:05:36.035Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:05:36.038Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ POST /dashboard/billing?plan=f162d216-017d-46f0-8b5b-9bfaa166061c 200 in 274ms (next.js: 26ms, proxy.ts: 4ms, application-code: 244ms)
+  └─ ƒ cancelOrder("409fb519-ccda-453d-8e29-4ed032f67dbd") in 24ms features/billing/actions/cancel-order.ts
+ GET /dashboard/billing 200 in 12ms (next.js: 2ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /dashboard/billing 200 in 52ms (next.js: 1813µs, proxy.ts: 5ms, application-code: 45ms)
+ GET /dashboard/billing 200 in 63ms (next.js: 15ms, proxy.ts: 5ms, application-code: 43ms)
+2026-11-15T10:05:36.541Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret

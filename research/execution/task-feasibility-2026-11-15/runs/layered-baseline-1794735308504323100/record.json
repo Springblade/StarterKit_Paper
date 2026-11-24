@@ -1,0 +1,20 @@
+{
+  "layout": "layered",
+  "phase": "baseline",
+  "model_calls": 0,
+  "started": "2026-11-15T09:35:08Z",
+  "runner_sha256": "041c8dd706b35acf4910c31f4e846ea296f26d5903b5f42d31e995ff6f7abfe8",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "passed",
+  "db_volumes": [
+    "c394d854d63fff43252b7048847f57f36ccd69448e1c0a5abaf6a5d765139c25"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 329ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "probe_exit": 0,
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T09:35:53Z"
+}

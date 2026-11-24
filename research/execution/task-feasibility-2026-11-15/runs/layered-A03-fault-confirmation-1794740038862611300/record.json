@@ -1,0 +1,28 @@
+{
+  "layout": "layered",
+  "phase": "fault-confirmation",
+  "task": "A03",
+  "model_calls": 0,
+  "started": "2026-11-15T10:53:58Z",
+  "runner_sha256": "3436e522f85ca1f949a41fdba34241585933b55eca675955a71218568d1a990f",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "detected",
+  "db_volumes": [
+    "4327f7b2107a4abf9a3a2cea69049fd9abe4f6fcd0e854037756f463d25e0fce"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 368ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "solution_files": {
+    "src/app/dashboard/settings/page.tsx": "dcf9698723bba19c16e407f4cb8d80b1efdf02e3fc7614be2c8c66a2c650fd8e",
+    "src/app/api/profile/password/route.ts": "cfa7debda20cccd16b61f61472d0be6271c5cc9240f75534a23011d1ec734abb"
+  },
+  "probe_sha256": "7c6bdd4f0e5dbe59eeafd57ab030e28e1ad0ae391c157bb39f0659b8c4de60b7",
+  "typecheck_exit": 0,
+  "probe_exit": 1,
+  "expected_failure": "A03-server-invalid-input-preserves-credential",
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T10:55:06Z"
+}

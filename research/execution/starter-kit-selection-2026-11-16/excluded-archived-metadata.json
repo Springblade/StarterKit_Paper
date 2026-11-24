@@ -1,0 +1,15 @@
+{
+  "full_name": "vercel/nextjs-subscription-payments",
+  "html_url": "https://github.com/vercel/nextjs-subscription-payments",
+  "stargazers_count": 7708,
+  "forks_count": 1749,
+  "archived": true,
+  "pushed_at": "2025-01-23T15:21:43Z",
+  "license": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  }
+}

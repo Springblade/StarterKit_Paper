@@ -1,0 +1,20 @@
+{
+  "project": "smartkit-proposal",
+  "date": "2026-11-10",
+  "mode": "compose",
+  "status": "supervisor_discussion_draft_exported",
+  "version": "0.1",
+  "language": "vi",
+  "foundation_editorial_score": 8.5,
+  "proposal_editorial_score": 8.5,
+  "score_limitation": "Model writing-review judgment; not scientific certification or acceptance prediction",
+  "deliverables": [
+    "research/smartkit-proposal.md",
+    "research/smartkit-proposal.docx"
+  ],
+  "technical_debts": [
+    "Baseline and task feasibility not experimentally validated",
+    "Artifact-level novelty check still required",
+    "Word content and package checked; pagination not visually rendered"
+  ]
+}

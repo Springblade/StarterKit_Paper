@@ -1,0 +1,28 @@
+{
+  "layout": "layered",
+  "phase": "fault-cached-role",
+  "task": "U03",
+  "model_calls": 0,
+  "started": "2026-11-15T10:57:54Z",
+  "runner_sha256": "3436e522f85ca1f949a41fdba34241585933b55eca675955a71218568d1a990f",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "detected",
+  "db_volumes": [
+    "b08e3caded2be179b0005ca4940f6b61f75981dc1bb3ad8c383033425dec7ae8"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 329ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "solution_files": {
+    "src/app/dashboard/admin/users/page.tsx": "dc44377f499780baf2fefac6eaba799ac8a462c0cf647a3da8bd00259292bfba",
+    "src/app/api/admin/role/route.ts": "a6bd7c6352cd60460e4b85c11a2133e06ed04063ec3534870ccad610db78a206"
+  },
+  "probe_sha256": "7c6bdd4f0e5dbe59eeafd57ab030e28e1ad0ae391c157bb39f0659b8c4de60b7",
+  "typecheck_exit": 0,
+  "probe_exit": 1,
+  "expected_failure": "U03-current-server-role-and-fresh-target-permissions",
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T10:58:34Z"
+}

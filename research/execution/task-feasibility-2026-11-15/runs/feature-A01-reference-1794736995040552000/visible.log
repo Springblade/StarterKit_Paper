@@ -1,0 +1,4 @@
+Already up to date
+Done in 329ms using pnpm v11.7.0
+$ node scripts/check-preservation.cjs
+{"task":"DP03","completed":true,"pass":true,"browser":"Chromium / Playwright 1.58.2","elapsedSeconds":3.485460208,"results":[{"id":"VP-A1-existing-update-only-caller","pass":true,"elapsedSeconds":0.027063511999999946},{"id":"VP-A2-protected-field-mass-assignment","pass":true,"elapsedSeconds":0.032877771000000056},{"id":"VP-A2-anonymous-existing-write-denied","pass":true,"elapsedSeconds":0.011004019000000085},{"id":"VP-A3-existing-update-and-settings-refresh","pass":true,"elapsedSeconds":0.9940856380000002},{"id":"VP-A4-existing-display-name-is-text","pass":true,"elapsedSeconds":0.9745132659999999},{"id":"VP-A5-settings-requires-authentication","pass":true,"elapsedSeconds":0.9509839769999998},{"id":"VP-identity-and-order-preservation","pass":true,"elapsedSeconds":0.0025380649999997332},{"id":"fixture-cleanup","pass":true}]}

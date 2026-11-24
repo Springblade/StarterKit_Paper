@@ -1,0 +1,530 @@
+[
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "signout",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": false,
+        "retained": false
+      },
+      "cancel": {
+        "prompt": false,
+        "retained": false
+      },
+      "keyboard": {
+        "prompt": false,
+        "retained": false
+      }
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "signout",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": true,
+        "retained": false
+      },
+      "cancel": {
+        "prompt": true,
+        "retained": true
+      },
+      "keyboard": {
+        "prompt": true,
+        "retained": true
+      }
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "signout",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": true,
+        "retained": true
+      },
+      "cancel": {
+        "prompt": true,
+        "retained": true
+      },
+      "keyboard": {
+        "prompt": true,
+        "retained": true
+      }
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "profile",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "stored_normalized": false,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "profile",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "profile",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": false,
+      "heldout_legacy_name_preserved": false
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "visibility",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "masked": true,
+      "toggle": false
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "visibility",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "masked": true,
+      "toggle": true
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 1,
+    "task": "visibility",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "masked": false,
+      "toggle": true
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "signout",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": false,
+        "retained": false
+      },
+      "cancel": {
+        "prompt": false,
+        "retained": false
+      },
+      "keyboard": {
+        "prompt": false,
+        "retained": false
+      }
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "signout",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": true,
+        "retained": false
+      },
+      "cancel": {
+        "prompt": true,
+        "retained": true
+      },
+      "keyboard": {
+        "prompt": true,
+        "retained": true
+      }
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "signout",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": true,
+        "retained": true
+      },
+      "cancel": {
+        "prompt": true,
+        "retained": true
+      },
+      "keyboard": {
+        "prompt": true,
+        "retained": true
+      }
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "profile",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "stored_normalized": false,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "profile",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "profile",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": false,
+      "heldout_legacy_name_preserved": false
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "visibility",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "masked": true,
+      "toggle": false
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "visibility",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "masked": true,
+      "toggle": true
+    }
+  },
+  {
+    "layout": 0,
+    "repeat": 2,
+    "task": "visibility",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "masked": false,
+      "toggle": true
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "signout",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": false,
+        "retained": false
+      },
+      "cancel": {
+        "prompt": false,
+        "retained": false
+      },
+      "keyboard": {
+        "prompt": false,
+        "retained": false
+      }
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "signout",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": true,
+        "retained": false
+      },
+      "cancel": {
+        "prompt": true,
+        "retained": true
+      },
+      "keyboard": {
+        "prompt": true,
+        "retained": true
+      }
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "signout",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": true,
+        "retained": true
+      },
+      "cancel": {
+        "prompt": true,
+        "retained": true
+      },
+      "keyboard": {
+        "prompt": true,
+        "retained": true
+      }
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "profile",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "stored_normalized": false,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "profile",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "profile",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": false,
+      "heldout_legacy_name_preserved": false
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "visibility",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "masked": true,
+      "toggle": false
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "visibility",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "masked": true,
+      "toggle": true
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "visibility",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "masked": false,
+      "toggle": true
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "signout",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": false,
+        "retained": false
+      },
+      "cancel": {
+        "prompt": false,
+        "retained": false
+      },
+      "keyboard": {
+        "prompt": false,
+        "retained": false
+      }
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "signout",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": true,
+        "retained": false
+      },
+      "cancel": {
+        "prompt": true,
+        "retained": true
+      },
+      "keyboard": {
+        "prompt": true,
+        "retained": true
+      }
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "signout",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "confirm": {
+        "prompt": true,
+        "retained": true
+      },
+      "cancel": {
+        "prompt": true,
+        "retained": true
+      },
+      "keyboard": {
+        "prompt": true,
+        "retained": true
+      }
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "profile",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "stored_normalized": false,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "profile",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "profile",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": false,
+      "heldout_legacy_name_preserved": false
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "visibility",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "masked": true,
+      "toggle": false
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "visibility",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "masked": true,
+      "toggle": true
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 2,
+    "task": "visibility",
+    "variant": "regression",
+    "basic": true,
+    "observed": {
+      "masked": false,
+      "toggle": true
+    }
+  }
+]

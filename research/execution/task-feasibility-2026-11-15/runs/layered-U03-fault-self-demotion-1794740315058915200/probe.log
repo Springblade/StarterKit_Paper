@@ -1,0 +1,3 @@
+{"id":"U03-browser-change-role","pass":true,"seconds":13.474}
+{"id":"U03-server-boundaries","pass":false,"errorClass":"AssertionError","location":"at /evaluator/probe.cjs:34:317","seconds":0.049}
+{"id":"U03-current-server-role-and-fresh-target-permissions","pass":false,"errorClass":"AssertionError","location":"at /evaluator/probe.cjs:36:42","seconds":0.017}

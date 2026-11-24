@@ -1,0 +1,29 @@
+{
+  "cell": "S1V0",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "speed": "standard-default",
+  "status": "complete",
+  "started": "2026-11-11T04:19:42Z",
+  "limit_seconds": 900,
+  "model_started": "2026-11-11T04:19:56Z",
+  "elapsed_seconds": 101.61,
+  "returncode": 0,
+  "timeout": false,
+  "model_finished": "2026-11-11T04:21:37Z",
+  "completed_turns": 1,
+  "usage_events": [
+    {
+      "input_tokens": 306198,
+      "cached_input_tokens": 271744,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3887,
+      "reasoning_output_tokens": 1075
+    }
+  ],
+  "cli_version": "codex-cli 0.166.0",
+  "acceptance": true,
+  "preservation": true,
+  "joint_success": true,
+  "finished": "2026-11-11T04:22:10Z"
+}

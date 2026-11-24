@@ -1,0 +1,15 @@
+Already up to date
+Done in 96ms using pnpm v11.7.0
+$ vitest run
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.11 C:/Users/wayad/Documents/Paper/research/SmartKit
+
+
+ Test Files  4 passed (4)
+      Tests  14 passed (14)
+   Start at  16:06:25
+   Duration  5.19s (transform 494ms, setup 3.80s, import 1.03s, tests 209ms, environment 14.07s)
+

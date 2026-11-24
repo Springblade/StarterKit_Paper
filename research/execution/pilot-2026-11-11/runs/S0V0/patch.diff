@@ -1,0 +1,130 @@
+diff --git a/src/app/dashboard/billing/history/page.tsx b/src/app/dashboard/billing/history/page.tsx
+index 80b260d..96d8c5f 100755
+--- a/src/app/dashboard/billing/history/page.tsx
++++ b/src/app/dashboard/billing/history/page.tsx
+@@ -1,17 +1,24 @@
+-import { desc, eq } from 'drizzle-orm';
++import { and, desc, eq } from 'drizzle-orm';
+ import { ArrowLeft, ReceiptText } from 'lucide-react';
+ import Link from 'next/link';
+ import { db } from '@/database/db';
+ import { orders } from '@/database/schema';
+ import { requireAuth } from '@/lib/auth/auth';
+ import { OrderStatusBadge } from '@/components/billing/OrderStatusBadge';
++import { PaymentStatusSchema } from '@/types/billing';
+ 
+ const STRINGS = {
+   pageTitle: 'Payment History',
+   pageSubtitle: 'Review your transactions and invoices',
+   emptyTitle: 'No transactions yet',
+   emptyBody: 'Your transactions will appear here after you purchase a subscription',
++  noFilteredResultsTitle: 'No matching transactions',
++  noFilteredResultsBody: 'There are no transactions with this status.',
+   selectPlan: 'Select a plan',
++  filterLabel: 'Filter by status',
++  applyFilter: 'Apply filter',
++  allStatuses: 'All statuses',
++  showAllOrders: 'Show all orders',
+   tableHeaders: {
+     transactionCode: 'Transaction ID',
+     plan: 'Plan',
+@@ -22,13 +29,32 @@ const STRINGS = {
+   backLink: 'Back',
+ } as const;
+ 
+-export default async function BillingHistoryPage() {
++const STATUS_OPTIONS = [
++  { value: 'pending', label: 'Pending' },
++  { value: 'completed', label: 'Paid' },
++  { value: 'cancelled', label: 'Cancelled' },
++  { value: 'expired', label: 'Expired' },
++] as const;
++
++function parseStatus(value: string | string[] | undefined) {
++  if (typeof value !== 'string') return undefined;
++  const result = PaymentStatusSchema.safeParse(value);
++  return result.success ? result.data : undefined;
++}
++
++export default async function BillingHistoryPage({
++  searchParams,
++}: {
++  searchParams: Promise<{ status?: string | string[] }>;
++}) {
+   const session = await requireAuth();
+   const userId = session.user.id;
++  const { status: rawStatus } = await searchParams;
++  const status = parseStatus(rawStatus);
+ 
+-  // Get all user orders
++  // Get this user's orders, optionally filtered by a valid status.
+   const userOrders = await db.query.orders.findMany({
+-    where: eq(orders.userId, userId),
++    where: and(eq(orders.userId, userId), status ? eq(orders.status, status) : undefined),
+     with: { plan: true },
+     orderBy: [desc(orders.createdAt)],
+   });
+@@ -40,17 +66,55 @@ export default async function BillingHistoryPage() {
+         <p className="text-zinc-500 dark:text-zinc-400">{STRINGS.pageSubtitle}</p>
+       </div>
+ 
++      <form action="/dashboard/billing/history" method="get" className="flex flex-wrap items-end gap-3">
++        <div className="space-y-1">
++          <label htmlFor="status" className="text-sm font-medium">{STRINGS.filterLabel}</label>
++          <select
++            id="status"
++            name="status"
++            defaultValue={status ?? ''}
++            className="block rounded-lg border bg-card px-3 py-2 text-sm"
++          >
++            <option value="">{STRINGS.allStatuses}</option>
++            {STATUS_OPTIONS.map(({ value, label }) => (
++              <option key={value} value={value}>{label}</option>
++            ))}
++          </select>
++        </div>
++        <button
++          type="submit"
++          className="rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-accent"
++        >
++          {STRINGS.applyFilter}
++        </button>
++      </form>
++
+       {userOrders.length === 0 ? (
+         <div className="flex flex-col items-center justify-center rounded-xl border bg-card p-12 text-center">
+           <ReceiptText className="h-12 w-12 text-muted-foreground/50" />
+-          <h3 className="mt-4 text-lg font-medium">{STRINGS.emptyTitle}</h3>
+-          <p className="mt-1 text-sm text-muted-foreground">{STRINGS.emptyBody}</p>
+-          <Link
+-            href="/dashboard/billing"
+-            className="mt-6 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+-          >
+-            {STRINGS.selectPlan}
+-          </Link>
++          {status ? (
++            <>
++              <h3 className="mt-4 text-lg font-medium">{STRINGS.noFilteredResultsTitle}</h3>
++              <p className="mt-1 text-sm text-muted-foreground">{STRINGS.noFilteredResultsBody}</p>
++              <Link
++                href="/dashboard/billing/history"
++                className="mt-6 rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-accent"
++              >
++                {STRINGS.showAllOrders}
++              </Link>
++            </>
++          ) : (
++            <>
++              <h3 className="mt-4 text-lg font-medium">{STRINGS.emptyTitle}</h3>
++              <p className="mt-1 text-sm text-muted-foreground">{STRINGS.emptyBody}</p>
++              <Link
++                href="/dashboard/billing"
++                className="mt-6 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
++              >
++                {STRINGS.selectPlan}
++              </Link>
++            </>
++          )}
+         </div>
+       ) : (
+         <div className="rounded-lg border">

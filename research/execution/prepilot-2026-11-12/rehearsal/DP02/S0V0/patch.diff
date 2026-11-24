@@ -1,0 +1,42 @@
+diff --git a/src/app/dashboard/admin/users/page.tsx b/src/app/dashboard/admin/users/page.tsx
+index eb638b2..2cce26d 100755
+--- a/src/app/dashboard/admin/users/page.tsx
++++ b/src/app/dashboard/admin/users/page.tsx
+@@ -1,4 +1,4 @@
+-import { desc, sql } from 'drizzle-orm';
++import { desc, eq, sql } from 'drizzle-orm';
+ import { db } from '@/database/db';
+ import { session as sessionTable, user } from '@/database/schema';
+ import { requireAdmin } from '@/lib/auth/auth';
+@@ -9,11 +9,16 @@ const STRINGS = {
+   totalUsers: (count: number) => `Total users: ${count}`,
+ } as const;
+ 
+-export default async function AdminUsersPage() {
++export default async function AdminUsersPage({ searchParams }: {
++  searchParams: Promise<Record<string, string | string[] | undefined>>;
++}) {
++  const requestedRole = (await searchParams).role;
++  const role = requestedRole === 'user' || requestedRole === 'admin' ? requestedRole : undefined;
+   const currentSession = await requireAdmin();
+ 
+   // Get all users
+   const allUsers = await db.query.user.findMany({
++    where: role ? eq(user.role, role) : undefined,
+     orderBy: [desc(user.createdAt)],
+   });
+ 
+@@ -41,6 +46,13 @@ export default async function AdminUsersPage() {
+         <p className="text-zinc-500 dark:text-zinc-400">{STRINGS.pageSubtitle(currentSession.user.email)}</p>
+       </div>
+ 
++      <form action="/dashboard/admin/users" method="get">
++        <label htmlFor="role-filter">Role</label>
++        <select id="role-filter" name="role" defaultValue={role ?? ''}>
++          <option value="">All</option><option value="user">User</option><option value="admin">Admin</option>
++        </select>
++        <button type="submit">Apply role</button>
++      </form>
+       <div className="rounded-lg border">
+         <table className="w-full">
+           <thead className="border-b bg-muted/50">

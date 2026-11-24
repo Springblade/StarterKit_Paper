@@ -1,0 +1,39 @@
+diff --git a/src/app/dashboard/admin/users/[userId]/page.tsx b/src/app/dashboard/admin/users/[userId]/page.tsx
+new file mode 100755
+index 0000000..43f0ab9
+--- /dev/null
++++ b/src/app/dashboard/admin/users/[userId]/page.tsx
+@@ -0,0 +1,15 @@
++import { eq,sql } from 'drizzle-orm';
++import { notFound } from 'next/navigation';
++import { db } from '@/database/db';
++import { user,session } from '@/database/schema';
++import { requireAdmin } from '@/features/auth/lib/auth';
++export default async function AccountDetail({params}:{params:Promise<{userId:string}>}) {
++ await requireAdmin();const {userId}=await params;
++ const record=await db.query.user.findFirst({where:eq(user.id,userId)});if(!record)notFound();
++ const [count]=await db.select({n:sql<number>`count(*)::int`}).from(session).where(eq(session.userId,userId));
++ if(!count)throw new Error('Missing session count');
++ return <section><h2>Account detail</h2><dl>
++ <dt>Name</dt><dd>{record.name}</dd><dt>Email</dt><dd>{record.email}</dd><dt>Role</dt><dd>{record.role}</dd>
++ <dt>Verified</dt><dd>{record.emailVerified?'Yes':'No'}</dd><dt>Sessions</dt><dd>{count.n}</dd><dt>Created</dt><dd>{record.createdAt.toISOString()}</dd>
++ </dl></section>;
++}
+diff --git a/src/app/dashboard/admin/users/page.tsx b/src/app/dashboard/admin/users/page.tsx
+index b235052..6c952d6 100755
+--- a/src/app/dashboard/admin/users/page.tsx
++++ b/src/app/dashboard/admin/users/page.tsx
+@@ -1,3 +1,4 @@
++import Link from 'next/link';
+ import { desc, sql } from 'drizzle-orm';
+ import { db } from '@/database/db';
+ import { session as sessionTable, user } from '@/database/schema';
+@@ -57,7 +58,7 @@ export default async function AdminUsersPage() {
+             {usersWithSessionCount.map((u) => (
+               <tr key={u.id} className="border-b last:border-0">
+                 <td className="px-4 py-3 text-sm">{u.name}</td>
+-                <td className="px-4 py-3 text-sm">{u.email}</td>
++                <td className="px-4 py-3 text-sm"><Link href={`/dashboard/admin/users/${u.id}`}>{u.email}</Link></td>
+                 <td className="px-4 py-3 text-sm">
+                   <span
+                     className={`rounded-full px-2 py-0.5 text-xs font-medium ${

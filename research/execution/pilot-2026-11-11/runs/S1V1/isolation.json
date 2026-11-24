@@ -1,0 +1,8 @@
+{
+  "no_host_mounts": true,
+  "no_docker_socket": true,
+  "private_pid_namespace": true,
+  "fresh_single_commit": true,
+  "image_id": "sha256:b64d34ff6b38827b884f0aa1654f4dd27224857bc290b69e5842137184d67ba9",
+  "network": "smartkit-agent-s1v1-net"
+}

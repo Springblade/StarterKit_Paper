@@ -1,0 +1,35 @@
+id,phase,task,deliverable,depends_on,owner,status
+P01,G0,Ghi câu hỏi 2x2 và phạm vi SmartKit đã xác nhận,execution/author-decisions-2026-11-11.md; 2x2 scope confirmed; six-task/48-run revision proposed not released,,Tác giả + giáo sư,done
+P02,G0,Đối chiếu nguồn gần nhất và giới hạn điểm mới,paper-proposal/citation-evidence.md E48-M1-M3 P1-P5; primary text plus bounded FeatBench artifact/schema read; full runner replication not done,P01,Tác giả + trợ lý,partial
+P03,G0,Chốt đóng góp so sánh S/V gắn audit hợp đồng trên patches,execution/research-direction-review/assessment.md; scoped practical question plausible; difference/value claim needs revision; no execution endorsement,P02,Tác giả + giáo sư,partial
+P04,G1,Ghi repaired baseline và giới hạn đối chiếu thesis,execution/baseline-report.md; execution/layout-manifest.json; exact thesis correspondence unverified,P01,Tác giả,done
+P05,G1,Dựng môi trường sạch và ghi phiên bản,execution/prepilot-2026-11-12/report.md; recorded runtime; current freeze verification tracked in P15,P04,Trợ lý + tác giả,done
+P06,G1,Chạy build và kiểm tra runtime/contracts,execution/baseline-report.md; execution/order-baseline-verification.md; local tested scope only,P05,Trợ lý + tác giả,done
+P07,G1,Tạo và kiểm tra fixture/reset,execution/layout-qualification.md; execution/prepilot-2026-11-12/report.md; recorded local resets,P06,Trợ lý,done
+P08,G2,Đặc tả development history-filter và access policy,execution/history-filter-task-card.md; execution/pilot-2026-11-11/protocol.md,P07,Tác giả + trợ lý,done
+P09,G2,Viết acceptance và preservation evaluator,execution/history-filter-qualification.md; execution/prepilot-2026-11-12/task-cards.md; development evaluators,P08,Trợ lý + tác giả,done
+P10,G2,Tạo reference và valid alternative,execution/prepilot-2026-11-12/solution-inventory.json; development references and alternatives,P09,Tác giả + trợ lý,done
+P11,G2,Kiểm tra faulty variants và flakiness,execution/prepilot-2026-11-12/qualification-summary.json; faults and reliability; transient limit retained,P10,Trợ lý + tác giả,done
+P12,G3,Định nghĩa và dựng layout đối chứng,execution/layout-manifest.json; execution/layout-qualification.md,P11,Tác giả + trợ lý,done
+P13,G3,Port và kiểm tra behavioral equivalence,execution/layout-behavior-results.json; tested contracts only,P12,Trợ lý,done
+P14,G3,Chuẩn bị basic/additional checks và exposure cho development,execution/prepilot-2026-11-12/report.md; eight packages prepared; main inventory unset,P13,Tác giả + trợ lý,done
+P15,G3,Kiểm tra runtime sau thay đổi dọn volumes và giữ evidence cũ,main48/runtime.py; all48 qualification runtimes and24 capture/reset/score rehearsals completed; historical freezes retained,P14,Trợ lý,done
+P16,G4,Prepare revised roster A01 A04 B05 B06 U02 U03,main48/task-cards.json; current roster A01 A04 B05 B06 U02 U03 fixed before main outcomes,P01;P11,Tác giả + trợ lý,done
+P17,G4,Review six current contracts before qualification,main48 public contracts implemented; boundaries clocks concurrency and authority tested; start release remains separate,P16,Tác giả,done
+P18,G4,Qualification cả sáu task cùng contract-to-check mapping,main48/readiness.json; all48 exact qualification ledgers and24 current rehearsals pass; allfive V0 retained,P15;P17,Tác giả + trợ lý,done
+P19,G4,Ghi phạm vi review độc lập hoặc việc chưa có reviewer,execution/author-decisions-2026-11-11.md Q17; unavailable reviewer; record limitation before main freeze,P18,Tác giả + người review,unavailable
+P20,G5,Review một lịch 48 slots và gói phân tích có nguồn,main48/allocation.json; fixed48 schedule and budgets; technical preparation complete; author start release absent,P15;P17;P18;P22;P23,Tác giả + giáo sư,ready-awaiting-start-release
+P21,G5,Bỏ expanded pilot mới khỏi lịch thực hiện,16/28-session options superseded in current proposal; historical allocation and four smoke runs retained,P20,Trợ lý + tác giả,superseded
+P22,G5,Đo nguồn lực agent và chấm lại trên cùng patches,main48/analysis.py; selfcheck.json; usage/timing missingness and allplanned contrasts; actual cost measured only after collection,P17,Tác giả + trợ lý,done-preparation
+P23,G6,Khóa analysis audit/codebook và đồng bộ kế hoạch manuscript,main48/protocol.md; analysis.py; main-revised.tex/PDF synchronized and compiled; no-main-outcomes,P18;P22,Tác giả + giáo sư,done-preparation
+P24,G6,Khóa sáu task cùng một lịch 48 và audit trước invocation,execution/main48/freeze.json; readiness technical_ready true; collect audit passed; zero main invocations; author-start-release absent,P03;P15;P18;P20;P23,Tác giả,technical-freeze-done-awaiting-start-release
+P25,G7,Thu một đợt 48 slots và lưu mọi attempt,one main archive; each slot invoked at most once; resume only unstarted slots; no replacements,P24,Trợ lý + tác giả,todo
+P26,G7,Đối chiếu48 slots và audit V0/V1/E trên patches,planned/invoked/assessable/missing; isolated suite replay all four conditions; infrastructure versus patch fault; no added model attempts,P25,Tác giả + trợ lý,todo
+P27,G7,Báo counts contrasts uncertainty và toàn bộ sensitivity,24 cells with counts/2; S/V risk differences; conditional wide intervals; cost all attempts; all six task and three domain omissions,P26,Tác giả + trợ lý,todo
+P28,G7,Rà evidence index nhãn lỗi và check escapes,all48 records; B1/E_P agreement table with explicit denominators; old versus new path defects; at most1 rule-selected example/task; no causal mediation,P26,Tác giả + trợ lý trích xuất; reviewer khác nếu có,todo
+P29,G8,Tạo figures và bảng từ dữ liệu đã khóa,outcome matrix; check-detection table; task/overlap map; evidence-backed examples; no synthetic agent data,P27;P28,Trợ lý + tác giả,todo
+P30,G8,Viết Results Discussion từ dữ liệu và cập nhật paper,paper LaTeX/PDF from P29 outputs; retain exploratory limits; prior prospective sections updated under P23,P29,Tác giả + trợ lý,todo
+P31,G8,Đối chiếu claims citations và data/artifact release,claim-evidence map versus E48-P1-P5; inspectability and contribution assessment; data/metadata/privacy/license; no guaranteed publication,P30,Tác giả + trợ lý,todo
+P32,G9,Tái lập phân tích và review toàn PDF,reproducibility + review logs,P31,Tác giả + người review nếu có,todo
+P33,G9,Kiểm tra yêu cầu venue authorship và disclosure,submission checklist,P32,Tác giả + giáo sư,todo
+P34,G9,Xác nhận bản cuối và nộp theo quyết định tác giả,submission package,P33,Tác giả,todo

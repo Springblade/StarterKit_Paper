@@ -1,0 +1,86 @@
+{
+  "task": "U03",
+  "cell": "S1V1",
+  "completed": true,
+  "model_calls": 0,
+  "forbidden_dependency_changes": [],
+  "lockfile_changed": false,
+  "V1": {
+    "task": "DP02",
+    "completed": true,
+    "pass": true,
+    "browser": "Chromium / Playwright 1.58.2",
+    "elapsedSeconds": 5.4143783029999994,
+    "results": [
+      {
+        "id": "VP-U1-admin-only-direct-route",
+        "pass": true,
+        "elapsedSeconds": 3.168494772
+      },
+      {
+        "id": "VP-U2-unfiltered-rows-counts-order",
+        "pass": true,
+        "elapsedSeconds": 0.9561680800000004
+      },
+      {
+        "id": "VP-U3-no-session-token-disclosure",
+        "pass": true,
+        "elapsedSeconds": 0.7483088519999992
+      },
+      {
+        "id": "VP-identity-and-order-preservation",
+        "pass": true,
+        "elapsedSeconds": 0.0020318209999995816
+      },
+      {
+        "id": "fixture-cleanup",
+        "pass": true
+      }
+    ]
+  },
+  "E": {
+    "task": "U03",
+    "completed": true,
+    "acceptance": true,
+    "preservation": true,
+    "jointSuccess": true,
+    "assessable": true,
+    "results": [
+      {
+        "id": "EU-old-directory-access-no-token",
+        "kind": "preservation",
+        "pass": true
+      },
+      {
+        "id": "EU3-new-browser-promotion-persistence",
+        "kind": "acceptance",
+        "pass": true
+      },
+      {
+        "id": "EU3-new-current-authority-and-fresh-session",
+        "kind": "acceptance",
+        "pass": true
+      },
+      {
+        "id": "EU3-new-replayed-boundaries-through-real-transport",
+        "kind": "acceptance",
+        "pass": true
+      },
+      {
+        "id": "EU-old-protected-fields-and-order-state",
+        "kind": "preservation",
+        "pass": true
+      }
+    ]
+  },
+  "V0": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "V0_reused_from": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\ledger-U03-feature-reference-V20-E20-B1.json",
+  "assessable": true,
+  "jointSuccess": true
+}

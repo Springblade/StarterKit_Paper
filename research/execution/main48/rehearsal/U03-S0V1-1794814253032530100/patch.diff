@@ -1,0 +1,47 @@
+diff --git a/src/app/api/admin/role/route.ts b/src/app/api/admin/role/route.ts
+new file mode 100755
+index 0000000..80901c1
+--- /dev/null
++++ b/src/app/api/admin/role/route.ts
+@@ -0,0 +1,15 @@
++import { db } from '@/database/db';
++import { user } from '@/database/schema';
++import { eq } from 'drizzle-orm';
++import { auth } from '@/lib/auth/auth';
++export async function POST(request: Request) {
++  if (request.headers.get('origin') !== new URL(request.url).origin) return Response.json({error:'Forbidden'}, {status:403});
++  const session=await auth.api.getSession({headers:request.headers,query:{disableCookieCache:true}});
++  if (!session || !('role' in session.user) || session.user.role!=='admin') return Response.json({error:'Forbidden'}, {status:403});
++  const data=await request.formData();const userId=data.get('userId'), role=data.get('role');
++  if (typeof userId!=='string' || (role!=='user' && role!=='admin')) return Response.json({error:'Invalid role'}, {status:400});
++  if (userId===session.user.id && role==='user') return Response.json({error:'Self demotion denied'}, {status:403});
++  const changed=await db.update(user).set({role}).where(eq(user.id,userId)).returning({id:user.id});
++  if (!changed.length) return Response.json({error:'Not found'}, {status:404});
++  return Response.redirect(new URL('/dashboard/admin/users',request.url),303);
++}
+diff --git a/src/app/dashboard/admin/users/page.tsx b/src/app/dashboard/admin/users/page.tsx
+index eb638b2..d88c0c6 100755
+--- a/src/app/dashboard/admin/users/page.tsx
++++ b/src/app/dashboard/admin/users/page.tsx
+@@ -50,7 +50,7 @@ export default async function AdminUsersPage() {
+               <th className="px-4 py-3 text-left text-sm font-medium">Role</th>
+               <th className="px-4 py-3 text-left text-sm font-medium">Verified</th>
+               <th className="px-4 py-3 text-left text-sm font-medium">Sessions</th>
+-              <th className="px-4 py-3 text-left text-sm font-medium">Created</th>
++              <th className="px-4 py-3 text-left text-sm font-medium">Created</th><th>Change role</th>
+             </tr>
+           </thead>
+           <tbody>
+@@ -78,6 +78,12 @@ export default async function AdminUsersPage() {
+                 </td>
+                 <td className="px-4 py-3 text-sm">{u.sessionCount}</td>
+                 <td className="px-4 py-3 text-sm">{new Date(u.createdAt).toLocaleDateString('vi-VN')}</td>
++                <td><form action="/api/admin/role" method="post" aria-label={`Role for ${u.email}`}>
++                  <input type="hidden" name="userId" value={u.id} />
++                  <label htmlFor={`role-${u.id}`}>Role for {u.email}</label>
++                  <select id={`role-${u.id}`} name="role" defaultValue={u.role ?? 'user'}><option value="user">User</option><option value="admin">Admin</option></select>
++                  <button type="submit">Save role</button>
++                </form></td>
+               </tr>
+             ))}
+           </tbody>

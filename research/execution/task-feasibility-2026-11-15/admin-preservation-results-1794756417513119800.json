@@ -1,0 +1,102 @@
+[
+  {
+    "layout": "feature",
+    "task": "baseline",
+    "variant": "baseline",
+    "preservation_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "U02",
+    "variant": "reference",
+    "preservation_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "U02",
+    "variant": "fault",
+    "preservation_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "U03",
+    "variant": "reference",
+    "preservation_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "U03",
+    "variant": "fault",
+    "preservation_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-feature-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "baseline",
+    "variant": "baseline",
+    "preservation_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "U02",
+    "variant": "reference",
+    "preservation_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "U02",
+    "variant": "fault",
+    "preservation_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "U03",
+    "variant": "reference",
+    "preservation_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "U03",
+    "variant": "fault",
+    "preservation_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\admin-preservation-layered-1794756417513119800",
+    "model_calls": 0
+  }
+]

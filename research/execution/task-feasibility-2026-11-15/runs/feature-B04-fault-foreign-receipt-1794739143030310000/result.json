@@ -1,0 +1,22 @@
+{
+  "phase": "fault-foreign-receipt",
+  "modelCalls": 0,
+  "completed": true,
+  "pass": false,
+  "baselineModified": false,
+  "browserAndRealDB": true,
+  "results": [
+    {
+      "id": "B04-browser-download-and-data",
+      "pass": true,
+      "seconds": 12.743
+    },
+    {
+      "id": "B04-ownership-and-status",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at /evaluator/probe.cjs:49:60",
+      "seconds": 0.03
+    }
+  ]
+}

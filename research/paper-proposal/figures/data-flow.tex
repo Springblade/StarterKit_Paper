@@ -1,0 +1,17 @@
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[node distance=7mm]
+\node[box,text width=3.8cm] (task) at (0,0) {Task record\\Task ID and source\\Requirements\\Oracle version};
+\node[box,text width=3.8cm] (run) at (5,0) {Attempt record\\Run ID and condition\\Model and repetition\\Environment ID};
+\node[box,text width=3.8cm] (obs) at (10,0) {Observation record\\Acceptance result\\Preservation result\\Time, tokens, failure};
+\draw[arrow] (task)--(run);
+\draw[arrow] (run)--(obs);
+\node[box,text width=3.8cm] (artifact) at (5,-2.8) {Linked artifacts\\Prompt, trace, patch\\Check logs\\Reruns and exclusions};
+\node[box,text width=3.8cm] (summary) at (10,-2.8) {Analysis dataset\\Task-level cell means\\Effect estimates\\Uncertainty intervals};
+\draw[arrow] (run)--(artifact);
+\draw[arrow] (obs)--(summary);
+\node[note,text width=3.8cm] at (0,-2.8) {One row per scheduled\\session, including\\missing outcomes.};
+\end{tikzpicture}
+\caption{Study data and session records}
+\label{fig:data_flow}
+\end{figure}

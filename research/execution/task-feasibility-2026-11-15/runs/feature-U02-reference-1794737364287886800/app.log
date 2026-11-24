@@ -1,0 +1,41 @@
+Already up to date
+Done in 388ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (webpack)
+- Local:         http://localhost:3107
+- Network:       http://172.19.0.3:3107
+- Environments: .env
+✓ Ready in 312ms
+
+ GET / 200 in 3.2s (next.js: 3.1s, application-code: 126ms)
+○ Compiling /api/auth/[...all] ...
+2026-11-15T10:09:42.118Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:42.653Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 4.2s (next.js: 4.1s, application-code: 117ms)
+ POST /api/auth/sign-in/email 200 in 465ms (next.js: 8ms, application-code: 458ms)
+2026-11-15T10:09:43.359Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 169ms (next.js: 3ms, application-code: 165ms)
+ POST /api/auth/sign-in/email 200 in 93ms (next.js: 11ms, application-code: 82ms)
+ POST /api/auth/sign-in/email 200 in 73ms (next.js: 1289µs, application-code: 71ms)
+ POST /api/auth/sign-in/email 200 in 75ms (next.js: 1505µs, application-code: 73ms)
+2026-11-15T10:09:43.978Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+○ Compiling proxy ...
+2026-11-15T10:09:49.231Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:50.720Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:50.789Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/admin/users 200 in 2.1s (next.js: 1322ms, proxy.ts: 457ms, application-code: 336ms)
+2026-11-15T10:09:53.378Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:56.670Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:56.888Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:56.910Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/admin/users/11b70300-0b2f-4c85-aff2-ab6b20189106 200 in 3.8s (next.js: 3.3s, proxy.ts: 226ms, application-code: 266ms)
+ GET /dashboard/admin/users/31ebe23f-ff04-46f3-9610-607a7352d4a1 307 in 168ms (next.js: 13ms, proxy.ts: 4ms, application-code: 152ms)
+2026-11-15T10:09:57.767Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:57.994Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:58.022Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in 307 in 835ms (next.js: 729ms, application-code: 106ms)
+2026-11-15T10:09:58.587Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:09:58.615Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard 200 in 598ms (next.js: 498ms, proxy.ts: 4ms, application-code: 96ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users/31ebe23f-ff04-46f3-9610-607a7352d4a1 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET /dashboard/admin/users/04d96f9a-d27e-40ac-9776-194326a5ceaf 404 in 76ms (next.js: 16ms, proxy.ts: 5ms, application-code: 55ms)
+2026-11-15T10:10:01.112Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret

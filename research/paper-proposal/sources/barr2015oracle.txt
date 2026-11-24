@@ -1,0 +1,1371 @@
+IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,                      VOL. 41, NO. 5,        MAY 2015                                                                      507
+
+
+
+
+                            The Oracle Problem in Software
+                                  Testing: A Survey
+                       Earl T. Barr, Mark Harman, Phil McMinn, Muzammil Shahbaz, and Shin Yoo
+
+       Abstract—Testing involves examining the behaviour of a system in order to discover potential faults. Given an input for a system,
+       the challenge of distinguishing the corresponding desired, correct behaviour from potentially incorrect behavior is called the “test
+       oracle problem”. Test oracle automation is important to remove a current bottleneck that inhibits greater overall test automation.
+       Without test oracle automation, the human has to determine whether observed behaviour is correct. The literature on test oracles
+       has introduced techniques for oracle automation, including modelling, specifications, contract-driven development and metamorphic
+       testing. When none of these is completely adequate, the final source of test oracle information remains the human, who may be
+       aware of informal specifications, expectations, norms and domain specific information that provide informal oracle guidance. All
+       forms of test oracles, even the humble human, involve challenges of reducing cost and increasing benefit. This paper provides a
+       comprehensive survey of current approaches to the test oracle problem and an analysis of trends in this important area of software
+       testing research and practice.
+
+       Index Terms—Test oracle, automatic testing, testing formalism
+
+                                                                                         Ç
+1    INTRODUCTION
+
+M       UCH work on software testing seeks to automate as
+       much of the test process as practical and desirable,
+to make testing faster, cheaper, and more reliable. To
+                                                                                             might be a detailed, and possibly formal, specification of
+                                                                                             intended behaviour. One might also hope that the code
+                                                                                             itself contains pre- and post- conditions that implement
+this end, we need a test oracle, a procedure that distin-                                    well-understood contract-driven development approaches
+guishes between the correct and incorrect behaviors of                                       [135]. In these situations, the test oracle cost problem is ame-
+the System Under Test (SUT).                                                                 liorated by the presence of an automatable test oracle to
+   However, compared to many aspects of test automation,                                     which a testing tool can refer to check outputs, free from the
+the problem of automating the test oracle has received signif-                               need for costly human intervention.
+icantly less attention, and remains comparatively less well-                                    Where no full specification of the properties of the SUT
+solved. This current open problem represents a significant                                   exists, one may hope to construct a partial test oracle that
+bottleneck that inhibits greater test automation and uptake                                  can answer questions for some inputs. Such partial test
+of automated testing methods and tools more widely. For                                      oracles can be constructed using metamorphic testing
+instance, the problem of automatically generating test inputs                                (built from known relationships between desired behav-
+has been the subject of research interest for nearly four deca-                              iour) or by deriving oracular information from execution
+des [46], [107]. It involves finding inputs that cause execution                             or documentation.
+to reveal faults, if they are present, and to give confidence in                                For many systems and most testing as currently practiced
+their absence, if none are found. Automated test input gener-                                in industry, however, the tester does not have the luxury of
+ation been the subject of many significant advances in both                                  formal specifications or assertions, or automated partial test
+Search-Based Testing [3], [5], [83], [126], [128] and Dynamic                                oracles [91], [92]. The tester therefore faces the daunting task
+Symbolic Execution [75], [108], [161]; yet none of these                                     of manually checking the system’s behaviour for all test
+advances address the issue of checking generated inputs                                      cases. In such cases, automated software testing approaches
+with respect to expected behaviours—that is, providing an                                    must address the human oracle cost problem [1], [82], [130].
+automated solution to the test oracle problem.                                                  To achieve greater test automation and wider uptake of
+   Of course, one might hope that the SUT has been devel-                                    automated testing, we therefore need a concerted effort to
+oped under excellent design-for-test principles, so that there                               find ways to address the test oracle problem and to integrate
+                                                                                             automated and partially automated test oracle solutions
+   E.T. Barr, M. Harman and S. Yoo are with the Department of Computer
+                                                                                             into testing techniques. This paper seeks to help address
+    Science, University College London, Gower Street, London WC2R 2LS,                       this challenge by providing a comprehensive review and
+    London, United Kingdom. E-mail: {e.barr, m.harman, shin.yoo}@ucl.ac.uk.                  analysis of the existing literature of the test oracle problem.
+   P. McMinn and M. Shahbaz are with the Department of Computer                                Four partial surveys of topics relating to test oracles pre-
+    Science, University of Sheffield, Sheffield S1 4DP, South Yorkshire,
+    United Kingdom.                                                                          cede this one. However, none has provided a comprehen-
+    E-mail: p.mcminn@sheffield.ac.uk, muzammil.shahbaz@gmail.com.                            sive survey of trends and results. In 2001, Baresi and Young
+Manuscript received 24 July 2013; revised 5 Sept. 2014; accepted 28 Oct.                     [17] presented a partial survey that covered four topics
+2014. Date of publication 19 Nov. 2014; date of current version 15 May 2015.                 prevalent at the time the paper was published: assertions,
+Recommended for acceptance by L. Baresi.                                                     specifications, state-based conformance testing, and log file
+For information on obtaining reprints of this article, please send e-mail to:
+reprints@ieee.org, and reference the Digital Object Identifier below.
+                                                                                             analysis. While these topics remain important, they capture
+Digital Object Identifier no. 10.1109/TSE.2014.2372785                                       only a part of the overall landscape of research in test
+                     This work is licensed under a Creative Commons Attribution 3.0 License. For more information, see http://creativecommons.org/licenses/by/3.0/
+508                                                            IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,               VOL. 41,   NO. 5,   MAY 2015
+
+
+oracles, which the present paper covers. Another early work
+was the initial motivation for considering the test oracle
+problem contained in Binder’s textbook on software testing
+[23], published in 2000. More recently, in 2009, Shahamiri
+et al. [164] compared six techniques from the specific cate-
+gory of derived test oracles. In 2011, Staats et al. [174] pro-
+posed a theoretical analysis that included test oracles in a
+revisitation of the fundamentals of testing. Most recently, in
+2014, Pezze and Zhang focus on automated test oracles for
+functional properties [150].
+   Despite this work, research into the test oracle problem            Fig. 1. Stimulus and observations: S is anything that can change the
+                                                                       observable behavior of the SUT f; R is anything that can be observed
+remains an activity undertaken in a fragmented community
+                                                                       about the system’s behavior; I includes f’s explicit inputs; O is its explicit
+of researchers and practitioners. The role of the present              outputs; everything not in S [ R neither affects nor is affected by f.
+paper is to overcome this fragmentation in this important
+area of software testing by providing the first comprehen-             Definition 2.1 (Test Activities). For the SUT p, S is the set of
+sive analysis and review of work on the test oracle problem.             stimuli that trigger or constrain p’s computation and R is the
+   The rest of the paper is organised as follows: Section 2 sets         set of observable responses to a stimulus of p. S and R are dis-
+out the definitions relating to test oracles that we use to com-         joint. Test activities form the set A ¼ S ] R.
+pare and contrast the techniques in the literature. Section 3
+                                                                          The use of disjoint union implicitly labels the elements of
+relates a historical analysis of developments in the area. Here
+                                                                       A, which we can flatten to the tuple L  C  V , where
+we identify key milestones and track the volume of past pub-
+                                                                       L ¼ fstimulus; responseg is the set of activities labels, C is
+lications. Based on this data, we plot growth trends for four
+                                                                       the set of components, and V is an arbitrary set of values.
+broad categories of solution to the test oracle problem, which
+                                                                       To model those aspects of the world that are independent of
+we survey in Sections 4, 5, 6, and 7. These four categories
+                                                                       any component, like a clock, we set an activity’s target to
+comprise approaches to the oracle problem where:
+                                                                       the empty set.
+         test oracles can be specified (Section 4);                      We use the terms “stimulus” and “observation” in the
+         test oracles can be derived (Section 5);                     broadest sense possible to cater to various testing scenarios,
+         test oracles can be built from implicit information          functional and nonfunctional. As shown in Fig. 1, a stimulus
+          (Section 6); and                                             can be either an explicit test input from the tester, I  S, or an
+       no automatable oracle is available, yet it is still possible   environmental factor that can affect the testing, S n I. Similarly,
+          to reduce human effort (Section 7).                          an observation ranges from an output of the SUT, O  R, to a
+      Finally, Section 8 concludes with closing remarks.               nonfunctional execution profile, like execution time in R n O.
+                                                                          For example, stimuli include the configuration and plat-
+                                                                       form settings, database table contents, device states, resource
+2         DEFINITIONS                                                  constraints, preconditions, typed values at an input device,
+This section presents definitions to establish a lingua franca         inputs on a channel from another system, sensor inputs and
+in which to examine the literature on oracles. These defini-           so on. Notably, resetting a SUT to an initial state is a stimulus
+tions are formalised to avoid ambiguity, but the reader                and stimulating the SUT with an input runs it. Observations
+should find that it is also possible to read the paper using           include anything that can be discerned and ascribed a mean-
+only the informal descriptions that accompany these formal             ing significant to the purpose of testing—including values
+definitions. We use the theory to clarify the relationship             that appear on an output device, database state, temporal
+between algebraic specification, pseudo oracles, and meta-             properties of the execution, heat dissipated during execution,
+morphic relations in Section 5.                                        power consumed, or any other measurable attributes of its
+   To begin, we define a test activity as a stimulus or                execution. Stimuli and observations are members of different
+response, then test activity sequences that incorporate con-           sets of test activities, but we combine them into test activities.
+straints over stimuli and responses. Test oracles accept or
+reject test activity sequences, first deterministically then           2.2 Test Activity Sequence
+probabilistically. We then define notions of soundness and             Testing is a sequence of stimuli and response observations.
+completeness of test oracles.                                          The relationship between stimuli and responses can often
+                                                                       be captured formally; consider a simple SUT that squares
+2.1 Test Activities                                                    its input. To compactly represent infinite relations between
+To test is to stimulate a system and observe its response. A           stimulus and response values such as ði; o ¼ i2 Þ, we intro-
+stimulus and a response both have values, which may coin-              duce a compact notation for set comprehensions:
+cide, as when the stimulus value and the response are both
+reals. A system has a set of components C. A stimulus and its                                       x: ½f ¼ fx j fg;
+response target a subset of components. For instance, a com-
+                                                                       where x is a dummy variable over an arbitrary set.
+mon pattern for constructing test oracles is to compare the
+output of distinct components on the same stimulus value.              Definition 2.2 (Test Activity Sequence). A test activity
+                                                                                                                 
+Thus, stimuli and responses are values that target compo-                sequence is an element of TA ¼ fw j T ! wg over the
+nents. Collectively, stimuli and responses are test activities:          grammar
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                                       509
+
+
+
+
+Fig. 2. Cumulative number of publications from 1978 to 2012 and research trend analysis for each type of test oracle. The x-axis represents years
+and y-axis the cumulative number of publications. We use a power regression model to perform the trend analysis. The regression equation and the
+coefficient of determination (R2 ) indicate a upward future trend, a sign of a healthy research community.
+
+
+                                                                          component on the different values, we must write r1 i1 r2 ; i2 :
+                       T ::¼ A0: ½0 f0 0 T j AT j 
+                                                                          ½r1 ; i1 ; r2 ; i2 2 S; cðr1 Þ ¼ cði1 Þ ¼ cðr2 Þ ¼ cði2 Þ ^ vði1 Þ 6¼ vði2 Þ.
+   where A is the test activity alphabet.                                 In the sequel, we often compare different executions of a sin-
+                                                                          gle SUT or compare the output of independently imple-
+    Under Definition 2.2, the testing activity sequence                   mented components of the SUT on the same input value. For
+io:½o ¼ i2  denotes the stimulus of invoking f on i, then                clarity, we introduce syntactic sugar to express constraints on
+observing the response output. It further specifies valid                 stimulus values and components. We let fðxÞ denote ri :
+responses obeying o ¼ i2 . Thus, it compactly represents                  ½cðiÞ ¼ f ^ vðiÞ ¼ x, for f 2 C.
+the infinite set of test activity sequences i1 o1 ; i2 o2 ; . . .              A test oracle is a predicate that determines whether a
+where ok ¼ i2k .                                                          given test activity sequence is an acceptable behaviour of
+    For practical purposes, a test activity sequence will                 the SUT or not. We first define a “test oracle”, and then relax
+almost always have to satisfy constraints in order to be use-             this definition to “probabilistic test oracle”.
+ful. Under our formalism, these constraints differentiate the
+                                                                          Definition 2.4 (Test Oracle). A test oracle D : TA 7! B is a
+approaches to test oracle we survey. As an initial illustra-
+                                                                            partial1 function from a test activity sequence to true or false.
+tion, we constrain a test activity sequence to obtain a practi-
+cal test sequence:                                                            When a test oracle is defined for a test activity, it either
+                                                                          accepts the test activity or not. Concatenation in a test activ-
+Definition 2.3 (Practical Test Sequence). A practical test
+                                                                          ity sequence denotes sequential activities; the test oracle D
+  sequence is any test activity sequence w that satisfies
+                                                                          permits parallel activities when it accepts different permu-
+                   w ¼ TsTrT;       for s 2 S; r 2 R:                     tations of the same stimuli and response observations. We
+                                                                          use D to distinguish a deterministic test oracle from proba-
+   Thus, the test activity sequence, w, is practical iff w con-           bilistic ones. Test oracles are typically computationally
+tains at least one stimulus followed by at least one                      expensive, so probabilistic approaches to the provision of
+observation.                                                              oracle information may be desirable even where a determin-
+   This notion of a test sequence is nothing more than a very             istic test oracle is possible [124].
+general notion of what it means to test; we must do some-
+thing to the system (the stimulus) and subsequently observe               Definition 2.5 (Probabilistic Test Oracle). A probabilistic
+some behaviour of the system (the observation) so that we                   test oracle D ~ : TA 7! ½0; 1 maps a test activity sequence into
+                                                                            the interval ½0; 1 2 R.
+have something to check (the observation) and something
+upon which this observed behaviour depends (the stimulus).                   A probabilistic test oracle returns a real number in the
+   A reliable reset ðp; rÞ 2 S is a special stimulus that returns         closed interval ½0; 1. As with test oracles, we do not require
+the SUT’s component p to its start state. The test activity               a probabilistic test oracle to be a total function. A
+sequence ðstimulus; p; rÞðstimulus; p; iÞ is therefore equivalent
+to the conventional application notation pðiÞ. To extract the
+                                                                              1. Recall that a function is implicitly total: it maps every element of
+value of an activity, we write vðaÞ; to extract its target compo-         its domain to a single element of its range. The partial function
+nent, we write cðaÞ. To specify two invocations of a single               f : X 7! Y is the total function f 0 : X0 ! Y , where X 0  X.
+510                                                             IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,          VOL. 41,   NO. 5,   MAY 2015
+
+
+probabilistic test oracle can model the case where the test                The non-negligible advantage  requires D  ~ to do suffi-
+oracle is only able to efficiently offer a probability that             ciently better than flipping a fair coin, which for a binary
+the test case is acceptable, or for other situations where              classifier maximizes entropy, that we can achieve arbitrary
+some degree of imprecision can be tolerated in the test                 confidence in whether the test sequence w is valid by repeat-
+oracle’s response.                                                      edly sampling D ~ on w.
+   Our formalism combines a language-theoretic view of
+stimulus and response activities with constraints over those
+activities; these constraints explicitly capture specifications.        3    TEST ORACLE RESEARCH TRENDS
+The high-level language view imposes a temporal order on                The term “test oracle” first appeared in William Howden’s
+the activities. Thus, our formalism is inherently temporal. The         seminal work in 1978 [99]. In this section, we analyze the
+formalism of Staats et al. captures any temporal exercising of          research on test oracles, and its related areas, conducted
+the SUT’s behavior in tests, which are atomic black boxes for           since 1978. We begin with a synopsis of the volume of publi-
+them [174]. Indeed, practitioners write test plans and activi-          cations, classified into specified, derived, implicit, and lack
+ties, they do not often write specifications at all, let alone a for-   of automated test oracles. We then discuss when key con-
+mal one. This fact and the expressivity of our formalism, as            cepts in test oracles were first introduced.
+evident in our capture of existing test oracle approaches, is
+evidence that our formalism is a good fit with practice.
+                                                                        3.1 Volume of Publications
+2.3 Soundness and Completeness
+                                                                        We constructed a repository of 694 publications on test
+We conclude this section by defining soundness and com-                 oracles and its related areas from 1978 to 2012 by conduct-
+pleteness of test oracles.                                              ing web searches for research articles on Google Scholar and
+   In order to define soundness and completeness of a test              Microsoft Academic Search using the queries “software + test
+oracle, we need to define a concept of the “ground truth”, G.           + oracle” and “software + test oracle”2, for each year.
+The ground truth is another form of oracle, a conceptual
+                                                                        Although some of the queries generated in this fashion may
+oracle, that always gives the “right answer”. Of course, it
+                                                                        be similar, different responses are obtained, with particular
+cannot be known in all but the most trivial cases, but it is a
+                                                                        differences around more lowly-ranked results.
+useful definition that bounds test oracle behaviour.
+                                                                           We classify work on test oracles into four categories:
+Definition 2.6 (Ground Truth). The ground truth oracle, G,              specified test oracles (317), derived test oracles (245),
+  is a total test oracle that always gives the “right answer”.          implicit test oracles (76), and no test oracle (56), which han-
+                                                                        dles the lack of a test oracle.
+   We can now define soundness and completeness of a test                  Specified test oracles, discussed in detail in Section 4,
+oracle with respect to G.                                               judge all behavioural aspects of a system with respect to a
+                                                                        given formal specification. For specified test oracles
+Definition 2.7 (Soundness). The test oracle D is sound iff
+                                                                        we searched for related articles using queries “formal +
+                              DðaÞ ) GðaÞ:                              specification”, “state-based specification”, “model-based
+                                                                        languages”, “transition-based languages”, “assertion-based
+Definition 2.8 (Completeness). The test oracle D is complete            languages”, “algebraic specification” and “formal + confor-
+  iff                                                                   mance testing”. For all queries, we appended the keywords
+                              GðaÞ ) DðaÞ:                              with “test oracle” to filter the results for test oracles.
+                                                                           Derived test oracles (see Section 5) involve artefacts from
+                                                                        which a test oracle may be derived—for instance, a previous
+    While test oracles cannot, in general, be both sound and            version of the system. For derived test oracles, we searched
+complete, we can, nevertheless, define and use partially cor-           for additional articles using the queries “specification
+rect test oracles. Further, one could argue, from a purely              inference”, “specification mining”, “API mining”,
+philosophical point of view, that human oracles can be                  “metamorphic testing”, “regression testing” and “program
+sound and complete, or correct. In this view, correctness               documentation”.
+becomes a subjective human assessment. The foregoing def-                  An implicit oracle (see Section 6) refers to the detection of
+initions allow for this case.                                           “obvious” faults such as a program crash. For implicit test
+    We relax our definition of soundness to cater for probabi-          oracles we applied the queries “implicit oracle”, “null
+listic test oracles:                                                    pointer + detection”, “null reference + detection”, “deadlock
+Definition 2.9 (Probablistic Soundness and Completeness).               + livelock + race + detection”, “memory leaks + detection”,
+     A probabilistic test oracle D
+                                 ~ is probabilistically sound iff       “crash + detection”, “performance + load testing”, “non-
+                                                                        functional + error detection”, “fuzzing + test oracle” and
+                                    1                                   “anomaly detection”.
+                    P ðDðwÞ
+                        ~     ¼ 1Þ > þ  ) GðwÞ
+                                    2                                      There have also been papers researching strategies for
+      and D
+          ~ is probabilistically complete iff
+                                                                        handling the lack of an automated test oracle (see Section 7).
+                                                                        Here, we applied the queries “human oracle”, “test
+                                         1
+                    GðwÞ ) P ðDðwÞ
+                              ~    ¼ 1Þ > þ 
+                                         2
+                                                                           2. We use + to separate the keywords in a query; a phrase, not inter-
+                                                                        nally separated by +, like “test oracle”, is a compound keyword, quoted
+      where  is non-negligible.                                        when given to the search engine.
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                             511
+
+
+
+
+Fig. 3. Chronological introduction of test oracles techniques and concepts.
+
+
+minimization”, “test suite reduction” and “test data + gen-                   or concept used to solve the problem labeled with the year
+eration + realistic + valid”.                                                 of its first publication.
+   Each of the above queries were appended by the key-                           The timeline shows only the work that is explicit on the
+words “software testing”. The results were filtered,                          issue of test oracles. For example, the work on test genera-
+removing articles that were found to have no relation to                      tion using finite state machines (FSM) can be traced back
+software testing and test oracles. Fig. 2 shows the cumu-                     to as early as 1950s. But the explicit use of finite state
+lative number of publications on each type of test oracle                     machines to generate test oracles can be traced back to Jard
+from 1978 onwards. We analyzed the research trend on                          and Bochmann [102] and Howden in 1986 [98]. We record,
+this data by applying different regression models. The                        in the timeline, the earliest available publication for a given
+trend line, shown in Fig. 2, is fitted using a power                          technique or concept. We consider only published work in
+model. The high values for the four coefficients of deter-                    journals, the proceedings of conferences and workshops, or
+mination (R2 ), one for each of the four types of test ora-                   magazines. We excluded all other types of documentation,
+cle, confirm that our models are good fits to the trend                       such as technical reports and manuals.
+data. The trends observed suggest a healthy growth in                            Fig. 3 shows a few techniques and concepts that pre-
+research volumes in these topics related to the test oracle                   date 1978. Although not explicitly on test oracles, they
+problem in the future.                                                        identify and address issues for which test oracles were
+                                                                              later developed. For example, work on detecting concur-
+3.2 The Advent of Test Oracle Techniques                                      rency issues (deadlock, livelock, and races) can be traced
+We classified the collected publications by techniques or                     back to the 1960s. Since these issues require no specifica-
+concepts they proposed to (partially) solve a test oracle                     tion, implicit test oracles can and have been built that
+problem; for example, Model Checking [35] and Metamorphic                     detect them on arbitrary systems. Similarly, Regression
+Testing [36] fall into the derived test oracle and DAISTIS                    Testing detects problems in the functionality a new ver-
+[69] is an algebraic specification system that addresses the                  sion of a system shares with its predecessors and is a pre-
+specified test oracle problem.                                                cursor of derived test oracles.
+   For each type of test oracle and the advent of a tech-                        The trend analysis suggests that proposals for new tech-
+nique or a concept, we plotted a timeline in chronological                    niques and concepts for the formal specification of test
+order of publications to study research trends. Fig. 3 shows                  oracles peaked in 1990s, and has gradually diminished in
+the timeline starting from 1978 when the term “test oracle”                   the last decade. However, it remains an area of much
+was first coined. Each vertical bar presents the technique                    research activity, as can be judged from the number of
+512                                                        IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,      VOL. 41,   NO. 5,   MAY 2015
+
+
+publications for each year in Fig. 2. For derived test oracles,    operation; a postcondition defines the (usually strongest)
+many solutions have been proposed throughout this period.          effect the operation has on program state [109].
+Initially, these solutions were primarily theoretical, such as         A variety of model-based specification languages exist,
+Partial/Pseudo-Oracles [196] and Specification Inference           including Z [172], B [110], UML/OCL [31], VDM/VDM-SL
+[194]; empirical studies however followed in late 1990s.           [62], Alloy [101], and the LARCH family [71], which
+   For implicit test oracles, research into the solutions estab-   includes an algebraic specification sub-language. Broadly,
+lished before 1978 has continued, but at a slower pace than        these languages have evolved toward being more concrete,
+the other types of test oracles. For handling the lack of an       closer to the implementation languages programmers use to
+automated test oracle, Partition Testing is a well-known tech-     solve problems. Two reasons explain this phenomenon: the
+nique that helps a human test oracle select tests. The trend       first is the effort to increase their adoption in industry by
+line suggests that only recently have new techniques and           making them more familiar to practitioners and the second
+concepts for tackling this problem started to emerge, with         is to establish synergies between specification and imple-
+an explicit focus on the human oracle cost problem.                mentation that facilitate development as iterative refine-
+                                                                   ment. For instance, Z models disparate entities, like
+4     SPECIFIED TEST ORACLES                                       predicates, sets, state properties, and operations, through a
+                                                                   single structuring mechanism, its schema construct; the B
+Specification is fundamental to computer science, so it is not
+                                                                   method, Z’s successor, provides a richer array of less
+surprising that a vast body of research has explored its use as
+                                                                   abstract language constructs.
+a source of test oracle information. This topic could merit an
+                                                                        orger discusses how to use the abstract state machine
+                                                                       B€
+entire survey on its own right. In this section, we provide an
+                                                                   formalism, a very general set-theoretic specification lan-
+overview of this work. We also include here partial specifica-
+                                                                   guage geared toward the definition of functions, to define
+tions of system behaviour such as assertions and models.
+                                                                   high level test oracles [29]. The models underlying specifica-
+   A specification defines, if possible using mathematical
+                                                                   tion languages can be very abstract, quite far from concrete
+logic, the test oracle for particular domain. Thus, a specifica-
+                                                                   execution output. For instance, it may be difficult to com-
+tion language is a notation for defining a specified test oracle
+                                                                   pute whether a model’s postcondition for a function permits
+D, which judges whether the behaviour of a system con-
+                                                                   an observed concrete output. If this impedance mismatch
+forms to a formal specification. Our formalism, defined in
+                                                                   can be overcome, by abstracting a system’s concrete output
+Section 2, is, itself, a specification language for specifying
+                                                                   or by concretizing a specification model’s output, and if a
+test oracles.
+                                                                   specification’s postconditions can be evaluated in finite
+   Over the last 30 years, many methods and formalisms for
+                                                                   time, they can serve as a test oracle [4].
+testing based on formal specification have been developed.
+                                                                       Model-based specification languages, such as VDM, Z,
+They fall into four broad categories: model-based specifica-
+                                                                   and B can express invariants, which can drive testing. Any
+tion languages, state transition systems, assertions and con-
+                                                                   test case that causes a program to violate an invariant has
+tracts, and algebraic specifications. Model-based languages
+                                                                   discovered an incorrect behavior; therefore, these invariants
+define models and a syntax that defines desired behavior in
+                                                                   are partial test oracles.
+terms of its effect on the model. State transition systems
+                                                                       In search of a model-based specification language acces-
+focus on modeling the reaction of a system to stimuli,
+                                                                   sible to domain experts, Parnas et al. proposed TOG (Test
+referred to as “transitions” in this particular formalism.
+                                                                   Oracles Generator) from program documentation [142],
+Assertions and contracts are fragments of a specification
+                                                                   [145], [148]. In their method, the documentation is written
+language that are interleaved with statements of the imple-
+                                                                   in fully formal tabular expressions in which the method sig-
+mentation language and checked at runtime. Algebraic
+                                                                   nature, the external variables, and relation between its start
+specifications define equations over a program’s operations
+                                                                   and end states are specified [104]. Thus, test oracles can be
+that hold when the program is correct.
+                                                                   automatically generated to check the outputs against the
+                                                                   specified states of a program. The work by Parnas et al. has
+4.1 Specification Languages
+                                                                   been developed over a considerable period of more than
+Specification languages define a mathematical model of a           two decades [48], [59], [60], [144], [149], [190], [191].
+system’s behaviour, and are equipped with a formal seman-
+tics that defines the meaning of each language construct in        4.1.2 State Transition Systems
+terms of the model. When used for testing, models do not           State transition systems often present a graphical syntax,
+usually fully specify the system, but seek to capture salient      and focus on transitions between different states of the sys-
+properties of a system so that test cases can be generated         tem. Here, states typically abstract sets of concrete state of
+from or checked against them.                                      the modeled system. State transition systems have been
+                                                                   referred as visual languages in the literature [197]. A wide
+4.1.1 Model-Based Specification Languages                          variety of state transition systems exist, including finite state
+Model-based specification languages model a system as a            machines [111], Mealy/Moore machines [111], I/O Autom-
+collection of states and operations to alter these states, and     ata [117], Labeled Transition Systems [180], SDL [54], Harel
+are therefore also referred to as “state-based specifications”     Statecharts [81], UML state machines [28], X-Machines [95],
+in the literature [101], [109], [182], [183]. Preconditions and    [96], Simulink/Stateflow [179] and PROMELA [97]. Mou-
+postconditions constrain the system’s operations. An oper-         chawrab et al. conducted a rigorous empirical evaluation
+ation’s precondition imposes a necessary condition over the        of test oracle construction techniques using state transition
+input states that must hold in a correct application of the        systems [70], [137].
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                               513
+
+
+   An important class of state transition systems have a                      from specification languages. First, assertions can directly
+finite set of states and are therefore particularly well-suited               reference and define relations over program variables,
+for automated reasoning about systems whose behaviour                         reducing the impedance mismatch between specification
+can be abstracted into states defined by a finite set of values               and implementation, for the properties an assertion can
+[93]. State transition systems capture the behavior of a sys-                 express and check. In this sense, assertions are a natural
+tem under test as a set of states,3 with transitions represent-               consequence of the evolution of specification languages
+ing stimuli that cause the system to change state. State                      toward supporting development through iterative refine-
+transition systems model the output of a system they                          ment. Second, they are typically written along with the code
+abstract either as a property of the states (the final state in               whose runtime behavior they check, as opposed to preced-
+the case of Moore machines) or the transitions traversed (as                  ing implementation as specification languages tend to do.
+with Mealy machines).                                                             Assertions have a long pedigree dating back to Turing
+   Models approximate a SUT, so behavioral differences                        [181], who first identified the need to separate the tester
+between the two are inevitable. Some divergences, however,                    from the developer and suggested that they should commu-
+are spurious and falsely report testing failure. State-transition             nicate by means of assertions: the developer writing them
+models are especially susceptible to this problem when                        and the tester checking them. Assertions gained significant
+modeling embedded systems, for which time of occurrence is                    attention as a means of capturing language semantics in the
+critical. Recent work model tolerates spurious differences in                 seminal work of Floyd [64] and Hoare [94] and subse-
+time by “steering” model’s evaluation: when the SUT and its                   quently were championed as a means of increasing code
+model differ, the model is backtracked, and a steering action,                quality in the development of the contract-based program-
+like modifying timer value or changing inputs, is applied to                  ming approach, notably in the language Eiffel [135].
+reduce the distance, under a similarity measure [74].                             Widely used programming languages now routinely
+   Protocol conformance testing [72] and, later, model-                       provide assertion constructs; for instance, C, C++, and Java
+based testing [183] motivated much of the work applying                       provide a construct called assert and C# provides a Debug.
+state transition systems to testing. Given a specification F as               Assert method. Moreover, a variety of systems have been
+a state transition system, e.g. a finite state machine, a test                independently developed for embedding assertions into a
+case can be extracted from sequences of transitions in F .                    host programming languages, such as Anna [116] for Ada,
+The transition labels of such a sequence define an input. A                   APP [155] and Nana [119] for C languages.
+test oracle can then be constructed from F as follows: if F                       In practice, assertion approaches can check only a limited
+accepts the sequence and outputs some value, then so                          set of properties at a certain point in a program [49]. Lan-
+should the system under test; if F does not accept the input,                 guages based on design by contract principles extend the
+then neither should the system under test.                                    expressivity of assertions by providing means to check con-
+   Challenges remain, however, as the definition of confor-                   tracts between client and supplier objects in the form of method
+mity comes in different flavours, depending on whether                        pre- and post- conditions and class invariants. Eiffel was the
+the model is deterministic or non-deterministic and                           first language to offer design by contract [135], a language fea-
+whether the behaviour of the system under test on a given                     ture that has since found its way into other languages, such as
+test case is observable and can be interpreted at the same                    Java in the form of Java modeling language (JML) [139].
+level of abstraction as the model’s. The resulting flavours                       Cheon and Leavens showed how to construct an assertion-
+of conformity have been captured in alternate notions, in                     based test oracle on top of JML [45]. For more on assertion-
+terms of whether the system under test is isomorphic to,                      based test oracles, see Coppit and Haddox-Schatz’s evalua-
+equivalent to, or quasi-equivalent to F. These notions of                     tion [49], and, later, a method proposed by Cheon [44]. Both
+conformity were defined in the mid-1990s in the famous                        assertions and contracts are enforced observation activity that
+survey paper by Lee and Yannakakis [111] among other                          are embedded into the code. Araujo et al. provide a systematic
+notable papers, including those by Bochmann and                               evaluation of design by contract on a large industrial system
+Petrenko [26] and Tretmans [180].                                             [9] and using JML in particular [8]; Briand et al. showed how
+                                                                              to support testing by instrumenting contracts [33].
+4.2 Assertions and Contracts
+An assertion is a boolean expression that is placed at a cer-                 4.3 Algebraic Specification Languages
+tain point in a program to check its behaviour at runtime.                    Algebraic specification languages define a software module in
+When an assertion evaluates to true, the program’s behav-                     terms of its interface, a signature consisting of sorts and opera-
+iour is regarded “as intended” at the point of the assertion,                 tion symbols. Equational axioms specify the required proper-
+for that particular execution; when an assertion evaluates to                 ties of the operations; their equivalence is often computed
+false, an error has been found in the program for that partic-                using term rewriting [15]. Structuring facilities, which group
+ular execution. It is obvious to see how assertions can be                    sorts and operations, allow the composition of interfaces. Typ-
+used as a test oracle.                                                        ically, these languages employ first-order logic to prove prop-
+   The fact that assertions are embedded in an implementa-                    erties of the specification, like the correctness of refinements.
+tion language has two implications that differentiate them                    Abstract data types (ADT), which combine data and opera-
+                                                                              tions over that data, are well-suited to algebraic specification.
+    3. Unfortunately, the term ‘state’ has different interpretation in the       One of the earliest algebraic specification systems, for
+context of test oracles. Often, it refers to a ‘snapshot’ of the configura-   implementing, specifying and testing ADTs, is DAISTS [69].
+tion of a system at some point during its execution; in context of state
+transition systems, however, ‘state’ typically refers to an abstraction of    In this system, equational axioms generally equate a term-
+a set of configurations, as noted above.                                      rewriting expression in a restricted dialect of ALGOL 60
+514                                                         IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,      VOL. 41,   NO. 5,   MAY 2015
+
+
+against a function composition in the implementation lan-           case generation and test harness creation. Bochmann et al.
+guage. For example, consider this axiom used in DAISTS:             used LOTOS to realise test oracle functions from algebraic
+                                                                    specifications [184]; most recently, Zhu also considered the
+       Pop2ðStack S; EltType IÞ :                                   use of algebraic specifications as test oracles [210].
+             PopðPushðS; IÞÞ ¼ if DepthðSÞ ¼ Limit
+                                   then PopðSÞ                      4.3.1 Specified Test Oracle Challenges
+                                   else S;                          Three challenges must be overcome to build specified test
+                                                                    oracles. The first is the lack of a formal specification. Indeed,
+This axiom is taken from a specification that differentiates
+                                                                    the other classes of test oracles, discussed in this survey, all
+the accessor Top, which returns the top element of a stake          address the problem of test oracle construction in the
+without modifying the stack, and the mutator Pop, which             absence of a formal specification. Formal specifications
+returns a new stack lacking the previous top element. A test        models necessarily rely on abstraction that can lead to the
+oracle simply executes both this axiom and its correspond-          second problem: imprecision, models that include infeasible
+ing composition of implemented functions against a test             behavior or that do not capture all the behavior relevant to
+suite: if they disagree, a failure has been found in the imple-
+                                                                    checking a specification [68]. Finally, one must contend
+mentation or in the axiom; if they agree, we gain some
+                                                                    with the problem of interpreting model output and equat-
+assurance of their correctness.
+                                                                    ing it to concrete program output.
+   Gaudel et al. [19], [20], [72], [73] were the first to provide
+                                                                       Specified results are usually quite abstract, and the con-
+a general testing theory founded on algebraic specification.
+                                                                    crete test results of a program’s executions may not be repre-
+Their idea is that an exhaustive test suite composed only of
+                                                                    sented in a form that makes checking their equivalence to the
+ground terms, i.e., terms with no free variables, would be          specified result straightforward. Moreover, specified results
+sufficient to judge program correctness. This approach faces        can be partially represented or oversimplified. This is why
+an immediate problem: the domain of each variable in a              Gaudel remarked that the existence of a formal specification
+ground term might be infinite and generate an infinite num-         does not guarantee the existence of a successful test driver
+ber of test cases. Test suites, however, must be finite, a prac-    [72]. Formulating concrete equivalence functions may be
+tical limitation to which all forms of testing are subject. The     necessary to correctly interpret results [118]. In short, solu-
+workaround is, of course, to abandon exhaustive coverage
+                                                                    tions to this problem of equivalence across abstraction levels
+of all bindings of values to ground terms and select a finite
+                                                                    depend largely on the degree of abstraction and, to a lesser
+subset of test cases [20].
+                                                                    extent, on the implementation of the system under test.
+   Gaudel’s theory focuses on observational equivalence.
+Observational inequivalence is, however, equally important
+[210]. For this reason, Frankl and Doong extended Gaudel’s          5   DERIVED TEST ORACLES
+theory to express inequality as well an equality [52]. They         A derived test oracle distinguishes a system’s correct from
+proposed a notation that is suitable for object-oriented pro-       incorrect behavior based on information derived from vari-
+grams and developed an algebraic specification language             ous artefacts (e.g. documentation, system executions) or
+called LOBAS and a test harness called ASTOOT. In addi-             properties of the system under test, or other versions of it.
+tion to handling object-orientation, Frankl and Doong               Testers resort to derived test oracles when specified test
+require classes to implement the testing method EQN that            oracles are unavailable, which is often the case, since specifi-
+ASTOOT uses to check the equivalence or inequivalence of            cations rapidly fall out of date when they exist at all. Of
+two instances of a given class. From the vantage point of an        course, the derived test oracle might become a partial
+observer, an object has observable and unobservable, or hid-        “specified test oracle”, so that test oracles derived by the
+den, state. Typically, the observable state of an object is its     methods discussed in this section could migrate, over time,
+public fields and method return values. EQN enhances the            to become, those considered to be the “specified test
+testability of code and enables ASTOOT to approximate the           oracles” of the previous section. For example, JWalk incre-
+observational equivalence of two objects on a sequence of           mentally learns algebraic properties of the class under test
+messages, or method calls. When ASTOOT checks the                   [170]. It allows interactive confirmation from the tester,
+equivalence of an object and a specification in LOBAS, it           ensuring that the human is in the “’learning loop”.
+realizes a specified test oracle.                                      The following sections discuss research on deriving test
+   Expanding upon ASTOOT, Chen et al. [40], [41] built              oracles from development artefacts, beginning in Section 5.1
+TACCLE, a tool that employs a white-box heuristic to gener-         with pseudo-oracles and N-version programming, which
+ate a relevant, finite number of test cases. Their heuristic        focus on agreement among independent implementations.
+builds a data relevance graph that connects two fields of a         Section 5.2 then introduces metamorphic relations which
+class if one affects the other. They use this graph to consider     focuses on relations that must hold among distinct executions
+only that can affect an observable attributes of a class when       of a single implementation. Regression testing, Section 5.3,
+considering the (in)equivalence of two instances. Algebraic         focuses on relations that should hold across different versions
+specification has been a fruitful line of research; many alge-      of the SUT. Approaches for inferring models from system
+braic specification languages and tools exist, including            executions, including invariant inference and specification
+Daistish [100], LOFT [122], CASL [11], CASCAT [205]. The            mining, are described in Section 5.4. Section 5.5 closes with a
+projects have been evolving toward testing a wider array of         discussion of research into extracting test oracle information
+entities, from ADTS, to classes, and most recently, compo-          from textual documentation, like comments, specifications,
+nents; they also differ in their degree of automation of test       and requirements.
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                    515
+
+
+5.1 Pseudo-Oracles                                                then ea e a ¼ 1 is a metamorphic relation. Under this meta-
+One of the earliest versions of a derived test oracle is the      morphic relation, p(0.3)  p(-0.3) = 1 will hold if p is
+concept of a pseudo-oracle, introduced by Davis and               correct [43]. The key idea is that reasoning about the proper-
+Weyuker [50], as a means of addressing so-called non-test-        ties of f will lead us to relations that its implementation p
+able programs:                                                    must obey.
+    “Programs which were written in order to deter-                  Metamorphic testing is a process of exploiting metamor-
+    mine the answer in the first place. There would be            phic relations to generate partial test oracles for follow-up
+    no need to write such programs, if the correct                test cases: it checks important properties of the SUT after
+    answer were known.” [196].                                    certain test cases are executed [36]. Although metamorphic
+                                                                  relations are properties of the ground truth, the correct phe-
+A pseudo-oracle is an alternative version of the program          nomenon (f in the example above) that a SUT seeks to
+produced independently, e.g. by a different programming           implement and could be considered a mechanism for creat-
+team or written in an entirely different programming lan-         ing specified test oracles. We have placed them with
+guage. In our formalism (Section 2), a pseudo-oracle is a test    derived test oracles, because, in practice, metamorphic rela-
+oracle D that accepts test activity sequences of the form         tions are usually manually inferred from a white-box
+                                                                  inspection of a SUT.
+             f1 ðxÞo1 f2 ðxÞo2 : ½f1 6¼ f2 ^ o1 ¼ o2 ;     (1)      Metamorphic relations differ from algebraic specifica-
+                                                                  tions in that a metamorphic relation relates different execu-
+where f1 ; f2 2 C, the components of the SUT (Section 2),
+                                                                  tions, not necessarily on the same input, of the same
+are alternative, independently produced, versions of the
+                                                                  implementation relative to its specification, while algebraic
+SUT on the same value. We draw the reader’s attention
+to the similarity between pseudo-oracles and algebraic            specifications equates two distinct implementations of the
+specification systems (Section 4.3), like DIASTIS, where          specification, one written in an implementation language
+                                                                  and the other written in formalism free of implementation
+the function composition expression in the implementa-
+                                                                  details, usually term rewriting [15].
+tion language and the term-rewriting expression are
+                                                                     Under the formalism of Section 2, a metamorphic rela-
+distinct implementations whose output must agree and
+                                                                  tion is
+form a pseudo-oracle.
+   A similar idea exists in fault-tolerant computing,
+referred to as multi- or N-version programming [13], [14],                  fðx1 Þo1 fðx2 Þo2    fðik Þok : ½expr ^ k   2;
+where the software is implemented in multiple ways and
+                                                                  where expr is a constraint, usually arithmetic, over the
+executed in parallel. Where results differ at run-time, a
+                                                                  inputs xi and ox . This definition makes clear that a meta-
+“voting” mechanism decides which output to use. In our
+formalism, an N-version test oracle accepts test activities       morphic relation is a constraint on the values of stimulating
+of the following form:                                            the single SUT f at least twice, observing the responses,
+                                                                  and imposing a constraint on how they interrelate. In con-
+                f1 ðxÞo1 f2 ðxÞo2    fk ðxÞok :                trast, algebraic specification is a type of pseudo-oracle, as
+                                                                  specified in Equation (1), which stimulates two distinct
+                ½8i; j 2 ½1::k; i 6¼ j ) fi 6¼ fj          (2)   implementations on the same value, requiring their output
+                 ^ arg maxoi mðoi Þ t:                           to be equivalent.
+                                                                     It is often thought that metamorphic relations need to
+   In Equation (2), the outputs form a multiset and m is the      concern numerical properties that can be captured by arith-
+multiplicity, or number of repetitions of an element in the       metic equations, but metamorphic testing is, in fact, more
+multiset. The arg max operator finds the argument that            general. For example, Zhou et al. [209] used metamorphic
+maximizes a function’s output, here an output with great-         testing to test search engines such as Google and Yahoo!,
+est multiplicity. Finally, the maximum multiplicity is            where the relations considered are clearly non-numeric.
+compared against the threshold t. We can now define a             Zhou et al. build metamorphic relations in terms of the con-
+N-version test oracle as Dnv ðw; xÞ where w obeys Equa-           sistency of search results. A motivating example they give is
+tion (2) with t bound to x. Then Dmaj ðwÞ ¼ Dnv ðw; dk2eÞ is an   of searching for a paper in the ACM digital library: two
+N-version oracle that requires a majority of the outputs to       attempts, the second quoted, using advanced search fail,
+agree and Dpso ðwÞ ¼ Dnv ðw; kÞ generalizes pseudo oracles        but a general search identical to the first succeeds. Using
+to agreement across k implementations.                            this insight, the authors build metamorphic relations, like
+   More recently, Feldt [58] investigated the possibility of      ROR : A1 ¼ ðA2 [ A3 Þ ) jA2 j jA1 j, where the Ai are sets of
+automatically producing different versions using genetic          web pages returned by queries. Metamorphic testing is also
+programming, and McMinn [127] explored the idea of pro-           means of testing Weyuker’s “non-testable programs”, intro-
+ducing different software versions for testing through pro-       duced in the last section.
+gram transformation and the swapping of different                    When the SUT is nondeterministic, such as a classifier
+software elements with those of a similar specification.          whose exact output varies from run to run, defining meta-
+                                                                  morphic relations solely in terms of output equality is usu-
+5.2 Metamorphic Relations                                         ally insufficient during metamorphic testing. Murphy et al.
+For the SUT p that implements the function f, a metamorphic       [138], [139] investigate relations other than equality, like set
+relation is a relation over applications of f that we expect to   intersection, to relate the output of stochastic machine learn-
+hold across multiple executions of p. Suppose fðxÞ ¼ ex ,         ing algorithms, such as classifiers. Guderlei and Mayer
+516                                                        IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,        VOL. 41,   NO. 5,   MAY 2015
+
+
+introduced statistical metamorphic testing, where the rela-        since the two have profoundly different consequences for
+tions for test output are checked using statistical analysis       test oracles. We therefore refer to this new category of
+[80], a technique later exploited to apply metamorphic test-       perfective maintenance as “changed requirements”. Recall
+ing to stochastic optimisation algorithms [203].                   that, for the function f : X ! Y , domðfÞ ¼ X. For changed
+   The biggest challenge in metamorphic testing is automat-        requirements:
+ing the discovery of metamorphic relations. Some of those
+in the literature are mathematical [36], [37], [42] or combina-                          9a  Diþ1 ðaÞ 6¼ Di ðaÞ;
+torial [138], [139], [160], [203]. Work on the discovery of
+algebraic specifications [88] and JWalk’s lazy systematic          which implies, of course, domðDiþ1 Þ \ domðDi Þ 6¼ ; and the
+unit testing, in which the specification is lazily, and incre-     new test oracle cannot simply union the new behavior with
+mentally, learned through interactions between JWalk               the old test oracle. Instead, we have
+and the developer [170] might be suitable for adaptation to                                 
+                                                                                                DD if a 2 domðDDÞ
+the discovery metamorphic relations. For instance, the                             Diþ1 ¼
+                                                                                                Di otherwise:
+programmer’s development environment might track rela-
+tionships among the output of test cases run during devel-
+                                                                   5.4 System Executions
+opment, and propose ones that hold across many runs to
+the developer as possible metamorphic relations. Work has          A system execution trace can be exploited to derive test
+already begun that exploits domain knowledge to formulate          oracles or to reduce the cost of a human test oracle by align-
+metamorphic relations [38], but it is still at an early stage      ing an incorrect execution against the expected execution,
+and not yet automated.                                             as expressed in temporal logic [51]. This section discusses
+                                                                   the two main techniques for deriving test oracles from
+5.3 Regression Test Suites                                         traces—invariant detection and specification mining.
+Regression testing aims to detect whether the modifications        Derived test oracles can be built on both techniques to auto-
+made to the new version of a SUT have disrupted existing           matically check expected behaviour similar to assertion-
+functionality [204]. It rests on the implicit assumption           based specification, discussed in Section 4.2.
+that the previous version can serve as an oracle for existing
+functionality.                                                     5.4.1 Invariant Detection
+    For corrective modifications, desired functionality            Program behaviours can be automatically checked against
+remains the same so the test oracle for version i, Di , can        invariants. Thus, invariants can serve as test oracles to help
+serve as the next version’s test oracle, Diþ1 . Corrective mod-    determine the correct and incorrect outputs.
+ifications may fail to correct the problem they seek to               When invariants are not available for a program in
+address or disrupt existing functionality; test oracles may        advance, they can be learned from the program (semi-)
+be constructed for these issues by symbolically comparing          automatically. A well-known technique proposed by Ernst
+the execution of the faulty version against the newer, alleg-      et al. [56], implemented in the Daikon tool [55], is to execute
+edly fixed version [79]. Orstra generates assertion-based test     a program on a collection of inputs (test cases) against a col-
+oracles by observing the program states of the previous ver-       lection of potential invariants. The invariants are instanti-
+sion while executing the regression test suite [199]. The          ated by binding their variables to the program’s variables.
+regression test suite, now augmented with assertions, is           Daikon then dynamically infers likely invariants from those
+then applied to the newer version. Similarly, spectra-based        invariants not violated during the program executions over
+approaches use the program and value spectra obtained              the inputs. The inferred invariants capture program behav-
+from the original version to detect regression faults in the       iours, and thus can be used to check program correctness.
+newer versions [86], [200].                                        For example, in regression testing, invariants inferred from
+    For perfective modifications, those that add new features      the previous version can be checked as to whether they still
+to the SUT, Di must be modified to cater for newly added           hold in the new version.
+behaviours, i.e. Diþ1 ¼ Di [ DD. Test suite augmentation              In our formalism, Daikon invariant detection can define
+techniques specialise in identifying and generating DD [6],        an unsound test oracle that gathers likely invariants from
+[131], [202]. However, more work is required to develop            the prefix of a testing activity sequence, then enforces those
+these augmentation techniques so that they augment, not            invariants over its suffix. Let Ij be the set of likely invariants
+merely the test input, but also the expected output. In this       at observation j; I0 are the initial invariants; for the test
+way, test suite augmentation could be extended to augment          activity sequence r1 r2 . . . rn , In ¼ fx 2 I j 8i 2 ½1::n; ri xg,
+the existing oracles as well as the test data.                     where is logical entailment. Thus, we take an observation
+    Changes in the specification, which is deemed to fail to       to define a binding of the variables in the world under
+meet requirements perhaps because the requirements have            which a likely invariant either holds or does not: only those
+themselves changed, drives another class of modifications.         likely invariants remain that no observation invalidates. In
+These changes are generally regarded as “perfective” main-         the suffix rnþ1 rnþ2 . . . rm , the test oracle then changes gear
+tenance in the literature but no distinction is made between       and accepts only those activities whose response observa-
+perfections that add new functionality to code (without            tions obey In , i.e. ri : ½ri In ; i > n.
+changing requirements) and those changes that arise due to            Invariant detection can be computationally expensive, so
+changed requirements (or incorrect specifications).                incremental [22], [171] and light weight static analyses [39],
+    Our formalisation of test oracles in Section 2 forces a dis-   [63] have been brought to bear. A technical report summa-
+tinction of these two categories of perfective maintenance,        rises various dynamic analysis techniques [157]. Model
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                    517
+
+
+inference [90], [187] could also be regarded as a form of           “black-box” systems, when source code/behavioural mod-
+invariant generation in which the invariant is expressed as a       els are unavailable. Most work has applied L , a well-
+model (typically as an FSM). Ratcliff et al. used Search-           known learning algorithm, to learn a black-box system B as
+Based Software Engineering (SBSE) [84] to search for invari-        a finite state machine with n states [7]. The algorithm infers
+ants, guided by mutation testing [153].                             an FSM by iteratively querying B and observing the corre-
+   The accuracy of inferred invariants depends in part on           sponding outputs. A string distinguishes two FSMs when
+the quality and completeness of the test cases; additional          only one of the two machines ends in a final state upon con-
+test cases might provide new data from which more accu-             suming the string. At each iteration, an inferred model Mi
+rate invariants can be inferred [56]. Nevertheless, inferring       with i < n states is given. Then, the model is refined with
+“perfect” invariants is almost impossible with the current          the help of a string that distinguishes B and Mi to produce
+state of the art, which tends to frequently infer incorrect or      a new model, until the number of states reaches n.
+irrelevant invariants [151]. Wei et al. recently leveraged              Lee and Yannakakis [111] showed how to use L for con-
+existing contracts in Eiffel code to infer postconditions on        formance testing of B with a specification S. Suppose L
+commands (as opposed to queries) involving quantification           starts by inferring a model Mi , then we compute a string
+or implications whose premises are conjunctions of formu-           that distinguishes Mi from S and refine Mi through the
+lae [192], [193].                                                   algorithm. If, for i ¼ n, Mn is S, then we declare B to be cor-
+   Human intervention can, of course, be used to filter the         rect, otherwise faulty.
+resulting invariants, i.e., retaining the correct ones and dis-         Apart from conformance testing, inference techniques
+carding the rest. However, manual filtering is error-prone          have been used to guide test generation to focus on particu-
+and the misclassification of invariants is frequent. In a recent    lar system behavior and to reduce the scope of analysis. For
+empirical study, Staats et al. found that half of the incorrect     example, Li et al. applied L to the integration testing of a
+invariants Daikon inferred from a set of Java programs were         system of black-box components [113]. Their analysis archi-
+misclassified [175]. Despite these issues, research on the          tecture derives a test oracle from a test suite by using L to
+dynamic inference of program invariants has exhibited               infer a model of the systems from dynamically observing
+strong momentum in the recent past with the primary focus           system’s behavior; this model is then searched to find incor-
+on its application to test generation [10], [141], [207].           rect behaviors, such as deadlocks, and used to verify the
+                                                                    system’s behaviour under fuzz testing (Section 6).
+5.4.2 Specification Mining                                              To find concurrency issues in asynchronous black-box
+Specification mining or inference infers a formal model of          systems, Groz et al. proposed an approach that extracts
+program behaviour from a set of observations. In terms of           behavioural models from systems through active learning
+our formalism, a test oracle can enforce these formal models        techniques [78] and then performs reachability analysis on
+over test activities. In her seminal work on using inference        the models [27] to detect issues, notably races.
+to assess test data adequacy, Weyuker connected inference               Further work in this context has been compiled by Shah-
+and testing as inverse processes [194]. The testing process         baz [165] with industrial applications. Similar applications
+starts with a program, and looks for I/O pairs that charac-         of inference can be found in system analysis [21], [78], [134],
+terise every aspect of both the intended and actual behav-          [188], [189], component interaction testing [114], [121],
+iours, while inference starts with a set of I/O pairs, and          regression testing [200], security testing [168] and verifica-
+derives a program to fit the given behaviour. Weyuker               tion [53], [77], [147].
+defined this relation for assessing test adequacy which can             Zheng et al. [208] extract item sets from web search
+be stated informally as follows.                                    queries and their results, then apply association rule mining
+   A set of I/O pairs T is an inference adequate test set for the   to infer rules. From these rules, they construct derived test
+program P intended to fulfil specification S iff the program        oracles for web search engines, which had been thought to
+IT inferred from T (using some inference procedure) is              be untestable. Image segmentation delineates objects of
+equivalent to both P and S. Any difference would imply              interest in an image; implementing segmentation programs
+that the inferred program is not equivalent to the actual pro-      is a tedious, iterative process. Frouchni et al. successfully
+gram and, therefore, that the test set T used to infer the pro-     apply semi-supervised machine learning to create test
+gram P is inadequate.                                               oracles for image segmentation programs [67]. Memon et al.
+   This inference procedure mainly depends upon the set of          [132], [133], [198] introduced and developed the GUITAR
+I/O pairs used to infer behaviours. These pairs can be              tool, which has been evaluated by treating the current ver-
+obtained from system executions either passively, e.g., by          sion of the SUT as correct, inferring the specification, and
+runtime monitoring, or actively, e.g., by querying the sys-         then executing the generated test inputs. Artificial Neural
+tem [105]. However, equivalence checking is undecidable in          Networks have also been applied to learn system behaviour
+general, and therefore inference is only possible for pro-          and detect deviations from it [162], [163].
+grams in a restricted class, such as those whose behaviour              The majority of specification mining techniques adopt
+can be modelled by finite state machines [194]. With this,          finite state machines as the output format to capture the
+equivalence can be accomplished by experiment [89]. Nev-            functional behaviour of the SUT [21], [27], [53], [77], [78],
+ertheless, serious practical limitations are associated with        [89], [111], [113], [134], [147], [165], [168], [189], sometimes
+such experiments (see the survey by Lee and Yannakakis              extended with temporal constraints [188] or data constraints
+[111] for complete discussion).                                     [114], [121] which are, in turn, inferred by Daikon [56].
+   The marriage between inference and testing has pro-              B€uchi automata have been used to check properties against
+duced wealth of techniques, especially in the context of            black-box systems [147]. Annotated call trees have been
+518                                                        IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,     VOL. 41,   NO. 5,   MAY 2015
+
+
+used to represent the program behaviour of different ver-          requirements in a concise vocabulary with minimal ambigu-
+sions in the regression testing context [200]. GUI widgets         ity. This, in turn, eases the interpretation of documents and
+have been directly modelled with objects and properties for        makes the automatic derivation of test oracles possible. The
+testing [132], [133], [198]. Artificial Neural Nets and            researchers who have proposed specification languages
+machine learning classifiers have been used to learn the           based on (semi-) formal subsets of a natural language are
+expected behaviour of SUT [67], [162], [163]. For dynamic          motivated by the fact that model-based specification lan-
+and fuzzy behaviours such as the result of web search              guages have not seen wide-spread adoption, and believe
+engine queries, association rules between input (query) and        the reason is the inaccessibility their formalism and set-the-
+output (search result strings) have been used as the format        oretic underpinnings to the average programmer.
+of an inferred oracle [208].                                          Schwitter introduced a computer-processable, restricted
+                                                                   natural language called PENG [159]. It covers a strict subset
+5.5 Textual Documentation                                          of standard English with a restricted grammar and a
+Textual documentation ranges from natural language                 domain specific lexicon for content words and predefined
+descriptions of requirements to structured documents detail-       function words. Documents written in PENG can be trans-
+ing the functionalities of APIs. These documents describe the      lated deterministically into first-order predicate logic.
+functionalities expected from the SUT to varying degrees,          Schwitter et al. [30] provided guidelines for writing test sce-
+and can therefore serve as a basis for generating test oracles.    narios in PENG that can automatically judge the correctness
+They are usually informal, intended for other humans, not to       of program behaviours.
+support formal logical or mathematical reasoning. Thus,
+they are often partial and ambiguous, in contrast to specifica-
+                                                                   6   IMPLICIT TEST ORACLES
+tion languages. Their importance for test oracle construction
+rests on the fact that developers are more likely to write them    An implicit test oracle is one that relies on general, implicit
+than formal specifications. In other words, the documenta-         knowledge to distinguish between a system’s correct and
+tion defines the constraints that the test oracle D, as defined    incorrect behaviour. This generally true implicit knowledge
+in Section 2, enforces over testing activities.                    includes such facts as “buffer overflows and segfaults are
+   At first sight, it may seem impossible to derive test           nearly always errors”. The critical aspect of an implicit test
+oracles automatically because natural languages are inher-         oracle is that it requires neither domain knowledge nor a
+ently ambiguous and textual documentation is often impre-          formal specification to implement, and it applies to nearly
+cise and inconsistent. The use of textual documentation has        all programs.
+often been limited to humans in practical testing applica-             Implicit test oracle can be built on any procedure that
+tions [143]. However, some partial automation can assist the       detects anomalies such as abnormal termination due to a
+human in testing using documentation as a source of test           crash or an execution failure [34], [167]. This is because such
+oracle information.                                                anomalies are blatant faults; that is, no more information is
+   Two approaches have been explored. The first category           required to ascertain whether the program behaved cor-
+builds techniques to construct a formal specification out of an    rectly or not. Under our formalism, an implicit oracle
+informal, textual artefact, such as an informal textual specifi-   defines a subset of stimulus and response relations as
+cation, user and developer documentation, and even source          guaranteed failures, in some context.
+code comments. The second restricts a natural language to a            Implicit test oracles are not universal. Behaviours abnor-
+semi-formal fragment amenable to automatic processing.             mal for one system in one context may be normal for that
+Next, we present representative examples of each approach.         system in a different context or normal for a different sys-
+                                                                   tem. Even crashing may be considered acceptable, or even
+5.5.1 Converting Text into Specifications                          desired behaviour, as in systems designed to find crashes.
+                                                                       Research on implicit oracles is evident from early work in
+Prowell and Poore [152] introduced a sequential enumera-
+                                                                   software engineering. The very first work in this context
+tion method for developing a formal specification from an
+                                                                   was related to deadlock, livelock and race detection to
+informal one. The method systematically enumerates all
+                                                                   counter system concurrency issues [24], [106], [185], [16],
+sequences from the input domain and maps the correspond-
+                                                                   [169]. Similarly, research on testing non-functional attrib-
+ing outputs to produce an arguably complete, consistent,           utes have garnered much attention since the advent of the
+and correct specification. However, it can suffer from an          object-oriented paradigm. In performance testing, system
+exponential explosion in the number of input/output                throughput metrics can highlight degradation errors [120],
+sequences. Prowell and Poore employ abstraction techni-            [123], as when a server fails to respond when a number of
+ques to control this explosion. The end result is a formal         requests are sent simultaneously. A case study by Weyuker
+specification that can be transferred into a number of nota-       and Vokolos showed how a process with excessive CPU
+tions, e.g., state transition systems. A notable benefit of this
+                                                                   usage caused service delays and disruptions [195]. Simi-
+approach is that it tends to discover many inconsistent and
+                                                                   larly, test oracles for memory leaks can be built on a profil-
+missing requirements, making the specification more com-
+                                                                   ing technique that detects dangling references during the
+plete and precise.
+                                                                   run of a program [12], [57], [87], [211]. For example, Xie and
+                                                                   Aiken proposed a boolean constraint system to represent
+5.5.2 Restricting Natural Language                                 the dynamically allocated objects in a program [201]. Their
+Restrictions on a natural language reduce complexities in          system raises an alarm when an object becomes unreachable
+its grammar and lexicon and allow the expression of                but has not yet been deallocated.
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                    519
+
+
+   Fuzzing is an effective way to find implicit anomalies,          terms of our formalism, quantitative reduction aims to parti-
+such a crashes [136]. The main idea is to generate random,          tion the set of test activity sequences so the human need only
+or “fuzz”, inputs and feed them to the system to find anom-         consider representative sequences, while test case reduction
+alies. This works because the implicit specification usually        aims to shorten test activity sequences.
+holds over all inputs, unlike explicit specifications which
+tend to relate subsets of inputs to outputs. If an anomaly is       7.1.1 Test Suite Reduction
+detected, the fuzz tester reports it along with the input
+                                                                    Traditionally, test suite reduction has been applied as a
+that triggers it. Fuzzing is commonly used to detect security
+                                                                    post-processing step to an existing test suite, e.g. the work
+vulnerabilities, such as buffer overflows, memory leaks,
+                                                                    of Harrold et al, [85], Offutt et al. [140] and Rothermel et al.
+unhandled exceptions, denial of service, etc. [18], [177].          [156]. Recent work in the search-based testing literature has
+   Other work has focused on developing patterns to detect          sought to combine test input generation and test suite
+anomalies. For instance, Ricca and Tonella [154] considered         reduction into one phase to produce smaller test suites.
+a subset of the anomalies that Web applications can harbor,             Harman et al. proposed a technique for generating test
+such as navigation problems, hyperlink inconsistencies, etc.        cases that penetrate the deepest levels of the control depen-
+In their empirical study, 60 percent of the web applications
+                                                                    dence graph for the program, in order to create test cases
+exhibited anomalies and execution failures.
+                                                                    that exercise as many elements of the program as possible
+                                                                    [82]. Ferrer et al. [61] attack a multi-objective version of the
+7   THE HUMAN ORACLE PROBLEM                                        problem in which they sought to simultaneously maximize
+The above sections give solutions to the test oracle problem        branch coverage and minimize test suite size; their focus
+when some artefact exists that can serve as the foundation          was not this problem per se, but its use to compare a num-
+for either a full or partial test oracle. In many cases, how-       ber of multi-objective optimisation algorithms, including
+ever, no such artefact exists so a human tester must verify         the well-known Non-dominated Sorting Genetic Algorithm
+whether software behaviour is correct given some stimuli.           II (NSGA-II), Strength Pareto EA 2 (SPEA2), and MOCell.
+Despite the lack of an automated test oracle, software engi-        On a series of randomly-generated programs and small
+neering research can still play a key role: finding ways to         benchmarks, they found MOCell performed best.
+reduce the effort that the human tester has to expend in                Taylor et al. [178] use an inferred model as a semantic test
+directly creating, or in being, the test oracle.                    oracle to shrink a test suite. Fraser and Arcuri [65] generate
+    This effort is referred to as the Human Oracle Cost [125].      test suites for Java using their EvoSuite tool. By generating the
+It aims to reduce the cost of human involvement along two           entire suite at once, they are able to simultaneously maximize
+dimensions: 1) writing test oracles and 2) evaluating test          coverage and minimize test suite size, thereby aiding human
+outcomes. Concerning the first dimension, the work of               oracles and alleviating the human oracle cost problem.
+Staats et al. is a representative. They seek to reduce the
+human oracle cost by guiding human testers to those parts           7.1.2 Test Case Reduction
+of the code they need to focus on when writing test oracles         When using randomised algorithms for generating test
+[173]. This reduces the cost of test oracle construction, rather    cases for object-oriented systems, individual test cases can
+than reducing the cost of a human involvement in testing in         generate very long traces very quickly—consisting of a large
+the absence of an automated test oracle. Additional recent          number of method calls that do not actually contribute to a
+work on test oracle construction includes Dodona, a tool            specific test goal (e.g. the coverage of a particular branch).
+that suggests oracle data to a human who then decides               Such method calls unnecessarily increase test oracle cost, so
+whether to use it to define a test oracle realized as a Java        Leitner et al. remove such calls [112] using Zeller’s and
+unit test [115]. Dodona infers relations among program vari-        Hildebrandt’s Delta Debugging [206]. JWalk simplifies test
+ables during execution, using network centrality analysis           sequences by removing side-effect free functions from
+and data flow.                                                      them, thereby reducing test oracle costs where the human is
+    Research that seeks to reduce the human oracle cost             the test oracle [170]. Quick tests seek to efficiently spend a
+broadly focuses on finding a quantitative reduction in the          small test budget by building test suites whose execution is
+amount of work the tester has to do for the same amount of          fast enough for it to be run after compilations [76]. These
+test coverage or finding a qualitative reduction in the work        quick tests must be likely to trigger bugs and therefore gen-
+needed to understand and evaluate test cases.                       erate short traces, which, as a result, are easier for humans
+                                                                    to comprehend.
+7.1 Quantitative Human Oracle Cost
+Test suites can be unnecessarily large, covering few test goals     7.2 Qualitative Human Oracle Cost
+in each individual test case. Additionally, the test cases          Human oracle costs may also be minimised from a qualita-
+themselves may be unnecessarily long—for example con-               tive perspective. That is, the extent to which test cases, more
+taining large numbers of method calls, many of which do not         generally testing activities, may be easily understood and
+contribute to the overall test case. The goal of quantitative       processed by a human. The input profile of a SUT is the dis-
+human oracle cost reduction is to reduce test suite and test case   tribution of inputs it actually processes when running in its
+size so as to maximise the benefit of each test case and each       operational environment. Learning an input profile requires
+component of that test case. This consequently reduces the          domain knowledge. If such domain knowledge is not built
+amount of manual checking effort that is required on behalf         into the test data generation process, machine-generated
+of a human tester performing the role of a test oracle. Cast in     test data tend to be drawn from a different distribution over
+520                                                       IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,      VOL. 41,   NO. 5,   MAY 2015
+
+
+the SUT’s inputs than its input profile. While this may be        into a fitness function, a metaheuristic search can not only
+beneficial for trapping certain types of faults, the utility of   cover test goals, but generate string inputs that are more
+the approach decreases when test oracle costs are taken into      comprehensible than the arbitrary strings generated by the
+account, since the tester must invest time comprehending the      previous state of the art. Over a number of case studies,
+scenario represented by test data in order to correctly evalu-    Afshan et al. found that human oracles more accurately and
+ate the corresponding program output. Arbitrary inputs are        more quickly evaluated their test strings.
+much harder to understand than recognisable pieces of                Fraser and Zeller [66] improve the familiarity of test cases
+data, thus adding time to the checking process.                   by mining the software under test for common usage pat-
+   All approaches to qualitatively alleviating the human          terns of APIs. They then seek to replicate these patterns in
+oracle cost problem incorporate human knowledge to                generated test cases. In this way, the scenarios generated
+improve the understandability of test cases. The three            are more likely to be realistic and represent actual usages of
+approaches we cover are                                           the software under test.
+
+  1)    augmenting test suites designed by the developers;
+                                                                  7.3 Crowdsourcing the Test Oracle
+  2)    computing “realistic” inputs from web pages, web
+        services, and natural language; and                       A recent approach to handling the lack of a test oracle is to
+   3) mining usage patterns to replicate them in the test         outsource the problem to an online service to which large
+        cases.                                                    numbers of people can provide answers—i.e., through
+    In order to improve the readability of automatically-gen-     crowdsourcing. Pastore et al. [146] demonstrated the feasi-
+erated test cases, McMinn et al. propose the incorporation        bility of the approach but noted problems in presenting the
+of human knowledge into the test data generation process          test problem to the crowd such that it could be easily under-
+[125]. With search-based approaches, they proposed inject-        stood, and the need to provide sufficient code documenta-
+ing this knowledge by “seeding” the algorithm with test           tion so that the crowd could determine correct outputs from
+cases that may have originated from a human source such           incorrect ones. In these experiments, crowdsourcing was
+as a “sanity check” performed by the programmer, an               performed by submitting tasks to a generic crowdsourcing
+already existing, partial test suite, or input–output examples    platform—Amazon’s Mechanical Turk.4 However, some
+generated by programming paradigms that involve the               dedicated crowdsourcing services now exist for the testing
+developer in computation, like prorogued programming [2].         of mobile applications. They specifically address the prob-
+    The generation of string test data is particularly problem-   lem of the exploding number of devices on which a mobile
+atic for automatic test data generators, which tend to gener-     application may run, and which the developer or tester may
+ate nonsensical strings. These nonsensical strings are, of        not own, but which may be possessed by the crowd at large.
+course, a form of fuzz testing (Section 6) and good for           Examples of these services include Mob4Hire,5 MobTest6
+exploring uncommon, shallow code paths and finding cor-           and uTest.7
+ner cases, but they are unlikely to exercise functionality
+deeper in a program’s control flow. This is because string        8    FUTURE DIRECTIONS AND CONCLUSION
+comparisons in control expressions are usually stronger
+                                                                  This paper has provided a comprehensive survey of test
+than numerical comparisons, making one of a control
+                                                                  oracles, covering specified, derived and implicit oracles and
+point’s branches much less likely to traverse via uniform
+                                                                  techniques that cater for the absence of test oracles. The
+fuzzing. We see here the seminal computer science trade-off
+                                                                  paper has also analyzed publication trends in the test oracle
+between breadth first and depth first search in the choice
+                                                                  domain. This paper has necessarily focused on the tradi-
+between fuzz testing with nonsensical inputs and testing
+                                                                  tional approaches to the test oracle problem. Much work on
+with realistic inputs.
+                                                                  test oracles remains to be done. In addition to research
+    Bozkurt and Harman, introduced the idea of mining
+                                                                  deepening and interconnecting these approaches, test oracle
+web services for realistic test inputs, using the outputs
+                                                                  problem is open to new research directions. We close with a
+of known and trusted test services as more realistic
+                                                                  discussion of two of these that we find noteworthy and
+inputs to the service under test [32]. The idea is that real-
+                                                                  promising: test oracle reuse and test oracle metrics.
+istic test cases are more likely to reveal faults that devel-
+                                                                     As this survey has shown, test oracles are difficult to con-
+opers care about and yield test cases that are more
+                                                                  struct. Oracle reuse is therefore an important problem that
+readily understood. McMinn et al. also mine the web for
+                                                                  merits attention. Two promising approaches to oracle reuse
+realistic test cases. They proposed mining strings from
+                                                                  are generalizations of reliable reset and the sharing of oracular
+the web to assist in the test generation process [129],
+                                                                  data across software product lines (SPLs). Generalizing reli-
+[166]. Since web page content is generally the result of
+                                                                  able reset to arbitrary states allows the interconnection of dif-
+human effort, the strings contained therein tend to be
+                                                                  ferent versions of a program, so we can build test oracles that
+real words or phrases with high degrees of semantic and
+                                                                  based on older versions of a program, using generalized reli-
+domain relevant context that can thus be used as sources
+                                                                  able reset to ignore or handle new inputs and functionality.
+of realistic test data.
+                                                                  SPLs are sets of related versions of a system [47]. A product
+    Afshan et al. [1] combine a natural language model and
+metahueristics, strategies that guide a search process [25], to
+help generate readable strings. The language model scores             4. http://www.mturk.com
+                                                                      5. http://www.mob4hire.com
+how likely a string is to belong to a language based on the           6. http://www.mobtest.com
+character combinations. Incorporating this probability score          7. http://www.utest.com/
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                                           521
+
+
+line can be thought of as a tree of related software products in              [11]   E. Astesiano, M. Bidoit, H. Kirchner, B. Krieg-Br€        uckner, P. D.
+                                                                                     Mosses, D. Sannella, and A. Tarlecki, “CASL: The common alge-
+which branches contain new alternative versions of the sys-                          braic specification language,” Theor. Comput. Sci., vol. 286, no. 2,
+tem, each of which shares some core functionality enjoyed by                         pp. 153–196, 2002.
+a base version. Research on test oracles should seek to lever-                [12]   T. M. Austin, S. E. Breach, and G. S. Sohi, “Efficient detection of
+age these SPL trees to define trees of test oracles that share                       all pointer and array access errors,” in Proc. ACM SIGPLAN 1994
+                                                                                     Conf. Programm. Lang. Des. Implementation, 1994, pp. 290–301.
+oracular data where possible.                                                 [13]   A. Avizienis, “The N-version approach to fault-tolerant
+   Work has already begun on using test oracle as the mea-                           software,” IEEE Trans. Softw. Eng., vol. 11, no. 12, pp. 1491–1501,
+sure of how well the program has been tested (a kind of test                         Dec. 1985.
+                                                                              [14]   A. Avizienis and L. Chen, “On the implementation of N-version
+oracle coverage) [103], [176], [186] and measures of oracles                         programming for software fault-tolerance during execution,” in
+such as assessing the quality of assertions [158]. More work                         Proc. 1st Int. Comput. Softw. Appl. Conf., 1977, pp. 149–155.
+is needed. “Oracle metrics” is a challenge to, and an oppor-                  [15]   F. Baader, and T. Nipkow, Term Rewriting and All That. New
+tunity for, the “software metrics” community. In a world in                          York, NY, USA: Cambridge Univ. Press, 1998.
+                                                                              [16]   A. F. Babich, “Proving total correctness of parallel programs,”
+which test oracles become more prevalent, it will be impor-                          IEEE Trans. Softw. Eng., vol. 5, no. 6, pp. 558–574, Nov. 1979.
+tant for testers to be able to assess the features offered by                 [17]   L. Baresi and M. Young. (2001, Aug.). Test oracles. Univ. of Ore-
+alternative test oracles.                                                            gon, Dept. Comput. Inform. Sci., Eugene, OR, USA. Tech. Rep.
+   A repository of papers on test oracles accompanies this                           CIS-TR-01-02. [Online]. Available: http://www.cs.uoregon.edu/
+                                                                                     ~michal/pubs/oracles.html
+paper at http://crestweb.cs.ucl.ac.uk/resources/oracle_rep                    [18]   S. Bekrar, C. Bekrar, R. Groz, and L. Mounier, “Finding software
+ository.                                                                             vulnerabilities by smart fuzzing,” in IEEE 4th Int. Conf. Softw.
+                                                                                     Testing, Verification Validation, 2011, pp. 427–430.
+                                                                              [19]   G. Bernot, “Testing against formal specifications: A theoretical
+ACKNOWLEDGMENTS                                                                      view,” in Proc. Int. Joint Conf. Theory Prac. Softw. Develop. Adv.
+                                                                                     Distrib. Comput. Colloquium Combining Paradigms Softw. Develop.,
+The authors would like to thank Bob Binder for helpful                               1991, pp. 99–119.
+information and discussions when we began work on this                        [20]   G. Bernot, M. C. Gaudel, and B. Marre, “Software testing based
+paper. We would also like thank all who attended the                                 on formal specifications: A theory and a tool,” Softw. Eng. J.,
+CREST Open Workshop on the Test Oracle Problem (21–22                                vol. 6, no. 6, pp. 387–405, Nov. 1991.
+                                                                              [21]   A. Bertolino, P. Inverardi, P. Pelliccione, and M. Tivoli,
+May 2012) at University College London, and gave feedback                            “Automatic synthesis of behavior protocols for composable web-
+on an early presentation of the work. We are further                                 services,” in Proc. 7th Joint Meeting Eur. Softw. Eng. Conf. ACM
+indebted to the very many responses to our emails from                               SIGSOFT Symp. Found. Softw. Eng., 2009, pp. 141–150.
+                                                                              [22]   D. Beyer, T. Henzinger, R. Jhala, and R. Majumdar, “Checking
+authors cited in this survey, who provided several useful
+                                                                                     memory safety with Blast,” in Proc. 8th Int. Conf. Held as Part Joint
+comments on an earlier draft of our paper. P. McMinn is                              Eur. Conf. Theory Pract. Softw. Conf. Fundam. Approaches Softw.
+corresponding author.                                                                Eng., 2005, pp. 2–18.
+                                                                              [23]   R. Binder, Testing Object-Oriented Systems: Models, Patterns, and
+                                                                                     Tools. Reading, MA, USA: Addison-Wesley, 2000.
+REFERENCES                                                                    [24]   A. Blikle, “Proving programs by sets of computations,” in Proc.
+[1]    S. Afshan, P. McMinn, and M. Stevenson, “Evolving readable                    3rd Symp. Math. Found. Comput. Sci., 1975, pp. 333–358.
+       string test inputs using a natural language model to reduce            [25]   C. Blum and A. Roli, “Metaheuristics in combinatorial optimiza-
+       human oracle cost,” in Proc. Int. Conf. Softw. Testing, Verification          tion: Overview and conceptual comparison,” ACM Comput.
+       Validation, Mar. 2013, pp. 352–361.                                           Surveys, vol. 35, no. 3, pp. 268–308, 2003.
+[2]    M. Afshari, E. T. Barr, and Z. Su, “Liberating the programmer          [26]   G. V. Bochmann and A. Petrenko, “Protocol testing: Review
+       with prorogued programming,” in Proc ACM Int. Symp. New                       of methods and relevance for software testing,” in Proc. ACM
+       Ideas, New Paradigms, Reflections Programm. Softw., 2012, pp. 11–             SIGSOFT Int. Symp. Softw. Testing Anal., 1994, pp. 109–124.
+       26.                                                                    [27]   G. V. Bochmann, “Finite state description of communication pro-
+[3]    W. Afzal, R. Torkar, and R. Feldt, “A systematic review of search-            tocols,” Comput. Netw., vol. 2, no. 4, pp. 361–372, 1978.
+       based testing for non-functional system properties,” Inf. Softw.       [28]   E. B€orger, A. Cavarra, and E. Riccobene, “Modeling the dynam-
+       Technol., vol. 51, no. 6, pp. 957–976, 2009.                                  ics of UML state machines,” in Abstract State Machines-Theory and
+[4]    B. K. Aichernig, “Automated black-box testing with abstract                   Applications. New York, NY, USA: Springer, 2000, pp. 167–186.
+       VDM oracles,” in Proc. 18th Int. Conf. Comput. Comput. Safety, Rel.    [29]   E. B€orger, “High level system design and analysis using abstract
+       Security, 1999, pp. 250–259.                                                  state machines,” in Proc. Int. Workshop Current Trends Appl.
+[5]    S. Ali, L. C. Briand, H. Hemmati, and R. K. Panesar-Walawege,                 Formal Method: Appl. Formal Methods, 1999, pp. 1–43.
+       “A systematic review of the application and empirical investiga-       [30]   K. B€ottger, R. Schwitter, D. Molla, and D. Richards, “Towards
+       tion of search-based test-case generation,” IEEE Trans. Softw.                reconciling use cases via controlled language and graphical mod-
+       Eng., vol. 36, no. 6, pp. 742–762, Nov. 2010.                                 els,” in Proc. Appl. Prolog 14th Int. Conf. Web Knowl. Manag. Decis.
+[6]    N. Alshahwan and M. Harman, “Automated session data repair                    Support, 2003, pp. 115–128.
+       for web application regression testing,” in Proc. Int. Conf. Softw.    [31]   F. Bouquet, C. Grandpierre, B. Legeard, F. Peureux, N. Vacelet,
+       Testing, Verification, Validation, 2008, pp. 298–307.                         and M. Utting, “A subset of precise UML for model-based
+[7]    D. Angluin, “Learning regular sets from queries and counter-                  testing,” in Proc. 3rd Int. Workshop Adv. Model-Based Testing, 2007,
+       examples,” Inf. Comput., vol. 75, no. 2, pp. 87–106, 1987.                    pp. 95–104.
+[8]    W. Araujo, L. C. Briand, and Y. Labiche, “Enabling the runtime         [32]   M. Bozkurt and M. Harman, “Automatically generating realistic
+       assertion checking of concurrent contracts for the Java modeling              test input from web services,” in Proc. IEEE 6th Int. Symp. Serv.
+       language,” in Proc. 33rd Int. Conf. Softw. Eng., 2011, pp. 786–795.           Oriented Syst. Eng., 2011, pp. 13–24.
+[9]    W. Araujo, L. C. Briand, and Y. Labiche, “On the effectiveness of      [33]   L. C. Briand, Y. Labiche, and H. Sun, “Investigating the use of
+       contracts as test oracles in the detection and diagnosis of race              analysis contracts to improve the testability of object-oriented
+       conditions and deadlocks in concurrent object-oriented                        code,” Softw. Pract. Exp., vol. 33, no. 7, pp. 637–672, Jun. 2003.
+       software,” in Proc. Int. Symp. Empirical Softw. Eng. Meas., 2011,      [34]   C. Cadar, V. Ganesh, P. M. Pawlowski, D. L. Dill, and D. R. Eng-
+       pp. 10–19.                                                                    ler, “EXE: Automatically generating inputs of death,” ACM
+[10]   S. Artzi, M. D. Ernst, A. Kiezun,_    C. Pacheco, and J. H. Perkins,          Trans. Inf. Syst. Secur., vol. 12, no. 2, pp. 10:1–10:38, Dec. 2008.
+       “Finding the needles in the haystack: Generating legal test inputs     [35]   J. Callahan, F. Schneider, and S. Easterbrook, “Automated
+       for object-oriented programs,” in Proc. 1st Workshop Model-Based              software testing using model-checking,” in Proc. SPIN Workshop,
+       Testing Object-Oriented Syst., Oct. 23, 2006.                                 volume 353, 1996.
+522                                                                   IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,              VOL. 41,   NO. 5,   MAY 2015
+
+[36]   F. T. Chan, T. Y. Chen, S. C. Cheung, M. F. Lau, and S. M. Yiu,         [60]   X. Feng, D. L. Parnas, and T. H. Tse, “Tabular expression-based
+       “Application of metamorphic testing in numerical analysis,” in                 testing strategies: A comparison,” in Proc. Testing: Acad. Indus.
+       Proc. IASTED Int. Conf. Softw. Eng., 1998, pp. 191–197.                        Conf. Prac. Res. Techn.—MUTATION, 2007, p. 134.
+[37]   W. K. Chan, S. C. Cheung, and Karl R. P. H. Leung, “A metamor-          [61]   J. Ferrer, F. Chicano, and E. Alba, “Evolutionary algorithms for
+       phic testing approach for online testing of service-oriented software          the multi-objective test data generation problem,” Softw.: Prac.
+       applications,” in Software Applications: Concepts, Methodologies,              Exp., vol. 42, no. 11, pp. 1331–1362, 2011.
+       Tools, and Applications. Hershey, PA, USA: IGI Global, 2009, ch. 7,     [62]   J. S. Fitzgerald and P. G. Larsen, “Modelling Systems—Practical
+       pp. 2894–2914.                                                                 Tools and Techniques in Software Development, 2nd ed. Cambridge,
+[38]   W. K. Chan, S. C. Cheung, and K. R. P. H. Leung, “Towards a                    U.K.: Cambridge Univ. Press, 2009.
+       metamorphic testing methodology for service-oriented software           [63]   C. Flanagan and K. R. M. Leino, “Houdini, an annotation assis-
+       applications,” in Proc. 5th Int. Conf. Quality Softw., Sep. 2005,              tant for ESC/Java,” Lecture Notes in Comput. Sci., vol. 2021,
+       pp. 470–476.                                                                   pp. 500–517, 2001.
+[39]   F. Chen, N. Tillmann, and W. Schulte, “Discovering specifica-           [64]   R. W. Floyd, “Assigning meanings to programs,” in Mathematical
+       tions,” Microsoft Research, Tech. Rep. MSR-TR-2005-146,                        Aspects of Computer Science, volume 19 of Symposia in Applied
+       Oct. 2005.                                                                     Mathematics, J. T. Schwartz Ed., American Providence, RI, USA:
+[40]   H. Y. Chen, T. H. Tse, F. T. Chan, and T. Y. Chen, “In black and               Mathematical Society, 1967, pp. 19–32. .
+       white: An integrated approach to class-level testing of object-ori-     [65]   G. Fraser and A. Arcuri, “Whole test suite generation,” IEEE
+       ented programs,” ACM Trans. Softw. Eng. Methodol., vol. 7,                     Trans. Softw. Eng., vol. 39, no. 2, pp. 276–291, Feb. 2013.
+       pp. 250–295, Jul. 1998.                                                 [66]   G. Fraser and A. Zeller, “Exploiting common object usage in test
+[41]   H. Y. Chen, T. H. Tse, and T. Y. Chen, “TACCLE: A methodology                  case generation,” in Proc. 4th IEEE Int. Conf. Softw. Testing, Verifi-
+       for object-oriented software testing at the class and cluster lev-             cation Validation, 2011, pp. 80–89.
+       els,” ACM Trans. Softw. Eng. Methodol., vol. 10, no. 1, pp. 56–109,     [67]   K. Frounchi, L. C. Briand, L. Grady, Y. Labiche, and R. Subra-
+       Jan. 2001.                                                                     manyan, “Automating image segmentation verification and vali-
+[42]   T. Y. Chen, F.-C. Kuo, T. H. Tse, and Z. Q. Zhou, “Metamorphic                 dation by learning test oracles,” Inf. Softw. Technol., vol. 53,
+       testing and beyond,” in Proc. Int. Workshop Softw. Technol. Eng.               no. 12, pp. 1337–1348, 2011.
+       Prac., Sep. 2004, pp. 94–100.                                           [68]   P. Gall and A. Arnould, “Formal specifications and test: Correct-
+[43]   T. Chen, D. Huang, H. Huang, T.-H. Tse, Z. Yang, and Z. Zhou,                  ness and oracle,” in Recent Trends in Data Type Specification, M.
+       “Metamorphic testing and its applications,” in Proc. 8th Int.                  Haveraaen, O. Owe, and O.-J. Dahl, Ed. Berlin, Germany,
+       Symp. Future Softw. Technol., 2004, pp. 310–319.                               Springer, 1996, pp. 342–358.
+[44]   Y. Cheon, “Abstraction in assertion-based test oracles,” in Proc.       [69]   J. Gannon, P. McMullin, and R. Hamlet, “Data abstraction,
+       7th Int. Conf. Quality Softw., 2007, pp. 410–414.                              implementation, specification, and testing,” ACM Trans. Pro-
+[45]   Y. Cheon and G. T. Leavens, “A simple and practical approach to                gramm. Lang. Syst, vol. 3, no. 3, pp. 211–223, 1981.
+       unit testing: The JML and JUnit way,” in Proc. 16th Eur. Conf.          [70]   A. Gargantini and E. Riccobene, “ASM-based testing: Coverage
+       Object-Oriented Programm., 2002, pp. 231–255.                                  criteria and automatic test sequence,” J. Universal Comput. Sci.,
+[46]   L. A. Clarke, “A system to generate test data and symbolically                 vol. 7, no. 11, pp. 1050–1067, Nov. 2001.
+       execute programs,” IEEE Trans. Softw. Eng., vol. 2, no. 3, pp. 215–     [71]   S. J. Garland, J. V. Guttag, and J. J. Horning, “An overview of
+       222, Sep. 1976.                                                                Larch,” in Functional Programming, Concurrency, Simulation and
+[47]   P. C. Clements, “Managing variability for software product lines:              Automated Reasoning, Springer Berlin Heidelberg, 1993, pp. 329–348.
+       Working with variability mechanisms,” in Proc. 10th Int. Conf.          [72]   M.-C. Gaudel, “Testing from formal specifications, a generic
+       Softw Product Lines, 2006, pp. 207–208.                                        approach,” in Proc. 6th Ade-Eur. Int. Conf. Leuven Rel. Softw. Tech-
+[48]   M. Clermont and D. Parnas, “Using information about functions                  nol., 2001, pp. 35–48.
+       in selecting test cases,” in Proc. 1st Int. Workshop Adv. Model-Based   [73]   M.-C. Gaudel and P. R. James, “Testing algebraic data types and
+       Testing, 2005, pp. 1–7.                                                        processes: A unifying theory,” Formal Asp. Comput., vol. 10,
+[49]   D. Coppit and J. M. Haddox-Schatz, “On the use of specification-               no. 5–6, pp. 436–451, 1998.
+       based assertions as test oracles,” in Proc. 29th Annu. IEEE/NASA        [74]   G. Gay, S. Rayadurgam, and M. Heimdah, “Improving the accu-
+       Softw. Eng. Workshop, 2005, pp. 305–314.                                       racy of oracle verdicts through automated model steering,” in
+[50]   M. Davies and E. Weyuker, “Pseudo-oracles for non-testable pro-                Proc. 29th ACM/IEEE Int. Conf. Automated Softw. Eng., 2014,
+       grams,” in Proc. ACM ’81 Conf., 1981, pp. 254–257.                             pp. 527–538.
+[51]   L. K. Dillon, “Automated support for testing and debugging of           [75]   P. Godefroid, N. Klarlund, and K. Sen, “DART: Directed auto-
+       real-time programs using oracles,” SIGSOFT Softw. Eng. Notes,                  mated random testing,” in Proc. ACM SIGPLAN Conf. Programm.
+       vol. 25, no. 1, pp. 45–46, Jan. 2000.                                          Lang. Des. Implementation, 2005, pp. 213–223.
+[52]   R.-K. Doong and P. G. Frankl, “The ASTOOT approach to testing           [76]   A. Groce, M. A. Alipour, C. Zhang, Y. Chen, and J. Regehr,
+       object-oriented programs,” ACM Trans. Softw. Eng. Methodol.,                   “Cause reduction for quick testing,” in Proc. IEEE Int. Conf. Softw.
+       vol. 3, pp. 101–130, Apr. 1994.                                                Testing, Verification, Validation, 2014, pp. 243–252.
+[53]   E. Elkind, B. Genest, D. Peled, and H. Qu, “Grey-box checking,”         [77]   A. Groce, D. Peled, and M. Yannakakis, “AMC: An adaptive
+       in Proc. 26th IFIP WG 6.1 Int. Conf. Formal Techn. Netw. Distrib.              model checker,” in Proc. Int. Conf. Comput. Aided Verification,
+       Syst., 2006, pp. 420–435.                                                      2002, pp. 521–525.
+[54]   J. Ellsberger, D. Hogrefe, and A. Sarma, SDL: Formal Object-Ori-        [78]   R. Groz, K. Li, A. Petrenko, and M. Shahbaz, “Modular system
+       ented Language for Communicating Systems. Englewood Cliffs, NJ,                verification by inference, testing and reachability analysis,” in
+       USA: Prentice-Hall, 1997.                                                      Proc. TestCom/FATES, 2008, pp. 216–233.
+[55]   M. D. Ernst, J. H. Perkins, P. J. Guo, S. McCamant, C. Pacheco, M.      [79]   Z. Gu, E. T. Barr, D. J. Hamilton, and Z. Su, “Has the bug really
+       S. Tschantz, and C. Xiao, “The Daikon system for dynamic detec-                been fixed?” in Proc. Int. Conf. Softw. Eng., 2010, pp. 55–64.
+       tion of likely invariants,” Sci. Comput. Programm., vol. 69, no. 1,     [80]   R. Guderlei and J. Mayer, “Statistical metamorphic testing testing
+       pp. 35–45, 2007.                                                               programs with random output by means of statistical hypothesis
+[56]   M. D. Ernst, J. Cockrell, W. G. Griswold, and D. Notkin,                       tests and metamorphic testing,” in 7th Int. Conf. Quality Softw.,
+       “Dynamically discovering likely program invariants to support                  Oct. 2007, pp. 404–409.
+       program evolution,” IEEE Trans. Softw. Eng., vol. 27, no. 2, pp.        [81]   D. Harel, “Statecharts: A visual formalism for complex systems,”
+       99–123, Feb. 2001.                                                             Sci. Comput. Programm., vol. 8, no. 3, pp. 231–274, 1987.
+[57]   R. A. Eyre-Todd, “The detection of dangling references in C++           [82]   M. Harman, S. G. Kim, K. Lakhotia, P. McMinn, and S. Yoo,
+       programs,” ACM Lett. Programm. Lang. Syst., vol. 2, no. 1–4,                   “Optimizing for the number of tests generated in search based
+       pp. 127–134, 1993.                                                             test data generation with an application to the oracle cost prob-
+[58]   R. Feldt, “Generating diverse software versions with genetic pro-              lem,” in Proc. Int. Workshop Search-Based Softw. Testing, Apr. 2010,
+       gramming: An experimental study,” in Softw., IEE Proc., vol. 145,              pp. 182–191.
+       pp. 228–236, Dec. 1998.                                                 [83]   M. Harman, A. Mansouri, and Y. Zhang, “Search based software
+[59]   X. Feng, D. L. Parnas, T. H. Tse, and T. O’Callaghan, “A compari-              engineering: A comprehensive analysis and review of trends
+       son of tabular expression-based testing strategies,” IEEE Trans.               techniques and applications,” Dept. of Comput. Sci., King’s
+       Softw. Eng., vol. 37, no. 5, pp. 616–634, Sep./Oct. 2011.                      College London, London, U.K., Tech. Rep. TR-09-03, Apr. 2009.
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                                                   523
+
+[84]    M. Harman, P. McMinn, J. T. de Souza, and S. Yoo, “Search based             [112] A. Leitner, M. Oriol, A Zeller, I. Ciupa, and B. Meyer, “Efficient
+        software engineering: Techniques, taxonomy, tutorial,” in Empir-                  unit test case minimization,” in Proc. Autom. Softw. Eng., 2007,
+        ical Software Engeneering and Verification, B. Meyer and M. Nordio,               pp. 417–420.
+        Eds. New York, NY, USA: Springer, 2012 pp. 1–59.                            [113] K. Li, R. Groz, and M. Shahbaz, “Integration testing of compo-
+[85]    M. J. Harrold, R. Gupta, and M. L. Soffa, “A methodology for                      nents guided by incremental state machine learning,” in Proc.
+        controlling the size of a test suite,” ACM Trans. Softw. Eng. Meth-               Testing: Acad. Ind. Conf. Prac. Res. Tech., 2006, pp. 59–70.
+        odol., vol. 2, no. 3, pp. 270–285, Jul. 1993.                               [114] D. Lorenzoli, L. Mariani, and M. Pezze, “Automatic generation of
+[86]    M. J. Harrold, G. Rothermel, K. Sayre, R. Wu, and L. Yi, “An                      software behavioral models,” in Proc. 30th Int. Conf. Softw. Eng.,
+        empirical investigation of the relationship between spectra dif-                  2008, pp. 501–510.
+        ferences and regression faults,” Softw. Testing, Verification Reli-         [115] P. Loyola, M. Staats, I.-Y. Ko, and G. Rothermel, “Dodona: Auto-
+        ability, vol. 10, no. 3, pp. 171–194, 2000.                                       mated oracle data set selection,” in Proc. Int. Symp. Softw. Testing
+[87]    D. L. Heine and M. S. Lam, “A practical flow-sensitive and con-                   Anal., 2014, pp. 193–203.
+        text-sensitive C and C++ memory leak detector,” in Proc. ACM                [116] D. Luckham and F. W. Henke, “An overview of ANNA-a
+        SIGPLAN Conf. Programm. Lang. Des. Implementation, 2003,                          specification language for ADA,” IEEE Soft., vol. 2, no. 2,
+        pp. 168–181.                                                                      pp. 9–22, 1984.
+[88]    J. Henkel and A. Diwan, “Discovering algebraic specifications               [117] N. A. Lynch and M. R. Tuttle, “An introduction to input/output
+        from Java classes,” Lecture Notes in Comput. Sci., vol. 2743,                     automata,” CWI Quarterly, vol. 2, pp. 219–246, 1989.
+        pp. 431–456, 2003.                                                          [118] P. D. L. Machado, “On oracles for interpreting test results against
+[89]    F. C. Hennie, Finite-State Models for Logical Machines. Hoboken,                  algebraic specifications,” in Proc. Int. Conf. Algebraic Methodol.
+        NJ, USA: Wiley, 1968.                                                             Softw. Technol., 1999, pp. 502–518.
+[90]    M. H. Heule and S. Verwer, “Software model synthesis using sat-             [119] P. Maker.(1998). GNU Nana: Improved support for assertion
+        isfiability solvers,” Empirical Softw. Eng., vol. 18, pp. 825–856,                checking and logging in GNU C/C++ [Online]. Available:
+        Aug. 2013.                                                                        http://gnu.cs.pu.edu.tw/software/nana/
+[91]    R. M. Hierons, “Oracles for distributed testing,” IEEE Trans.               [120] H. Malik, H. Hemmati, and A. E. Hassan, “Automatic detection
+        Softw. Eng., vol. 38, no. 3, pp. 629–641, May/Jun. 2012.                          of performance deviations in the load testing of large scale sys-
+[92]    R. M. Hierons, “Verdict functions in testing with a fault domain                  tems,” in Proc. Int. Conf. Softw. Eng.—Softw. Eng. Prac. Track,
+        or test hypotheses,” ACM Trans. Softw. Eng. Methodol., vol. 18,                   2013, pp. 1012–1021.
+        no. 4, pp. 14:1–14:19, Jul. 2009.                                           [121] L. Mariani, F. Pastore, and M. Pezze, “Dynamic analysis for diag-
+[93]    R. M. Hierons, K. Bogdanov, J. P. Bowen, R. Cleaveland, J. Der-                   nosing integration faults,” IEEE Trans. Softw. Eng., vol. 37, no. 4,
+        rick, J. Dick, M. Gheorghe, M. Harman, K. Kapoor, P. Krause, G.                   pp. 486–508, Jul./Aug. 2011.
+        L€uttgen, A. J. H. Simons, S. Vilkomir, M. R. Woodward, and H.              [122] B. Marre, “Loft: A tool for assisting selection of test data sets
+        Zedan, “Using formal specifications to support testing,” ACM                      from algebraic specifications,” in Proc. 6th Int. Joint Conf. CAAP/
+        Comput. Surv., vol. 41, pp. 9:1–9:76, Feb. 2009.                                  FASE Theory Pract. Softw. Develop., 1995, pp. 799–800.
+[94]    C. A. R. Hoare, “An axiomatic basis of computer programming,”               [123] A. P. Mathur, “Performance, effectiveness, and reliability issues
+        Commun. ACM, vol. 12, pp. 576–580, 1969.                                          in software testing,” in Proc. 15th Annu. Int. Comput. Softw. Appl.
+[95]    M. Holcombe, “X-machines as a basis for dynamic system speci-                     Conf., 1991, pp. 604–605.
+        fication,” Softw. Eng. J., vol. 3, no. 2, pp. 69–76, 1988.                  [124] J. Mayer and R. Guderlei, “Test oracles using statistical meth-
+[96]    M. Holcombe and F. Ipate, “Correct systems: Building a business                   ods,” in Proc. 1st Int. Workshop Softw. Quality, Lecture Notes Inform.
+        process solution,” Softw. Testing VerificationRel., vol. 9, no. 1, pp.            P-58, Kllen Druck+Verlag GmbH, 2004, pp. 179–189.
+        76–77, 1999.                                                                [125] P. McMinn, M. Stevenson, and M. Harman, “Reducing qualita-
+[97]    G. J. Holzmann, “The model checker SPIN,” IEEE Trans. Softw.                      tive human oracle costs associated with automatically generated
+        Eng., vol. 23, no. 5, pp. 279–295, May 1997.                                      test data,” in Proc. 1st Int. Workshop Softw. Test Output Validation,
+[98]    W. E. Howden, “A functional approach to program testing and                       2010, pp. 1–4.
+        analysis,” IEEE Trans. Softw. Eng., vol. 12, no. 10, pp. 997–1005,          [126] P. McMinn, “Search-based software test data generation: A
+        Oct. 1986.                                                                        survey,” Softw. Test. Verif. Rel., vol. 14, no. 2, pp. 105–156, Jun. 2004.
+[99]    W. E. Howden, “Theoretical and empirical studies of program                 [127] P. McMinn, “Search-based failure discovery using testability
+        testing,” IEEE Trans. Softw. Eng., vol. 4, no. 4, pp. 293–298, Jul. 1978.         transformations to generate pseudo-oracles,” in Proc. Genetic
+[100]   M. Hughes and D. Stotts, “Daistish: Systematic algebraic testing                  Evol. Comput. Conf., 2009, pp. 1689–1696.
+        for OO programs in the presence of side-effects,” SIGSOFT Softw.            [128] P. McMinn, “Search-based software testing: Past, present and
+        Eng. Notes, vol. 21, no. 3, pp. 53–61, May 1996.                                  future,” in Proc. Int. Workshop Search-Based Softw. Testing, 2011,
+[101]   D. Jackson, “Software Abstractions: Logic, Language, and Analysis.                pp. 153–163.
+        Cambridge, MA, USA: MIT Press, 2006.                                        [129] P. McMinn, M. Shahbaz, and M. Stevenson, “Search-based test
+[102]   C. Jard and G. V. Bochmann, “An approach to testing specifica-                    input generation for string data types using the results of web
+        tions,” J. Syst. Softw., vol. 3, no. 4, pp. 315–323, 1983.                        queries,” in Proc. IEEE 5th Int. Conf. Softw. Testing, Verification
+[103]   D. Jeffrey and R. Gupta, “Test case prioritization using relevant                 Validation, 2012, pp. 141–150.
+        slices,” in Proc. 30th Annu. Int. Comput. Softw. Appl. Conf., 2006,         [130] P. McMinn, M. Stevenson, and M. Harman, “Reducing qualita-
+        pp. 411–420, 2006.                                                                tive human oracle costs associated with automatically generated
+[104]   Y. Jin and D. L. Parnas, “Defining the meaning of tabular mathe-                  test data,” in Proc. Int. Workshop Softw. Test Output Validation, Jul.
+        matical expressions,” Sci. Comput. Program., vol. 75, no. 11,                     2010, pp. 1–4.
+        pp. 980–1000, Nov. 2010.                                                    [131] A. M. Memon, “Automatically repairing event sequence-based
+[105]   M. J. Kearns and U. V. Vazirani, An Introduction to Computational                 GUI test suites for regression testing,” ACM Trans. Softw. Eng.
+        Learning Theory. Cambridge, MA, USA: MIT Press, 1994.                             Methodol., vol. 18, no. 2, pp. 1–36, 2008.
+[106]   R. M. Keller, “Formal verification of parallel programs,” Com-              [132] A. M. Memon, M. E. Pollack, and M. L. Soffa, “Automated test
+        mun. ACM, vol. 19, no. 7, pp. 371–384, 1976.                                      oracles for GUIs,” in Proc. 8th ACM SIGSOFT Int. Symp. Found.
+[107]   J. C. King, “Symbolic execution and program testing,” Commun.                     Softw. Eng., 2000, pp. 30–39.
+        ACM, vol. 19, no. 7, pp. 385–394, Jul. 1976.                                [133] A. M. Memon and Q. Xie, “Using transient/persistent errors
+[108]   K. Lakhotia, P. McMinn, and M. Harman, “An empirical                              to develop automated test oracles for event-driven software,”
+        investigation into branch coverage for C programs using                           in Proc. 19th IEEE Int. Conf. Automated Softw. Eng., 2004,
+        CUTE and AUSTIN,” J. Syst. Softw., vol. 83, no. 12, pp. 2379–                     pp. 186–195.
+        2391, 2010.                                                                 [134] M. Merten, F. Howar, B. Steffen, P. Pellicione, and M. Tivoli,
+[109]   A. van Lamsweerde, “Formal specification: A roadmap,” in Proc.                    “Automated inference of models for black box systems based on
+        Conf. Future Softw. Eng., 2000, pp. 147–159.                                      interface descriptions,” in Proc. 5th Int. Conf. Leveraging Appl. For-
+[110]   K. Lano and H. Haughton, “Specification in B: An Introduction                     mal Methods, Verification Validation: Technol. Mastering Change—
+        Using the B Toolkit. London, U.K.: Imperial College Press, 1996.                  Volume Part I, 2012, pp. 79–96.
+[111]   D. Lee and M. Yannakakis, “Principles and methods of testing                [135] B. Meyer, “Eiffel: A language and environment for software
+        finite state machines—a survey,” Proc. IEEE, vol. 84, no. 8,                      engineering,” J. Syst. Softw., vol. 8, no. 3, pp. 199–246, Jun.
+        pp. 1090–1123, Aug. 1996.                                                         1988.
+524                                                                   IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,             VOL. 41,   NO. 5,   MAY 2015
+
+[136] B. P. Miller, L. Fredriksen, and B. So, “An empirical study of the       [161] K. Sen, D. Marinov, and G. Agha, “CUTE: A concolic unit testing
+      reliability of UNIX utilities,” Commun. ACM, vol. 33, no. 12,                  engine for C,” in Proc. 10th Eur. Softw. Eng. Conf. Held Jointly 13th
+      pp. 32–44, 1990.                                                               ACM SIGSOFT Int. Symp. Found. Softw. Eng., 2005, pp. 263–272.
+[137] S. Mouchawrab, L. C. Briand, Y. Labiche, and M. Di Penta,                [162] S. Shahamiri, W. Wan-Kadir, S. Ibrahim, and S. Hashim,
+      “Assessing, comparing, and combining state machine-based test-                 “Artificial neural networks as multi-networks automated test
+      ing and structural testing: A series of experiments,” IEEE Trans.              oracle,” Autom. Softw. Eng., vol. 19, no. 3, pp. 303–334, 2012.
+      Softw. Eng., vol. 37, no. 2, pp. 161–187, Mar./Apr. 2011.                [163] S. R. Shahamiri, W. M. N. Wan-Kadir, S. Ibrahim, and S. Z. M.
+[138] C. Murphy, K. Shen, and G. Kaiser, “Automatic system testing of                Hashim, “An automated framework for software test oracle,”
+      programs without test oracles,” in Proc. 18th Int. Symp. Softw.                Inf. Softw. Technol., vol. 53, no. 7, pp. 774–788, 2011.
+      Testing Anal., 2009, pp. 189–200.                                        [164] S. R. Shahamiri, W. M. N. Wan-Kadir, and S. Z. M. Hashim, “A
+[139] C. Murphy, K. Shen, and G. Kaiser, “Using JML runtime asser-                   comparative study on automated software test oracle methods,”
+      tion checking to automate metamorphic testing in applications                  in Proc. 4th Int. Conf. Softw. Eng. Adv., Porto, 2009, pp. 140–145.
+      without test oracles,” in Proc. Int. Conf. Softw. Testing Verification   [165] M. Shahbaz, “Reverse Engineering and Testing of Black-Box Software
+      and Validation, 2009, pp. 436–445.                                             Components. LAP Lambert Academic Publishing, 2012.
+[140] A. J. Offutt, J. Pan, and J. M. Voas, “Procedures for reducing the       [166] M. Shahbaz, P. McMinn, and M. Stevenson, “Automatic genera-
+      size of coverage-based test sets,” in Int. Conf. Testing Comput.               tion of valid and invalid test data for string validation routines,”
+      Softw., 1995, pp. 111–123.                                                     Sci. Comput. Programm., vol. 97, no. 4, pp. 405–425, 2015.
+[141] C. Pacheco and M. Ernst, “Eclat: Automatic generation and                [167] K. Shrestha and M. J. Rutherford, “An empirical evaluation of
+      classification of test inputs,” in Proc. 19th Eur. Conf. Object-               assertions as oracles,” in Proc. 4th IEEE Int. Conf. Softw. Testing,
+      Oriented Programming, pp. 734–734, 2005.                                       Verification Validation, 2011, pp. 110–119.
+[142] D. L. Parnas, J. Madey, and M. Iglewski, “Precise documentation          [168] G. Shu, Y. Hsu, and D. Lee, “Detecting communication protocol
+      of well-structured programs,” IEEE Trans. Softw. Eng., vol. 20,                security flaws by formal fuzz testing and machine learning,” in
+      no. 12, pp. 948–976, Dec. 1994.                                                Proc. 28th IFIP WG 6.1 Int. Conf. Formal Techn. Networked Distrib.
+[143] D. L. Parnas, “Document based rational software development,”                  Syst., 2008, pp. 299–304.
+      J. Knowl. Based Syst., vol. 22, pp. 132–141, Apr. 2009.                  [169] J. Sifakis, “Deadlocks and livelocks in transition systems,” in
+[144] D. L. Parnas, “Precise documentation: The key to better                        Proc. 9th Symp. Math. Found. Comput. Sci., 1980, pp. 587–600.
+      software,” in The Future of Software Engineering, S. Nanz, Ed. Ber-      [170] A. J. H. Simons, “JWalk: A tool for lazy systematic testing of Java
+      lin, Germany, Springer, 2011, pp. 125–148.                                     classes by design introspection and user interaction,” Autom.
+[145] D. L. Parnas and J. Madey, “Functional documents for computer                  Softw. Eng., vol. 14, no. 4, pp. 369–418, Dec. 2007.
+      systems,” Sci. Comput. Program., vol. 25, no. 1, pp. 41–61, Oct.         [171] R. Singh, D. Giannakopoulou, and C. S. Pasareanu, “Learning
+      1995.                                                                          component interfaces with may and must abstractions,” in Proc.
+[146] F. Pastore, L. Mariani, and G. Fraser, “Crowdoracles: Can the                  22nd Int. Conf. Comput. Aided Verification, 2010, pp. 527–542.
+      crowd solve the oracle problem?” in Proc. Int. Conf. Softw. Testing,     [172] J. M. Spivey, Z Notation—a Reference Manual, 2nd ed. Englewood
+      Verification Validation, 2013, pp. 342–351.                                    Cliffs, NJ, USA: Prentice-Hall, 1992.
+[147] D. Peled, M. Y. Vardi, and M. Yannakakis, “Black box checking,”          [173] M. Staats, G. Gay, and M. P. E. Heimdahl, “Automated oracle
+      J. Automata, Lang. Combinatorics, vol 7, no. 2, pp. 225–246, 2002.             creation support, or: How I learned to stop worrying about fault
+[148] D. K. Peters and D. L. Parnas, “Using test oracles generated from              propagation and love mutation testing,” in Proc. 34th Int. Conf.
+      program documentation,” IEEE Trans. Softw. Eng., vol. 24, no. 3,               Softw. Eng., 2012, pp. 870–880.
+      pp. 161–173, Mar. 1998.                                                  [174] M. Staats, M. W. Whalen, and M. P. E. Heimdahl, “Programs,
+[149] D. K. Peters and D. L. Parnas, “Requirements-based monitors for                tests, and oracles: The foundations of testing revisited,” in Proc.
+      real-time systems,” IEEE Trans. Softw. Eng., vol. 28, no. 2,                   33rd Int. Conf. Softw. Eng., 2011, pp. 391–400.
+      pp. 146–158, Feb. 2002.                                                  [175] M. Staats, S. Hong, M. Kim, and G. Rothermel, “Understanding
+[150] M. Pezze, and C. Zhang, “Automated test oracles: A survey,” in                user understanding: Determining correctness of generated pro-
+      A. Hurson and A. Memon, Eds., Advances in Computers, vol. 95,                  gram invariants,” in Proc. Int. Symp. Softw. Testing Anal., 2012,
+      pp. 1–48. Elsevier Ltd., 2014.                                                 pp. 188–198.
+[151] N. Polikarpova, I. Ciupa, and B. Meyer, “A comparative study of          [176] M. Staats, P. Loyola, and G. Rothermel, “Oracle-centric test case
+      programmer-written and automatically inferred contracts,” in                   prioritization,” in Proc. 23rd Int. Symp. Softw. Rel. Eng., 2012, pp.
+      Proc. 18th Int. Symp. Softw. Testing Anal., 2009, pp. 93–104.                  311–320.
+[152] S. J. Prowell and J. H. Poore, “Foundations of sequence-based            [177] A. Takanen, J. DeMott, and C. Miller, Fuzzing for Software Security
+      software specification,” IEEE Trans, Softw. Eng., vol. 29, no. 5,              Testing and Quality Assurance, 1st ed. Norwood, MA, USA: Artech
+      pp. 417–429, May 2003.                                                         House, Inc., 2008.
+[153] S. Ratcliff, D. R. White, and J. A. Clark, “Searching for invariants     [178] R. Taylor, M. Hall, K. Bogdanov, and J. Derrick, “Using behav-
+      using genetic programming and mutation testing,” in Proc. 13th                 iour inference to optimise regression test sets,” in Proc. 24th IFIP
+      Annu. Conf. Genetic Evol. Comput., 2011, pp. 1907–1914.                        WG 601 Int. Conf. Testing Softw. Syst., 2012, pp. 184–199.
+[154] F. Ricca and P. Tonella, “Detecting anomaly and failure in web           [179] A. Tiwari. (2002). Formal semantics and analysis methods for
+      applications,” IEEE Multimedia, vol. 13, no. 2, pp. 44–51, Apr.-               Simulink Stateflow models. SRI International, Menlo Park, CA,
+      Jun. 2006.                                                                     USA: Tech. Rep. [Online]. Available: http://www.csl.sri.com/
+[155] D. S. Rosenblum, “A practical approach to programming with                     users/tiwari/html/stateflow.html
+      assertions,” IEEE Trans., Softw. Eng., vol. 21, no. 1, pp. 19–31, Jan.   [180] J. Tretmans, “Test generation with inputs, outputs and repetitive
+      1995.                                                                          quiescence,” Softw.—Concepts Tools, vol. 17, no. 3, pp. 103–120,
+[156] G. Rothermel, M. J. Harrold, J. von Ronne, and C. Hong,                        1996.
+      “Empirical studies of test-suite reduction,” Softw. Testing, Verifi-     [181] A. M. Turing, “Checking a large routine,” in Report of a Conference
+      cation Rel., vol. 12, pp. 219–249, 2002.                                       on High Speed Automatic Calculating Machines. Cambridge, Eng-
+[157] N. Walkinshaw S. Ali, K. Bogdanov. (2007, Oct.). A comparative                 land, University Mathematical Laboratory, Jun. 1949, pp. 67–69.
+      study of methods for dynamic reverse-engineering of state mod-           [182] M. Utting and B. Legeard, Practical Model-Based Testing: A Tools
+      els. The Univ. of Sheffield, Dept. of Comput. Sci., Sheffield, U.K.,           Approach. San Francisco, CA, USA: Morgan Kaufmann, 2007.
+      Tech. Rep. CS-07-16, Oct.[Online]. Available: http://www.dcs.            [183] M. Utting, A. Pretschner, and B. Legeard, “A taxonomy of
+      shef.ac.uk/intranet/research/resmes/CS0716.pdf                                 model-based testing approaches,” Softw. Test. Verif. Reliab.,
+[158] D. Schuler and A. Zeller, “Assessing oracle quality with checked               vol. 22, no. 5, pp. 297–312, Aug. 2012.
+      coverage,” in Proc. 4th IEEE Int. Conf. Softw. Testing, Verification     [184] G. V. Bochmann, C. He, and D. Ouimet, “Protocol testing using
+      Validation, 2011, pp. 90–99.                                                   automatic trace analysis,” in Proc. Can. Conf. Elect. Comput. Eng.,
+[159] R. Schwitter, “English as a formal specification language,” in                 1989, pp. 814–820.
+      Proc. 13th Int. Workshop Database Expert Syst. Appl., Sep. 2002,         [185] A. Van Lamsweerde and M. Sintzoff, “Formal derivation of
+      pp. 228–232.                                                                   strongly correct concurrent programs,” Acta Informatica, vol. 12,
+[160] S. Segura, R. M. Hierons, D. Benavides, and A. Ruiz-Cortes,                   no. 1, pp. 1–31, 1979.
+      “Automated metamorphic testing on the analyses of feature                [186] J. M. Voas, “PIE: A dynamic failure-based technique,” IEEE
+      models,” Inf. Softw. Technol., vol. 53, no. 3, pp. 245–258, 2011.              Trans. Softw. Eng., vol. 18, no. 8, pp. 717–727, Aug. 1992.
+BARR ET AL.: THE ORACLE PROBLEM IN SOFTWARE TESTING: A SURVEY                                                                                      525
+
+[187] N. Walkinshaw, K. Bogdanov, J. Derrick, and J. Paris, “Increasing                              Earl Barr received the PhD degree in computer
+      functional coverage by inductive testing: A case study,” in Proc.                              science in 2009 from the University of California
+      22nd IFIP WG 6.1 Int. Conf. Testing Softw. Syst., 2010, pp. 126–141.                           at Davis. He is a lecturer at the University
+[188] N. Walkinshaw and K. Bogdanov, “Inferring finite-state models                                  College London in its Systems and Software
+      with temporal constraints,” in Proc. 23rd IEEE/ACM Int. Conf.                                  Engineering Research Group and a member of
+      Autom. Softw. Eng., 2008, pp. 248–257.                                                         its CREST centre. His research interests include
+[189] N. Walkinshaw, J. Derrick, and Q. Guo, “Iterative refinement of                                testing and program analysis, empirical software
+      reverse-engineered models by model-based testing,” in Proc. 2nd                                engineering, and cyber-security.
+      World Congress Formal Methods, 2009, pp. 305–320.
+[190] Y. Wang and D. Parnas, “Trace rewriting systems,” in Conditional
+      Term Rewriting Systems, vol. 656, M. Rusinowitch and J.-L. Remy
+      Eds. Berlin, Germany, Springer, 1993, pp. 343–356.
+[191] Y. Wang and D. L. Parnas, “Simulating the behaviour of software                                 Mark Harman is a professor of software engi-
+      modules by trace rewriting,” in Proc. 15th Int. Conf. Softw. Eng.,                              neering in the Department of Computer Science
+      1993, pp. 14–23.                                                                                at University College London, where he directs
+[192] Y. Wei, C. A. Furia, N. Kazmin, and B. Meyer, “Inferring better                                 the CREST centre and is the head of Software
+      contracts,” in Proc. 33rd Int. Conf. Softw. Eng., 2011, pp. 191–200.                            Systems Engineering. He is widely known for
+[193] Y. Wei, H. Roth, C. A. Furia, Y. Pei, A. Horton, M. Steindorfer, M.                             work on source code analysis (particularly pro-
+      Nordio, and B. Meyer, “Stateful testing: Finding more errors in                                 gram slicing) and testing and cofounded the field
+      code and contracts,” in Proc. 26th IEEE/ACM Int. conf. Autom.                                   of search-based software engineering (SBSE).
+      Softw. Eng., 2011, pp. 440–443.                                                                 SBSE research has rapidly grown over the past
+[194] E. J. Weyuker, “Assessing test data adequacy through program                                    five years and now includes over 1,600 authors,
+      inference,” ACM Trans. Programm. Lang. Syst., vol. 5, no. 4,                                    from nearly 300 institutions spread over more
+      pp. 641–655, 1983.                                                       than 40 countries. A recent tutorial paper on SBSE can be found here:
+[195] E. J. Weyuker and F. I. Vokolos, “Experience with performance            http://www.cs.ucl.ac.uk/staff/mharman/laser.pdf
+      testing of software systems: Issues, an approach, and case
+      study,” IEEE Trans. Softw. Eng., vol. 26, no. 12, pp. 1147–1156,
+      Dec. 2000.                                                                                     Phil McMinn is a senior lecturer in the Depart-
+[196] E. J. Weyuker, “On testing non-testable programs,” Comput. J.,                                 ment of Computer Science at the University of
+      vol. 25, no. 4, pp. 465–470, Nov. 1982.                                                        Sheffield, where he has been researching and
+[197] J. M. Wing, “A specifier’s introduction to formal methods,” IEEE                               teaching software engineering since 2006. He is
+      Comput., vol. 23, no. 9, pp. 8–24, Sep. 1990.                                                  an assistant director at the University’s Advanced
+[198] Q. Xie and A. M. Memon, “Designing and comparing automated                                     Computing Research Centre, where he leads
+      test oracles for GUI-based software applications,” ACM Trans.                                  the Software Quality team. His main research
+      Softw. Eng. Methodol., vol. 16, no. 1, p. 4, 2007.                                             interests include search-based software engi-
+[199] T. Xie, “Augmenting automatically generated unit-test suites                                   neering, software testing, program transforma-
+      with regression oracle checking,” in Proc. 20th Eur. Conf. Object-                             tion, and reverse engineering.
+      Oriented Programm., Jul. 2006, pp. 380–403.
+[200] T. Xie and D. Notkin, “Checking inside the black box: Regression
+      testing by comparing value spectra,” IEEE Trans. Softw. Eng., vol.                             Muzammil Shahbaz received the PhD degree in
+      31, no. 10, pp. 869–883, Oct. 2005.                                                            software engineering from the Grenoble Institute
+[201] Y. Xie and A. Aiken, “Context-and path-sensitive memory leak                                   of Technology, France. He is senior engineer at
+      detection,” ACM SIGSOFT Softw. Eng. Notes, vol. 30, no. 5, pp.                                 Ultra Electronics based in United Kingdom. He is
+      115–125, 2005.                                                                                 working on developing synergies between formal
+[202] Z. Xu, Y. Kim, M. Kim, G. Rothermel, and M. B. Cohen, “Directed                                methods and software testing in the aviation
+      test suite augmentation: Techniques and tradeoffs,” in Proc. 18th                              industry. He was a researcher at Orange Labs,
+      ACM SIGSOFT Int. Symp. Found. Softw. Eng., 2010, pp. 257–266.                                  France, Fraunhofer Institute of Experimental
+[203] S. Yoo, “Metamorphic testing of stochastic optimisation,” in Proc.                             Software Engineering, Germany and University
+      3rd Int. Conf. Softw. Testing, Verification, Validation Workshops,                             of Sheffield, United Kingdom.
+      2010, pp. 192–201.
+[204] S. Yoo and M. Harman, “Regression testing minimisation, selec-
+      tion and prioritisation: A survey,” Softw. Testing, Verification,                              Shin Yoo received the PhD degree in computer
+      Rel., vol. 22, no. 2, pp. 67–120, Mar. 2012.                                                   science from King’s College London, United
+[205] B. Yu, L. Kong, Y. Zhang, and H. Zhu, “Testing Java components                                 Kingdom. He is a lecturer (assistant professor) of
+      based on algebraic specifications,” in Proc. Int. Conf. Softw. Test-                           software engineering at Centre for Research on
+      ing, Verification, Validation, 2008, pp. 190–199.                                              Evolution, Search, and Testing at University
+[206] A. Zeller and R Hildebrandt, “Simplifying and isolating failure-                               College London, United Kingdom. His research
+      inducing input,” IEEE Trans. Softw. Eng., vol. 28, no. 2, pp. 183–                             interests include software testing and debugging,
+      200, Feb. 2002.                                                                                evolutionary computation, program slicing,
+[207] S. Zhang, D. Saff, Y. Bu, and M. D. Ernst, “Combined static and                                and the use of Information Theory in software
+      dynamic automated test generation,” in Proc. Int. Symp. Softw.                                 engineering.
+      Testing Anal., 2011, vol. 11, pp. 353–363.
+[208] W. Zheng, H. Ma, M. R. Lyu, T. Xie, and I. King, “Mining test
+      oracles of web search engines,” in Proc. 26th IEEE/ACM Int. Conf.        " For more information on this or any other computing topic,
+      Autom. Softw. Eng., 2011, pp. 408–411.                                   please visit our Digital Library at www.computer.org/publications/dlib.
+[209] Z. Q. Zhou, S. Zhang, M. Hagenbuchner, T. H. Tse, F.-C. Kuo,
+      and T. Y. Chen, “Automated functional testing of online search
+      services,” Softw. Testing, Verification Rel., vol. 22, no. 4, pp. 221–
+      243, 2012.
+[210] H. Zhu, “A note on test oracles and semantics of algebraic speci-
+      fications,” in Proc. 3rd Int. Conf. Q. Softw., 2003, pp. 91–98.
+[211] B. Zorn and P. Hilfinger, “A memory allocation profiler for C and
+      Lisp programs,” in Proc. Summer USENIX Conf., 1988, pp. 223–
+      237.
+

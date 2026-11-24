@@ -1,0 +1,16 @@
+[
+  {
+    "layout": "feature",
+    "scope": "combined A04/B05/B06 reference overlay, not individual independent-task builds",
+    "exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-build-feature-1794756706658679000",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "scope": "combined A04/B05/B06 reference overlay, not individual independent-task builds",
+    "exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-build-layered-1794756739857184800",
+    "model_calls": 0
+  }
+]

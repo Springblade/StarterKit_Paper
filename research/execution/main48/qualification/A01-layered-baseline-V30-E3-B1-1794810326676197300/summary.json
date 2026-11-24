@@ -1,0 +1,1841 @@
+{
+  "task": "A01",
+  "layout": "layered",
+  "variant": "baseline",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "7af1fecb6403077dbdd600d45ca8c8d865bde2a5aeaba9ed36c0017f62126cce",
+    "hidden": "a2148b0e5bc6c332b71da4acd58d9fc4b977d0fe1ce24102a27558897cb7b6e3",
+    "visible": "ce370907085f5332cd9f3a67bbb9cd224c8aec2bc9340876bcffd61873f0d6d6",
+    "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": null,
+    "visible_rounds": 30,
+    "hidden_rounds": 3,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\A01-layered-baseline-V30-E3-B1-1794810326676197300",
+  "visible": [
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 3.9673059760000005,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.02338407200000006
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02586106399999994
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.01184083099999998
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 1.848124906
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.8145345259999999
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7161550049999996
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.002857144999999946
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.788917969,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.01905759899999998
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02770145500000001
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.012597544999999969
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.785662588
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7629459380000001
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7106718819999996
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0026963049999999384
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.8145304020000004,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.021566192
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.022414995999999975
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.009735711000000037
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.816684901
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.788222379
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7118652409999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016721360000001369
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.7572161019999997,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.017665848000000095
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.020720848000000045
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.01050604199999998
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7695490009999999
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7638234830000001
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7247633409999998
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0014404609999996865
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.8367302870000004,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.018653388000000062
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.022674079000000007
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.011108708999999977
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.827798997
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.766325402
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7246848029999996
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016321259999999712
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.8073499789999996,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.018735979999999926
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.022990455999999996
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.011409312999999997
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.799943412
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7851080349999999
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7166567709999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0023904190000002927
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.8104146759999997,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.019554944999999976
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.021443033000000014
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010428965999999946
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.795388678
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7719626620000002
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.717555143
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0027865609999998923
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.784590568,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.017835054000000013
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.022553813999999988
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010156374000000029
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7872697409999999
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7694498640000001
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7192436519999996
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016646370000003117
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.823612547,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.018926756999999954
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02481320399999993
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010315065000000003
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7972510559999999
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.766589441
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7382394079999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0028967149999998584
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.790124264,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.016822257000000035
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02297303199999999
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.012532429999999976
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.778825577
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.764515281
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.715802749
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.002762980999999854
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.820512823,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.018257011000000035
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02425159000000008
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010282275000000026
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.792267415
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7672729810000003
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7251538829999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0026202909999997245
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.8018944190000004,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.017983371000000033
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02115527300000008
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.011719430999999987
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7791554480000001
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7672814080000001
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7137167169999998
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.004102481999999782
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.7903669600000005,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.017865654999999946
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.024065062000000012
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010799197999999934
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.794543178
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7636262699999999
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7217850640000002
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.002046483999999964
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.7802289019999997,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.0177016329999999
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02273317899999995
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.011425220999999965
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7756403679999999
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7744176730000002
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7246631579999998
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.002811803999999938
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.8612478120000002,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.02032218899999998
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.027442125000000032
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.011549282999999945
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.8131980739999999
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7860194890000001
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7171465470000002
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0017227550000002338
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.81932894,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.016726224
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02122949100000005
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010468489999999974
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.777403482
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7723220079999998
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7196162540000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.002350304999999935
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.79932291,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.01853901600000006
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.023055229000000056
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.01058916099999999
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.795667355
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7731849179999999
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7135988629999998
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.003783429999999953
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.7980041580000004,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.017287775000000012
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.021522163999999976
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010809544000000074
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7906693189999999
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7822047660000001
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7199076230000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0018592349999998986
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.819791311,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.020811464999999998
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.023260197000000062
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.011734782999999993
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7837377790000001
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.802007562
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.718402478
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0031416079999999056
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.7991557630000004,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.018032603999999994
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.021709728999999924
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.008974165000000084
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7806793830000001
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7579212960000002
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7324261919999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0014220789999999396
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.7785705870000004,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.027901176000000076
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02483596899999998
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.009616833000000042
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.770795377
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.757843879
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7310141479999998
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0023779140000001462
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.7919970370000002,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.01756946800000003
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.020592922000000045
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.011103334000000019
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7721986220000001
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7705617350000002
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7225055640000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0024053240000002914
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.803131231,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.017413282999999977
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02400894100000005
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.011025074000000018
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.779407165
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.757667787
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7230116830000002
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0015584160000003066
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.773536431,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.018066908000000013
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.022679338000000028
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010311506000000008
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7870054340000001
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7687639139999999
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7128226759999998
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0031725790000000417
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.7877022589999996,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.017360668000000034
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.021227547000000072
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010635561000000052
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7851115150000001
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7957791620000003
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7089050729999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0014023729999998978
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.917775044,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.01997828500000003
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02260530599999993
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010883114999999974
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7895185149999999
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.783562942
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7185098090000002
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.003552654999999959
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.940590875,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.019024211000000037
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.021894722000000002
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.009495228999999996
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.795060462
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7743024839999998
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7590883610000001
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.002290027999999893
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.821855218,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.018201371999999993
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.024420570999999995
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.010491579999999999
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.8002320610000001
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7797239149999998
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7213666899999999
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0029836119999999936
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.75854009,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.017777947999999925
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.02361581600000011
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.012490324999999984
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.802347554
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7664297090000002
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.723464097
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0031472309999999197
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "pass": true,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 2.784344752,
+      "results": [
+        {
+          "id": "VP-A1-existing-update-only-caller",
+          "pass": true,
+          "elapsedSeconds": 0.016963551000000052
+        },
+        {
+          "id": "VP-A2-protected-field-mass-assignment",
+          "pass": true,
+          "elapsedSeconds": 0.022955681000000026
+        },
+        {
+          "id": "VP-A2-anonymous-existing-write-denied",
+          "pass": true,
+          "elapsedSeconds": 0.009866214000000014
+        },
+        {
+          "id": "VP-A3-existing-update-and-settings-refresh",
+          "pass": true,
+          "elapsedSeconds": 0.7936632699999999
+        },
+        {
+          "id": "VP-A4-existing-display-name-is-text",
+          "pass": true,
+          "elapsedSeconds": 0.7693030030000002
+        },
+        {
+          "id": "VP-A5-settings-requires-authentication",
+          "pass": true,
+          "elapsedSeconds": 0.7264274329999998
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0019063860000001114
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "DP03",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "elapsedSeconds": 12.491650157,
+      "results": [
+        {
+          "id": "A-A1-labelled-form-submission-trim-and-refresh",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7489251279999999
+        },
+        {
+          "id": "A-A2-boundary-one",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7632703200000003
+        },
+        {
+          "id": "A-A2-boundary-eighty-unicode",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.731694974
+        },
+        {
+          "id": "A-A3-server-rejects-empty",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7278610189999999
+        },
+        {
+          "id": "A-A3-server-rejects-whitespace",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7480163049999996
+        },
+        {
+          "id": "A-A3-server-rejects-81-bmp",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7428731209999996
+        },
+        {
+          "id": "A-A3-server-rejects-81-unicode",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7457595649999994
+        },
+        {
+          "id": "A-A4-own-target-and-protected-fields-through-actual-write",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7470373559999998
+        },
+        {
+          "id": "A-A5-anonymous-new-write-denied",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at /evaluator/final.cjs:251:16",
+          "elapsedSeconds": 0.00030399300000044606
+        },
+        {
+          "id": "A-P3-stored-name-safe-on-existing-settings",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.8315837799999999
+        },
+        {
+          "id": "A-P4-identity-and-sign-in-preserved",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.8128218680000009
+        },
+        {
+          "id": "A-P5-existing-settings-anonymous-denied",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 1.1018770260000001
+        },
+        {
+          "id": "A-P6-existing-order-status-and-history-ownership",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 3.209022221000001
+        },
+        {
+          "id": "P-orders-unchanged",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0017054410000000644
+        },
+        {
+          "id": "P-browser-no-uncaught-runtime-errors",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 5.9006999999837715e-05
+        },
+        {
+          "id": "fixture-cleanup",
+          "kind": "instrument",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "elapsedSeconds": 10.512018639999999,
+      "results": [
+        {
+          "id": "A-A1-labelled-form-submission-trim-and-refresh",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7640312240000001
+        },
+        {
+          "id": "A-A2-boundary-one",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.8155632049999999
+        },
+        {
+          "id": "A-A2-boundary-eighty-unicode",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7462897560000001
+        },
+        {
+          "id": "A-A3-server-rejects-empty",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7205757360000002
+        },
+        {
+          "id": "A-A3-server-rejects-whitespace",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7591442670000002
+        },
+        {
+          "id": "A-A3-server-rejects-81-bmp",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7360211410000002
+        },
+        {
+          "id": "A-A3-server-rejects-81-unicode",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7472837800000006
+        },
+        {
+          "id": "A-A4-own-target-and-protected-fields-through-actual-write",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7242849259999994
+        },
+        {
+          "id": "A-A5-anonymous-new-write-denied",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at /evaluator/final.cjs:251:16",
+          "elapsedSeconds": 0.0002583920000006401
+        },
+        {
+          "id": "A-P3-stored-name-safe-on-existing-settings",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.7762954569999992
+        },
+        {
+          "id": "A-P4-identity-and-sign-in-preserved",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.8488701800000008
+        },
+        {
+          "id": "A-P5-existing-settings-anonymous-denied",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.7322363609999993
+        },
+        {
+          "id": "A-P6-existing-order-status-and-history-ownership",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 1.5128787410000004
+        },
+        {
+          "id": "P-orders-unchanged",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.0016876720000000205
+        },
+        {
+          "id": "P-browser-no-uncaught-runtime-errors",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 6.835900000078254e-05
+        },
+        {
+          "id": "fixture-cleanup",
+          "kind": "instrument",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "DP03",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "elapsedSeconds": 10.446309404,
+      "results": [
+        {
+          "id": "A-A1-labelled-form-submission-trim-and-refresh",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7748693289999999
+        },
+        {
+          "id": "A-A2-boundary-one",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.8131902960000003
+        },
+        {
+          "id": "A-A2-boundary-eighty-unicode",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.720199955
+        },
+        {
+          "id": "A-A3-server-rejects-empty",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7202464409999998
+        },
+        {
+          "id": "A-A3-server-rejects-whitespace",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7320412209999999
+        },
+        {
+          "id": "A-A3-server-rejects-81-bmp",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7353459960000001
+        },
+        {
+          "id": "A-A3-server-rejects-81-unicode",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7234722730000003
+        },
+        {
+          "id": "A-A4-own-target-and-protected-fields-through-actual-write",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at submitName (/evaluator/final.cjs:65:10)",
+          "elapsedSeconds": 0.7326690209999998
+        },
+        {
+          "id": "A-A5-anonymous-new-write-denied",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "location": "at /evaluator/final.cjs:251:16",
+          "elapsedSeconds": 0.0002699959999999919
+        },
+        {
+          "id": "A-P3-stored-name-safe-on-existing-settings",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.7746996289999998
+        },
+        {
+          "id": "A-P4-identity-and-sign-in-preserved",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.851356748000001
+        },
+        {
+          "id": "A-P5-existing-settings-anonymous-denied",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.7490512420000014
+        },
+        {
+          "id": "A-P6-existing-order-status-and-history-ownership",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 1.4909638450000002
+        },
+        {
+          "id": "P-orders-unchanged",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 0.00147693099999924
+        },
+        {
+          "id": "P-browser-no-uncaught-runtime-errors",
+          "kind": "preservation",
+          "pass": true,
+          "elapsedSeconds": 6.365999999979977e-05
+        },
+        {
+          "id": "fixture-cleanup",
+          "kind": "instrument",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "check-types": 0,
+    "test:run": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

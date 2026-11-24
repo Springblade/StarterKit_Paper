@@ -1,0 +1,999 @@
+{
+  "kind": "non-model-feasibility-verification-not-main-qualification",
+  "date": "2026-11-15",
+  "model_invocations": 0,
+  "valid_implementation_layout_cases": [
+    {
+      "task": "A01",
+      "layout": "feature",
+      "implementation": "reference",
+      "runtime_log": "runs/feature-A01-reference-1794736995040552000",
+      "build_log": "runs/feature-A01-basic-1794741069594345000",
+      "check_count": 16,
+      "source_archived": true
+    },
+    {
+      "task": "A01",
+      "layout": "feature",
+      "implementation": "alternative",
+      "runtime_log": "runs/feature-A01-alternative-1794738114089909600",
+      "build_log": "runs/feature-A01-alternative-1794738114089909600",
+      "check_count": 16,
+      "source_archived": true
+    },
+    {
+      "task": "A01",
+      "layout": "layered",
+      "implementation": "reference",
+      "runtime_log": "runs/layered-A01-reference-1794737495631157400",
+      "build_log": "runs/layered-A01-reference-1794737495631157400",
+      "check_count": 16,
+      "source_archived": true
+    },
+    {
+      "task": "A01",
+      "layout": "layered",
+      "implementation": "alternative",
+      "runtime_log": "runs/layered-A01-alternative-1794738713156850800",
+      "build_log": "runs/layered-A01-alternative-1794738713156850800",
+      "check_count": 16,
+      "source_archived": true
+    },
+    {
+      "task": "A03",
+      "layout": "feature",
+      "implementation": "reference",
+      "runtime_log": "runs/feature-A03-reference-1794737051310782800",
+      "build_log": "runs/feature-A03-basic-1794740093386273800",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "A03",
+      "layout": "feature",
+      "implementation": "alternative",
+      "runtime_log": "runs/feature-A03-alternative-1794738197215416800",
+      "build_log": "runs/feature-A03-alternative-1794738197215416800",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "A03",
+      "layout": "layered",
+      "implementation": "reference",
+      "runtime_log": "runs/layered-A03-reference-1794737571508002000",
+      "build_log": "runs/layered-A03-reference-1794737571508002000",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "A03",
+      "layout": "layered",
+      "implementation": "alternative",
+      "runtime_log": "runs/layered-A03-alternative-1794738787494735500",
+      "build_log": "runs/layered-A03-alternative-1794738787494735500",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "B03",
+      "layout": "feature",
+      "implementation": "reference",
+      "runtime_log": "runs/feature-B03-reference-1794737089911956000",
+      "build_log": "runs/feature-B03-basic-1794740134449689400",
+      "check_count": 3,
+      "source_archived": true
+    },
+    {
+      "task": "B03",
+      "layout": "feature",
+      "implementation": "alternative",
+      "runtime_log": "runs/feature-B03-alternative-1794738254979097200",
+      "build_log": "runs/feature-B03-alternative-1794738254979097200",
+      "check_count": 3,
+      "source_archived": true
+    },
+    {
+      "task": "B03",
+      "layout": "layered",
+      "implementation": "reference",
+      "runtime_log": "runs/layered-B03-reference-1794737630799659900",
+      "build_log": "runs/layered-B03-reference-1794737630799659900",
+      "check_count": 3,
+      "source_archived": true
+    },
+    {
+      "task": "B03",
+      "layout": "layered",
+      "implementation": "alternative",
+      "runtime_log": "runs/layered-B03-alternative-1794738842408199700",
+      "build_log": "runs/layered-B03-alternative-1794738842408199700",
+      "check_count": 3,
+      "source_archived": true
+    },
+    {
+      "task": "B04",
+      "layout": "feature",
+      "implementation": "reference",
+      "runtime_log": "runs/feature-B04-reference-1794737142444496700",
+      "build_log": "runs/feature-B04-basic-1794740177022205600",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "B04",
+      "layout": "feature",
+      "implementation": "alternative",
+      "runtime_log": "runs/feature-B04-alternative-1794738327255246100",
+      "build_log": "runs/feature-B04-alternative-1794738327255246100",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "B04",
+      "layout": "layered",
+      "implementation": "reference",
+      "runtime_log": "runs/layered-B04-reference-1794737707862585000",
+      "build_log": "runs/layered-B04-reference-1794737707862585000",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "B04",
+      "layout": "layered",
+      "implementation": "alternative",
+      "runtime_log": "runs/layered-B04-alternative-1794738914162938400",
+      "build_log": "runs/layered-B04-alternative-1794738914162938400",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "U02",
+      "layout": "feature",
+      "implementation": "reference",
+      "runtime_log": "runs/feature-U02-reference-1794737364287886800",
+      "build_log": "runs/feature-U02-reference-1794737364287886800",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "U02",
+      "layout": "feature",
+      "implementation": "alternative",
+      "runtime_log": "runs/feature-U02-alternative-1794738388533947500",
+      "build_log": "runs/feature-U02-alternative-1794738388533947500",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "U02",
+      "layout": "layered",
+      "implementation": "reference",
+      "runtime_log": "runs/layered-U02-reference-1794737767270948900",
+      "build_log": "runs/layered-U02-reference-1794737767270948900",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "U02",
+      "layout": "layered",
+      "implementation": "alternative",
+      "runtime_log": "runs/layered-U02-alternative-1794738970516166400",
+      "build_log": "runs/layered-U02-alternative-1794738970516166400",
+      "check_count": 2,
+      "source_archived": true
+    },
+    {
+      "task": "U03",
+      "layout": "feature",
+      "implementation": "reference",
+      "runtime_log": "runs/feature-U03-reference-1794736773796008900",
+      "build_log": "runs/feature-U03-basic-1794740221939688200",
+      "check_count": 3,
+      "source_archived": true
+    },
+    {
+      "task": "U03",
+      "layout": "feature",
+      "implementation": "alternative",
+      "runtime_log": "runs/feature-U03-alternative-1794738449328161900",
+      "build_log": "runs/feature-U03-alternative-1794738449328161900",
+      "check_count": 3,
+      "source_archived": true
+    },
+    {
+      "task": "U03",
+      "layout": "layered",
+      "implementation": "reference",
+      "runtime_log": "runs/layered-U03-reference-1794737827011548300",
+      "build_log": "runs/layered-U03-reference-1794737827011548300",
+      "check_count": 3,
+      "source_archived": true
+    },
+    {
+      "task": "U03",
+      "layout": "layered",
+      "implementation": "alternative",
+      "runtime_log": "runs/layered-U03-alternative-1794739034640845000",
+      "build_log": "runs/layered-U03-alternative-1794739034640845000",
+      "check_count": 3,
+      "source_archived": true
+    }
+  ],
+  "constructed_fault_layout_cases": [
+    {
+      "task": "A03",
+      "layout": "feature",
+      "fault": "fault-confirmation",
+      "expected_assertion": "A03-server-invalid-input-preserves-credential",
+      "failed_assertions": [
+        "A03-server-invalid-input-preserves-credential",
+        "A03-browser-change-and-signin"
+      ],
+      "artifact_dir": "runs/feature-A03-fault-confirmation-1794739006813595300",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "B03",
+      "layout": "feature",
+      "fault": "fault-foreign-resume",
+      "expected_assertion": "B03-foreign-expired-and-terminal-denial",
+      "failed_assertions": [
+        "B03-foreign-expired-and-terminal-denial"
+      ],
+      "artifact_dir": "runs/feature-B03-fault-foreign-resume-1794739081100064100",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "B04",
+      "layout": "feature",
+      "fault": "fault-foreign-receipt",
+      "expected_assertion": "B04-ownership-and-status",
+      "failed_assertions": [
+        "B04-ownership-and-status"
+      ],
+      "artifact_dir": "runs/feature-B04-fault-foreign-receipt-1794739143030310000",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "U02",
+      "layout": "feature",
+      "fault": "fault-no-admin-guard",
+      "expected_assertion": "U02-direct-access-and-missing-account",
+      "failed_assertions": [
+        "U02-direct-access-and-missing-account"
+      ],
+      "artifact_dir": "runs/feature-U02-fault-no-admin-guard-1794739181549097600",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "U03",
+      "layout": "feature",
+      "fault": "fault-cached-role",
+      "expected_assertion": "U03-current-server-role-and-fresh-target-permissions",
+      "failed_assertions": [
+        "U03-current-server-role-and-fresh-target-permissions"
+      ],
+      "artifact_dir": "runs/feature-U03-fault-cached-role-1794739223826149900",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "U03",
+      "layout": "feature",
+      "fault": "fault-self-demotion",
+      "expected_assertion": "U03-server-boundaries",
+      "failed_assertions": [
+        "U03-server-boundaries",
+        "U03-current-server-role-and-fresh-target-permissions"
+      ],
+      "artifact_dir": "runs/feature-U03-fault-self-demotion-1794739266063387400",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "A03",
+      "layout": "layered",
+      "fault": "fault-confirmation",
+      "expected_assertion": "A03-server-invalid-input-preserves-credential",
+      "failed_assertions": [
+        "A03-server-invalid-input-preserves-credential",
+        "A03-browser-change-and-signin"
+      ],
+      "artifact_dir": "runs/layered-A03-fault-confirmation-1794740038862611300",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "B03",
+      "layout": "layered",
+      "fault": "fault-foreign-resume",
+      "expected_assertion": "B03-foreign-expired-and-terminal-denial",
+      "failed_assertions": [
+        "B03-foreign-expired-and-terminal-denial"
+      ],
+      "artifact_dir": "runs/layered-B03-fault-foreign-resume-1794740106159567300",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "B04",
+      "layout": "layered",
+      "fault": "fault-foreign-receipt",
+      "expected_assertion": "B04-ownership-and-status",
+      "failed_assertions": [
+        "B04-ownership-and-status"
+      ],
+      "artifact_dir": "runs/layered-B04-fault-foreign-receipt-1794740170345508800",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "U02",
+      "layout": "layered",
+      "fault": "fault-no-admin-guard",
+      "expected_assertion": "U02-direct-access-and-missing-account",
+      "failed_assertions": [
+        "U02-direct-access-and-missing-account"
+      ],
+      "artifact_dir": "runs/layered-U02-fault-no-admin-guard-1794740223536909800",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "U03",
+      "layout": "layered",
+      "fault": "fault-cached-role",
+      "expected_assertion": "U03-current-server-role-and-fresh-target-permissions",
+      "failed_assertions": [
+        "U03-current-server-role-and-fresh-target-permissions"
+      ],
+      "artifact_dir": "runs/layered-U03-fault-cached-role-1794740274180620900",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    },
+    {
+      "task": "U03",
+      "layout": "layered",
+      "fault": "fault-self-demotion",
+      "expected_assertion": "U03-server-boundaries",
+      "failed_assertions": [
+        "U03-server-boundaries",
+        "U03-current-server-role-and-fresh-target-permissions"
+      ],
+      "artifact_dir": "runs/layered-U03-fault-self-demotion-1794740315058915200",
+      "kind": "constructed new-feature fault; not observed agent outcome"
+    }
+  ],
+  "baseline_probes": [
+    {
+      "layout": "feature",
+      "artifact_dir": "runs/feature-baseline-1794735107255365400",
+      "results": [
+        {
+          "id": "A01-A03-baseline-ui-gap",
+          "pass": true,
+          "seconds": 7.306,
+          "profileFormMissing": true,
+          "currentPasswordFormMissing": true,
+          "backendNotClaimedMissing": true
+        },
+        {
+          "id": "B03-baseline-resume-missing",
+          "pass": true,
+          "seconds": 7.956,
+          "resumeQueryIgnored": true,
+          "orderUnchanged": true
+        },
+        {
+          "id": "B04-baseline-receipt-missing",
+          "pass": true,
+          "seconds": 0.99,
+          "receiptRouteStatus": 404
+        },
+        {
+          "id": "U02-U03-baseline-ui-gap",
+          "pass": true,
+          "seconds": 1.928,
+          "roleControlsMissing": true,
+          "detailRouteStatus": 404
+        },
+        {
+          "id": "U03-existing-role-api-denies-ordinary-anonymous",
+          "pass": true,
+          "seconds": 0.069
+        },
+        {
+          "id": "U03-promotion-demotion-fresh-and-cached-session",
+          "pass": true,
+          "seconds": 4.495,
+          "oldCachedReadRole": "admin",
+          "currentDBRole": "user",
+          "oldCachedWriteStatus": 403,
+          "freshLoginAdminDataDenied": true
+        },
+        {
+          "id": "A03-existing-password-api-authentication-and-preservation",
+          "pass": true,
+          "seconds": 0.557,
+          "wrongCurrentRejected": true,
+          "oldPasswordRejected": true,
+          "newPasswordWorks": true,
+          "identityOrdersPreserved": true
+        },
+        {
+          "id": "baseline-role-api-self-demotion-scope",
+          "pass": true,
+          "seconds": 0.023,
+          "status": 200,
+          "selfDemotionAllowed": true,
+          "interpretation": "Existing API behavior only; new UI must enforce its own declared rule without repairing baseline"
+        }
+      ]
+    },
+    {
+      "layout": "layered",
+      "artifact_dir": "runs/layered-baseline-1794735308504323100",
+      "results": [
+        {
+          "id": "A01-A03-baseline-ui-gap",
+          "pass": true,
+          "seconds": 7.175,
+          "profileFormMissing": true,
+          "currentPasswordFormMissing": true,
+          "backendNotClaimedMissing": true
+        },
+        {
+          "id": "B03-baseline-resume-missing",
+          "pass": true,
+          "seconds": 8.068,
+          "resumeQueryIgnored": true,
+          "orderUnchanged": true
+        },
+        {
+          "id": "B04-baseline-receipt-missing",
+          "pass": true,
+          "seconds": 0.991,
+          "receiptRouteStatus": 404
+        },
+        {
+          "id": "U02-U03-baseline-ui-gap",
+          "pass": true,
+          "seconds": 1.935,
+          "roleControlsMissing": true,
+          "detailRouteStatus": 404
+        },
+        {
+          "id": "U03-existing-role-api-denies-ordinary-anonymous",
+          "pass": true,
+          "seconds": 0.07
+        },
+        {
+          "id": "U03-promotion-demotion-fresh-and-cached-session",
+          "pass": true,
+          "seconds": 4.62,
+          "oldCachedReadRole": "admin",
+          "currentDBRole": "user",
+          "oldCachedWriteStatus": 403,
+          "freshLoginAdminDataDenied": true
+        },
+        {
+          "id": "A03-existing-password-api-authentication-and-preservation",
+          "pass": true,
+          "seconds": 0.488,
+          "wrongCurrentRejected": true,
+          "oldPasswordRejected": true,
+          "newPasswordWorks": true,
+          "identityOrdersPreserved": true
+        },
+        {
+          "id": "baseline-role-api-self-demotion-scope",
+          "pass": true,
+          "seconds": 0.02,
+          "status": 200,
+          "selfDemotionAllowed": true,
+          "interpretation": "Existing API behavior only; new UI must enforce its own declared rule without repairing baseline"
+        }
+      ]
+    }
+  ],
+  "all_invocation_status_counts": {
+    "passed": 31,
+    "detected": 12,
+    "infrastructure-error": 1,
+    "failed": 3
+  },
+  "all_invocations": [
+    {
+      "layout": "feature",
+      "phase": "alternative",
+      "task": "A01",
+      "status": "passed",
+      "artifact_dir": "runs/feature-A01-alternative-1794738114089909600",
+      "started": "2026-11-15T10:21:54Z",
+      "finished": "2026-11-15T10:23:17Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "basic",
+      "task": "A01",
+      "status": "passed",
+      "artifact_dir": "runs/feature-A01-basic-1794741069594345000",
+      "started": "2026-11-15T11:11:09Z",
+      "finished": "2026-11-15T11:11:45Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "A01",
+      "status": "passed",
+      "artifact_dir": "runs/feature-A01-reference-1794736995040552000",
+      "started": "2026-11-15T10:03:15Z",
+      "finished": "2026-11-15T10:04:11Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "alternative",
+      "task": "A03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-A03-alternative-1794738197215416800",
+      "started": "2026-11-15T10:23:17Z",
+      "finished": "2026-11-15T10:24:14Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "basic",
+      "task": "A03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-A03-basic-1794740093386273800",
+      "started": "2026-11-15T10:54:53Z",
+      "finished": "2026-11-15T10:55:34Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "fault-confirmation",
+      "task": "A03",
+      "status": "detected",
+      "artifact_dir": "runs/feature-A03-fault-confirmation-1794739006813595300",
+      "started": "2026-11-15T10:36:46Z",
+      "finished": "2026-11-15T10:38:00Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "A03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-A03-reference-1794737051310782800",
+      "started": "2026-11-15T10:04:11Z",
+      "finished": "2026-11-15T10:04:49Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "alternative",
+      "task": "B03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-B03-alternative-1794738254979097200",
+      "started": "2026-11-15T10:24:15Z",
+      "finished": "2026-11-15T10:25:27Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "basic",
+      "task": "B03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-B03-basic-1794740134449689400",
+      "started": "2026-11-15T10:55:34Z",
+      "finished": "2026-11-15T10:56:16Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "fault-foreign-resume",
+      "task": "B03",
+      "status": "detected",
+      "artifact_dir": "runs/feature-B03-fault-foreign-resume-1794739081100064100",
+      "started": "2026-11-15T10:38:01Z",
+      "finished": "2026-11-15T10:39:02Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "B03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-B03-reference-1794737089911956000",
+      "started": "2026-11-15T10:04:49Z",
+      "finished": "2026-11-15T10:05:42Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "alternative",
+      "task": "B04",
+      "status": "passed",
+      "artifact_dir": "runs/feature-B04-alternative-1794738327255246100",
+      "started": "2026-11-15T10:25:27Z",
+      "finished": "2026-11-15T10:26:28Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "basic",
+      "task": "B04",
+      "status": "passed",
+      "artifact_dir": "runs/feature-B04-basic-1794740177022205600",
+      "started": "2026-11-15T10:56:17Z",
+      "finished": "2026-11-15T10:57:01Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "fault-foreign-receipt",
+      "task": "B04",
+      "status": "detected",
+      "artifact_dir": "runs/feature-B04-fault-foreign-receipt-1794739143030310000",
+      "started": "2026-11-15T10:39:03Z",
+      "finished": "2026-11-15T10:39:41Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "B04",
+      "status": "passed",
+      "artifact_dir": "runs/feature-B04-reference-1794737142444496700",
+      "started": "2026-11-15T10:05:42Z",
+      "finished": "2026-11-15T10:06:20Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "baseline",
+      "status": "infrastructure-error",
+      "artifact_dir": "runs/feature-baseline-1794734784912566500",
+      "started": "2026-11-15T09:26:24Z",
+      "finished": "2026-11-15T09:26:41Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "baseline",
+      "status": "passed",
+      "artifact_dir": "runs/feature-baseline-1794735107255365400",
+      "started": "2026-11-15T09:31:47Z",
+      "finished": "2026-11-15T09:32:33Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "alternative",
+      "task": "U02",
+      "status": "passed",
+      "artifact_dir": "runs/feature-U02-alternative-1794738388533947500",
+      "started": "2026-11-15T10:26:28Z",
+      "finished": "2026-11-15T10:27:29Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "fault-no-admin-guard",
+      "task": "U02",
+      "status": "detected",
+      "artifact_dir": "runs/feature-U02-fault-no-admin-guard-1794739181549097600",
+      "started": "2026-11-15T10:39:41Z",
+      "finished": "2026-11-15T10:40:23Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "U02",
+      "status": "failed",
+      "artifact_dir": "runs/feature-U02-reference-1794737181019333200",
+      "started": "2026-11-15T10:06:21Z",
+      "finished": "2026-11-15T10:07:04Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "U02",
+      "status": "passed",
+      "artifact_dir": "runs/feature-U02-reference-1794737364287886800",
+      "started": "2026-11-15T10:09:24Z",
+      "finished": "2026-11-15T10:10:24Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "alternative",
+      "task": "U03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-U03-alternative-1794738449328161900",
+      "started": "2026-11-15T10:27:29Z",
+      "finished": "2026-11-15T10:28:33Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "basic",
+      "task": "U03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-U03-basic-1794740221939688200",
+      "started": "2026-11-15T10:57:02Z",
+      "finished": "2026-11-15T10:57:46Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "fault-cached-role",
+      "task": "U03",
+      "status": "detected",
+      "artifact_dir": "runs/feature-U03-fault-cached-role-1794739223826149900",
+      "started": "2026-11-15T10:40:23Z",
+      "finished": "2026-11-15T10:41:05Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "fault-self-demotion",
+      "task": "U03",
+      "status": "detected",
+      "artifact_dir": "runs/feature-U03-fault-self-demotion-1794739266063387400",
+      "started": "2026-11-15T10:41:06Z",
+      "finished": "2026-11-15T10:41:45Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "U03",
+      "status": "failed",
+      "artifact_dir": "runs/feature-U03-reference-1794735651562597100",
+      "started": "2026-11-15T09:40:51Z",
+      "finished": "2026-11-15T09:41:32Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "U03",
+      "status": "failed",
+      "artifact_dir": "runs/feature-U03-reference-1794735948186706300",
+      "started": "2026-11-15T09:45:48Z",
+      "finished": "2026-11-15T09:46:28Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "feature",
+      "phase": "reference",
+      "task": "U03",
+      "status": "passed",
+      "artifact_dir": "runs/feature-U03-reference-1794736773796008900",
+      "started": "2026-11-15T09:59:33Z",
+      "finished": "2026-11-15T10:00:15Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "alternative",
+      "task": "A01",
+      "status": "passed",
+      "artifact_dir": "runs/layered-A01-alternative-1794738713156850800",
+      "started": "2026-11-15T10:31:53Z",
+      "finished": "2026-11-15T10:33:07Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "reference",
+      "task": "A01",
+      "status": "passed",
+      "artifact_dir": "runs/layered-A01-reference-1794737495631157400",
+      "started": "2026-11-15T10:11:35Z",
+      "finished": "2026-11-15T10:12:51Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "alternative",
+      "task": "A03",
+      "status": "passed",
+      "artifact_dir": "runs/layered-A03-alternative-1794738787494735500",
+      "started": "2026-11-15T10:33:07Z",
+      "finished": "2026-11-15T10:34:02Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "fault-confirmation",
+      "task": "A03",
+      "status": "detected",
+      "artifact_dir": "runs/layered-A03-fault-confirmation-1794740038862611300",
+      "started": "2026-11-15T10:53:58Z",
+      "finished": "2026-11-15T10:55:06Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "reference",
+      "task": "A03",
+      "status": "passed",
+      "artifact_dir": "runs/layered-A03-reference-1794737571508002000",
+      "started": "2026-11-15T10:12:51Z",
+      "finished": "2026-11-15T10:13:49Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "alternative",
+      "task": "B03",
+      "status": "passed",
+      "artifact_dir": "runs/layered-B03-alternative-1794738842408199700",
+      "started": "2026-11-15T10:34:02Z",
+      "finished": "2026-11-15T10:35:14Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "fault-foreign-resume",
+      "task": "B03",
+      "status": "detected",
+      "artifact_dir": "runs/layered-B03-fault-foreign-resume-1794740106159567300",
+      "started": "2026-11-15T10:55:06Z",
+      "finished": "2026-11-15T10:56:10Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "reference",
+      "task": "B03",
+      "status": "passed",
+      "artifact_dir": "runs/layered-B03-reference-1794737630799659900",
+      "started": "2026-11-15T10:13:50Z",
+      "finished": "2026-11-15T10:15:07Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "alternative",
+      "task": "B04",
+      "status": "passed",
+      "artifact_dir": "runs/layered-B04-alternative-1794738914162938400",
+      "started": "2026-11-15T10:35:14Z",
+      "finished": "2026-11-15T10:36:10Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "fault-foreign-receipt",
+      "task": "B04",
+      "status": "detected",
+      "artifact_dir": "runs/layered-B04-fault-foreign-receipt-1794740170345508800",
+      "started": "2026-11-15T10:56:10Z",
+      "finished": "2026-11-15T10:57:03Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "reference",
+      "task": "B04",
+      "status": "passed",
+      "artifact_dir": "runs/layered-B04-reference-1794737707862585000",
+      "started": "2026-11-15T10:15:07Z",
+      "finished": "2026-11-15T10:16:07Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "baseline",
+      "status": "passed",
+      "artifact_dir": "runs/layered-baseline-1794735308504323100",
+      "started": "2026-11-15T09:35:08Z",
+      "finished": "2026-11-15T09:35:53Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "alternative",
+      "task": "U02",
+      "status": "passed",
+      "artifact_dir": "runs/layered-U02-alternative-1794738970516166400",
+      "started": "2026-11-15T10:36:10Z",
+      "finished": "2026-11-15T10:37:14Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "fault-no-admin-guard",
+      "task": "U02",
+      "status": "detected",
+      "artifact_dir": "runs/layered-U02-fault-no-admin-guard-1794740223536909800",
+      "started": "2026-11-15T10:57:03Z",
+      "finished": "2026-11-15T10:57:54Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "reference",
+      "task": "U02",
+      "status": "passed",
+      "artifact_dir": "runs/layered-U02-reference-1794737767270948900",
+      "started": "2026-11-15T10:16:07Z",
+      "finished": "2026-11-15T10:17:06Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "alternative",
+      "task": "U03",
+      "status": "passed",
+      "artifact_dir": "runs/layered-U03-alternative-1794739034640845000",
+      "started": "2026-11-15T10:37:14Z",
+      "finished": "2026-11-15T10:38:20Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "fault-cached-role",
+      "task": "U03",
+      "status": "detected",
+      "artifact_dir": "runs/layered-U03-fault-cached-role-1794740274180620900",
+      "started": "2026-11-15T10:57:54Z",
+      "finished": "2026-11-15T10:58:34Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "fault-self-demotion",
+      "task": "U03",
+      "status": "detected",
+      "artifact_dir": "runs/layered-U03-fault-self-demotion-1794740315058915200",
+      "started": "2026-11-15T10:58:35Z",
+      "finished": "2026-11-15T10:59:15Z",
+      "cleanup_volumes_removed": true
+    },
+    {
+      "layout": "layered",
+      "phase": "reference",
+      "task": "U03",
+      "status": "passed",
+      "artifact_dir": "runs/layered-U03-reference-1794737827011548300",
+      "started": "2026-11-15T10:17:07Z",
+      "finished": "2026-11-15T10:18:15Z",
+      "cleanup_volumes_removed": true
+    }
+  ],
+  "source_manifest_records_verified": 284,
+  "research_assessment": {
+    "feasibility": "all six tasks have two scoped runnable candidates on both layouts",
+    "organization_exposure": "all twelve task-implementation pairs edit zero existing relocated modules; imports differ, no claim S effect equals0",
+    "verification_treatment": "new fault cases test new-feature semantics; V1 preservation benefit/gate not established by these tests",
+    "main_ready": false,
+    "release": false
+  },
+  "limitations": [
+    "Feasibility probes have candidate-specific routes/labels, not frozen hidden evaluator accepting arbitrary implementations",
+    "Five new tasks lack full V0/V1 preservation-gate and reliability qualification",
+    "Reference/alternative variants are author-assistant constructs, not independent human validation",
+    "B03 concurrent completion/cancel races and expiry transition while open not comprehensively verified",
+    "No actual agent performance or effect measurement",
+    "Baseline feature absence checked through declared UI and chosen routes; not exhaustive search of all possible endpoints",
+    "Rebuilt feasibility image differs from old missing image; app lock/runtime/browser pinned, no Codex CLI or account credentials installed",
+    "Some early failed source versions were not archived; failed logs retained; latest successful candidates have hashes or archived source"
+  ],
+  "hashes": {
+    "build-alternatives.py": "1f94398970cdb02a011f47b7e205bb25bb32f5150f4a6e20c6877e1db6bf5bdd",
+    "build-references.py": "6b5e161d9fcdafc118953a4fa603c745a6ff9be7db78e8520bfadab6d1840b59",
+    "image-build.log": "d06dc50b23bb80e5ab93be4f7abf6215cd5d75cf40414bb699cb9fc1e9240f16",
+    "probe.cjs": "247eb0ec96b2b9b7d1f434f3d227ada970b557741ce9dd48f2eb7b26431d2418",
+    "run-faults.py": "33fea112ca6733c4c815312219f62a15b268346f4b1b81906291addf1f8a79b5",
+    "run-references.py": "5c265f8aded17b517a3717a6efc3154e8e4dba2f56370da944fd6eb7da184f94",
+    "source-check.py": "89784a63e36e3a11c85d515479d8b6be2667b38f89ba7eeb1b72f32faf1201ff",
+    "source-evidence.json": "c143ac32941adbd734646d5eaacfcf4b198ac92965e0a1773cb8e486a3e9426c",
+    "summarize.py": "62fd0c97b4f97dd31f47a762172735c11e916c00f54fc787ce480ac7a97b61f4",
+    "task-probe.cjs": "7c6bdd4f0e5dbe59eeafd57ab030e28e1ad0ae391c157bb39f0659b8c4de60b7",
+    "verify.py": "e13b78871ebe77bebea42d2e7c9eed057d5ea9e3b638546939d22a6e5571fc0e"
+  }
+}

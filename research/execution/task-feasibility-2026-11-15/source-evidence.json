@@ -1,0 +1,687 @@
+{
+  "baseline_manifest_records_checked": 284,
+  "all_baseline_files_unchanged": true,
+  "reference_exposure": [
+    {
+      "task": "A01",
+      "implementation": "reference",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/features/auth/actions/update-display-name.ts",
+            "logical": "src/features/auth/actions/update-display-name.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": false
+          },
+          {
+            "path": "src/features/auth/types/profile.ts",
+            "logical": "src/features/auth/types/profile.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": false
+          },
+          {
+            "path": "src/app/dashboard/settings/page.tsx",
+            "logical": "src/app/dashboard/settings/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 1,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/types/auth/profile.ts",
+            "logical": "src/features/auth/types/profile.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": false
+          },
+          {
+            "path": "src/app/dashboard/settings/page.tsx",
+            "logical": "src/app/dashboard/settings/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/actions/auth/update-display-name.ts",
+            "logical": "src/features/auth/actions/update-display-name.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": false
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 1,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      }
+    },
+    {
+      "task": "A01",
+      "implementation": "alternative",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/features/auth/components/display-name-form.tsx",
+            "logical": "src/features/auth/components/display-name-form.tsx",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": false
+          },
+          {
+            "path": "src/features/auth/types/profile.ts",
+            "logical": "src/features/auth/types/profile.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": false
+          },
+          {
+            "path": "src/app/dashboard/settings/page.tsx",
+            "logical": "src/app/dashboard/settings/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/profile/display-name/route.ts",
+            "logical": "src/app/api/profile/display-name/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/types/auth/profile.ts",
+            "logical": "src/features/auth/types/profile.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": false
+          },
+          {
+            "path": "src/components/auth/display-name-form.tsx",
+            "logical": "src/features/auth/components/display-name-form.tsx",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": false
+          },
+          {
+            "path": "src/app/dashboard/settings/page.tsx",
+            "logical": "src/app/dashboard/settings/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/profile/display-name/route.ts",
+            "logical": "src/app/api/profile/display-name/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      }
+    },
+    {
+      "task": "A03",
+      "implementation": "reference",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/settings/page.tsx",
+            "logical": "src/app/dashboard/settings/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/profile/password/route.ts",
+            "logical": "src/app/api/profile/password/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/settings/page.tsx",
+            "logical": "src/app/dashboard/settings/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/profile/password/route.ts",
+            "logical": "src/app/api/profile/password/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      }
+    },
+    {
+      "task": "A03",
+      "implementation": "alternative",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/settings/page.tsx",
+            "logical": "src/app/dashboard/settings/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/profile/password/route.ts",
+            "logical": "src/app/api/profile/password/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/settings/page.tsx",
+            "logical": "src/app/dashboard/settings/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/profile/password/route.ts",
+            "logical": "src/app/api/profile/password/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      }
+    },
+    {
+      "task": "B03",
+      "implementation": "reference",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/billing/page.tsx",
+            "logical": "src/app/dashboard/billing/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/dashboard/billing/history/page.tsx",
+            "logical": "src/app/dashboard/billing/history/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts",
+          "src/features/billing/actions/create-order.ts",
+          "src/features/billing/components/OrderStatusBadge.tsx",
+          "src/features/billing/components/PaymentSection.tsx",
+          "src/features/billing/components/PlanCard.tsx",
+          "src/features/billing/errors.ts",
+          "src/features/billing/payment-content.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/billing/page.tsx",
+            "logical": "src/app/dashboard/billing/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/dashboard/billing/history/page.tsx",
+            "logical": "src/app/dashboard/billing/history/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts",
+          "src/features/billing/actions/create-order.ts",
+          "src/features/billing/components/OrderStatusBadge.tsx",
+          "src/features/billing/components/PaymentSection.tsx",
+          "src/features/billing/components/PlanCard.tsx",
+          "src/features/billing/errors.ts",
+          "src/features/billing/payment-content.ts"
+        ]
+      }
+    },
+    {
+      "task": "B03",
+      "implementation": "alternative",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/billing/page.tsx",
+            "logical": "src/app/dashboard/billing/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/dashboard/billing/history/page.tsx",
+            "logical": "src/app/dashboard/billing/history/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts",
+          "src/features/billing/actions/create-order.ts",
+          "src/features/billing/components/OrderStatusBadge.tsx",
+          "src/features/billing/components/PaymentSection.tsx",
+          "src/features/billing/components/PlanCard.tsx",
+          "src/features/billing/errors.ts",
+          "src/features/billing/payment-content.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/billing/page.tsx",
+            "logical": "src/app/dashboard/billing/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/dashboard/billing/history/page.tsx",
+            "logical": "src/app/dashboard/billing/history/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts",
+          "src/features/billing/actions/create-order.ts",
+          "src/features/billing/components/OrderStatusBadge.tsx",
+          "src/features/billing/components/PaymentSection.tsx",
+          "src/features/billing/components/PlanCard.tsx",
+          "src/features/billing/errors.ts",
+          "src/features/billing/payment-content.ts"
+        ]
+      }
+    },
+    {
+      "task": "B04",
+      "implementation": "reference",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/billing/history/page.tsx",
+            "logical": "src/app/dashboard/billing/history/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/orders/[orderId]/receipt/route.ts",
+            "logical": "src/app/api/orders/[orderId]/receipt/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts",
+          "src/features/billing/components/OrderStatusBadge.tsx"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/billing/history/page.tsx",
+            "logical": "src/app/dashboard/billing/history/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/orders/[orderId]/receipt/route.ts",
+            "logical": "src/app/api/orders/[orderId]/receipt/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts",
+          "src/features/billing/components/OrderStatusBadge.tsx"
+        ]
+      }
+    },
+    {
+      "task": "B04",
+      "implementation": "alternative",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/billing/history/page.tsx",
+            "logical": "src/app/dashboard/billing/history/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/orders/[orderId]/receipt/route.ts",
+            "logical": "src/app/api/orders/[orderId]/receipt/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts",
+          "src/features/billing/components/OrderStatusBadge.tsx"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/billing/history/page.tsx",
+            "logical": "src/app/dashboard/billing/history/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/orders/[orderId]/receipt/route.ts",
+            "logical": "src/app/api/orders/[orderId]/receipt/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts",
+          "src/features/billing/components/OrderStatusBadge.tsx"
+        ]
+      }
+    },
+    {
+      "task": "U02",
+      "implementation": "reference",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/admin/users/page.tsx",
+            "logical": "src/app/dashboard/admin/users/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/dashboard/admin/users/[userId]/page.tsx",
+            "logical": "src/app/dashboard/admin/users/[userId]/page.tsx",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/admin/users/page.tsx",
+            "logical": "src/app/dashboard/admin/users/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/dashboard/admin/users/[userId]/page.tsx",
+            "logical": "src/app/dashboard/admin/users/[userId]/page.tsx",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      }
+    },
+    {
+      "task": "U02",
+      "implementation": "alternative",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/admin/users/page.tsx",
+            "logical": "src/app/dashboard/admin/users/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/dashboard/admin/users/[userId]/page.tsx",
+            "logical": "src/app/dashboard/admin/users/[userId]/page.tsx",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/admin/users/page.tsx",
+            "logical": "src/app/dashboard/admin/users/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/dashboard/admin/users/[userId]/page.tsx",
+            "logical": "src/app/dashboard/admin/users/[userId]/page.tsx",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      }
+    },
+    {
+      "task": "U03",
+      "implementation": "reference",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/admin/users/page.tsx",
+            "logical": "src/app/dashboard/admin/users/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/admin/role/route.ts",
+            "logical": "src/app/api/admin/role/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/admin/users/page.tsx",
+            "logical": "src/app/dashboard/admin/users/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/admin/role/route.ts",
+            "logical": "src/app/api/admin/role/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      }
+    },
+    {
+      "task": "U03",
+      "implementation": "alternative",
+      "feature": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/admin/users/page.tsx",
+            "logical": "src/app/dashboard/admin/users/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/admin/role/route.ts",
+            "logical": "src/app/api/admin/role/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      },
+      "layered": {
+        "changed_files": [
+          {
+            "path": "src/app/dashboard/admin/users/page.tsx",
+            "logical": "src/app/dashboard/admin/users/page.tsx",
+            "existing": true,
+            "relocated_existing": false,
+            "framework_route": true
+          },
+          {
+            "path": "src/app/api/admin/role/route.ts",
+            "logical": "src/app/api/admin/role/route.ts",
+            "existing": false,
+            "relocated_existing": false,
+            "framework_route": true
+          }
+        ],
+        "relocated_existing_edit_count": 0,
+        "unchanged_path_route_edit_count": 2,
+        "direct_imports_of_relocated_modules": [
+          "src/features/auth/lib/auth.ts"
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Static references only; not actual agent reads",
+    "Zero relocated existing edits does not imply zero layout effect",
+    "Five new task reference candidates use same framework routes; imports still differ",
+    "No main task admitted; feasibility probes do not replace final evaluator or V-gate qualification"
+  ],
+  "runtime_check": {
+    "current_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+    "without_volume_flag_sha256": "4d803e4930546377dbf44082a881c9d36add0687a9444b9483eb932889421a51",
+    "old_manifest_runtime_entry": "4d803e4930546377dbf44082a881c9d36add0687a9444b9483eb932889421a51"
+  }
+}

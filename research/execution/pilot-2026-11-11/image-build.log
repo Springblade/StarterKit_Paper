@@ -1,0 +1,131 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 302B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/node:24
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/node:24@sha256:8fa96264f302f58bbb13aa7339c541547b56975766ce956c875da149452a3e40
+#4 resolve docker.io/library/node:24@sha256:8fa96264f302f58bbb13aa7339c541547b56975766ce956c875da149452a3e40 0.0s done
+#4 DONE 0.3s
+
+#5 [internal] load build context
+#5 transferring context: 162.82kB 0.0s done
+#5 DONE 0.1s
+
+#6 [2/5] RUN npm install -g pnpm@11.7.0 @openai/codex@0.166.0
+#6 15.91 
+#6 15.91 added 3 packages in 16s
+#6 15.91 
+#6 15.91 1 package is looking for funding
+#6 15.91   run `npm fund` for details
+#6 15.91 npm notice
+#6 15.91 npm notice New major version of npm available! 11.19.1 -> 12.2.2
+#6 15.91 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+#6 15.91 npm notice To update run: npm install -g npm@12.2.2
+#6 15.91 npm notice
+#6 DONE 17.2s
+
+#7 [3/5] WORKDIR /workspace
+#7 DONE 0.1s
+
+#8 [4/5] COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+#8 DONE 0.1s
+
+#9 [5/5] RUN pnpm install --frozen-lockfile
+#9 0.807 ? Verifying lockfile against supply-chain policies (479 entries)...
+#9 0.812 Lockfile is up to date, resolution step is skipped
+#9 0.954 Progress: resolved 1, reused 0, downloaded 0, added 0
+#9 1.148 Packages: +325
+#9 1.148 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#9 1.957 Progress: resolved 325, reused 0, downloaded 88, added 88
+#9 2.067 
+#9 2.067    ╭──────────────────────────────────────────╮
+#9 2.067    │                                          │
+#9 2.067    │   Update available! 11.7.0 → 12.18.0.    │
+#9 2.067    │   Changelog: https://pnpm.io/v/12.18.0   │
+#9 2.067    │     To update, run: pnpm add -g pnpm     │
+#9 2.067    │                                          │
+#9 2.067    ╰──────────────────────────────────────────╯
+#9 2.067 
+#9 2.957 Progress: resolved 325, reused 0, downloaded 178, added 178
+#9 3.777 [WARN] Tarball download average speed 3 KiB/s (size 3 KiB) is below 50 KiB/s: https://registry.npmjs.org/estree-walker/-/estree-walker-3.0.3.tgz (GET)
+#9 3.968 Progress: resolved 325, reused 0, downloaded 300, added 300
+#9 4.967 Progress: resolved 325, reused 0, downloaded 321, added 321
+#9 5.967 Progress: resolved 325, reused 0, downloaded 322, added 322
+#9 7.102 ✓ Lockfile passes supply-chain policies (479 entries in 6.2s)
+#9 7.646 Progress: resolved 325, reused 0, downloaded 323, added 322
+#9 8.646 Progress: resolved 325, reused 0, downloaded 324, added 324
+#9 8.939 Progress: resolved 325, reused 0, downloaded 325, added 325, done
+#9 9.040 .../sharp@0.34.5/node_modules/sharp install$ node install/check.js || npm run build
+#9 9.055 .../esbuild@0.28.1/node_modules/esbuild postinstall$ node install.js
+#9 9.056 .../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js
+#9 9.056 .../esbuild@0.18.20/node_modules/esbuild postinstall$ node install.js
+#9 9.095 .../sharp@0.34.5/node_modules/sharp install: Done
+#9 9.105 .../esbuild@0.28.1/node_modules/esbuild postinstall: Done
+#9 9.115 .../esbuild@0.18.20/node_modules/esbuild postinstall: Done
+#9 9.123 .../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+#9 10.92 
+#9 10.92 dependencies:
+#9 10.92 + bcryptjs 3.0.3
+#9 10.92 + better-auth 1.6.25
+#9 10.92 + clsx 2.1.1
+#9 10.92 + dotenv 17.4.2
+#9 10.92 + drizzle-kit 0.31.10
+#9 10.92 + drizzle-orm 0.45.2
+#9 10.92 + lucide-react 1.31.0
+#9 10.92 + nanoid 6.0.0
+#9 10.92 + next 16.2.12
+#9 10.92 + next-themes 0.4.6
+#9 10.92 + pg 8.22.0
+#9 10.92 + react 18.3.1
+#9 10.92 + react-dom 18.3.1
+#9 10.92 + react-email 6.9.1
+#9 10.92 + resend 6.18.1
+#9 10.92 + tailwind-merge 3.6.0
+#9 10.92 + zod 4.4.3
+#9 10.92 
+#9 10.92 devDependencies:
+#9 10.92 + @better-auth/drizzle-adapter 1.6.25
+#9 10.92 + @biomejs/biome 2.5.6
+#9 10.92 + @tailwindcss/postcss 4.3.3
+#9 10.92 + @testing-library/jest-dom 7.0.1
+#9 10.92 + @testing-library/react 16.3.2
+#9 10.92 + @testing-library/user-event 14.6.6
+#9 10.92 + @types/bcryptjs 3.0.0
+#9 10.92 + @types/node 26.0.1
+#9 10.92 + @types/pg 8.20.0
+#9 10.92 + @types/react 18.3.31
+#9 10.92 + @types/react-dom 18.3.7
+#9 10.92 + @vitejs/plugin-react 6.1.0
+#9 10.92 + @vitest/ui 4.1.11
+#9 10.92 + happy-dom 20.11.8
+#9 10.92 + jsdom 30.0.1
+#9 10.92 + tailwindcss 4.3.3
+#9 10.92 + tsx 4.22.4
+#9 10.92 + typescript 5.7.3
+#9 10.92 + vitest 4.1.11
+#9 10.92 
+#9 11.16 Done in 10.8s using pnpm v11.7.0
+#9 DONE 12.5s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 24.6s done
+#10 exporting manifest sha256:7480a1d6d937ee489b57a7610fd669f1fb564ec297dd3cef0f5f8d4c49a796d2 0.0s done
+#10 exporting config sha256:1612dc64fd1eec16fa8917b6ea7bfdfa927d6d31c94de10f6a29f9453b1182ef 0.0s done
+#10 exporting attestation manifest sha256:d94eb3b119baaeb792c31b7755387c9e66af2aef5b120f4035ae3b1b993a996a 0.0s done
+#10 exporting manifest list sha256:b64d34ff6b38827b884f0aa1654f4dd27224857bc290b69e5842137184d67ba9
+#10 exporting manifest list sha256:b64d34ff6b38827b884f0aa1654f4dd27224857bc290b69e5842137184d67ba9 0.0s done
+#10 naming to docker.io/library/smartkit-pilot:20261111 done
+#10 unpacking to docker.io/library/smartkit-pilot:20261111
+#10 unpacking to docker.io/library/smartkit-pilot:20261111 13.8s done
+#10 DONE 38.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/gn22nogi75dq9bhrr9xbmf5dv

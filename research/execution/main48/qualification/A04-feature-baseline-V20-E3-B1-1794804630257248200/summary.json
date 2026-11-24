@@ -1,0 +1,522 @@
+{
+  "task": "A04",
+  "layout": "feature",
+  "variant": "baseline",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "9470798266ee4d90ea50452c13f4573330a68c2b3efa9bd9df13de33d1b0c146",
+    "hidden": "635ffde497fcff083473cdedc9ec4bd7c38a5e2138661adc95c6d69c230c27b2",
+    "visible": "b8ca5218cb9c849cfefc36a70749268e533f083a7ca67cc24f93fe74c3306106",
+    "runtime": "edc893f6227fe07c937f178c48d5c20762329488ed2597e7489d0f6131d57db0",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": null,
+    "visible_rounds": 20,
+    "hidden_rounds": 3,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\A04-feature-baseline-V20-E3-B1-1794804630257248200",
+  "visible": [
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "A04",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "results": [
+        {
+          "id": "EA-old-short-credential-and-identity",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EA-new-signup-boundaries-verification-no-autosignin",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Expected values to be strictly equal:\n\ntrue !== false\n"
+        },
+        {
+          "id": "EA-new-real-signup-form",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-new-reset-token-retention-on-short-and-single-use",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "The expression evaluated to a falsy value:\n\n  assert.ok(!(await api('reset-password',{token:t,newPassword:'x'.repeat(11)})).ok())\n"
+        },
+        {
+          "id": "EA-new-browser-reset-and-fresh-credential",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-old-expired-reset-max-identity",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "A04",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "results": [
+        {
+          "id": "EA-old-short-credential-and-identity",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EA-new-signup-boundaries-verification-no-autosignin",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Expected values to be strictly equal:\n\ntrue !== false\n"
+        },
+        {
+          "id": "EA-new-real-signup-form",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-new-reset-token-retention-on-short-and-single-use",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "The expression evaluated to a falsy value:\n\n  assert.ok(!(await api('reset-password',{token:t,newPassword:'x'.repeat(11)})).ok())\n"
+        },
+        {
+          "id": "EA-new-browser-reset-and-fresh-credential",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-old-expired-reset-max-identity",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "task": "A04",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "results": [
+        {
+          "id": "EA-old-short-credential-and-identity",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EA-new-signup-boundaries-verification-no-autosignin",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "Expected values to be strictly equal:\n\ntrue !== false\n"
+        },
+        {
+          "id": "EA-new-real-signup-form",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-new-reset-token-retention-on-short-and-single-use",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "The expression evaluated to a falsy value:\n\n  assert.ok(!(await api('reset-password',{token:t,newPassword:'x'.repeat(11)})).ok())\n"
+        },
+        {
+          "id": "EA-new-browser-reset-and-fresh-credential",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-old-expired-reset-max-identity",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "basic_reused_from": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\ledger-A04-feature-baseline-V1-E1-B1.json",
+  "cleanup_volumes_removed": true
+}

@@ -1,0 +1,77 @@
+{
+  "task": "B05",
+  "layout": "feature",
+  "variant": "reference",
+  "binding": {
+    "package": "b8f03e979e7711eac2e00baa77545a4f0ca174fcbeec793af025313c54ff8ab4",
+    "hidden": "653e1aef9ae0ed81411afc91d7d88a4f33989158d9f616fa84d5fc5d3b6db8df",
+    "visible": "4ee31a8a34d125a79a06bfc542fc342badf8d0d9d53bb7efc8b82dc9a0578e8e",
+    "runtime": "34255ad51c76cc88b341b5b4e23c669f7d4bfc053fb2b76b8fd17ddbb884d50e",
+    "mock": "04fcb1b1d0849721f7a8cac5dcf78c48c6deaf003318cf56cd88ead930a90175",
+    "solution": "321a569cf8c98ed7ca4108ebf8ec6b315f2ab08d533cfdf3f5319eb94e0edd54",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\B05-feature-reference-V1-E1-B1-1794757579013987900",
+  "visible": [
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "VP-existing-checkout-transfer-format",
+          "pass": true
+        },
+        {
+          "id": "VP-standard-QR-payment-case-live-audit-retry",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "B05",
+      "completed": true,
+      "acceptance": false,
+      "preservation": true,
+      "jointSuccess": false,
+      "results": [
+        {
+          "id": "E-old-standard-webhook-retry",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-standard-cron-and-signature",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-mismatch-terminal-outbound",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-new-embedded-webhook-and-cron",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "error",
+          "message": "duplicate key value violates unique constraint \"orders_code_idx\""
+        },
+        {
+          "id": "E-new-reject-ambiguous-invalid-and-wrong-case",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "error",
+          "message": "duplicate key value violates unique constraint \"orders_code_idx\""
+        }
+      ]
+    }
+  ],
+  "basic": {},
+  "model_calls": 0,
+  "passed": false,
+  "cleanup_volumes_removed": true
+}

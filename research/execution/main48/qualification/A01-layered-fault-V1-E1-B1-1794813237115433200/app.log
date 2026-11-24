@@ -1,0 +1,99 @@
+Already up to date
+Done in 347ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.20.0.3:3107
+- Environments: .env
+✓ Ready in 235ms
+
+ GET / 200 in 1359ms (next.js: 1221ms, application-code: 139ms)
+2026-11-16T07:14:08.549Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:14:09.093Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:14:09.114Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/auth/get-session 200 in 1604ms (next.js: 1583ms, application-code: 21ms)
+2026-11-16T07:14:10.363Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:14:10.479Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in 200 in 1377ms (next.js: 1189ms, application-code: 188ms)
+ GET /auth/sign-up 200 in 445ms (next.js: 394ms, application-code: 51ms)
+2026-11-16T07:14:11.510Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/reset-password 200 in 576ms (next.js: 386ms, application-code: 190ms)
+ GET /auth/sign-in?redirectTo=/dashboard 200 in 59ms (next.js: 1876µs, application-code: 58ms)
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 67ms (next.js: 1445µs, application-code: 66ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 65ms (next.js: 1586µs, application-code: 64ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing 200 in 27ms (next.js: 1592µs, application-code: 26ms)
+ POST /api/auth/sign-in/email 200 in 128ms (next.js: 8ms, application-code: 120ms)
+ POST /api/auth/sign-in/email 200 in 83ms (next.js: 1650µs, application-code: 82ms)
+ POST /api/auth/update-user 200 in 17ms (next.js: 2ms, application-code: 14ms)
+ POST /api/auth/update-user 400 in 9ms (next.js: 1592µs, application-code: 7ms)
+ POST /api/auth/update-user 400 in 8ms (next.js: 1529µs, application-code: 6ms)
+ POST /api/auth/update-user 401 in 6ms (next.js: 1390µs, application-code: 4ms)
+ POST /api/auth/update-user 200 in 12ms (next.js: 1351µs, application-code: 10ms)
+2026-11-16T07:14:13.435Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/settings 200 in 1191ms (next.js: 786ms, proxy.ts: 3ms, application-code: 401ms)
+ POST /api/auth/update-user 200 in 88ms (next.js: 70ms, application-code: 17ms)
+ GET /dashboard/settings 200 in 50ms (next.js: 2ms, proxy.ts: 5ms, application-code: 42ms)
+ GET /dashboard/x 404 in 267ms (next.js: 238ms, proxy.ts: 4ms, application-code: 25ms)
+2026-11-16T07:14:15.781Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 27ms (next.js: 2ms, application-code: 25ms)
+ POST /api/auth/sign-in/email 200 in 94ms (next.js: 8ms, application-code: 86ms)
+ POST /api/auth/sign-in/email 200 in 76ms (next.js: 1446µs, application-code: 75ms)
+ POST /api/auth/sign-in/email 200 in 78ms (next.js: 1361µs, application-code: 77ms)
+ GET /dashboard/settings 200 in 43ms (next.js: 1755µs, proxy.ts: 4ms, application-code: 38ms)
+2026-11-16T07:14:18.169Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/settings?profile=saved 200 in 34ms (next.js: 2ms, proxy.ts: 3ms, application-code: 29ms)
+ POST /dashboard/settings 303 in 89ms (next.js: 2ms, proxy.ts: 10ms, application-code: 77ms)
+  └─ ƒ updateDisplayName({}) in 28ms src/actions/auth/update-display-name.ts
+ GET /dashboard/settings?profile=saved 200 in 40ms (next.js: 1916µs, proxy.ts: 2ms, application-code: 36ms)
+ GET /dashboard/settings 200 in 38ms (next.js: 1699µs, proxy.ts: 2ms, application-code: 34ms)
+ POST /dashboard/settings 303 in 81ms (next.js: 3ms, proxy.ts: 3ms, application-code: 75ms)
+  └─ ƒ updateDisplayName({}) in 17ms src/actions/auth/update-display-name.ts
+ GET /dashboard/settings?profile=saved 200 in 59ms (next.js: 2ms, proxy.ts: 3ms, application-code: 53ms)
+ GET /dashboard/settings 200 in 65ms (next.js: 2ms, proxy.ts: 3ms, application-code: 60ms)
+ GET /dashboard/settings?profile=saved 200 in 31ms (next.js: 1774µs, proxy.ts: 3ms, application-code: 26ms)
+ POST /dashboard/settings 303 in 66ms (next.js: 2ms, proxy.ts: 3ms, application-code: 61ms)
+  └─ ƒ updateDisplayName({}) in 23ms src/actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 38ms (next.js: 1663µs, proxy.ts: 2ms, application-code: 34ms)
+ GET /dashboard/settings?profile=invalid 200 in 30ms (next.js: 1843µs, proxy.ts: 3ms, application-code: 25ms)
+ POST /dashboard/settings 303 in 45ms (next.js: 1677µs, proxy.ts: 3ms, application-code: 40ms)
+  └─ ƒ updateDisplayName({}) in 4ms src/actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 39ms (next.js: 1721µs, proxy.ts: 2ms, application-code: 35ms)
+ GET /dashboard/settings?profile=invalid 200 in 34ms (next.js: 1559µs, proxy.ts: 1962µs, application-code: 31ms)
+ POST /dashboard/settings 303 in 50ms (next.js: 3ms, proxy.ts: 2ms, application-code: 44ms)
+  └─ ƒ updateDisplayName({}) in 4ms src/actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 40ms (next.js: 1942µs, proxy.ts: 3ms, application-code: 35ms)
+ GET /dashboard/settings?profile=invalid 200 in 27ms (next.js: 1892µs, proxy.ts: 2ms, application-code: 23ms)
+ POST /dashboard/settings 303 in 41ms (next.js: 2ms, proxy.ts: 2ms, application-code: 37ms)
+  └─ ƒ updateDisplayName({}) in 4ms src/actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 35ms (next.js: 1626µs, proxy.ts: 2ms, application-code: 31ms)
+ GET /dashboard/settings?profile=invalid 200 in 41ms (next.js: 1601µs, proxy.ts: 2ms, application-code: 37ms)
+ POST /dashboard/settings 303 in 56ms (next.js: 1842µs, proxy.ts: 4ms, application-code: 51ms)
+  └─ ƒ updateDisplayName({}) in 4ms src/actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 39ms (next.js: 3ms, proxy.ts: 2ms, application-code: 34ms)
+ GET /dashboard/settings?profile=saved 200 in 26ms (next.js: 1523µs, proxy.ts: 2ms, application-code: 23ms)
+ POST /dashboard/settings 303 in 50ms (next.js: 3ms, proxy.ts: 2ms, application-code: 45ms)
+  └─ ƒ updateDisplayName({}) in 11ms src/actions/auth/update-display-name.ts
+ POST /api/auth/update-user 200 in 19ms (next.js: 8ms, application-code: 10ms)
+ GET /dashboard/settings 200 in 38ms (next.js: 2ms, proxy.ts: 2ms, application-code: 34ms)
+2026-11-16T07:14:26.190Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 87ms (next.js: 8ms, application-code: 79ms)
+ GET /dashboard/settings 200 in 51ms (next.js: 2ms, proxy.ts: 2ms, application-code: 46ms)
+2026-11-16T07:14:26.961Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 28ms (next.js: 1466µs, application-code: 27ms)
+2026-11-16T07:14:29.106Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /api/orders/a6b09a66-3d47-4711-b1b4-457d5ccf77f7/status 200 in 1066ms (next.js: 1055ms, application-code: 11ms)
+ GET /api/orders/a6b09a66-3d47-4711-b1b4-457d5ccf77f7/status 307 in 14ms (next.js: 9ms, application-code: 5ms)
+ GET /api/orders/cc7192df-3416-49d8-aeed-80edf5e4ce3b/status 404 in 8ms (next.js: 1426µs, application-code: 6ms)
+ GET /api/orders/cc7192df-3416-49d8-aeed-80edf5e4ce3b/status 307 in 5ms (next.js: 1401µs, application-code: 4ms)
+2026-11-16T07:14:29.689Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history 200 in 549ms (next.js: 372ms, proxy.ts: 2ms, application-code: 174ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing/history 200 in 29ms (next.js: 1995µs, application-code: 27ms)
+ POST /api/sepay/webhook 200 in 465ms (next.js: 449ms, application-code: 15ms)
+ POST /api/sepay/webhook 200 in 5ms (next.js: 1401µs, application-code: 4ms)
+ POST /api/sepay/webhook 401 in 7ms (next.js: 1445µs, application-code: 5ms)
+ POST /api/sepay/webhook 200 in 7ms (next.js: 1306µs, application-code: 6ms)
+ POST /api/sepay/webhook 200 in 11ms (next.js: 1480µs, application-code: 9ms)
+ POST /api/sepay/webhook 200 in 18ms (next.js: 3ms, application-code: 16ms)
+ POST /api/sepay/webhook 200 in 21ms (next.js: 6ms, application-code: 16ms)
+ POST /api/sepay/webhook 200 in 12ms (next.js: 2ms, application-code: 10ms)
+ POST /api/sepay/webhook 200 in 12ms (next.js: 5ms, application-code: 7ms)
+[?25h

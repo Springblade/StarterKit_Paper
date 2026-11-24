@@ -1,0 +1,40 @@
+Already up to date
+Done in 100ms using pnpm v11.7.0
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.orders.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.11 C:/Users/wayad/Documents/Paper/research/SmartKit
+
+ ❯ scripts/check-order-baseline.integration.ts (15 tests | 1 failed) 2878ms
+     × each status shows exactly the owner subset for both users without mutating orders 216ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/check-order-baseline.integration.ts > history filter development-task evaluator > each status shows exactly the owner subset for both users without mutating orders
+AssertionError: user 0 filter completed: expected [ Array(1) ] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+  [
+-   "b2471564-3d9a-415e-8047-d94c300b1a58-a-completed",
++   "b2471564-3d9a-415e-8047-d94c300b1a58-a-pending",
+  ]
+
+ ❯ scripts/check-order-baseline.integration.ts:151:68
+    149|       for (const status of states) {
+    150|         const document = await history(person, `?status=${status}`);
+    151|         expect(codes(document), `user ${person} filter ${status}`).toE…
+       |                                                                    ^
+    152|         const row = document.querySelector('tbody tr')!;
+    153|         expect(row.textContent).toContain('Order baseline fixture');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 passed (15)
+   Start at  17:10:23
+   Duration  5.20s (transform 128ms, setup 0ms, import 2.00s, tests 2.88s, environment 0ms)
+

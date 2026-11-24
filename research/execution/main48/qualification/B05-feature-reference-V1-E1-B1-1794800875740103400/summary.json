@@ -1,0 +1,85 @@
+{
+  "task": "B05",
+  "layout": "feature",
+  "variant": "reference",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "98533ab3533635f5bbdaccea1c0f0e19384c774201f3351d2a426fea9e74ab5c",
+    "hidden": "dbf5a80b1764d3a85fb95bc4deb8b8face0f2d8d8792001d5c6abfb697581bc5",
+    "visible": "045786fadff874d8b708b45ac9d0db47e8ad08d3135337cc738ca0754b1bcadb",
+    "runtime": "edc893f6227fe07c937f178c48d5c20762329488ed2597e7489d0f6131d57db0",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "321a569cf8c98ed7ca4108ebf8ec6b315f2ab08d533cfdf3f5319eb94e0edd54",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\B05-feature-reference-V1-E1-B1-1794800875740103400",
+  "visible": [
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "VP-existing-checkout-transfer-format",
+          "pass": true
+        },
+        {
+          "id": "VP-standard-QR-payment-case-live-audit-retry",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "B05",
+      "completed": true,
+      "acceptance": true,
+      "preservation": true,
+      "jointSuccess": true,
+      "results": [
+        {
+          "id": "E-old-checkout-preserves-standard-transfer-content",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-standard-webhook-retry",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-standard-cron-and-signature",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-mismatch-terminal-outbound",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-new-embedded-webhook-and-cron",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "E-new-reject-ambiguous-invalid-and-wrong-case",
+          "kind": "acceptance",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "task": "DP02",
+  "cell": "S0V1",
+  "kind": "reference-pipeline-rehearsal-no-model",
+  "account_credentials_supplied": false,
+  "final_check_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+  "package_manifest_sha256": "4d840a851b9a979c29dcb9dbf7e13d0f281b1d23488d2a08e53417bd4e9ac74f"
+}

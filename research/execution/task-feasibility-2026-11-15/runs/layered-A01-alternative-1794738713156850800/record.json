@@ -1,0 +1,34 @@
+{
+  "layout": "layered",
+  "phase": "alternative",
+  "task": "A01",
+  "model_calls": 0,
+  "started": "2026-11-15T10:31:53Z",
+  "runner_sha256": "4cf943656fcbec673abe9d9c09efc7c40dee063d6a399964b8dedac5798f657c",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "passed",
+  "db_volumes": [
+    "32f46ebe23294dc66f61a0837cf05a61a9d16dbd301b3b31f1082d968596833b"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 352ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "solution_files": {
+    "files.json": "dc522f2537b7251b8fa821a822be450933dfa67d9112b685529e20767b3972ce",
+    "src/types/auth/profile.ts": "8d05c946e01ee11d715eed72b3589cd4d5a8048949b64e48359ff3e88bb00be2",
+    "src/components/auth/display-name-form.tsx": "b90fb309d6608c6eaa0c3d419678474cd4ec953c55df9df5422b0476d625f3d2",
+    "src/app/dashboard/settings/page.tsx": "d8baedf605fedb1d15d8febf9ae4e9fb48f9fd8fa60aefeba5cd08da02688716",
+    "src/app/api/profile/display-name/route.ts": "fb69d7480096cedfc43d7c574648368a5cd6966c2b9404204a3b662e834cc1ee"
+  },
+  "probe_sha256": "68f1c83e8bd4dd78c24ecbc98411ed70b3b255ea6f1bacb2e0f8ff96b14a2970",
+  "typecheck_exit": 0,
+  "test:run_exit": 0,
+  "build_exit": 0,
+  "A01_joint_success": true,
+  "visible_exit": 0,
+  "probe_exit": 0,
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T10:33:07Z"
+}

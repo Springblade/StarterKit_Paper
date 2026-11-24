@@ -1,0 +1,22 @@
+\begin{table}[ht]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\caption{Confound taxonomy and mitigation status for the pilot study.}
+\label{tbl:confound-taxonomy}
+\begin{tabular}{@{}p{3.2cm}p{5.5cm}p{3.8cm}p{2cm}@{}}
+\toprule
+\textbf{Confound Type} & \textbf{Description} & \textbf{Pilot Status} & \textbf{Mitigation Stage} \\
+\midrule
+\textbf{Run-order} & All Condition~B runs preceded Condition~A. Time-of-day, experimenter familiarity, or tool snapshots may contribute to observed contrast. & Fully confounded & Validation \\
+\addlinespace[0.5em]
+\textbf{Prompt verbosity} & Condition~A prompt is longer (631 tokens) than Condition~B (196 tokens). Increased verbosity may improve output quality independent of convention encoding. & Uncontrolled & Validation \\
+\addlinespace[0.5em]
+\textbf{Service integration} & SmartKit integrates billing, auth, and email. If the pilot feature called these services, pattern-matching from integration code could confound convention adherence measurement. & Eliminated by design & --- \\
+\addlinespace[0.5em]
+\textbf{Component-level mechanism} & AGENTS.md, FSD layout, and sibling Zod patterns are bundled in Condition~A. The pilot measures ecosystem-level effect but cannot assign contribution to individual components. & Bundled (intentional) & Future Work (item~4) \\
+\addlinespace[0.5em]
+\textbf{Sample size} & $n=5$ per condition is sufficient for deterministic-verdict detection but insufficient for correlation analysis or distribution comparison. & Design constraint & Validation \\
+\bottomrule
+\end{tabular}
+\end{table}

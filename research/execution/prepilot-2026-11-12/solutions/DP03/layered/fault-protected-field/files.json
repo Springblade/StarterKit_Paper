@@ -1,0 +1,6 @@
+{
+  "src/app/dashboard/settings/page.tsx": "d8baedf605fedb1d15d8febf9ae4e9fb48f9fd8fa60aefeba5cd08da02688716",
+  "src/components/auth/display-name-form.tsx": "b90fb309d6608c6eaa0c3d419678474cd4ec953c55df9df5422b0476d625f3d2",
+  "src/app/api/profile/display-name/route.ts": "67c4e8c3791301cb60ea9af1cf37666487d06c05173fea5f3b84a388d7bbaa6e",
+  "src/types/auth/profile.ts": "8d05c946e01ee11d715eed72b3589cd4d5a8048949b64e48359ff3e88bb00be2"
+}

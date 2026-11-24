@@ -1,0 +1,27 @@
+{
+  "phase": "fault-foreign-resume",
+  "modelCalls": 0,
+  "completed": true,
+  "pass": false,
+  "baselineModified": false,
+  "browserAndRealDB": true,
+  "results": [
+    {
+      "id": "B03-browser-resume-same-order",
+      "pass": true,
+      "seconds": 19.381
+    },
+    {
+      "id": "B03-foreign-expired-and-terminal-denial",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at /evaluator/probe.cjs:52:168",
+      "seconds": 1.896
+    },
+    {
+      "id": "B03-existing-purchase-status-and-cancel",
+      "pass": true,
+      "seconds": 4.566
+    }
+  ]
+}

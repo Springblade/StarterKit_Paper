@@ -1,0 +1,20 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\node[box,text width=3.6cm,minimum height=18mm] (input) at (0,0) {Task specification\\Clean repository\\Assigned condition};
+\node[box,text width=3.6cm,minimum height=18mm] (agent) at (5,0) {Fresh agent session\\Read, edit, run tools\\Fixed total budget};
+\node[box,text width=3.6cm,minimum height=18mm] (patch) at (10,0) {Final patch\\Tool trace\\Resource log};
+\node[box,text width=3.6cm,minimum height=20mm] (visible) at (5,-3.2) {Visible checks\\Basic checks for all\\Extra checks in $V=1$};
+\node[box,text width=3.6cm,minimum height=20mm,draw=studyorange,fill=studyorange!5] (hidden) at (10,-3.2) {Final evaluator\\Acceptance\\Preservation\\Study requirements};
+\node[note,text width=3.6cm] at (0,-3.2) {Qualify checks first:\\unchanged baseline,\\valid alternatives,\\faulty variants};
+\draw[arrow] (input)--(agent);
+\draw[arrow] (agent)--(patch);
+\draw[arrow] ([xshift=-5mm]agent.south)--node[left,font=\small]{run} ([xshift=-5mm]visible.north);
+\draw[arrow] ([xshift=5mm]visible.north)--node[right,font=\small]{feedback} ([xshift=5mm]agent.south);
+\draw[arrow] (patch)--(hidden);
+\draw[dashed,draw=black!60] (7.6,-1.6)--(12.2,-1.6);
+\node[note,text width=13cm] at (5,-5) {Final checks stay outside the agent workspace.\\Final scores are not supplied as in-trial feedback.};
+\end{tikzpicture}
+\caption{Agents can run the checks supplied in their condition. The same final evaluator scores every saved patch for a given kit and task.}
+\label{fig:evaluation}
+\end{figure}

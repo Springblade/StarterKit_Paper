@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "model_calls": 0,
+  "checks": [
+    "stale-result-rejection",
+    "checker-error-rejection",
+    "invoked-slot-never-replaced",
+    "missing-or-stale-author-start-release-cannot-launch-anything",
+    "known-exhausted-or-unavailable-quota-rejected-before-invocation",
+    "synthetic-analysis-boundaries"
+  ],
+  "files": {
+    "collect.py": "9bffd400f5520ff87144119f5e3eaad25de5defcb39e95db9c9fd443c5fdf8ca",
+    "qualify.py": "fd53ea38122d6a9efb2ea114c01b77b91bdd7dee29115c29c14c8e1069e04fc4",
+    "analysis.py": "b976b25da3d8af809bd6d04f45bf1641a3594cd1fe14025ff20f5a24ac480934",
+    "selfcheck.py": "f5ea336caeebef44a90e420ec435d63d8e1e5e6ecb736f59366ceaaa56944ecc"
+  }
+}

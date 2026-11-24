@@ -1,0 +1,5 @@
+{
+  "src/lib/auth/auth.ts": "c3d8dfd3e5facd9ed2b52d3422ed1c45d90c84872f50300016172413aeba57fc",
+  "src/app/dashboard/admin/users/page.tsx": "dc44377f499780baf2fefac6eaba799ac8a462c0cf647a3da8bd00259292bfba",
+  "src/app/api/admin/role/route.ts": "8348e7a0dbdda69d263285a78af3fc02e7aca90f26ccd1a460bf441d0b34a66c"
+}

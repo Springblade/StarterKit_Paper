@@ -1,0 +1,5 @@
+{"id":"preservation-live-completion-and-audit","pass":true}
+{"id":"acceptance-expired-before-cleanup-no-entitlement","pass":false,"error":"Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'ignored'\n"}
+{"id":"preservation-mismatch-terminal-outbound","pass":true}
+{"id":"acceptance-cleanup-race-and-distinct-payments","pass":false,"error":"Expected values to be strictly equal:\n+ actual - expected\n\n+ 'completed'\n- 'expired'\n"}
+{"id":"preservation-concurrent-live-payments-one-completion","pass":false,"error":"Expected values to be strictly equal:\n\n2 !== 1\n"}

@@ -1,0 +1,95 @@
+Already up to date
+Done in 106ms using pnpm v11.7.0
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.orders.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.11 C:/Users/wayad/Documents/Paper/research/SmartKit
+
+ ❯ scripts/check-order-baseline.integration.ts (15 tests | 4 failed) 5135ms
+     × offers a labelled GET form with all states and preserves selection in the URL 81ms
+     × each status shows exactly the owner subset for both users without mutating orders 80ms
+     × missing, empty, invalid and repeated status fall back to full own history in date order 76ms
+     × an empty filtered result retains controls and explains the empty state 93ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/check-order-baseline.integration.ts > history filter development-task evaluator > offers a labelled GET form with all states and preserves selection in the URL
+AssertionError: expected null not to be null
+ ❯ scripts/check-order-baseline.integration.ts:129:24
+    127|     const document = await history(0, '?status=completed');
+    128|     const select = document.querySelector('select[name="status"]');
+    129|     expect(select).not.toBeNull();
+       |                        ^
+    130|     const id = select!.id;
+    131|     const label = document.querySelector(`label[for="${id}"]`);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  scripts/check-order-baseline.integration.ts > history filter development-task evaluator > each status shows exactly the owner subset for both users without mutating orders
+AssertionError: user 0 filter pending: expected [ …(4) ] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+  [
++   "b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-expired",
++   "b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-cancelled",
++   "b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-completed",
+    "b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-pending",
+  ]
+
+ ❯ scripts/check-order-baseline.integration.ts:150:68
+    148|       for (const status of states) {
+    149|         const document = await history(person, `?status=${status}`);
+    150|         expect(codes(document), `user ${person} filter ${status}`).toE…
+       |                                                                    ^
+    151|         const row = document.querySelector('tbody tr')!;
+    152|         expect(row.textContent).toContain('Order baseline fixture');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  scripts/check-order-baseline.integration.ts > history filter development-task evaluator > missing, empty, invalid and repeated status fall back to full own history in date order
+AssertionError: expected undefined to be '' // Object.is equality
+
+- Expected:
+""
+
++ Received:
+undefined
+
+ ❯ scripts/check-order-baseline.integration.ts:165:70
+    163|       expect(codes(document)).toEqual([...fixtures.filter(row => row.u…
+    164|         .sort((a,b) => b.createdAt.getTime() - a.createdAt.getTime()).…
+    165|       expect(document.querySelector('select[name="status"]')?.value).t…
+       |                                                                      ^
+    166|     }
+    167|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  scripts/check-order-baseline.integration.ts > history filter development-task evaluator > an empty filtered result retains controls and explains the empty state
+AssertionError: expected undefined to be 'pending' // Object.is equality
+
+- Expected:
+"pending"
+
++ Received:
+undefined
+
+ ❯ scripts/check-order-baseline.integration.ts:171:68
+    169|     const document = await history(2, '?status=pending');
+    170|     expect(codes(document)).toEqual([]);
+    171|     expect(document.querySelector('select[name="status"]')?.value).toB…
+       |                                                                    ^
+    172|     expect(document.body.textContent).toMatch(/no .*orders|no .*transa…
+    173|     const reset = [...document.querySelectorAll('a')].find(link =>
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 11 passed (15)
+   Start at  17:08:20
+   Duration  7.04s (transform 124ms, setup 0ms, import 1.62s, tests 5.14s, environment 0ms)
+

@@ -1,0 +1,22 @@
+{
+  "phase": "fault-no-admin-guard",
+  "modelCalls": 0,
+  "completed": true,
+  "pass": false,
+  "baselineModified": false,
+  "browserAndRealDB": true,
+  "results": [
+    {
+      "id": "U02-browser-detail-and-aggregate",
+      "pass": true,
+      "seconds": 14.123
+    },
+    {
+      "id": "U02-direct-access-and-missing-account",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at /evaluator/probe.cjs:45:161",
+      "seconds": 0.953
+    }
+  ]
+}

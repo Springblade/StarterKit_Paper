@@ -1,0 +1,68 @@
+Already up to date
+Done in 337ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.20.0.3:3107
+- Environments: .env
+✓ Ready in 239ms
+
+ GET / 200 in 1423ms (next.js: 1285ms, application-code: 138ms)
+2026-11-16T05:06:03.981Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T05:06:04.517Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T05:06:04.539Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/auth/get-session 200 in 1683ms (next.js: 1658ms, application-code: 25ms)
+2026-11-16T05:06:06.028Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T05:06:06.133Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in 200 in 1604ms (next.js: 1427ms, application-code: 176ms)
+ GET /auth/sign-up 200 in 489ms (next.js: 438ms, application-code: 51ms)
+2026-11-16T05:06:07.288Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/reset-password 200 in 655ms (next.js: 456ms, application-code: 198ms)
+ GET /auth/sign-in?redirectTo=/dashboard 200 in 59ms (next.js: 1740µs, application-code: 57ms)
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 74ms (next.js: 1704µs, application-code: 73ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 72ms (next.js: 2ms, application-code: 70ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing 200 in 31ms (next.js: 1767µs, application-code: 29ms)
+ POST /api/auth/sign-in/email 200 in 114ms (next.js: 8ms, application-code: 106ms)
+2026-11-16T05:06:09.225Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing?plan=0dfe9734-57fe-4acb-a52e-242b304a8ed7 200 in 1730ms (next.js: 1052ms, proxy.ts: 4ms, application-code: 673ms)
+ POST /dashboard/billing?plan=0dfe9734-57fe-4acb-a52e-242b304a8ed7 200 in 26ms (next.js: 1932µs, proxy.ts: 4ms, application-code: 20ms)
+  └─ ƒ checkOrderStatus("40c925bf-db70-4f72-af59-d6a4e902c664") in 8ms src/features/billing/actions/check-order-status.ts
+ POST /dashboard/billing?plan=0dfe9734-57fe-4acb-a52e-242b304a8ed7 200 in 10ms (next.js: 1797µs, proxy.ts: 3ms, application-code: 6ms)
+  └─ ƒ generatePaymentQRAction("xGDfWroa", 42000) in 0ms src/features/billing/actions/generate-payment-qr.ts
+ POST /api/sepay/webhook 200 in 619ms (next.js: 602ms, application-code: 17ms)
+ POST /api/sepay/webhook 200 in 6ms (next.js: 1519µs, application-code: 5ms)
+ POST /api/auth/sign-in/email 200 in 85ms (next.js: 8ms, application-code: 77ms)
+ GET /dashboard/billing?plan=00f01ed5-c758-4304-b3bb-bb8399c20d6e 200 in 62ms (next.js: 3ms, proxy.ts: 3ms, application-code: 56ms)
+ POST /dashboard/billing?plan=00f01ed5-c758-4304-b3bb-bb8399c20d6e 200 in 17ms (next.js: 2ms, proxy.ts: 4ms, application-code: 10ms)
+  └─ ƒ checkOrderStatus("faff1928-c8b5-4f0c-b93e-d502974b515c") in 6ms src/features/billing/actions/check-order-status.ts
+ POST /dashboard/billing?plan=00f01ed5-c758-4304-b3bb-bb8399c20d6e 200 in 12ms (next.js: 3ms, proxy.ts: 5ms, application-code: 4ms)
+  └─ ƒ generatePaymentQRAction("aQ6PZgKJ", 42000) in 0ms src/features/billing/actions/generate-payment-qr.ts
+2026-11-16T05:06:13.320Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/sepay/webhook 200 in 13ms (next.js: 1832µs, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 5ms (next.js: 1402µs, application-code: 4ms)
+ POST /api/auth/sign-in/email 200 in 84ms (next.js: 7ms, application-code: 77ms)
+ GET /dashboard/billing?plan=32671a1f-269a-46b8-89a4-062ecbd4a6ac 200 in 114ms (next.js: 4ms, proxy.ts: 4ms, application-code: 106ms)
+ POST /dashboard/billing?plan=32671a1f-269a-46b8-89a4-062ecbd4a6ac 200 in 16ms (next.js: 2ms, proxy.ts: 4ms, application-code: 10ms)
+  └─ ƒ checkOrderStatus("378aff1e-d7ee-4f15-abe2-64a30a2f71f0") in 5ms src/features/billing/actions/check-order-status.ts
+ POST /dashboard/billing?plan=32671a1f-269a-46b8-89a4-062ecbd4a6ac 200 in 10ms (next.js: 2ms, proxy.ts: 3ms, application-code: 5ms)
+  └─ ƒ generatePaymentQRAction("z8IgUmcT", 42000) in 0ms src/features/billing/actions/generate-payment-qr.ts
+2026-11-16T05:06:15.166Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/sepay/webhook 200 in 16ms (next.js: 2ms, application-code: 13ms)
+ POST /api/sepay/webhook 200 in 7ms (next.js: 1466µs, application-code: 5ms)
+ POST /api/auth/sign-in/email 200 in 81ms (next.js: 8ms, application-code: 73ms)
+ GET /dashboard/billing?plan=1486f550-60a2-484b-9bb6-0c4ffc6972ce 200 in 60ms (next.js: 4ms, proxy.ts: 3ms, application-code: 53ms)
+ POST /dashboard/billing?plan=1486f550-60a2-484b-9bb6-0c4ffc6972ce 200 in 18ms (next.js: 3ms, proxy.ts: 3ms, application-code: 12ms)
+  └─ ƒ checkOrderStatus("89761809-0325-4117-b070-d6bd77159a0e") in 7ms src/features/billing/actions/check-order-status.ts
+ POST /dashboard/billing?plan=1486f550-60a2-484b-9bb6-0c4ffc6972ce 200 in 11ms (next.js: 2ms, proxy.ts: 4ms, application-code: 5ms)
+  └─ ƒ generatePaymentQRAction("JTfOFPaI", 42000) in 0ms src/features/billing/actions/generate-payment-qr.ts
+2026-11-16T05:06:17.003Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/sepay/webhook 200 in 13ms (next.js: 1806µs, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 5ms (next.js: 1321µs, application-code: 3ms)
+ POST /api/auth/sign-in/email 200 in 78ms (next.js: 8ms, application-code: 70ms)
+ GET /dashboard/billing?plan=a49e3ab6-5986-4b2e-a051-9a8c32afd063 200 in 57ms (next.js: 3ms, proxy.ts: 2ms, application-code: 52ms)
+ POST /dashboard/billing?plan=a49e3ab6-5986-4b2e-a051-9a8c32afd063 200 in 23ms (next.js: 2ms, proxy.ts: 3ms, application-code: 18ms)
+  └─ ƒ checkOrderStatus("a7cfeec3-a83c-4b01-bd85-043d638f57e7") in 13ms src/features/billing/actions/check-order-status.ts
+ POST /dashboard/billing?plan=a49e3ab6-5986-4b2e-a051-9a8c32afd063 200 in 11ms (next.js: 2ms, proxy.ts: 3ms, application-code: 5ms)
+  └─ ƒ generatePaymentQRAction("4PiHXdyk", 42000) in 0ms src/features/billing/actions/generate-payment-qr.ts
+2026-11-16T05:06:18.808Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/sepay/webhook 200 in 12ms (next.js: 1686µs, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 5ms (next.js: 1245µs, application-code: 4ms)

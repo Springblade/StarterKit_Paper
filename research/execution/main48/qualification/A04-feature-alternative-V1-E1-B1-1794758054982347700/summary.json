@@ -1,0 +1,83 @@
+{
+  "task": "A04",
+  "layout": "feature",
+  "variant": "alternative",
+  "binding": {
+    "package": "6c0d7cc81e803793e406fda333ee6cb8455f2048f168e902e283087ac661e969",
+    "hidden": "42065c646e13d885be6394ddb7291936cf9400c8953759429050f0eb95757630",
+    "visible": "b8ca5218cb9c849cfefc36a70749268e533f083a7ca67cc24f93fe74c3306106",
+    "runtime": "b22c0e6bddc196dea84ee9b8880aefc865aa554cbadb28a095a067c52dd32f6f",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "88488951c03fd459884b58dbff22ee6d2253f0ec7b07e59c23aa23f20cf6e5ba",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\A04-feature-alternative-V1-E1-B1-1794758054982347700",
+  "visible": [
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "A04",
+      "completed": true,
+      "acceptance": true,
+      "preservation": true,
+      "jointSuccess": true,
+      "results": [
+        {
+          "id": "EA-old-short-credential-and-identity",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EA-new-signup-boundaries-verification-no-autosignin",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-new-real-signup-form",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-new-reset-token-retention-on-short-and-single-use",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-old-expired-reset-max-identity",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

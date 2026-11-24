@@ -1,0 +1,242 @@
+[
+  {
+    "layout": "feature",
+    "task": "A04",
+    "variant": "baseline",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\A04-baseline.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "A04",
+    "variant": "reference",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\A04-reference.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "A04",
+    "variant": "alternative",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\A04-alternative.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "A04",
+    "variant": "fault",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\A04-fault.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "B05",
+    "variant": "baseline",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\B05-baseline.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "B05",
+    "variant": "reference",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\B05-reference.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "B05",
+    "variant": "alternative",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\B05-alternative.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "B05",
+    "variant": "fault",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\B05-fault.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "B06",
+    "variant": "baseline",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\B06-baseline.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "B06",
+    "variant": "reference",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\B06-reference.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "B06",
+    "variant": "alternative",
+    "probe_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\B06-alternative.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "feature",
+    "task": "B06",
+    "variant": "fault",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-feature-1794755978095142200\\B06-fault.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "A04",
+    "variant": "baseline",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\A04-baseline.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "A04",
+    "variant": "reference",
+    "probe_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\A04-reference.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "A04",
+    "variant": "alternative",
+    "probe_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\A04-alternative.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "A04",
+    "variant": "fault",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\A04-fault.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "B05",
+    "variant": "baseline",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\B05-baseline.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "B05",
+    "variant": "reference",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\B05-reference.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "B05",
+    "variant": "alternative",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\B05-alternative.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "B05",
+    "variant": "fault",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\B05-fault.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "B06",
+    "variant": "baseline",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 0,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\B06-baseline.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "B06",
+    "variant": "reference",
+    "probe_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\B06-reference.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "B06",
+    "variant": "alternative",
+    "probe_exit": 0,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\B06-alternative.log",
+    "model_calls": 0
+  },
+  {
+    "layout": "layered",
+    "task": "B06",
+    "variant": "fault",
+    "probe_exit": 1,
+    "basic_exit": 0,
+    "type_exit": 2,
+    "log": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\task-feasibility-2026-11-15\\runs\\replacement-layered-1794756101046898800\\B06-fault.log",
+    "model_calls": 0
+  }
+]

@@ -1,0 +1,1190 @@
+                                           Are Mutants a Valid Substitute
+                                        for Real Faults in Software Testing?
+
+René Just† , Darioush Jalali† , Laura Inozemtseva*, Michael D. Ernst† , Reid Holmes*, and Gordon Fraser‡
+                 † University of Washington
+                                                                                  *University of Waterloo                                ‡ University of Sheffield
+                        Seattle, WA, USA                                           Waterloo, ON, Canada                                         Sheffield, UK
+                {rjust, darioush, mernst}                                         {lminozem, rtholmes}                            gordon.fraser@sheffield.ac.uk
+                  @cs.washington.edu                                                 @uwaterloo.ca
+
+ABSTRACT                                                                                                    1.    INTRODUCTION
+A good test suite is one that detects real faults. Because the set                                             Both industrial software developers and software engineering re-
+of faults in a program is usually unknowable, this definition is not                                        searchers are interested in measuring test suite effectiveness. While
+useful to practitioners who are creating test suites, nor to researchers                                    developers want to know whether their test suites have a good chance
+who are creating and evaluating tools that generate test suites. In                                         of detecting faults, researchers want to be able to compare differ-
+place of real faults, testing research often uses mutants, which are                                        ent testing or debugging techniques. Ideally, one would directly
+artificial faults — each one a simple syntactic variation — that are                                        measure the number of faults a test suite can detect in a program.
+systematically seeded throughout the program under test. Mutation                                           Unfortunately, the faults in a program are unknown a priori, so a
+analysis is appealing because large numbers of mutants can be                                               proxy measurement must be used instead.
+automatically-generated and used to compensate for low quantities                                              A well-established proxy measurement for test suite effective-
+or the absence of known real faults.                                                                        ness in testing research is the mutation score, which measures a
+   Unfortunately, there is little experimental evidence to support                                          test suite’s ability to distinguish a program under test, the origi-
+the use of mutants as a replacement for real faults. This paper in-                                         nal version, from many small syntactic variations, called mutants.
+vestigates whether mutants are indeed a valid substitute for real                                           Specifically, the mutation score is the percentage of mutants that
+faults, i.e., whether a test suite’s ability to detect mutants is corre-                                    a test suite can distinguish from the original version. Mutants
+lated with its ability to detect real faults that developers have fixed.                                    are created by systematically injecting small artificial faults into
+Unlike prior studies, these investigations also explicitly consider the                                     the program under test, using well-defined mutation operators.
+conflating effects of code coverage on the mutant detection rate.                                           Examples of such mutation operators are replacing arithmetic or
+   Our experiments used 357 real faults in 5 open-source applica-                                           relational operators, modifying branch conditions, or deleting state-
+tions that comprise a total of 321,000 lines of code. Furthermore,                                          ments (cf. [18]).
+our experiments used both developer-written and automatically-                                                 Mutation analysis is often used in software testing and debugging
+generated test suites. The results show a statistically significant                                         research. More concretely, it is commonly used in the following use
+correlation between mutant detection and real fault detection, inde-                                        cases (e.g., [3, 13, 18, 19, 35, 37–39]):
+pendently of code coverage. The results also give concrete sugges-                                          Test suite evaluation The most common use of mutation analysis
+tions on how to improve mutation analysis and reveal some inherent                                          is to evaluate and compare (generated) test suites. Generally, a test
+limitations.                                                                                                suite that has a higher mutation score is assumed to detect more real
+                                                                                                            faults than a test suite that has a lower mutation score.
+Categories and Subject Descriptors                                                                          Test suite selection Suppose two unrelated test suites T1 and T2
+D.2.5 [Software Engineering]: Testing and Debugging                                                         exist that have the same mutation score and |T1 | < |T2 |. In the
+                                                                                                            context of test suite selection, T1 is a preferable test suite as it has
+General Terms                                                                                               fewer tests than T2 but the same mutation score.
+Experimentation, Measurement                                                                                Test suite minimization A mutation-based test suite minimiza-
+                                                                                                            tion approach reduces a test suite T to T \ {t } for every test t ∈ T
+Keywords                                                                                                    for which removing t does not decrease the mutation score of T .
+                                                                                                            Test suite generation A mutation-based test generation (or aug-
+Test effectiveness, real faults, mutation analysis, code coverage
+                                                                                                            mentation) approach aims at generating a test suite with a high mu-
+                                                                                                            tation score. In this context, a test generation approach augments a
+                                                                                                            test suite T with a test t only if t increases the mutation score of T .
+                                                                                                            Fault localization A fault localization technique that precisely
+Permissiontotomake  make    digital  or hard                                                                identifies the root cause of an artificial fault, i.e., the mutated code
+Permission             digital  or hard  copiescopies     ofpart
+                                                  of all or       or this
+                                                              all of  partwork
+                                                                             of this   work foror
+                                                                                 for personal
+personal or
+classroom    useclassroom             granted
+                              use is fee
+                 is granted without       providedwithout    fee provided
+                                                      that copies              thatorcopies
+                                                                    are not made               are
+                                                                                       distributed          location, is assumed to also be effective for real faults.
+notprofit
+for   madeoror commercial
+                 distributedadvantage   andor
+                               for profit    that copies bear this
+                                               commercial            notice and
+                                                                advantage        thethat
+                                                                               and    full copies
+                                                                                           citation
+on  thethis
+        firstnotice
+              page. Copyrights   forcitation
+                                     components     of this                                                    These uses of mutation analysis rely on the assumption that mu-
+bear                 and the full              on the   firstwork
+                                                              page.owned    by others
+                                                                      To copy          than ACM
+                                                                                 otherwise,      to
+must be honored. Abstracting with credit is permitted. To copy otherwise, or republish,                     tants are a valid substitute for real faults. Unfortunately, there is little
+republish,
+to            to postoron
+   post on servers         servers or to
+                        to redistribute to redistribute
+                                           lists, requires to  lists,
+                                                            prior     requires
+                                                                   specific      prior specific
+                                                                             permission   and/or a
+permission
+fee.            and/or a fee.
+     Request permissions     from Permissions@acm.org.
+                                                                                                            experimental evidence supporting this assumption, as discussed in
+FSE’14 , November 16–22, 2014, Hong Kong, China                                                             greater detail in Section 4. To the best of our knowledge, only three
+FSE’14, November 16–21, 2014, Hong Kong, China
+Copyright 2014
+Copyright        ACM 978-1-4503-3056-5/14/11...$15.00
+           2014 ACM    978-1-4503-3056-5/14/11 ...$15.00.                                                   previous studies have explored the relationship between mutants and
+http://dx.doi.org/10.1145/2635868.2635929
+
+
+
+                                                                                                      654
+real faults [1, 8, 27]. Our work differs from these previous studies                           Table 1: Investigated subject programs.
+in four main aspects. (1) Our study considers subject programs that               Program size (KLOC), test suite size (Test KLOC), and the number of
+are orders of magnitude larger. (2) Our study considers real faults               JUnit tests (Tests) are reported for the most recent version. LOC refers to
+rather than hand-seeded faults. (3) Our study uses developer-written              non-comment, non-blank lines of code and was measured with sloccount
+and automatically-generated test suites. (4) Our study considers the              (http://www.dwheeler.com/sloccount).
+conflating effects of code coverage when studying the correlation                              Program                 KLOC       Test KLOC         Tests
+between mutant detection and real fault detection. A higher mu-
+                                                                                   Chart       JFreeChart                 96            50          2,205
+tant detection and real fault detection rate could both be caused by
+                                                                                   Closure     Closure Compiler           90            83          7,927
+higher code coverage, thus it is important to control this variable
+                                                                                   Math        Commons Math               85            19          3,602
+when measuring the correlation.
+                                                                                   Time        Joda-Time                  28            53          4,130
+   Specifically, this paper extends previous work and explores the
+                                                                                   Lang        Commons Lang               22             6          2,245
+relationship between mutants and real faults using 5 large Java
+programs, 357 real faults, and 230,000 mutants. It aims to confirm                 Total                                 321           211         20,109
+or refute the hypothesis that mutants are a valid substitute for real
+faults in software testing by answering the following questions:                     The remainder of this paper is structured as follows. Section 2
+     R ESEARCH Q UESTION 1. Are real faults coupled to mu-                        describes our methodology and the experiments we performed to
+  tants generated by commonly used mutation operators?                            answer our research questions. Section 3 presents and discusses the
+                                                                                  results. Section 4 reviews related work, and Section 5 concludes.
+The existence of the coupling effect [9] is a fundamental assumption
+underlying mutation analysis. A complex fault is coupled to a set of              2.    METHODOLOGY
+simple faults if a test that detects all the simple faults also detects             Our goal was to test the assumption that mutants are a valid
+the complex fault. Prior research empirically showed the existence                substitute for real faults by conducting a study with real faults, using
+of the coupling effect between simple and complex mutants [17, 28],               both developer-written and automatically-generated test suites. To
+but it is unclear whether real faults are coupled to simple mu-                   accomplish this, we performed the following high-level steps:
+tants derived from commonly used mutation operators [18, 26, 29].                    1. Located and isolated real faults that have been previously
+Therefore, this paper investigates whether this coupling effect exists.                  found and fixed by analyzing the subject programs’ version
+In addition, it studies the numbers of mutants coupled to each of the                    control and bug tracking systems (Section 2.2).
+real faults as well as their underlying mutation operators.
+                                                                                     2. Obtained developer-written test suites for both the faulty and
+    R ESEARCH Q UESTION 2. What types of real faults are not                             the fixed program version for each real fault (Section 2.3).
+  coupled to mutants?                                                                3. Automatically generated test suites for the fixed program
+                                                                                         version for each real fault (Section 2.4).
+The coupling effect may not hold for every real fault. Therefore,
+this paper investigates what types of real faults are not coupled to                 4. Generated mutants and performed mutation analysis for all
+any of the generated mutants. Additionally, this paper sheds light                       fixed program versions (Section 2.5).
+on whether the absence of the coupling effect indicates a weakness                   5. Conducted experiments using the real faults, mutants, and the
+of the set of commonly applied mutation operators or an inherent                         test suites to answer our research questions (Section 2.6).
+limitation of mutation analysis.
+                                                                                  2.1      Subject Programs
+     R ESEARCH Q UESTION 3. Is mutant detection correlated                          Table 1 lists the 5 subject programs we used in our experiments.
+  with real fault detection?                                                      These programs satisfy the following desiderata:
+                                                                                    1. Each program has a version control and bug tracking system,
+Since mutation analysis is commonly used to evaluate and compare                        enabling us to locate and isolate real faults.
+(generated) test suites, this paper also addresses the question of
+                                                                                    2. Each program is released with a comprehensive test suite,
+whether a test suite’s ability to detect mutants is correlated with its
+                                                                                        enabling us to experiment with developer-written test suites
+ability to detect real faults.
+                                                                                        in addition to automatically-generated ones.
+  In summary, the contributions of this paper are as follows:
+    • A new set of 357 developer-fixed and manually-verified real                 2.2      Locating and Isolating Real Faults
+       faults and corresponding test suites from 5 programs.
+                                                                                     We obtained real faults from each subject program’s version
+    • The largest study to date of whether mutants are a valid sub-               control system by identifying commits that corrected a failure in the
+       stitute for real faults using 357 real faults, 230,000 mutants,            program’s source code. Ideally, we would have obtained, for each
+       and developer-written and automatically-generated tests.                   real fault, two source code versions Vbug and Vfix which differ by
+    • An investigation of the coupling effect between real faults and             only the bug fix. Unfortunately, developers do not always minimize
+       the mutants that are generated by commonly used mutation                   their commits. Therefore, we had to locate and isolate the fix for the
+       operators. The results show the existence of a coupling effect             real fault in a bug-fixing commit.
+       for 73% of real faults.                                                       We first examined the version control and bug tracking system of
+    • Concrete suggestions for improving mutation analysis (10%                   each program for indications of a bug fix (Section 2.2.1). We refer to
+       of real faults require a new or stronger mutation operator), and           a revision that indicates a bug fix as a candidate revision. For each
+       identification of its inherent limitations (17% of real faults are         candidate revision, we tried to reproduce the fault with an existing
+       not coupled to mutants).                                                   test (Section 2.2.2). Finally, we reviewed each reproducible fault to
+    • An analysis of whether mutant detection is correlated with                  ensure that it is isolated, i.e., the bug-fixing commit does not include
+       real fault detection. The results show a statistically signifi-            irrelevant code changes (Section 2.2.3). We discarded any fault
+       cant correlation that is stronger than the correlation between             that could not be reproduced and isolated. Table 2 summarizes the
+       statement coverage and real fault detection.                               results of each step in which we discarded candidate revision pairs.
+
+
+
+                                                                            655
+Table 2: Number of candidate revisions, compilable revisions,                                                         source code diff
+and reproducible and isolated faults for each subject program.
+             Candidate     Compilable      Reproducible     Isolated                Vbug                         V1                              V2            Vfix
+                                                                                                features &                       bug fix               =
+             revisions      revisions         faults         faults                            refactorings
+  Chart          80             62               28             26
+  Closure       316            227              179            133                       Figure 1: Obtaining source code versions V1 and V2 .
+  Math          435            304              132            106                V1 and V2 differ by only a bug fix. Vbug and Vfix are the source code versions
+  Time           75             57               29             27                of two consecutive revisions in a subject program’s version control system.
+  Lang          273            186               69             65
+  Total        1179            836              437            357
+
+                                                                                              Tbug               i
+                                                                                                                Tpass                    i
+                                                                                                                                       Tfail          Tfix
+2.2.1       Candidate Revisions for Bug-Fixing Commits                                          1                    1                    1             1
+                                                                                               tbug                 tfix                 tfix          tfix
+   We developed a script to determine revisions that a developer
+marked as a bug fix. This script mines the version control system                                ..                   ..                   ..            ..
+                                                                                                  .                    .                    .             .
+for explicit mentions of a bug fix, such as a bug identifier from the                             ..                 n                    n             n
+subject program’s bug tracking system.                                               pass
+                                                                                                   .                tfix                 tfix          tfix
+                                                                                    on V1                                                                       pass
+   Let revfix be a revision marked as a bug fix. We assume that the                                ..                j                     i           n+1     on V2
+                                                                                                                    tbug                 tˆfix        tfix
+previous revision in the version control system, revbug , was faulty                                .                                                   ..
+(later steps validate this assumption). Overall, we identified 1,179                                                                                     .      fail
+                                                                                                k
+                                                                                               tbug             j                                              on V1
+candidate revision pairs hrevbug ,revfix i.                                                                    tbug is previous version                n+m
+                                                                                                                      i — empty if tˆi                tfix
+                                                                                     fail                        of tˆfix            fix
+2.2.2       Discarding Non-reproducible Faults                                      on V1                       was introduced in Tfix                          fail
+   A candidate revision pair obtained in the previous step is not                                                                                              on V2
+suitable for our experiments if we cannot reproduce the real fault.
+Let V be the source code version of a revision rev, and let T be                  Figure 2: Relationship between the i-th obtained test suite pair
+the corresponding test suite. The fault of a candidate revision pair                i ,T i i and the developer-written test suites T
+                                                                                  hTpass fail                                       bug and Tfix .
+hrevbug ,revfix i is reproducible if a test exists in Tfix that passes on                                                                                      i
+                                                                                  Tbug and Tfix are derived from a subject program’s version control system. tˆfix
+Vfix but fails on Vbug due to the existence of the fault.                                                                    j
+   In some cases, test suite Tfix does not run on Vbug . If necessary,            is the i-th triggering test in Tfix , and tbug is the previous version of that test.
+we fixed build-system-related configuration issues and trivial errors
+such as imports of non-existent classes. However, we did not attempt
+to fix compilation errors requiring non-trivial changes, which would              fix part of the diff. The result of this step was two source code
+necessitate deeper knowledge about the program. 836 out of 1,179                  versions V1 and V2 such that V1 and V2 differ by exactly a bug fix —
+revision pairs remained after discarding candidate revision pairs                 no features were added and no refactorings were applied. To ensure
+with unresolvable compilation errors.                                             consistency, the review process was performed twice by different au-
+   After fixing trivial compilation errors, we discarded version pairs            thors, with a third author resolving disagreements. Different authors
+for which the fault was not reproducible. A fault might not be repro-             reviewed different diffs to avoid introducing a systematic bias.
+ducible for three reasons. (1) The source code diff is empty — the                   Figure 1 visualizes the relationship between the source code
+difference between revbug and revfix was only to tests, configuration,            versions V1 and V2 , and how they are obtained from the source code
+or documentation. (2) No test in Tfix passes on Vfix but fails on Vbug .          versions of a candidate revision pair. V2 is equal to the version Vfix ,
+(3) None of the tests in Tfix that fail on Vbug exposes the real fault.           and the difference between V1 and V2 is the bug fix. Note that V1 is
+                                                                                  obtained by re-introducing the real fault into V2 — that is, applying
+We manually inspected each test of Tfix that failed on Vbug while
+                                                                                  the inverse bug-fixing diff. Overall, we obtained 357 version pairs
+passing on Vfix to determine whether its failure was caused by the                hV1 ,V2 i for which we could isolate the bug fix.
+real fault. Examples of failing tests that do not expose a real fault
+include dependent tests [42] or non-deterministic tests. The overall
+number of reproducible candidate revision pairs was 437.
+                                                                                  2.3       Obtaining Developer-written Test Suites
+                                                                                     Section 2.2 described how we obtained 357 suitable version pairs
+2.2.3       Discarding Non-isolated Faults                                        hV1 ,V2 i. This section describes how we obtained two related test
+   Since developers do not always minimize their commits, the                     suites Tpass and Tfail made up of developer-written tests. Tpass and
+source code of Vbug and Vfix might differ by both features and the                Tfail differ by exactly one test, Tpass passes on V1 , and Tfail fails on
+bug fix. We ensured that all bug fixes were isolated for the purposes             V1 because of the real fault.
+of our study. Isolation is important because unrelated changes could                 Since Tpass and Tfail differ by exactly one test related to the real
+affect the outcome of generated tests or could affect the coverage                fault, the pairs hTpass ,Tfail i enable us to study the coupling effect
+and mutation score. Other benefits of isolation include improved                  between real faults and mutants, and whether the effect exists in-
+backward-compatibility of tests and the ability to focus our experi-              dependently of code coverage. These test suite pairs also reflect
+ments on a smaller amount of modified code.                                       common and recommended practice. The developer’s starting point
+   For each of the 437 reproducible candidate revision pairs, we                  is the faulty source code version V1 and a corresponding test suite
+manually reviewed the bug fix (the source code diff between Vbug                  Tpass , which passes on V1 . Upon discovering a previously-unknown
+and Vfix ) to verify that it was isolated and related to the real fault.          fault in V1 , a developer augments test suite Tpass to expose this fault.
+We divided a non-isolated bug fix into two diffs, one that represents             The resulting test suite Tfail fails on V1 but passes on the fixed source
+the bug fix and one that represents features and refactorings. We                 code version V2 . Tpass might be augmented by modifying an existing
+discarded a candidate revision pair if we could not isolate the bug               test (e.g., adding stronger assertions) or by adding a new test.
+
+
+
+                                                                            656
+               Chart        Closure     Lang          Math       Time                        Table 3: Characteristics of generated test suites.
+                                                                                   Test suites gives the total number of test suites that passed on V2 and the
+100%                                              ●
+                                                                                   percentage of test suites that detected a real fault (Tfail ). The KLOC and
+                                                                                   Tests columns report the mean and standard deviation of lines of code and
+ 75%                ●
+                    ●
+                    ●
+                    ●
+                    ●
+                    ●         ●                                                    number of JUnit tests for all test suites. Detected faults shows how many
+                    ●   ●
+                        ●
+                    ●
+
+                        ●                                                          distinct real faults the test suites detected out of the number of program
+ 50%                ●
+                    ●
+                    ●
+                    ●
+                              ●
+                              ●                   ●
+                                                  ●
+
+                                                                                   versions for which at least one suitable test suite could be generated.
+                              ●                         ●
+                                                                  ●
+                                                                  ●
+                                                  ●     ●
+                                                             ●
+
+ 25%                ●                             ●
+                                                        ●    ●
+                                                             ●                                      Test suites       KLOC            Tests        Detected
+                        ●                         ●
+                                                  ●                                                Total    Tfail                                   faults
+  0%           ●                                        ●
+
+
+
+
+              Statement coverage               Mutation score                        EvoSuite     28,318    22.3%     10±49          68±133         182/354
+                                                                                      -branch     10,133    21.1%      2±7           21±24          156/352
+Figure 3: Statement coverage ratios and mutation scores of the                        -weak        9,420    21.8%      3±8           24±27          158/352
+test suites Tpass for each subject program.                                           -strong      8,765    24.1%     26±86         171±202         152/350
+                                                                                     Randoop       3,387 18.0% 212±132            6,929±9,923        90/326
+                                                                                      -nonnull     1,690 17.3% 200±124            6,113±9,012        78/316
+   We cannot directly use the existing developer-written test suites                  -null        1,697 18.7% 224±138            7,747±10,698       84/319
+Tbug and Tfix as Tpass and Tfail , because not all tests pass on each                JCrasher      3,436     0.6% 543±561 47,928±48,174                2/350
+committed version and because the developer may have committed                       Total        35,141 19.7% 335±995            1,066±5,599       198/357
+changes to the tests that are irrelevant to the fault. Therefore, we
+created the test suites Tpass and Tfail based on Tbug and Tfix , as we
+now describe.                                                                      2.4       Automatically Generating Test Suites
+   Recall that for each pair hV1 ,V2 i, one or more tests expose the
+                                                                                      We used three test generation tools for our study: EvoSuite [12],
+real fault in V1 while passing on V2 — we refer to such a test as
+                                                                                   Randoop [31], and JCrasher [6]. We attempted to use DSDCrasher
+a triggering test, tˆ. Let m be the number of triggering tests for
+                                                                                   [7] instead of JCrasher, but found that it relies on the static analysis
+a version pair; then tˆi denotes the i-th triggering test (1 ≤ i ≤ m).
+                                                                                   tool ESC/Java2. This tool does not work with Java 1.5 and higher,
+Figure 2 visualizes how we obtained, for each real fault, m pairs of
+               i ,T i i with the following properties:                             making it impossible to use DSDCrasher for this study.
+test suites hTpass fail                                                               Unlike Randoop and JCrasher, EvoSuite aims to satisfy one of
+        i
+    • Tpass passes on V1 and V2 .                                                  three possible criteria — branch coverage, weak mutation testing, or
+        i fails on V but passes on V .                                             strong mutation testing. We generated tests for each of the criteria.
+    • Tfail         1               2                                              We also selected two different configurations for Randoop, one
+        i
+    • Tpass       i differ by exactly one modified or added test.
+            and Tfail                                                              that allows null values as inputs (Randoop-null) and one that does
+                                                                                   not (Randoop-nonnull). For each fixed program version V2 , we
+   In order to fairly compare the effectiveness of Tpass and Tfail ,
+                                                                                   generated 30 test suites with EvoSuite for each of the selected
+they must not contain irrelevant differences. Therefore, Tpass is
+                                                                                   criteria, 6 test suites for each configuration of Randoop, and 10 test
+derived from Tfix . If Tpass were derived from Tbug instead, two
+                                                                                   suites with JCrasher. Each test generation tool was guided to create
+possible problems could arise. First, V1 might include features                    tests only for classes modified by the bug fix.
+(compared to Vbug , as described in Section 2.2), and Tfix might                      Each of the test generation tools might produce tests that do not
+include corresponding feature tests. Second, tests unrelated to the                compile or do not run without errors. Additionally, tests might
+real fault might have been added, changed, or removed in Tfix .                    sporadically fail due to the use of non-deterministic APIs such as
+   In summary, we applied the following steps to obtain all pairs                  time of day or random number generators. A test suite that (sporad-
+hTpass ,Tfail i using the developer-written test suites Tbug and Tfix :            ically) fails is not suitable for our study. We automatically repaired
+   1. Manually fixed all classpath- and configuration-related test                 uncompilable and failing test suites using the following workflow:
+      failures in Tbug and Tfix to ensure that all failures indicate                  1. Removed all tests that cause compilation errors.
+      genuine faults.                                                                 2. Removed all tests that fail during execution on V2 .
+   2. Excluded all tests from Tbug that fail on V1 , and excluded all                 3. Iteratively removed all non-deterministic tests; we assumed
+      tests from Tfix that fail on V2 .                                                  that a test suite does not include any further non-deterministic
+                                        i in T .
+   3. Determined all triggering tests tˆfix                                              tests once it passed 5 times in a row.
+                                              fix
+                                     i ,T i i for each tˆi ∈ T (as                    The final output of this process was generated test suites that pass
+   4. Created one test suite pair hTpass fail            fix  fix                  on V2 . Repairing a test suite resulted in approximately 2% of cases
+      visualized in Figure 2).                                                     in an empty test suite, when all tests failed and had to be removed.
+   Overall, we obtained 480 test suite pairs hTpass ,Tfail i in this step.         Therefore, for all tools used to generate tests, the number of suitable
+Figure 3 summarizes the statement coverage ratios and mutation                     test suites, which pass on V2 , is smaller than the total number of
+scores for all test suites Tpass measured for classes modified by the              generated test suites. Table 3 summarizes the characteristics of all
+bug fix. The high degree of statement coverage achieved by Tpass                   generated test suites that pass on V2 . Note that unlike EvoSuite and
+allowed us to obtain 258 test suite pairs for which coverage did not               Randoop, JCrasher does not capture program behavior for regression
+increase and 222 test suite pairs for which it did.                                testing but rather aims at crashing a program with an unexpected
+   In 80% of the cases, Tfix contained exactly one triggering test;                exception, explaining the low real fault detection rate.
+developers usually augment a test suite by adding or strengthening                    We executed each generated test suite T̃ on V1 . If it passed (T̃pass ),
+one test to expose the fault. For the remaining cases, each triggering             it did not detect the real fault. If it failed (T̃fail ), we verified that the
+test exposes the real fault differently. For example, a developer                  failing tests are valid triggering tests, i.e., they do not fail due to
+might add two tests for a boundary condition bug fix — one test to                 build system or configuration issues. Overall, the test generation
+check the maximum and one test to check the minimum value.                         tools created 35,141 test suites that detect 198 of the 357 real faults.
+
+
+
+                                                                             657
+                      EvoSuite−branch    EvoSuite−weakmutation                   EvoSuite−strongmutation                        Randoop−nonnull                  Randoop−null                    JCrasher
+                       Chart                                   Closure                    Lang                                             Math                                              Time
+100%                                       ●
+                                           ●
+                                           ●
+                                           ●
+                                           ●
+                                           ●
+                                           ●
+                                           ●
+                                           ●
+                                           ●
+                                           ●
+                                           ●
+                                               ●
+                                               ●
+                                               ●
+                                               ●
+                                               ●
+                                               ●
+                                               ●
+                                               ●
+                                               ●
+                                               ●
+                                                   ●
+                                                   ●
+                                                   ●
+                                                       ●
+                                                       ●
+                                                       ●
+                                                           ●
+                                                           ●
+                                                           ●
+                                                           ●
+                                                                                                    ●
+
+                                                                                                    ●                                                                                                               ●
+
+
+
+
+                                                                                                                                                                                                                        Coverage
+                                           ●
+                                           ●   ●
+                                               ●   ●
+                                                   ●   ●   ●
+                                           ●
+                                           ●   ●
+                                               ●   ●   ●   ●
+                                           ●   ●   ●   ●   ●                                                                               ●
+                                           ●
+                                           ●   ●   ●   ●
+                                                       ●
+
+ 75%
+                                           ●
+                                           ●       ●
+                                                   ●   ●   ●
+                                           ●       ●
+                                                   ●
+                                                   ●
+                                                   ●                                                                                       ●
+                                                   ●
+                                                   ●   ●                                                                                   ●
+                                                   ●   ●
+                                                       ●   ●
+                                                           ●                                                                               ●
+                                                                                                                                           ●             ●                                                          ●
+                                                   ●
+                                                   ●   ●
+                                                       ●   ●
+                                                           ●                                                                               ●             ●                                          ●
+                                                   ●   ●   ●
+                                                           ●                                                                                                                                                        ●
+                                                   ●   ●   ●                                                                               ●             ●                                          ●
+                                                   ●
+                                                   ●   ●   ●                                                                                             ●
+                                                   ●
+                                                   ●       ●                                                                                         ●                                              ●   ●
+
+ 50%
+                                                   ●
+                                                   ●
+                                                   ●                                                      ●
+                                                                                                          ●                                      ●
+                                                                                                                                                 ●   ●   ●
+                                                   ●                                                      ●                                ●
+                                                                                                                                           ●     ●
+                                                                                                                                                 ●   ●   ●
+                                                                                                                                                         ●                                          ●
+                                                                ●
+                                                                ●                                         ●                                      ●
+                                                                                                                                                 ●       ●
+                                                                ●                                         ●   ●                                  ●   ●
+                                                                                                                                                     ●   ●                                                      ●
+                                                                                                          ●   ●                                  ●
+                                                                                                                                                 ●                                                          ●
+                                                                                                          ●
+                                                                                                          ●   ●
+                                                                                                              ●                                  ●   ●
+                                                                                                              ●                                  ●   ●   ●                               ●              ●
+                                                                                            ●             ●                                      ●   ●   ●
+                                                                                            ●
+                                                                                            ●                                                    ●
+                                                                                                                                                 ●
+                                                                                                                                                 ●       ●
+                                                                                            ●
+                                                                                            ●                 ●                                      ●   ●
+                                                                                            ●
+                                                                                            ●                         ●   ●                      ●   ●
+                                                                                                                                                     ●       ●   ●
+                                                                                            ●
+                                                                                            ●                                                    ●
+                                                                                                                                                 ●   ●
+                                                                                                                                                     ●   ●
+                                                                                                                                                         ●   ●   ●
+
+
+ 25%
+                                                                                            ●
+                                                                                            ●                                                    ●                               ●   ●
+                                                                ●                           ●                                                    ●
+                                                                                                                                                 ●   ●   ●
+                                                                                            ●
+                                                                                            ●                                                    ●   ●   ●                   ●   ●
+                                                                ●                   ●
+                                                                                    ●       ●
+                                                                                            ●                                                        ●   ●               ●   ●
+                                                                                                                                                                             ●   ●
+                                                                                                                                                                                 ●
+                                                                                    ●       ●
+                                                                                            ●                                                    ●   ●
+                                                                                                                                                     ●   ●               ●   ●
+                                                                                    ●
+                                                                                    ●       ●
+                                                                                            ●                                                            ●   ●   ●       ●   ●
+                                                                                                                                                                             ●
+                                                                                                                                                 ●       ●               ●
+                                                                                                                                                                         ●
+                                                                                            ●
+                                                                                            ●                                                    ●           ●   ●
+                                                                                                                                                                 ●       ●
+                                                                                    ●   ●   ●
+                                                                                            ●                                                                            ●   ●
+                                                                                    ●                     ●
+                                                                                                          ●   ●   ●                              ●                       ●   ●
+                                                                                    ●       ●             ●   ●
+                                                                                                              ●                    ●             ●
+                                                                                    ●   ●   ●             ●                        ●
+                                                                                                                                   ●             ●           ●   ●       ●   ●
+                                                                                    ●   ●
+                                                                                        ●   ●                                      ●
+
+  0%
+                                                                                            ●                                      ●             ●
+                                                                                                                                                 ●   ●
+                                                                                                                                                     ●   ●
+                                                                                                                                                         ●               ●
+                                                                                                                                                                         ●   ●                          ●
+                                                                                    ●   ●   ●   ●                                  ●
+                                                                                                                                   ●                     ●   ●   ●
+                                                                                                                                   ●
+
+
+
+
+100%      ●
+
+
+          ●
+              ●   ●
+                                                                                                                                                                                 ●
+                                                                                                                                                                                 ●
+                                                                                                                                                                                 ●
+
+
+
+
+                                                                                                                                                                                                                        Mutation
+              ●                                                                                                                                                              ●   ●                          ●
+              ●   ●                                                                                                                                                                  ●                      ●
+                                                                                                                                                                                 ●                          ●
+                                                                                                                                                                                                            ●
+
+ 75%          ●
+              ●   ●                                                                                                                                                      ●   ●   ●
+                                                                                                                                                                                 ●   ●                      ●
+                  ●                                        ●             ●   ●                                                                                                   ●       ●
+                                                                                                                                                                                         ●          ●
+              ●
+              ●   ●                                        ●                                                                                                                         ●   ●
+                                                                         ●                                                                                                           ●
+                                                                                                                                                                                     ●   ●                  ●
+              ●
+              ●                                                              ●
+                                               ●
+                                               ●                    ●        ●
+              ●                                                              ●
+                                           ●   ●           ●
+                                                           ●        ●
+                                           ●   ●   ●   ●                                                                                                                                                            ●
+                                                       ●
+                                                       ●   ●
+                                                           ●
+                                           ●   ●
+                                               ●   ●
+
+ 50%                                       ●   ●
+                                               ●   ●
+                                                   ●   ●                                            ●
+                                           ●
+                                           ●   ●
+                                               ●   ●
+                                                   ●       ●
+                                           ●   ●
+                                               ●   ●
+                                                   ●   ●                                                                                                                                                            ●
+                                           ●
+                                           ●   ●
+                                               ●   ●
+                                                   ●   ●
+                                           ●   ●
+                                               ●       ●   ●                                        ●
+                                           ●
+                                           ●   ●
+                                               ●   ●   ●   ●
+                                           ●   ●
+                                               ●   ●   ●   ●
+                                           ●
+                                           ●   ●
+                                               ●
+                                               ●   ●
+                                                   ●   ●   ●
+                                                           ●                                        ●
+                                           ●
+                                           ●   ●
+                                               ●   ●   ●   ●                                        ●
+                                           ●
+                                           ●   ●
+                                               ●   ●
+                                                   ●   ●
+                                                       ●   ●                                                                                                                                 ●
+                                                                                                                                                                                             ●
+                                           ●
+                                           ●   ●   ●       ●                                                                                                                                 ●
+                                           ●
+                                           ●       ●
+                                                   ●   ●   ●                                                                                                                                 ●
+                                                           ●
+
+ 25%
+                                                   ●
+                                                   ●   ●   ●                                        ●                                                                                                               ●
+                                                   ●
+                                                   ●
+                                                   ●   ●
+                                                       ●   ●                                        ●
+                                                   ●
+                                                   ●   ●   ●
+                                                           ●                                        ●                                                                                    ●
+                                                   ●
+                                                                                                    ●                                                                                        ●      ●
+                                                                ●                                   ●
+                                                                                                    ●                                      ●
+                                                                                                                                           ●
+                                                                                                                                           ●
+                                                                                                                                           ●                                         ●
+                                                                                                                      ●                    ●
+                                                                                                                                           ●             ●
+                                                                                                                                                         ●
+                                                                                                          ●                                ●
+                                                                                                                                           ●
+                                                                                                                                           ●             ●
+
+
+  0%
+                                                                                                                                           ●
+                                                                                                                                           ●
+                                                                                                                                           ●
+                                                                ●                                                                                        ●                                              ●
+                                                                                                                                                         ●
+
+
+
+
+       0 (not detected) 1 (detected)    0 (not detected) 1 (detected)            0 (not detected) 1 (detected)                 0 (not detected) 1 (detected)          0 (not detected) 1 (detected)
+
+                  Figure 4: Statement coverage ratios and mutation scores of the generated test suites for each subject program.
+The vertical axis shows the statement coverage ratio (Coverage) and the mutation score (Mutation). The horizontal axis shows the real fault detection rate.
+
+
+Figure 4 gives the statement coverage ratios and mutation scores for                                      test suite metric such as the mutation score unless simpler ones such
+all generated test suites grouped by subject program, test generation                                     as structural code coverage ratios had exhausted their usefulness.
+tool/configuration, and real fault detection rate.                                                           To account for these facts, we performed our experiments in two
+                                                                                                          ways. First, we ignored code coverage and simply determined the
+2.5      Mutation Analysis                                                                                mutation score for each test suite using all mutants. Second, we
+   We used the Major mutation framework [20, 21] to create the mu-                                        controlled for coverage and determined the mutation score using
+tant versions and to perform the mutation analysis. Major provides                                        only mutants in code covered by both test suites.
+the following set of mutation operators: Replace constants, Replace                                          For the related test suite pairs hTpass ,Tfail i, Tpass and Tfail may
+operators, Modify branch conditions, and Delete statements. This                                          have the same code coverage: Tpass and Tfail cover the same code if
+set, suggested in the literature on mutation analysis [18, 24, 26, 29],                                   the triggering test in Tfail does not increase code coverage.
+is commonly used and includes the mutation operators used by                                                 For the automatically-generated test suites, it is highly unlikely
+previous studies [1, 8].                                                                                  that T̃pass and T̃fail have the same coverage because they were in-
+   Major only mutated classes of the source code version V2 that                                          dependently generated. Therefore, we had to control for coverage
+were modified by the bug fix. This reduces the number of mutants                                          when using the automatically-generated test suites. We did this by
+irrelevant to the fault — differences in the mutation score would be                                      only considering the intersection of mutants covered by both test
+washed out otherwise.                                                                                     suites. This means that a pair of generated test suites was discarded
+   For each of the developer-written and automatically-generated                                          if the intersection was the empty set.
+test suites, Major computed mutation coverage and mutation score.                                            We include the first, questionable methodology for comparison
+A test is said to cover a mutant if it reaches and executes the mutated                                   with prior research that does not control for coverage. The second
+code. A test detects a mutant if the test outcome indicates a fault —                                     methodology controls for coverage. It better answers whether use
+a test assertion fails or the test causes an exception in the mutant.                                     of mutation analysis is profitable, under the assumption that a de-
+   We did not eliminate equivalent mutants, which means that the                                          veloper is already using the industry-standard coverage metric. Our
+reported mutation scores might be underestimated. This is, however,                                       experiments use Cobertura [5] to compute statement coverage over
+not a concern for our study because we do not interpret absolute                                          the classes modified by the bug fix.
+mutation scores. Moreover, the set of equivalent mutants is identical                                         2.6.2           Are Real Faults Coupled to Mutants Generated
+for any two test suites used in a comparison.                                                                                 by Commonly Used Mutation Operators?
+2.6      Experiments                                                                                         The test suites Tpass and Tfail model how a developer usually
+                                                                                                          augments a test suite. Tfail is a better suite — it detects a fault that
+   As described in Section 1, the goal of our study was to answer                                         Tpass does not. If mutants are a valid substitute for real faults, then
+three research questions:                                                                                 any test suite Tfail that has a higher real fault detection rate than
+   1. Are real faults coupled to mutants generated by commonly                                            Tpass should have a higher mutation score as well. In other words,
+      used mutation operators?                                                                            each real fault should be coupled to at least one mutant. For each
+   2. What types of real faults are not coupled to mutants?                                               test suite pair hTpass ,Tfail i, we studied the following questions:
+   3. Is mutant detection correlated with real fault detection?                                               • Does Tfail have a higher mutation score than Tpass ?
+After explaining why and how we controlled for code coverage, this                                            • Does Tfail have a higher statement coverage than Tpass ?
+section explains how we answered these three questions.                                                       • Is the difference between Tpass and Tfail a new test?
+                                                                                                             Based on the observations, we performed three analyses. (1) We
+2.6.1 Controlling for Code Coverage                                                                       used the Chi-square test to determine whether there is a signifi-
+   Structural code coverage is a widely-used measure of test suite ef-                                    cant association between the measured variables mutation score
+fectiveness. Differences in coverage often dominate other aspects of                                      increased, statement coverage increased, and test added. (2) We
+test suite effectiveness, and a test suite that achieves higher coverage                                  determined the number of real faults coupled to at least one of the
+usually detects more mutants and faults for that reason alone [16].                                       generated mutants. (3) We measured the sensitivity of the mutation
+More specifically, if test suite Tx covers more code than Ty , then Tx                                    score with respect to the detection of a single real fault — the in-
+is likely to have a higher overall mutation score, even if Ty does a                                      crease in the number of detected mutants between Tpass and Tfail . We
+better job in testing a smaller portion of the program.                                                   also determined the mutation operators that generated the mutants
+   Furthermore, no developer would use a complex, time-consuming                                          additionally detected by Tfail . Section 3.1 discusses the results.
+
+
+
+                                                                                                    658
+2.6.3     What Types of Real Faults Are Not Coupled to                                                                  Coverage unchanged    Coverage increased
+          Mutants?
+
+
+
+
+                                                                                   Percentage of tests
+   Some of the real faults are not coupled to any of the generated                                         40%
+mutants, i.e., the set of mutants detected by Tpass is equal to the set
+of mutants detected by Tfail . We manually investigated each such
+                                                                                                           20%
+fault. This qualitative study reveals how the set of commonly used
+mutation operators should be improved. Moreover, this study shows
+what types of real faults are not coupled to any mutants and there-                                         0%
+fore reveals general limitations of mutation analysis. Section 3.2
+discusses the results.                                                                                              0    1 2 3 4 5 6 7 8 9 ≥ 10
+                                                                                                                        Number of additionally detected mutants
+2.6.4     Is Mutant Detection Correlated with Real Fault
+          Detection?                                                                                     Figure 5: Effect of triggering tests on mutant detection.
+   We conducted two experiments to investigate whether a test                     The bars represent 480 triggering tests. 258 triggering tests did not increase
+suite’s mutation score is correlated with its real fault detection rate.          statement coverage (unchanged), and each one detects 2 new mutants on
+Calculating the correlation requires larger numbers of test suites per            average. 222 triggering tests increased statement coverage, and each one
+fault, and thus we used the automatically-generated test suites. We               detects 28 new mutants on average.
+analyzed the entire pool of test suites derived from all test generation
+tools to investigate whether the mutation score is generally a good
+metric to compare the effectiveness of arbitrary test suites. The                 statement coverage increased. The Chi-square test showed a signifi-
+experiments consider 194 real faults for which we could generate                  cant association between mutation score increased and statement
+at least one test suite that detects the real fault and at least one test         coverage increased (χ2 (1) = 78.13, N = 480, p < 0.001), hence
+suite that does not.                                                              we considered the influence of statement coverage throughout our
+   We determined the strength of the correlation between mutation                 analyses. In contrast, there was no significant association between
+score and real fault detection. Since real fault detection is a dichoto-          mutation score increased and test added.
+mous variable, we computed the point-biserial and rank-biserial                      In addition to determining whether the mutation score increased,
+correlation coefficients. In addition, we investigated whether the                we also measured the sensitivity of the mutation score with respect
+correlation is significantly stronger than the correlation between                to the detection of a single real fault, i.e., the number of mutants
+statement coverage and real fault detection.                                      additionally detected by the triggering test. Figure 5 visualizes the
+   While we cannot directly calculate the correlation between muta-               number of additionally detected mutants when coverage did not
+tion score and real fault detection independently of code coverage,               increase (unchanged) and when it did. For triggering tests that did
+we can still determine whether there is a statistically significant               not increase statement coverage (black bars), two characteristics can
+difference in the mutation score between T̃pass and T̃fail when cover-            be observed. First, 40% of these triggering tests did not detect any
+age is fixed. Calculating the correlation coefficient independently               additional mutants. Second, 45% of these triggering tests detected
+of code coverage would require fixed coverage over all test suites.               only 1–3 additional mutants, suggesting that the number of mutants
+In contrast, testing whether the mutation score differs significantly             that are coupled to a real fault is small when accounting for the
+requires only fixed coverage between pairs of test suites.                        conflating effects of code coverage.
+   For each real fault, we compared the mutation scores of T̃pass                    Figure 5 also illustrates these conflating effects of code coverage
+and T̃fail . Since the differences in mutation score were not nor-                on the mutation score: 35% of triggering tests that increased state-
+mally distributed (evaluated by the Kolmogorov-Smirnov test), a                   ment coverage (gray bars) detected 10 or more additional mutants.
+non-parametric statistical test was required. Using the Wilcoxon                  In contrast, this ratio was only 3% for triggering tests that did not
+signed-rank test, we tested whether the mutation scores of T̃fail are             increase statement coverage.
+                                                                                     We also investigated the underlying mutation operators of the mu-
+significantly higher than the mutation scores of T̃pass , independently
+                                                                                  tants that are coupled to real faults when statement coverage did not
+of code coverage. Additionally, we measured the Â12 effect sizes                 increase. We found that real faults were more often coupled to mu-
+for the mutation score differences. Section 3.3 discusses the results.            tants generated by the conditional operator replacement, relational
+                                                                                  operator replacement, and statement deletion mutation operators.
+3.    RESULTS                                                                     A possible explanation is that some of these mutants cannot be de-
+    Section 2 described our methodology and analyses. This section                tected by tests that only satisfy statement coverage. Conditional and
+answers the posed research questions. Recall that we used 357 real                relational operator replacement mutants are frequently generated
+faults, 480 test suite pairs hTpass ,Tfail i made up of developer-written         within conditional statements, and numerous statement deletion mu-
+tests, and 35,141 automatically-generated test suites which may                   tants only omit side effects — detecting those mutants requires more
+(T̃fail ) or may not (T̃pass ) detect a real fault.                               thorough testing. None of these three mutation operators is known
+                                                                                  to generate a disproportionate number of equivalent mutants [40],
+                                                                                  hence they should always be employed during mutation analysis.
+3.1 Are Real Faults Coupled to Mutants Genera-
+    ted by Commonly Used Mutation Operators?                                                   73% of real faults are coupled to the mutants generated by
+   Considering all test suite pairs hTpass ,Tfail i, the mutation score                        commonly used mutation operators. When controlling for code
+of Tfail increased compared to Tpass for 362 out of 480 pairs (75%).                           coverage, on average 2 mutants are coupled to a single real
+Statement coverage increased for only 222 out of 480 pairs (46%).                              fault, and the conditional operator replacement, relational
+   The mutation score of Tfail increased for 153 out of 258 pairs                              operator replacement, and statement deletion mutants are more
+(59%) for which statement coverage did not increase. The mutation                              often coupled to real faults than other mutants.
+score of Tfail increased for 209 out of 222 pairs (94%) for which
+
+
+
+                                                                            659
+Table 4: Number of real faults not coupled to mutants gener-                              }
+ated by commonly used mutation operators.                                           +     return false ;
+Numbers categorized by reason: weak implementation of a mutation opera-                 }
+tor, missing mutation operator, or no appropriate mutation operator exists.             case 4: {
+                                                                                          char ch = str . charAt (0) ;
+                    Weak         Missing       No such
+                                                            Total                                             (a) Lang-365 fix
+                   operator      operator      operator
+       Chart            5            1             2           8                    - Partial newPartial = new Partial ( iChronology ,
+                                                                                        newTypes , newValues );
+       Closure         11            2            18          31                    + Partial newPartial = new Partial ( newTypes ,
+       Math             4            4            30          38                        newValues , iChronology );
+       Time             2            0             5           7
+       Lang             3            0             8          11                                               (b) Time-88 fix
+
+       Total           25            7            63          95                    - return solve (min , max );
+                                                                                    + return solve (f , min , max );
+                                                                                                              (c) Math-369 fix
+3.2 What Types of Real Faults Are Not Coupled
+                                                                                    - int indexOfDot = namespace . indexOf ( ’. ’);
+    to Mutants?                                                                     + int indexOfDot = namespace . lastIndexOf ( ’. ’);
+   For 95 out of 357 real faults (27%), none of the triggering tests
+detected any additional mutants. We manually reviewed each such                                              (d) Closure-747 fix
+fault to investigate whether this indicates a general limitation of mu-             - return ... + toolTipText + ...;
+tation analysis. Table 4 summarizes the results, which fell into three              + return ... + ImageMapUtilities . htmlEscape (
+categories: cases where a mutation operator should be strengthened,                     toolTipText ) + ...;
+cases where a new mutation operator should be introduced, and                                                 (e) Chart-591 fix
+cases where no obvious mutation operator can generate mutants that
+                                                                                    - return chromosomes . iterator () ;
+are coupled to the real fault. In the latter case, results derived from
+                                                                                    + return getChromosomes () . iterator () ;
+mutation analysis do not generalize to those real faults.
+                                                                                                               (f) Math-779 fix
+Real faults requiring stronger mutation operators (25)
+    • Statement deletion (12): The statement deletion operator                      - FastMath . pow (2 * FastMath .PI , -dim / 2)
+                                                                                    + FastMath . pow (2 * FastMath .PI , -0.5 * dim )
+      is usually not implemented for statements that manipulate
+      the control flow. We surmise that this is due to technical                                              (g) Math-929 fix
+      challenges in the context of Java — removing return or
+      break/continue statements changes the control flow and may                    Figure 6: Snippets of real faults that require stronger or new
+      lead to uninitialized variables or unreachable code errors.                   mutation operators.
+      Figure 6a gives an example.
+    • Argument swapping (6): Arguments to a method call that
+      have the same type can be swapped without causing type-                             replace such a method call with its argument, provided that
+      checking errors. Argument swapping represents a special                             the mutated code type-checks.
+      case of swapping identifiers, which is not a commonly-used                        • Direct access of field (2): When a class includes non-trivial
+      mutation operator [29]. Figure 6b shows an example.                                 getter or setter methods for a field (e.g., further side effects
+    • Argument omission (5): Method overloading is error-prone                            or post-processing), an object that accesses the field directly
+      when two methods differ in one extra argument — a developer                         might cause an error. Figure 6f shows an example in which
+      might inadvertently call the method that requires fewer argu-                       post-processing of the field chromosomes is required before
+      ments. Figure 6c gives an example. Generating mutants for                           the method iterator() should be invoked. A new mutation
+      this type of fault requires a generalization of a suggested class-                  operator could replace calls to non-trivial getter and setter
+      based mutation operator, which addresses method overloading                         methods with a direct access to the field.
+      to a certain extent [25].                                                         • Type conversions (1): Wrong assumptions about implicit type
+    • Similar library method called (2): Existing mutation operators                      conversions and missing casts in arithmetic expressions can
+      replace one method call by another only for calls to getter                         cause unexpected behavior. Figure 6g shows an example
+      and setter methods. It would be both unfeasible and largely                         where the division should be performed on floating point
+      unproductive to replace every method call with every possible                       numbers rather than integers (the replacement of the divi-
+      alternative that type-checks. Nonetheless, the method call                          sion by multiplication is unrelated to the real fault). A new
+      replacement operator should be extended to substitute calls to                      mutation operator could replace a floating-point constant by
+      methods with related semantics — in particular library method                       an exact integer equivalent (e.g., replace 2.0 by 2), remove
+      calls for string operations. Figure 6d shows an example in                          explicit casts, or manipulate operator precedence.
+      which the fault is caused by using the wrong one of two                       Real faults not coupled to mutants (63)
+      similar library methods (indexOf instead of lastIndexOf).                         • Algorithm modification or simplification (37): Most of the real
+                                                                                          faults not coupled to mutants were due to incorrect algorithms.
+Real faults requiring new mutation operators (7)                                          The bug fix was to re-implement or modify the algorithm.
+    • Omit chaining method call (4): A developer might forget to                        • Code deletion (7): Faults caused by extra code that has to
+      call a method whose return type is equal to (or a subtype of)                       be deleted are not coupled to mutants. A bug fix that only
+      its argument type. Figure 6e gives an example in which a                            removes special handling code also falls into this category —
+      string needs to be escaped. A new mutation operator could                           Figure 7a gives an example.
+
+
+
+                                                                              660
+    • Similar method called (5): Another common mistake is call-                    if ( childType . isDict () ) {
+      ing a wrong but related method within the program, which                        ...
+      might either return wrong data or omit side-effects. Figure 7b              - } else if (n. getJSType != null &&
+      shows an example of calling a wrong method. Note that this                  -      parent . isAssign () ) {
+                                                                                  -   return ;
+      type of fault can be represented by mutants for well-known                    } ...
+      library methods. However, without deeper knowledge about
+      the relation between methods in a program, replacing every                                                (a) Closure-810 fix
+      identifier and method call with all alternatives would result in            - return getPct (( Comparable <? >) v);
+      an unmanageable number of mutants.                                          + return getCumPct (( Comparable <? >) v);
+    • Context sensitivity (4): Mutation analysis is context insensi-                                             (b) Math-337 fix
+      tive, while bugs can be context sensitive. Suppose the access
+      of a field that might be null is extracted to a utility method that         - if ( categoryKeys . length != this . startData [0].
+                                                                                      length )
+      includes a null check. A developer might forget to replace an
+                                                                                  + if ( categoryKeys . length != getCategoryCount () )
+      instance of the field access with a call to this utility method.
+      This rather subtle fault cannot be represented with mutants                                                (c) Chart-834 fix
+      since it would require inlining the utility method (without                 - lookupMap = new HashMap < CharSequence ,
+      the null check) for every call. Figure 7c gives an example                      CharSequence >() ;
+      of this type of fault. The fault is that this.startData might               + lookupMap = new HashMap < String , CharSequence >() ;
+      be null — this condition is checked in getCategoryCount().                                                 (d) Lang-882 fixa
+      However, other tests directly or indirectly detect all mutants
+      in getCategoryCount(), hence a test that exposes the fault does             a The result of comparing two CharSequence objects is undefined —
+      not detect any additional mutants.                                          the bug fix uses String to alleviate this issue.
+    • Violation of pre/post conditions or invariants (3): Some real               - if (u * v == 0)
+      faults were caused by the misuse of libraries. For example, the             + if (( u == 0) || (v == 0) )
+      Java library makes assumptions about the hashCode and equals                                               (e) Math-238 fix
+      methods of objects that are used as keys to a HashMap. Yet, a
+      violation of this assumption cannot be generally simulated                  - {"\ u00CB " , "& Ecirc ;"},
+      with mutants. Figure 7d gives an example of such a fault.                   + {"\ u00CA " , "& Ecirc ;"},
+                                                                                  + {"\ u00CB " , "& Euml ;"},
+    • Numerical analysis errors (4): Real faults caused by over-
+      flows, underflows, and improper handling of NaN values are                                                 (f) Lang-658 fix
+      difficult to simulate with mutants, and hence also represent                    Figure 7: Snippets of real faults not coupled to mutants.
+      a general limitation. Figure 7e shows an example of a non-
+      trivial case of this type of fault.                                                             Mutation score vs. real fault detection rate
+    • Specific literal replacements (3): Literal replacement is a                                     Statement coverage vs. real fault detection rate
+      commonly used mutation operator that replaces a literal with                 1.0
+      a well-defined default (e.g., an integer with 0 or a string with             0.5
+      the empty string). However, the real fault might only be
+                                                                                   0.0
+      exposed with a specific replacement. For example, a map
+                                                                                  −0.5       ●
+
+      might contain a wrong value that is only accessible with a                                  ●
+
+
+
+
+      specific key. The literal replacement operator cannot generally             −1.0
+                                                                                                        Closure
+                                                                                             ChartMutation  score vs. Lang          Math rate Time
+                                                                                                                       real fault detection
+      simulate such a specific replacement. Figure 7f demonstrates
+                                                                                                 (a) Point-biserial correlation coefficients.
+                                                                                                  Statement coverage vs. real fault detection rate
+      an example that involves Unicode characters.
+  27% of real faults are not coupled to the mutants generated by                   1.0
+  commonly used mutation operators. The set of commonly used                       0.5
+  mutation operators should be enhanced. However, 17% of real                      0.0
+  faults, mostly involving algorithmic changes or code deletion,                  −0.5       ●
+                                                                                             ●    ●
+                                                                                                                                       ●
+                                                                                                                                       ●
+
+                                                                                                  ●                                         ●
+
+  are not coupled to any mutants.                                                 −1.0
+                                                                                             Chart         Closure       Lang          Math          Time
+3.3    Is Mutant Detection Correlated with Real                                                   (b) Rank-biserial correlation coefficients.
+       Fault Detection?                                                            Figure 8: Correlation coefficients for each subject program.
+   Section 3.1 provided evidence that mutants and real faults are                 The differences between the correlation coefficients (of mutation score and
+coupled, but the question remains whether a test suite’s mutation                 statement coverage) are significant (Wilcoxon signed-rank test) for all subject
+score is correlated with its real fault detection rate and whether                programs (p < 0.05) except Time (p > 0.2).
+mutation score is a good predictor of fault-finding effectiveness.
+   Figure 8 summarizes the point-biserial and rank-biserial correla-                 The correlation between mutation score and real fault detection
+tion coefficients between the mutation score and real fault detection             rate is conflated with the influence of statement coverage, but the
+rate for each subject program. Both correlation coefficients lead to              Wilcoxon signed-rank test showed that the correlation coefficient
+the same conclusion: the correlation is positive, usually strong or               between mutation score and real fault detection rate is significantly
+moderate, indicating that mutation score is indeed correlated with                higher than the correlation coefficient between statement coverage
+real fault detection. Unsurprisingly, real faults that are not cou-               and real fault detection rate for all subject programs except Time.
+pled to mutants show a negligible or even negative correlation. For                  Further investigating the influence of statement coverage, Table 5
+reference Figure 8 also includes the results for statement coverage.              summarizes the comparison of the mutation scores between all test
+
+
+
+                                                                            661
+Table 5: Comparison of mutation scores between T̃pass and T̃fail .                       Table 6: Comparison of studies that explored the relationship
+Significant gives the number of real faults for which T̃fail has a significantly         between mutants and real faults.
+higher mutation score (Wilcoxon signed-rank test, significance level 0.05).              LOC gives the total number of lines of code of the studied programs that con-
+                                                                                         tained real faults. Test suites gives the type of used test suites (gen=generated,
+   Program           Coverage controlled           Coverage ignored
+                                                                                         dev=developer-written). Mutation operators refers to: Rc=Replace constants,
+                    Significant Avg. Â12        Significant Avg. Â12
+                                                                                         Ri=Replace identifiers, Ro=Replace operators, Nbc=Negate branch condi-
+   Chart              21/22          0.74           21/22           0.74                 tions, Ds=Delete statements, Mbc=Modify branch conditions (note that Mbc
+   Closure            27/32          0.66           30/32           0.71                 subsumes Nbc [23]).
+   Math               76/80          0.79           80/80           0.81                          Real               Tests     Mutation         Mutants Coverage
+   Time               18/18          0.81           17/18           0.81                                     LOC
+                                                                                                  faults             suites    operators        evaluated controlled
+   Lang               40/42          0.77           39/42           0.78                    [8]    12        1,000 gen     Rc,Ri,Ro                 1%           no
+                                                                                            [1]    38        5,905 gen  Rc,Ro,Nbc,Ds               10%           no
+                     Coverage         controlled          ignored                          [27]    38        5,905 gen Rc,Ri,Ro,Nbc,Ds             10%           no
+1.00                                                                                       Our                       gen
+                                                                                                357        321,000            Rc,Ro,Mbc,Ds        100%           yes
+                                                                                          study                      dev
+0.75
+0.50
+                                                                                         threat is unlikely to impact our results for the following two reasons.
+0.25
+                                                            ●
+
+
+                ●
+                                                      ●
+                                                            ●                            First, while we may suffer false negatives (i.e., missed faults), our
+0.00                                                                                     dataset is unlikely to be skewed towards certain types of faults, such
+           Chart        Closure        Lang          Math           Time                 as off-by-one errors. Bachmann et al. did not find a relationship
+                                                                                         between the type of a fault and the likelihood that the fault is linked
+Figure 9: Â12 effect sizes for mutation score differences be-                           to a commit [2]. Second, recent evidence suggests that the size
+tween T̃pass and T̃fail for each subject program.                                        of bug datasets influences the accuracy of research studies more
+                                                                                         than the bias of bug datasets [33]. The severity of the bias threat is
+suites T̃pass and T̃fail for each real fault when coverage is controlled                 therefore reduced by the fact that we used a large number of real
+or ignored (not controlled). In addition to the number of real faults                    faults in our study.
+for which the mutation score of T̃fail is significantly higher, the table                   We focused on identifying faults that have an unquestionably
+shows the average Â12 effect size.                                                      undesirable effect and that can be triggered with an automated test.
+   Figure 9 summarizes the Â12 effect sizes. In our scenario the                        It is possible that our results — the correlation between the mutant
+value of Â12 is an estimation of the probability that a test suite with                 detection and real fault detection — do not generalize to faults that
+a higher real fault detection rate has a higher mutation score as well,                  do not match these criteria. However, we argue that reproducibility
+where a value Â12 = 1 means that the mutation score increased for all                   of faults is desirable and characteristic of common practice.
+observations. An effect size of Â12 ≥ 0.71 is typically interpreted as                     A final threat is that we did not use class-level mutation operators,
+large. As expected, the effect size is greater if statement coverage is                  such as those in Kim and Offutt’s studies [25, 30]. We did not con-
+ignored (not controlled), but the average effect size remains large for                  sider them in our study for two reasons. First, class-level mutation
+all subject programs except for Closure when coverage is controlled.                     operators are neither implemented in modern Java mutation tools
+                                                                                         such as Major, Javalanche, and PIT, nor are they commonly used
+  Mutant detection is positively correlated with real fault de-                          in experiments involving mutants. We therefore argue that using
+  tection, independently of code coverage. This correlation is                           the set of traditional mutation operators improves comparability
+  stronger than the correlation between statement coverage and                           and also generalizability — the set of traditional mutation operators
+  real fault detection.                                                                  is applicable to many programming languages. In addition, our
+                                                                                         qualitative study addresses this threat and shows whether and how
+3.4     Threats to validity                                                              mutation analysis could benefit from adding improved or specialized
+                                                                                         versions of class-level mutation operators.
+    Our evaluation uses only 5 subject programs, all written in Java.
+Other programs might have different characteristics. Moreover, all                       4.       RELATED WORK
+5 subject programs are well-tested (see Figure 3). This may limit
+the applicability of the results to programs that are not well-tested                      This section discusses previous studies that explored the relation-
+(e.g., programs under development). However, we do not feel this                         ship between mutants and real faults. It also discusses commonly
+is a major threat, since mutation analysis is typically only used as                     used artifacts that provide faulty program versions and research ar-
+an advanced metric. For example, if a test suite covers only 20% of                      eas that rely on the existence of a correlation between the mutation
+the source code, developers are likely to focus on improving code                        score and real fault detection rate.
+coverage before they focus on improving the mutation score.
+    Another threat to validity is the possibility of a bias in our fault                 4.1      Studies That Explored the Relationship
+sample. We located the real faults by automatically linking bug iden-                             Between Mutants and Real Faults
+tifiers from the bug tracking system to the version control revisions                       We are only aware of three previous studies that investigated the
+that resolved them. Previous work suggests that this approach does                       relationship between mutants and real faults, which are summarized
+not produce an unbiased sample of real faults [2]. In particular, the                    in Table 6.
+authors found that not all faults are mentioned in the bug tracking                         Duran and Thévenod-Fosse [8] performed the first such study.
+system and that not all bug-fixing commits can be identified auto-                       They found that, when their subject program was exercised with
+matically. In addition, they found that process metrics such as the                      generated test suites, the errors (incorrect internal state) and failures
+experience of the developer affect the likelihood that a link will be                    (incorrect output) produced by mutants were similar to those pro-
+created between the issue and the commit that fixes it. However, this                    duced by real faults. However, this study was limited in scope as it
+
+
+
+                                                                                   662
+considered a single 1,000 line C program and evaluated only 1% of                 Test suite minimization and prioritization approaches are often
+the generated mutants. Finally, this study only used generated test            evaluated with mutants to ensure that they do not decrease (or they
+suites and did not control for code coverage.                                  minimally decrease) the mutation score of the test suite (e.g., [11,
+   Andrews et al. [1] were the next to explore the relationship be-            34]). Prior studies, however, left open the question whether and how
+tween mutants, hand-seeded faults, and real faults. They found                 well those approaches maintain real fault effectiveness.
+that hand-seeded faults are not a good substitute for real faults, but            To evaluate an algorithm for fault localization or automatic
+that mutants are. In particular, they found that there is no practi-           program repair, one must know where the faults in the program
+cally significant difference between the mutation score and the real           are. Mutants are valuable for this reason and commonly used
+fault detection rate. However, this study was also limited in scope            (e.g., [4, 19]). Yet, it is unclear whether those algorithms evalu-
+since only one of the eight studied programs (Space) contained                 ated on mutants perform equally well on real faults.
+real faults. Space is written in C and contains 5,905 lines of code.              Our qualitative and quantitative studies show to what extent re-
+Additionally, the study considered only 10% of the generated mu-               search using mutants generalizes to real faults. Our studies also
+tants, used automatically-generated test cases, and did not control            reveal inherent limitations of mutation analysis that should be kept
+for code coverage.                                                             in mind when drawing conclusions based on mutants.
+   Namin and Kakarla [27] later replicated the work of Andrews et
+al. [1], used a different mutation testing tool (Proteum), and came            5.    CONCLUSION
+to a different conclusion: they found that the correlation between                Mutants are intended to be used as practical replacements for
+the mutation score and the real fault detection rate for Space was             real faults in software testing research. This is valid only if a test
+weak. They also extended the work to five Java classes from the                suite’s mutation score is correlated with its real fault detection rate.
+standard library, ranging from 197 to 895 lines of code. Faults were           Our study empirically confirms that such a correlation generally
+hand-seeded by graduate students, and the authors found that the               exists by examining 357 real faults on 5 large, open-source pro-
+correlation was considerably stronger.                                         grams using developer-written and automatically-generated tests.
+   To the best of our knowledge, our study is the first to undertake           Furthermore, our study shows that the set of commonly used muta-
+experimental evaluation of the relationship between mutants and                tion operators [18, 26, 29] should be enhanced, and it also reveals
+real faults at such a scale in terms of number of real faults, number          some inherent limitations of mutation analysis.
+of mutants, subject program size, subject program diversity, and the              Investigating the coupling effect between real faults and the mu-
+use of developer-written and automatically-generated test suites. In           tants generated by commonly used mutation operators, our results
+addition, our study is the first to consider the conflating effects of         show that the coupling effect exists for 73% of the real faults, but the
+code coverage on the mutation score and the first to explore real              number of mutants coupled to a single real fault is small when code
+faults in object-oriented programs.                                            coverage is controlled. Moreover, conditional operator replacement,
+                                                                               relational operator replacement, and statement deletion mutants are
+4.2    Commonly Used Artifacts                                                 more often coupled to real faults than other mutants.
+   Many research papers use programs from the Siemens bench-                      By analyzing the 27% of real faults that were not coupled to the
+mark suite [15] or the software-artifact infrastructure repository             generated mutants, we identified ways to improve mutation analysis
+(SIR) [10] in their evaluation. More precisely, Google Scholar lists           by strengthening or introducing new mutation operators. We also
+approximately 1,400 papers that used programs from the Siemens                 discovered that 17% of faults are not coupled to any mutants, which
+benchmark suite, and SIR’s usage information website [36] lists                reveals a fundamental limitation of mutation analysis.
+more than 500 papers that reference SIR.                                          Furthermore, our experiments found a statistically significant cor-
+   The Siemens benchmark suite consists of 7 C programs varying                relation between mutant detection and real fault detection. This
+between 141 and 512 lines of code, and all faults were manually                correlation exists even if code coverage is controlled, and this corre-
+seeded. The authors described their manually-seeded faults as fol-             lation is stronger than the correlation between statement coverage
+lows [15]: “The faults are mostly changes to single lines of code,             and real fault detection.
+but a few involve multiple changes. Many of the faults take the form              The results presented in this paper have practical implications for
+of simple mutations or missing code.” Thus, our results likely hold            several areas in software testing. First, the results show that test
+for these faults, which are essentially mutants.                               suites that detect more mutants have a higher real fault detection
+   SIR provides 81 subjects written in Java, C, C++, and C#.                   rate, independently of code coverage. This suggests that mutants
+According to the SIR meta data, 36 of these subjects come with real            can be used as a substitute for real faults when comparing (gener-
+faults. The median size of those 36 subjects is 120 lines of code,             ated) test suites. Second, the results also suggest that a test suite’s
+and 35 of them are written in Java. SIR was not suitable for our               mutation score is a better predictor of its real fault detection rate
+study due to the small program sizes and the absence of compre-                than code coverage. Thus, the mutation-based approach to automati-
+hensive developer-written test suites. Therefore, we developed a               cally generating test suites is promising. Third, test suite selection,
+fault database that provides 357 real faults for 5 large open-source           minimization, and prioritization techniques evaluated on mutants
+programs, which feature comprehensive test suites [22].                        might lead to a reduced real fault detection rate of the test suite,
+                                                                               even if the mutation score does not decrease.
+4.3    Software Testing Research Using Mutants
+   The assumption that mutant detection is well correlated with real           6.    ACKNOWLEDGMENTS
+fault detection underpins many studies and techniques in several                  This material is based on research sponsored by DARPA under
+areas in software testing research.                                            agreement number FA8750-12-2-0107. The U.S. Government is
+   Mutation analysis is an integral part of mutation-based test gen-           authorized to reproduce and distribute reprints for Governmental
+eration approaches, which automatically generate tests that can                purposes notwithstanding any copyright notation thereon.
+distinguish mutant versions of a program from the original ver-                   Some of the computations in this work were performed using the
+sion (e.g., [13, 14, 32, 41]). However, studies in this area have not          facilities of the Shared Hierarchical Academic Research Computing
+evaluated whether the generated test suites can detect real faults.            Network (SHARCNET: www.sharcnet.ca).
+
+
+
+                                                                         663
+7.   REFERENCES                                                                   International Conference on Software Engineering (ICSE),
+                                                                                  pages 435–445, 2014.
+ [1] J. H. Andrews, L. C. Briand, and Y. Labiche. Is mutation an             [17] Y. Jia and M. Harman. Higher order mutation testing.
+     appropriate tool for testing experiments? In Proceedings of                  Information and Software Technology, 51(10):1379–1393,
+     the International Conference on Software Engineering (ICSE),                 2009.
+     2005.                                                                   [18] Y. Jia and M. Harman. An analysis and survey of the
+ [2] A. Bachmann, C. Bird, F. Rahman, P. Devanbu, and                             development of mutation testing. IEEE Transactions on
+     A. Bernstein. The missing links: bugs and bug-fix commits. In                Software Engineering (TSE), 37(5):649–678, 2011.
+     Proceedings of the International Symposium on Foundations               [19] J. A. Jones and M. J. Harrold. Empirical evaluation of the
+     of Software Engineering (FSE), pages 97–106, 2010.                           tarantula automatic fault-localization technique. In
+ [3] B. Baudry, F. Fleurey, and Y. L. Traon. Improving test suites                Proceedings of the International Conference on Automated
+     for efficient fault localization. In Proceedings of the                      Software Engineering (ASE), pages 273–282, 2005.
+     International Conference on Software Engineering (ICSE),                [20] R. Just. The major mutation framework: Efficient and scalable
+     2006.                                                                        mutation analysis for java. In Proceedings of the International
+ [4] A. Carzaniga, A. Gorla, A. Mattavelli, N. Perino, and                        Symposium on Software Testing and Analysis (ISSTA), pages
+     M. Pezze. Automatic recovery from runtime failures. In                       433–436, 2014.
+     Proceedings of the International Conference on Software                 [21] R. Just, M. D. Ernst, and G. Fraser. Efficient mutation analysis
+     Engineering (ICSE), pages 782–791, 2013.                                     by propagating and partitioning infected execution states. In
+ [5] Cobertura. The official web site of the Cobertura project,                   Proceedings of the International Symposium on Software
+     Accessed Jan 28, 2014.                                                       Testing and Analysis (ISSTA), pages 315–326, 2014.
+     http://cobertura.sourceforge.net.                                       [22] R. Just, D. Jalali, and M. D. Ernst. Defects4J: A Database of
+ [6] C. Csallner and Y. Smaragdakis. JCrasher: an automatic                       existing faults to enable controlled testing studies for Java
+     robustness tester for Java. Software: Practice and Experience,               programs. In Proceedings of the International Symposium on
+     34(11):1025–1050, 2004.                                                      Software Testing and Analysis (ISSTA), pages 437–440, 2014.
+ [7] C. Csallner and Y. Smaragdakis. DSD-Crasher: A hybrid                   [23] R. Just, G. M. Kapfhammer, and F. Schweiggert. Do
+     analysis tool for bug finding. In Proceedings of the                         redundant mutants affect the effectiveness and efficiency of
+     International Symposium on Software Testing and Analysis                     mutation analysis? In Proceedings of the International
+     (ISSTA), pages 245–254, 2006.                                                Workshop on Mutation Analysis (Mutation), pages 720–725,
+ [8] M. Daran and P. Thévenod-Fosse. Software error analysis: A                   2012.
+     real case study involving real faults and mutations. In                 [24] R. Just, G. M. Kapfhammer, and F. Schweiggert. Using
+     Proceedings of the International Symposium on Software                       non-redundant mutation operators and test suite prioritization
+     Testing and Analysis (ISSTA), 1996.                                          to achieve efficient and scalable mutation analysis. In
+ [9] R. DeMillo, R. Lipton, and F. Sayward. Hints on test data                    Proceedings of the International Symposium on Software
+     selection: Help for the practicing programmer. IEEE                          Reliability Engineering (ISSRE), pages 11–20, 2012.
+     Computer, 4(11):34–41, 1978.                                            [25] S. Kim, J. A. Clark, and J. A. McDermid. Class mutation:
+[10] H. Do, S. Elbaum, and G. Rothermel. Supporting controlled                    Mutation testing for object-oriented programs. In Proceedings
+     experimentation with testing techniques: An infrastructure                   of the Net. Object Days Conference on Object-Oriented
+     and its potential impact. Empirical Software Engineering                     Software Systems, pages 9–12, 2000.
+     (ESEM), 10(4):405–435, 2005.                                            [26] A. Namin, J. Andrews, and D. Murdoch. Sufficient mutation
+[11] S. Elbaum, A. G. Malishevsky, and G. Rothermel. Test case                    operators for measuring test effectiveness. In Proceedings of
+     prioritization: A family of empirical studies. IEEE                          the International Conference on Software Engineering (ICSE),
+     Transactions on Software Engineering (TSE), 28(2):159–182,                   pages 351–360, 2008.
+     2002.                                                                   [27] A. S. Namin and S. Kakarla. The use of mutation in testing
+[12] G. Fraser and A. Arcuri. EvoSuite: Automatic test suite                      experiments and its sensitivity to external threats. In
+     generation for object-oriented software. In Proceedings of the               Proceedings of the International Symposium on Software
+     International Symposium on Foundations of Software                           Testing and Analysis (ISSTA), pages 342–352, 2011.
+     Engineering (FSE), pages 416–419, 2011.                                 [28] A. J. Offutt. Investigations of the software testing coupling
+[13] G. Fraser and A. Zeller. Mutation-driven generation of unit                  effect. ACM Transactions on Software Engineering and
+     tests and oracles. IEEE Transactions on Software Engineering                 Methodology (TOSEM), 1(1):5–20, 1992.
+     (TSE), 28(2):278–292, 2012.                                             [29] A. J. Offutt, A. Lee, G. Rothermel, R. H. Untch, and C. Zapf.
+[14] M. Harman, Y. Jia, and W. B. Langdon. Strong higher order                    An experimental determination of sufficient mutant operators.
+     mutation-based test data generation. In Proceedings of the                   ACM Transactions on Software Engineering and Methodology
+     19th ACM SIGSOFT symposium and the 13th European                             (TOSEM), 5(2):99–118, 1996.
+     conference on Foundations of software engineering,                      [30] J. Offutt, Y.-S. Ma, and Y.-R. Kwon. The class-level mutants
+     ESEC/FSE ’11, pages 212–222. ACM, 2011.                                      of MuJava. In Proceedings of the International Workshop on
+[15] M. Hutchins, H. Foster, T. Goradia, and T. Ostrand.                          Automation of Software Test (AST), pages 78–84, 2006.
+     Experiments of the effectiveness of dataflow- and                       [31] C. Pacheco, S. K. Lahiri, M. D. Ernst, and T. Ball.
+     controlflow-based test adequacy criteria. In Proceedings of the              Feedback-directed random test generation. In Proceedings of
+     International Conference on Software Engineering (ICSE),                     the International Conference on Software Engineering (ICSE),
+     pages 191–200, 1994.                                                         pages 75–84, 2007.
+[16] L. Inozemtseva and R. Holmes. Coverage is not strongly                  [32] M. Papadakis and N. Malevris. Automatic mutation test case
+     correlated with test suite effectiveness. In Proceedings of the
+
+
+
+                                                                       664
+     generation via dynamic symbolic execution. In Software                  [38] K. Taneja and T. Xie. Diffgen: Automated regression unit-test
+     reliability engineering (ISSRE), 2010 IEEE 21st international                generation. In Proceedings of the International Conference on
+     symposium on, pages 121–130. IEEE, 2010.                                     Automated Software Engineering (ASE), 2008.
+[33] F. Rahman, D. Posnett, I. Herraiz, and P. Devanbu. Sample               [39] M. Whalen, G. Gay, D. You, M. P. E. Heimdahl, and
+     size vs. bias in defect prediction. In Proceedings of the Joint              M. Staats. Observable modified condition/decision coverage.
+     Meeting of the European Software Engineering Conference                      In Proceedings of the International Conference on Software
+     and the Symposium on the Foundations of Software                             Engineering (ICSE), 2013.
+     Engineering (ESEC/FSE), pages 147–157, 2013.                            [40] X. Yao, M. Harman, and Y. Jia. A study of equivalent and
+[34] G. Rothermel, M. Harrold, J. Ostrin, and C. Hong. An                         stubborn mutation operators using human analysis of
+     empirical study of the effects of minimization on the fault                  equivalence. In Proceedings of the International Conference
+     detection capabilities of test suites. In Proceedings of the                 on Software Engineering (ICSE), pages 919–930, 2014.
+     International Conference on Software Maintenance (ICSM),                [41] L. Zhang, T. Xie, L. Zhang, N. Tillmann, J. de Halleux, and
+     pages 34–43, 1998.                                                           H. Mei. Test generation via dynamic symbolic execution for
+[35] G. Rothermel, R. H. Untch, C. Chu, and M. J. Harrold.                        mutation testing. In Proceedings of the International
+     Prioritizing test cases for regression testing. IEEE                         Conference on Software Maintenance (ICSM), pages 1–10,
+     Transactions on Software Engineering (TSE), 27(10):929–948,                  2010.
+     2001.                                                                   [42] S. Zhang, D. Jalali, J. Wuttke, K. Muşlu, W. Lam, M. D. Ernst,
+[36] SIR: Software-artifact Infrastructure Repository. SIR usage                  and D. Notkin. Empirically revisiting the test independence
+     information, Accessed Mar 4, 2014.                                           assumption. In Proceedings of the International Symposium
+     http://sir.unl.edu/portal/usage.php.                                         on Software Testing and Analysis (ISSTA), pages 385–396,
+[37] B. H. Smith and L. Williams. On guiding the augmentation of                  2014.
+     an automated test suite via mutation analysis. Empirical
+     Software Engineering (ESEM), 14(3):341–369, 2009.
+
+
+
+
+                                                                       665
+

@@ -1,0 +1,5 @@
+{
+  "src/features/auth/auth.config.ts": "424d4f34864c1a6a4efca4720aad664f199a8f5ceb9252180b4fa0e20da9fb37",
+  "src/app/(auth)/auth/reset-password/page.tsx": "2c97ac391a260d40b6df4a8f8605802e55f9c2e1eb9fd048fc0b633f6df2a2b1",
+  "src/app/(auth)/auth/sign-up/page.tsx": "89fe40f6fa89fb547489de9e4fd9a1697dc4d4bcd55fb9729500de80bfab732e"
+}

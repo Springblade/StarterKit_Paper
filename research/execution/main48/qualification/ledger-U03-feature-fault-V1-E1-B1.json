@@ -1,0 +1,108 @@
+{
+  "task": "U03",
+  "layout": "feature",
+  "variant": "fault",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "ead71888993041211d754f3d431122086ed569f6efc31ba562c0932a47cee4cf",
+    "hidden": "535f896b10753fec475eb8a514c422b70c4426bf8e81d2fd38a98e9d50df4f47",
+    "visible": "af48f9df6720b3b80d67a4376c470cef610470a70aa8da334ed269b84999b9c5",
+    "runtime": "890da408ad674dce01b5c3f2783126fc2e05d501a353db0a95a5ae6087ddbb57",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "42ea46548323230c786b8611700c0c4eeb02fdfd68239d186e712773f0559348",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true,
+    "candidate_setup": "pre-overlaid-start-v1"
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\U03-feature-fault-V1-E1-B1-1794809631618941100",
+  "visible": [
+    {
+      "task": "DP02",
+      "completed": true,
+      "pass": false,
+      "browser": "Chromium / Playwright 1.58.2",
+      "elapsedSeconds": 5.704382184,
+      "results": [
+        {
+          "id": "VP-U1-admin-only-direct-route",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "elapsedSeconds": 2.503468931
+        },
+        {
+          "id": "VP-U2-unfiltered-rows-counts-order",
+          "pass": true,
+          "elapsedSeconds": 0.9093775100000002
+        },
+        {
+          "id": "VP-U3-no-session-token-disclosure",
+          "pass": true,
+          "elapsedSeconds": 0.846428202
+        },
+        {
+          "id": "VP-identity-and-order-preservation",
+          "pass": true,
+          "elapsedSeconds": 0.002464828000000125
+        },
+        {
+          "id": "fixture-cleanup",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "U03",
+      "completed": true,
+      "acceptance": false,
+      "preservation": false,
+      "jointSuccess": false,
+      "assessable": true,
+      "results": [
+        {
+          "id": "EU-old-directory-access-no-token",
+          "kind": "preservation",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "The expression evaluated to a falsy value:\n\n  assert.ok(!(await p.locator('body').innerText()).includes(email(0)))\n",
+          "assessable": true
+        },
+        {
+          "id": "EU3-new-browser-promotion-persistence",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU3-new-current-authority-and-fresh-session",
+          "kind": "acceptance",
+          "pass": false,
+          "errorClass": "AssertionError",
+          "message": "The expression evaluated to a falsy value:\n\n  assert.ok(!(await q.locator('body').innerText()).includes(email(0)))\n",
+          "assessable": true
+        },
+        {
+          "id": "EU3-new-replayed-boundaries-through-real-transport",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EU-old-protected-fields-and-order-state",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "check-types": 0,
+    "test:run": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

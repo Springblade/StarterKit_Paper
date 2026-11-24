@@ -1,0 +1,107 @@
+{
+  "seed": 2026111102,
+  "python": "3.13.3",
+  "slots": [
+    {
+      "slot": "DP02-R01-S1V1",
+      "task": "DP02",
+      "repetition": 1,
+      "cell": "S1V1"
+    },
+    {
+      "slot": "DP02-R01-S1V0",
+      "task": "DP02",
+      "repetition": 1,
+      "cell": "S1V0"
+    },
+    {
+      "slot": "DP02-R01-S0V1",
+      "task": "DP02",
+      "repetition": 1,
+      "cell": "S0V1"
+    },
+    {
+      "slot": "DP02-R01-S0V0",
+      "task": "DP02",
+      "repetition": 1,
+      "cell": "S0V0"
+    },
+    {
+      "slot": "DP03-R01-S1V0",
+      "task": "DP03",
+      "repetition": 1,
+      "cell": "S1V0"
+    },
+    {
+      "slot": "DP03-R01-S1V1",
+      "task": "DP03",
+      "repetition": 1,
+      "cell": "S1V1"
+    },
+    {
+      "slot": "DP03-R01-S0V1",
+      "task": "DP03",
+      "repetition": 1,
+      "cell": "S0V1"
+    },
+    {
+      "slot": "DP03-R01-S0V0",
+      "task": "DP03",
+      "repetition": 1,
+      "cell": "S0V0"
+    },
+    {
+      "slot": "DP03-R02-S1V0",
+      "task": "DP03",
+      "repetition": 2,
+      "cell": "S1V0"
+    },
+    {
+      "slot": "DP03-R02-S0V0",
+      "task": "DP03",
+      "repetition": 2,
+      "cell": "S0V0"
+    },
+    {
+      "slot": "DP03-R02-S1V1",
+      "task": "DP03",
+      "repetition": 2,
+      "cell": "S1V1"
+    },
+    {
+      "slot": "DP03-R02-S0V1",
+      "task": "DP03",
+      "repetition": 2,
+      "cell": "S0V1"
+    },
+    {
+      "slot": "DP03-R03-S0V1",
+      "task": "DP03",
+      "repetition": 3,
+      "cell": "S0V1"
+    },
+    {
+      "slot": "DP03-R03-S0V0",
+      "task": "DP03",
+      "repetition": 3,
+      "cell": "S0V0"
+    },
+    {
+      "slot": "DP03-R03-S1V1",
+      "task": "DP03",
+      "repetition": 3,
+      "cell": "S1V1"
+    },
+    {
+      "slot": "DP03-R03-S1V0",
+      "task": "DP03",
+      "repetition": 3,
+      "cell": "S1V0"
+    }
+  ],
+  "scheduled_trials": 16,
+  "model_attempt_replacements_cap": 6,
+  "automatic_model_retries": false,
+  "wall_seconds_per_trial": 900,
+  "scheduled_wall_hours_cap": 4.0
+}

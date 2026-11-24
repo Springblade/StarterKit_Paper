@@ -1,0 +1,28 @@
+{
+  "layout": "layered",
+  "phase": "fault-no-admin-guard",
+  "task": "U02",
+  "model_calls": 0,
+  "started": "2026-11-15T10:57:03Z",
+  "runner_sha256": "3436e522f85ca1f949a41fdba34241585933b55eca675955a71218568d1a990f",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "detected",
+  "db_volumes": [
+    "f3a6e81b158171f81d2cdea98e46ac159a5107a7b5b485acd5b39d4b5b72705d"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 375ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "solution_files": {
+    "src/app/dashboard/admin/users/page.tsx": "67d0749d3930996dbd5930d0fb6398771c4b35ffbca2c67714537491a30cc0c3",
+    "src/app/dashboard/admin/users/[userId]/page.tsx": "c90747e724ae3db1cc11f636c68112571d165d1fdefa2eafdaf6165f57a0c173"
+  },
+  "probe_sha256": "7c6bdd4f0e5dbe59eeafd57ab030e28e1ad0ae391c157bb39f0659b8c4de60b7",
+  "typecheck_exit": 0,
+  "probe_exit": 1,
+  "expected_failure": "U02-direct-access-and-missing-account",
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T10:57:54Z"
+}

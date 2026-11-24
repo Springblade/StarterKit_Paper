@@ -1,0 +1,23 @@
+Already up to date
+Done in 395ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.20.0.3:3107
+- Environments: .env
+✓ Ready in 266ms
+
+ GET / 200 in 1652ms (next.js: 1495ms, application-code: 157ms)
+2026-11-16T06:19:49.735Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T06:19:50.295Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T06:19:50.316Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/auth/get-session 200 in 1967ms (next.js: 1946ms, application-code: 21ms)
+2026-11-16T06:19:51.906Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T06:19:52.001Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in 200 in 1701ms (next.js: 1504ms, application-code: 197ms)
+ GET /auth/sign-up 200 in 541ms (next.js: 475ms, application-code: 67ms)
+2026-11-16T06:19:53.248Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/reset-password 200 in 694ms (next.js: 457ms, application-code: 237ms)
+ GET /auth/sign-in?redirectTo=/dashboard 200 in 72ms (next.js: 2ms, application-code: 70ms)
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 84ms (next.js: 2ms, application-code: 82ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 80ms (next.js: 3ms, application-code: 78ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing 200 in 33ms (next.js: 2ms, application-code: 31ms)

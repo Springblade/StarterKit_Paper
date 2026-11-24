@@ -1,0 +1,26 @@
+﻿ migration_count 
+-----------------
+              11
+(1 row)
+
+ enumlabel  
+------------
+ credential
+ google
+(2 rows)
+
+  column_default   | udt_name  
+-------------------+-----------
+ 'user'::user_role | user_role
+(1 row)
+
+ users 
+-------
+     2
+(1 row)
+
+ plans 
+-------
+     3
+(1 row)
+

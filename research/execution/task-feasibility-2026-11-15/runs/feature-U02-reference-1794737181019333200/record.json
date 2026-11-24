@@ -1,0 +1,27 @@
+{
+  "layout": "feature",
+  "phase": "reference",
+  "task": "U02",
+  "model_calls": 0,
+  "started": "2026-11-15T10:06:21Z",
+  "runner_sha256": "0f5c091b63ef9e7516007896afead9a1b4c1ee17cdac4faaf9317cbcd451e5ca",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "failed",
+  "db_volumes": [
+    "ce4c3c5c60df0f958eaaaa2fb60f70a2d5e45568e210598047318e9161c71fad"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 330ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "solution_files": {
+    "src/app/dashboard/admin/users/page.tsx": "3e58834658c308a5b4ac66f23ea71f9a4c5fbeb599f5be5eb9f4af6d312f750a",
+    "src/app/dashboard/admin/users/[userId]/page.tsx": "d13a8356fdcd53d95c9aa1264c181739aa98381120077eccb21dd7d871d19cbe"
+  },
+  "probe_sha256": "bdd3bd4e8576da44cd702b3dcde4f05880110f0e3662c67cf95f256d66b626bf",
+  "typecheck_exit": 2,
+  "probe_exit": 1,
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T10:07:04Z"
+}

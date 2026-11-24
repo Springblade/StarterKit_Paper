@@ -1,0 +1,27 @@
+{
+  "phase": "reference",
+  "modelCalls": 0,
+  "completed": true,
+  "pass": true,
+  "baselineModified": false,
+  "browserAndRealDB": true,
+  "results": [
+    {
+      "id": "U03-browser-change-role",
+      "pass": true,
+      "seconds": 12.182
+    },
+    {
+      "id": "U03-server-boundaries",
+      "pass": true,
+      "seconds": 0.074
+    },
+    {
+      "id": "U03-current-server-role-and-fresh-target-permissions",
+      "pass": true,
+      "seconds": 3.328,
+      "demotedCachedCallerDenied": true,
+      "promoteDemoteEffectiveOnFreshLogin": true
+    }
+  ]
+}

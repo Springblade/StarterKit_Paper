@@ -1,0 +1,122 @@
+[
+  {
+    "kit": "smartkit",
+    "repeat": 1,
+    "variant": "baseline",
+    "common_basic": true,
+    "public_preservation": true,
+    "alternate_layout": false,
+    "toggle": false,
+    "mask": true
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 1,
+    "variant": "reference",
+    "common_basic": true,
+    "public_preservation": true,
+    "alternate_layout": false,
+    "toggle": true,
+    "mask": true
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 1,
+    "variant": "fault",
+    "common_basic": true,
+    "public_preservation": false,
+    "alternate_layout": false,
+    "toggle": true,
+    "mask": false
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 2,
+    "variant": "baseline",
+    "common_basic": true,
+    "public_preservation": true,
+    "alternate_layout": false,
+    "toggle": false,
+    "mask": true
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 2,
+    "variant": "reference",
+    "common_basic": true,
+    "public_preservation": true,
+    "alternate_layout": false,
+    "toggle": true,
+    "mask": true
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 2,
+    "variant": "fault",
+    "common_basic": true,
+    "public_preservation": false,
+    "alternate_layout": false,
+    "toggle": true,
+    "mask": false
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 1,
+    "variant": "baseline",
+    "common_basic": true,
+    "public_preservation": true,
+    "alternate_layout": false,
+    "toggle": false,
+    "mask": true
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 1,
+    "variant": "reference",
+    "common_basic": true,
+    "public_preservation": true,
+    "alternate_layout": false,
+    "toggle": true,
+    "mask": true
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 1,
+    "variant": "fault",
+    "common_basic": true,
+    "public_preservation": false,
+    "alternate_layout": false,
+    "toggle": true,
+    "mask": false
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 2,
+    "variant": "baseline",
+    "common_basic": true,
+    "public_preservation": true,
+    "alternate_layout": false,
+    "toggle": false,
+    "mask": true
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 2,
+    "variant": "reference",
+    "common_basic": true,
+    "public_preservation": true,
+    "alternate_layout": false,
+    "toggle": true,
+    "mask": true
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 2,
+    "variant": "fault",
+    "common_basic": true,
+    "public_preservation": false,
+    "alternate_layout": false,
+    "toggle": true,
+    "mask": false
+  }
+]

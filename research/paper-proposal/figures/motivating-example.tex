@@ -1,0 +1,13 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=8mm]
+\node[box,text width=3.5cm,minimum height=21mm] (request) {Feature request\\Add order-code search\\for the signed-in user};
+\node[box,right=of request,text width=3.5cm,minimum height=21mm] (patch) {Candidate patch\\Matching orders\\are returned};
+\node[box,right=of patch,text width=4.6cm,minimum height=21mm,draw=studyorange,fill=studyorange!5] (risk) {Possible regression\\Another user's matching order\\is also returned};
+\draw[arrow] (request)--(patch);
+\draw[arrow] (patch)--(risk);
+\node[note,below=6mm of patch,text width=12cm] {New behavior: search works.\qquad Preservation: ownership restriction fails.};
+\end{tikzpicture}
+\caption{Hypothetical order-search extension with an ownership regression.}
+\label{fig:motivation}
+\end{figure}

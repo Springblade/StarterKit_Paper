@@ -1,0 +1,66 @@
+Already up to date
+Done in 340ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.20.0.3:3107
+- Environments: .env
+✓ Ready in 233ms
+
+ GET / 200 in 1383ms (next.js: 1246ms, application-code: 137ms)
+2026-11-16T07:15:34.569Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:15:35.112Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:15:35.133Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/auth/get-session 200 in 1618ms (next.js: 1597ms, application-code: 21ms)
+2026-11-16T07:15:36.504Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:15:36.615Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in 200 in 1494ms (next.js: 1308ms, application-code: 185ms)
+ GET /auth/sign-up 200 in 476ms (next.js: 423ms, application-code: 53ms)
+2026-11-16T07:15:37.668Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/reset-password 200 in 566ms (next.js: 377ms, application-code: 189ms)
+ GET /auth/sign-in?redirectTo=/dashboard 200 in 61ms (next.js: 1805µs, application-code: 59ms)
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 67ms (next.js: 1650µs, application-code: 65ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 65ms (next.js: 1876µs, application-code: 64ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing 200 in 28ms (next.js: 1988µs, application-code: 26ms)
+ POST /api/auth/sign-in/email 200 in 123ms (next.js: 7ms, application-code: 117ms)
+ POST /api/auth/reset-password 400 in 9ms (next.js: 3ms, application-code: 6ms)
+ POST /api/auth/reset-password 400 in 9ms (next.js: 1564µs, application-code: 8ms)
+2026-11-16T07:15:39.686Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 84ms (next.js: 6ms, application-code: 78ms)
+ GET /api/auth/get-session 200 in 8ms (next.js: 1664µs, application-code: 6ms)
+2026-11-16T07:15:40.139Z WARN [Better Auth]: Password is too short
+ POST /api/auth/sign-up/email 400 in 8ms (next.js: 1337µs, application-code: 7ms)
+[email] RESEND_API_KEY not set, skipping email send to: a9e1b96a-87fd-4955-9d66-679cc253fd8c@hidden.local
+ POST /api/auth/sign-up/email 200 in 79ms (next.js: 1622µs, application-code: 77ms)
+[email] RESEND_API_KEY not set, skipping email send to: 87729c2c-0e54-4a04-83db-ea8d34d21e47@hidden.local
+ POST /api/auth/sign-up/email 200 in 81ms (next.js: 1600µs, application-code: 79ms)
+2026-11-16T07:15:40.323Z WARN [Better Auth]: Password is too long
+ POST /api/auth/sign-up/email 400 in 7ms (next.js: 1327µs, application-code: 5ms)
+ GET /auth/sign-up 200 in 33ms (next.js: 1759µs, application-code: 31ms)
+2026-11-16T07:15:40.594Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+[email] RESEND_API_KEY not set, skipping email send to: dbb33fcd-0d9e-4dee-bae8-d13bc9f0349c@hidden.local
+ POST /api/auth/sign-up/email 200 in 78ms (next.js: 7ms, application-code: 72ms)
+ GET /api/auth/get-session 200 in 5ms (next.js: 1708µs, application-code: 3ms)
+ POST /api/auth/reset-password 400 in 6ms (next.js: 1512µs, application-code: 4ms)
+ POST /api/auth/reset-password 200 in 93ms (next.js: 1869µs, application-code: 91ms)
+ POST /api/auth/reset-password 400 in 7ms (next.js: 1620µs, application-code: 5ms)
+ POST /api/auth/sign-in/email 200 in 84ms (next.js: 1894µs, application-code: 82ms)
+2026-11-16T07:15:41.765Z WARN [Better Auth]: Invalid password
+ POST /api/auth/sign-in/email 401 in 64ms (next.js: 1452µs, application-code: 63ms)
+2026-11-16T07:15:41.810Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/reset-password?token=6478ab32-a66b-4df7-9d2e-f029b4cecc86 200 in 32ms (next.js: 1646µs, application-code: 31ms)
+ POST /api/auth/reset-password 200 in 84ms (next.js: 7ms, application-code: 76ms)
+ GET /auth/sign-in?reset=success 200 in 15ms (next.js: 1978µs, application-code: 13ms)
+ POST /api/auth/sign-in/email 200 in 79ms (next.js: 5ms, application-code: 74ms)
+ POST /api/auth/reset-password 400 in 10ms (next.js: 1308µs, application-code: 8ms)
+ POST /api/auth/reset-password 400 in 5ms (next.js: 1438µs, application-code: 4ms)
+2026-11-16T07:15:43.175Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/sepay/webhook 200 in 684ms (next.js: 665ms, application-code: 19ms)
+ POST /api/sepay/webhook 200 in 6ms (next.js: 1785µs, application-code: 5ms)
+ POST /api/sepay/webhook 401 in 7ms (next.js: 1533µs, application-code: 6ms)
+ POST /api/sepay/webhook 200 in 8ms (next.js: 1326µs, application-code: 6ms)
+ POST /api/sepay/webhook 200 in 10ms (next.js: 1585µs, application-code: 8ms)
+ POST /api/sepay/webhook 200 in 13ms (next.js: 1643µs, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 15ms (next.js: 4ms, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 9ms (next.js: 1639µs, application-code: 8ms)
+ POST /api/sepay/webhook 200 in 11ms (next.js: 4ms, application-code: 7ms)
+[?25h

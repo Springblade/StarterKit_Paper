@@ -1,0 +1,123 @@
+{
+  "task": "DP03",
+  "completed": true,
+  "acceptance": false,
+  "preservation": true,
+  "jointSuccess": false,
+  "elapsedSeconds": 16.703042299999996,
+  "results": [
+    {
+      "id": "A-A1-labelled-form-submission-trim-and-refresh",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at submitName (/evaluator/final.cjs:65:10)",
+      "elapsedSeconds": 1.105761586
+    },
+    {
+      "id": "A-A2-boundary-one",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at submitName (/evaluator/final.cjs:65:10)",
+      "elapsedSeconds": 1.119717329
+    },
+    {
+      "id": "A-A2-boundary-eighty-unicode",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at submitName (/evaluator/final.cjs:65:10)",
+      "elapsedSeconds": 1.194852125
+    },
+    {
+      "id": "A-A3-server-rejects-empty",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at submitName (/evaluator/final.cjs:65:10)",
+      "elapsedSeconds": 1.2170021059999998
+    },
+    {
+      "id": "A-A3-server-rejects-whitespace",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at submitName (/evaluator/final.cjs:65:10)",
+      "elapsedSeconds": 1.627518161
+    },
+    {
+      "id": "A-A3-server-rejects-81-bmp",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at submitName (/evaluator/final.cjs:65:10)",
+      "elapsedSeconds": 1.3016149989999994
+    },
+    {
+      "id": "A-A3-server-rejects-81-unicode",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at submitName (/evaluator/final.cjs:65:10)",
+      "elapsedSeconds": 1.101874561999999
+    },
+    {
+      "id": "A-A4-own-target-and-protected-fields-through-actual-write",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at submitName (/evaluator/final.cjs:65:10)",
+      "elapsedSeconds": 1.0929062439999997
+    },
+    {
+      "id": "A-A5-anonymous-new-write-denied",
+      "kind": "acceptance",
+      "pass": false,
+      "errorClass": "AssertionError",
+      "location": "at /evaluator/final.cjs:251:16",
+      "elapsedSeconds": 0.0003940089999996417
+    },
+    {
+      "id": "A-P3-stored-name-safe-on-existing-settings",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 1.2289157509999986
+    },
+    {
+      "id": "A-P4-identity-and-sign-in-preserved",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 1.2268328170000005
+    },
+    {
+      "id": "A-P5-existing-settings-anonymous-denied",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 1.112178994
+    },
+    {
+      "id": "A-P6-existing-order-status-and-history-ownership",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 2.498383076
+    },
+    {
+      "id": "P-orders-unchanged",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 0.0022083050000001095
+    },
+    {
+      "id": "P-browser-no-uncaught-runtime-errors",
+      "kind": "preservation",
+      "pass": true,
+      "elapsedSeconds": 0.0001098100000017439
+    },
+    {
+      "id": "fixture-cleanup",
+      "kind": "instrument",
+      "pass": true
+    }
+  ]
+}

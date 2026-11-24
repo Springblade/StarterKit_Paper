@@ -1,0 +1,9 @@
+{
+  "cell": "S1V0",
+  "event": "setup failure before model invocation",
+  "original_record": "attempt-setup-failure-01.json",
+  "original_log": "migrate-setup-failure-01.log",
+  "decision": "Allow setup-only retry; no agent attempt occurred, no patch or model outcome selected against.",
+  "diagnosis": "Unix-socket readiness can precede network readiness during PostgreSQL initialization; TCP-specific readiness gate introduced. Original DB logs unavailable because cleanup already removed that container; diagnosis is a supported failure hypothesis, not a proven SQL error.",
+  "runner_change": "TCP readiness and database-log preservation only; packages, model, task, timeout and allocation unchanged."
+}

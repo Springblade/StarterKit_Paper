@@ -1,0 +1,127 @@
+diff --git a/src/app/dashboard/billing/history/page.tsx b/src/app/dashboard/billing/history/page.tsx
+index b65a249..b4e7b07 100755
+--- a/src/app/dashboard/billing/history/page.tsx
++++ b/src/app/dashboard/billing/history/page.tsx
+@@ -1,4 +1,4 @@
+-import { desc, eq } from 'drizzle-orm';
++import { and, desc, eq } from 'drizzle-orm';
+ import { ArrowLeft, ReceiptText } from 'lucide-react';
+ import Link from 'next/link';
+ import { db } from '@/database/db';
+@@ -11,6 +11,16 @@ const STRINGS = {
+   pageSubtitle: 'Review your transactions and invoices',
+   emptyTitle: 'No transactions yet',
+   emptyBody: 'Your transactions will appear here after you purchase a subscription',
++  emptyFilteredTitle: 'No orders match this status',
++  emptyFilteredBody: 'Try another status or return to all orders.',
++  allStatuses: 'All statuses',
++  pending: 'Pending',
++  completed: 'Paid',
++  cancelled: 'Cancelled',
++  expired: 'Expired',
++  filterLabel: 'Filter by status',
++  applyFilter: 'Apply filter',
++  showAllOrders: 'Show all orders',
+   selectPlan: 'Select a plan',
+   tableHeaders: {
+     transactionCode: 'Transaction ID',
+@@ -22,13 +32,27 @@ const STRINGS = {
+   backLink: 'Back',
+ } as const;
+ 
+-export default async function BillingHistoryPage() {
++const ORDER_STATUSES = ['pending', 'completed', 'cancelled', 'expired'] as const;
++type OrderStatusFilter = (typeof ORDER_STATUSES)[number];
++
++function getStatusFilter(status: string | string[] | undefined): OrderStatusFilter | undefined {
++  if (typeof status !== 'string') return undefined;
++  return ORDER_STATUSES.includes(status as OrderStatusFilter) ? (status as OrderStatusFilter) : undefined;
++}
++
++export default async function BillingHistoryPage({
++  searchParams,
++}: {
++  searchParams: Promise<{ status?: string | string[] }>;
++}) {
++  const { status: rawStatus } = await searchParams;
++  const status = getStatusFilter(rawStatus);
+   const session = await requireAuth();
+   const userId = session.user.id;
+ 
+-  // Get all user orders
++  // Get the authenticated user's orders, optionally filtered by status.
+   const userOrders = await db.query.orders.findMany({
+-    where: eq(orders.userId, userId),
++    where: and(eq(orders.userId, userId), status ? eq(orders.status, status) : undefined),
+     with: { plan: true },
+     orderBy: [desc(orders.createdAt)],
+   });
+@@ -40,18 +64,58 @@ export default async function BillingHistoryPage() {
+         <p className="text-zinc-500 dark:text-zinc-400">{STRINGS.pageSubtitle}</p>
+       </div>
+ 
+-      {userOrders.length === 0 ? (
+-        <div className="flex flex-col items-center justify-center rounded-xl border bg-card p-12 text-center">
+-          <ReceiptText className="h-12 w-12 text-muted-foreground/50" />
+-          <h3 className="mt-4 text-lg font-medium">{STRINGS.emptyTitle}</h3>
+-          <p className="mt-1 text-sm text-muted-foreground">{STRINGS.emptyBody}</p>
+-          <Link
+-            href="/dashboard/billing"
+-            className="mt-6 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
++      <form method="get" className="flex flex-wrap items-end gap-3">
++        <div className="flex flex-col gap-1">
++          <label htmlFor="status" className="text-sm font-medium">
++            {STRINGS.filterLabel}
++          </label>
++          <select
++            id="status"
++            name="status"
++            defaultValue={status ?? ''}
++            className="h-10 rounded-md border bg-background px-3 text-sm"
+           >
+-            {STRINGS.selectPlan}
+-          </Link>
++            <option value="">{STRINGS.allStatuses}</option>
++            <option value="pending">{STRINGS.pending}</option>
++            <option value="completed">{STRINGS.completed}</option>
++            <option value="cancelled">{STRINGS.cancelled}</option>
++            <option value="expired">{STRINGS.expired}</option>
++          </select>
+         </div>
++        <button
++          type="submit"
++          className="h-10 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90"
++        >
++          {STRINGS.applyFilter}
++        </button>
++      </form>
++
++      {userOrders.length === 0 ? (
++        status ? (
++          <div className="flex flex-col items-center justify-center rounded-xl border bg-card p-12 text-center">
++            <ReceiptText className="h-12 w-12 text-muted-foreground/50" />
++            <h3 className="mt-4 text-lg font-medium">{STRINGS.emptyFilteredTitle}</h3>
++            <p className="mt-1 text-sm text-muted-foreground">{STRINGS.emptyFilteredBody}</p>
++            <Link
++              href="/dashboard/billing/history"
++              className="mt-6 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
++            >
++              {STRINGS.showAllOrders}
++            </Link>
++          </div>
++        ) : (
++          <div className="flex flex-col items-center justify-center rounded-xl border bg-card p-12 text-center">
++            <ReceiptText className="h-12 w-12 text-muted-foreground/50" />
++            <h3 className="mt-4 text-lg font-medium">{STRINGS.emptyTitle}</h3>
++            <p className="mt-1 text-sm text-muted-foreground">{STRINGS.emptyBody}</p>
++            <Link
++              href="/dashboard/billing"
++              className="mt-6 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
++            >
++              {STRINGS.selectPlan}
++            </Link>
++          </div>
++        )
+       ) : (
+         <div className="rounded-lg border">
+           <table className="w-full">

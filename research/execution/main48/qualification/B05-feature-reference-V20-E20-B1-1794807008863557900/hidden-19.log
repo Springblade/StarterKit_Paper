@@ -1,0 +1,7 @@
+{"id":"E-old-checkout-preserves-standard-transfer-content","kind":"preservation","pass":true}
+{"id":"E-old-standard-webhook-retry","kind":"preservation","pass":true}
+{"id":"E-old-standard-cron-and-signature","kind":"preservation","pass":true}
+{"id":"E-old-mismatch-terminal-outbound","kind":"preservation","pass":true}
+{"id":"E-new-embedded-webhook-and-cron","kind":"acceptance","pass":true}
+{"id":"E-new-reject-ambiguous-invalid-and-wrong-case","kind":"acceptance","pass":true}
+{"task":"B05","completed":true,"acceptance":true,"preservation":true,"jointSuccess":true,"results":[{"id":"E-old-checkout-preserves-standard-transfer-content","kind":"preservation","pass":true},{"id":"E-old-standard-webhook-retry","kind":"preservation","pass":true},{"id":"E-old-standard-cron-and-signature","kind":"preservation","pass":true},{"id":"E-old-mismatch-terminal-outbound","kind":"preservation","pass":true},{"id":"E-new-embedded-webhook-and-cron","kind":"acceptance","pass":true},{"id":"E-new-reject-ambiguous-invalid-and-wrong-case","kind":"acceptance","pass":true}]}

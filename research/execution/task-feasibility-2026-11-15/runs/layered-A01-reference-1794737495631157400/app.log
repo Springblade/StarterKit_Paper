@@ -1,0 +1,88 @@
+Already up to date
+Done in 351ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (webpack)
+- Local:         http://localhost:3107
+- Network:       http://172.19.0.3:3107
+- Environments: .env
+✓ Ready in 278ms
+
+○ Compiling / ...
+ GET / 200 in 3.4s (next.js: 3.2s, application-code: 125ms)
+○ Compiling /api/auth/[...all] ...
+2026-11-15T10:11:54.009Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:11:54.729Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 5.3s (next.js: 4.9s, application-code: 391ms)
+ POST /api/auth/sign-in/email 200 in 157ms (next.js: 17ms, application-code: 140ms)
+ POST /api/auth/sign-in/email 200 in 89ms (next.js: 2ms, application-code: 87ms)
+2026-11-15T10:11:56.234Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+○ Compiling proxy ...
+2026-11-15T10:12:01.354Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:12:02.616Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:12:02.689Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/settings 200 in 1835ms (next.js: 1108ms, proxy.ts: 452ms, application-code: 276ms)
+2026-11-15T10:12:04.033Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /dashboard/settings 303 in 1130ms (next.js: 190ms, proxy.ts: 279ms, application-code: 661ms)
+ GET /dashboard/settings?profile=saved 200 in 127ms (next.js: 6ms, proxy.ts: 9ms, application-code: 112ms)
+ GET /dashboard/settings?profile=saved 200 in 66ms (next.js: 2ms, proxy.ts: 5ms, application-code: 58ms)
+ GET /dashboard/settings 200 in 42ms (next.js: 2ms, proxy.ts: 3ms, application-code: 37ms)
+ GET /dashboard/settings?profile=saved 200 in 40ms (next.js: 1633µs, proxy.ts: 4ms, application-code: 34ms)
+ POST /dashboard/settings 303 in 88ms (next.js: 4ms, proxy.ts: 6ms, application-code: 77ms)
+  └─ ƒ updateDisplayName({}) in 13ms actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 48ms (next.js: 2ms, proxy.ts: 4ms, application-code: 42ms)
+ GET /dashboard/settings?profile=saved 200 in 41ms (next.js: 1990µs, proxy.ts: 11ms, application-code: 28ms)
+ POST /dashboard/settings 303 in 72ms (next.js: 2ms, proxy.ts: 4ms, application-code: 65ms)
+  └─ ƒ updateDisplayName({}) in 16ms actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 39ms (next.js: 1629µs, proxy.ts: 3ms, application-code: 35ms)
+ GET /dashboard/settings?profile=invalid 200 in 27ms (next.js: 1656µs, proxy.ts: 2ms, application-code: 23ms)
+ POST /dashboard/settings 303 in 45ms (next.js: 1887µs, proxy.ts: 4ms, application-code: 39ms)
+  └─ ƒ updateDisplayName({}) in 4ms actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 39ms (next.js: 1333µs, proxy.ts: 3ms, application-code: 34ms)
+ GET /dashboard/settings?profile=invalid 200 in 28ms (next.js: 1417µs, proxy.ts: 3ms, application-code: 24ms)
+ POST /dashboard/settings 303 in 45ms (next.js: 2ms, proxy.ts: 3ms, application-code: 40ms)
+  └─ ƒ updateDisplayName({}) in 4ms actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 55ms (next.js: 1802µs, proxy.ts: 3ms, application-code: 50ms)
+ GET /dashboard/settings?profile=invalid 200 in 26ms (next.js: 1778µs, proxy.ts: 3ms, application-code: 21ms)
+ POST /dashboard/settings 303 in 43ms (next.js: 2ms, proxy.ts: 4ms, application-code: 37ms)
+  └─ ƒ updateDisplayName({}) in 3ms actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 36ms (next.js: 1962µs, proxy.ts: 3ms, application-code: 31ms)
+ GET /dashboard/settings?profile=invalid 200 in 26ms (next.js: 1376µs, proxy.ts: 2ms, application-code: 22ms)
+ POST /dashboard/settings 303 in 39ms (next.js: 1296µs, proxy.ts: 3ms, application-code: 35ms)
+  └─ ƒ updateDisplayName({}) in 4ms actions/auth/update-display-name.ts
+ GET /dashboard/settings 200 in 36ms (next.js: 1180µs, proxy.ts: 2ms, application-code: 33ms)
+ GET /dashboard/settings?profile=saved 200 in 27ms (next.js: 1376µs, proxy.ts: 3ms, application-code: 22ms)
+ POST /dashboard/settings 303 in 52ms (next.js: 1907µs, proxy.ts: 3ms, application-code: 47ms)
+  └─ ƒ updateDisplayName({}) in 13ms actions/auth/update-display-name.ts
+ POST /api/auth/update-user 200 in 63ms (next.js: 23ms, application-code: 40ms)
+ GET /dashboard/settings 200 in 33ms (next.js: 1321µs, proxy.ts: 3ms, application-code: 29ms)
+2026-11-15T10:12:14.195Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 97ms (next.js: 12ms, application-code: 85ms)
+ GET /dashboard/settings 200 in 36ms (next.js: 1632µs, proxy.ts: 3ms, application-code: 32ms)
+2026-11-15T10:12:15.138Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:12:16.519Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:12:16.597Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 1092ms (next.js: 795ms, application-code: 297ms)
+2026-11-15T10:12:18.304Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:12:19.052Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:12:19.103Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/4f6f69c4-403d-4266-a261-8f80989173ee/status 200 in 1697ms (next.js: 1629ms, application-code: 68ms)
+ GET /api/orders/4f6f69c4-403d-4266-a261-8f80989173ee/status 307 in 17ms (next.js: 12ms, application-code: 5ms)
+ GET /api/orders/05e98d7e-2fca-41a6-9380-ed7b734ecb4b/status 404 in 13ms (next.js: 3ms, application-code: 11ms)
+ GET /api/orders/05e98d7e-2fca-41a6-9380-ed7b734ecb4b/status 307 in 10ms (next.js: 2ms, application-code: 7ms)
+2026-11-15T10:12:19.980Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:12:20.379Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T10:12:20.443Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 1281ms (next.js: 1067ms, proxy.ts: 6ms, application-code: 208ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing/history 200 in 48ms (next.js: 7ms, application-code: 41ms)
+ POST /api/auth/sign-in/email 200 in 129ms (next.js: 18ms, application-code: 111ms)
+ POST /api/auth/sign-in/email 200 in 80ms (next.js: 1308µs, application-code: 79ms)
+ POST /api/auth/update-user 200 in 20ms (next.js: 1243µs, application-code: 19ms)
+ POST /api/auth/update-user 400 in 13ms (next.js: 1227µs, application-code: 12ms)
+ POST /api/auth/update-user 400 in 10ms (next.js: 1253µs, application-code: 8ms)
+ POST /api/auth/update-user 401 in 6ms (next.js: 1189µs, application-code: 5ms)
+ POST /api/auth/update-user 200 in 14ms (next.js: 1385µs, application-code: 13ms)
+ GET /dashboard/settings 200 in 75ms (next.js: 12ms, proxy.ts: 4ms, application-code: 58ms)
+2026-11-15T10:12:46.771Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/update-user 200 in 22ms (next.js: 10ms, application-code: 11ms)
+ GET /dashboard/settings 200 in 46ms (next.js: 1832µs, proxy.ts: 3ms, application-code: 41ms)
+2026-11-15T10:12:48.066Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 31ms (next.js: 1905µs, application-code: 29ms)

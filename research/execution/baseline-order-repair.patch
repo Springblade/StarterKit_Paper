@@ -1,0 +1,34 @@
+diff --git a/src/features/billing/actions/list-orders.ts b/src/features/billing/actions/list-orders.ts
+index ab7a446..6069cb9 100644
+--- a/src/features/billing/actions/list-orders.ts
++++ b/src/features/billing/actions/list-orders.ts
+@@ -1,9 +1,11 @@
+ 'use server';
+ 
+-import { desc, eq } from 'drizzle-orm';
++import { and, desc, eq } from 'drizzle-orm';
+ import { z } from 'zod';
+ import { db } from '@/database/db';
+ import { orders } from '@/database/schema';
++import { getSession } from '@/features/auth/lib/auth';
++import { BillingError } from '../errors';
+ 
+ const ListOrdersParamsSchema = z.object({
+   status: z.enum(['pending', 'completed', 'expired', 'cancelled']).optional(),
+@@ -13,9 +15,15 @@ const ListOrdersParamsSchema = z.object({
+ export type ListOrdersParams = z.input<typeof ListOrdersParamsSchema>;
+ 
+ export async function listOrders(params?: z.infer<typeof ListOrdersParamsSchema>) {
++  const session = await getSession();
++  if (!session) throw new BillingError('UNAUTHORIZED');
++
+   const parsed = ListOrdersParamsSchema.parse(params ?? {});
+ 
+-  const whereClause = parsed.status ? eq(orders.status, parsed.status) : undefined;
++  const whereClause = and(
++    eq(orders.userId, session.user.id),
++    parsed.status ? eq(orders.status, parsed.status) : undefined,
++  );
+ 
+   const ordersList = await db.query.orders.findMany({
+     where: whereClause,

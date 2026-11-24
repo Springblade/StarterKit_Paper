@@ -1,0 +1,323 @@
+Already up to date
+Done in 92ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.25.0.1:3107
+- Environments: .env
+✓ Ready in 561ms
+
+2026-11-10T10:08:23.112Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:08:23.994Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 1352ms (next.js: 1227ms, application-code: 125ms)
+ POST /api/auth/sign-in/email 200 in 85ms (next.js: 9ms, application-code: 76ms)
+ POST /api/auth/sign-in/email 200 in 78ms (next.js: 3ms, application-code: 76ms)
+2026-11-10T10:08:24.563Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:08:24.875Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:08:25.007Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+2026-11-10T10:08:25.061Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history 200 in 1578ms (next.js: 252ms, proxy.ts: 268ms, application-code: 1059ms)
+2026-11-10T10:08:26.895Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:08:26.913Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-pending/status 200 in 1032ms (next.js: 1013ms, application-code: 19ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-completed/status 200 in 24ms (next.js: 7ms, application-code: 16ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-cancelled/status 200 in 27ms (next.js: 3ms, application-code: 25ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-expired/status 200 in 28ms (next.js: 3ms, application-code: 25ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-b-pending/status 404 in 28ms (next.js: 3ms, application-code: 25ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-b-completed/status 404 in 29ms (next.js: 4ms, application-code: 26ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-b-cancelled/status 404 in 27ms (next.js: 2ms, application-code: 24ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-b-expired/status 404 in 14ms (next.js: 2ms, application-code: 12ms)
+ GET /dashboard/billing/history 200 in 60ms (next.js: 4ms, proxy.ts: 3ms, application-code: 53ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-pending/status 404 in 12ms (next.js: 2ms, application-code: 10ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-completed/status 404 in 18ms (next.js: 2ms, application-code: 15ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-cancelled/status 404 in 16ms (next.js: 4ms, application-code: 12ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-expired/status 404 in 25ms (next.js: 5ms, application-code: 20ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-b-pending/status 200 in 23ms (next.js: 2ms, application-code: 21ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-b-completed/status 200 in 13ms (next.js: 2ms, application-code: 10ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-b-cancelled/status 200 in 27ms (next.js: 3ms, application-code: 25ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-b-expired/status 200 in 13ms (next.js: 3ms, application-code: 10ms)
+ GET /api/orders/b98e8c65-fb68-4c8a-8a86-ef2689e918e9-a-pending/status 307 in 19ms (next.js: 3ms, application-code: 16ms)
+ GET /dashboard/billing/history?status=completed 200 in 64ms (next.js: 4ms, proxy.ts: 3ms, application-code: 56ms)
+ GET /dashboard/billing/history?status=pending 200 in 67ms (next.js: 5ms, proxy.ts: 3ms, application-code: 59ms)
+ GET /dashboard/billing/history 200 in 70ms (next.js: 6ms, proxy.ts: 4ms, application-code: 60ms)
+ GET /dashboard/billing/history?status=pending 200 in 88ms (next.js: 5ms, proxy.ts: 3ms, application-code: 80ms)
+2026-11-10T10:08:27.865Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+✓ Compiled in 126ms
+2026-11-10T10:08:50.858Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 188ms (next.js: 100ms, application-code: 88ms)
+ POST /api/auth/sign-in/email 200 in 85ms (next.js: 2ms, application-code: 83ms)
+ POST /api/auth/sign-in/email 200 in 76ms (next.js: 3ms, application-code: 73ms)
+2026-11-10T10:08:51.211Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:08:51.383Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:08:51.446Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 433ms (next.js: 137ms, proxy.ts: 86ms, application-code: 210ms)
+2026-11-10T10:08:51.632Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-pending/status 200 in 72ms (next.js: 54ms, application-code: 18ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-completed/status 200 in 25ms (next.js: 2ms, application-code: 22ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-cancelled/status 200 in 27ms (next.js: 4ms, application-code: 23ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-expired/status 200 in 28ms (next.js: 3ms, application-code: 26ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-b-pending/status 404 in 27ms (next.js: 3ms, application-code: 24ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-b-completed/status 404 in 26ms (next.js: 3ms, application-code: 23ms)
+2026-11-10T10:08:51.819Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-b-cancelled/status 404 in 28ms (next.js: 3ms, application-code: 26ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-b-expired/status 404 in 17ms (next.js: 2ms, application-code: 14ms)
+ GET /dashboard/billing/history 200 in 77ms (next.js: 5ms, proxy.ts: 5ms, application-code: 66ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-pending/status 404 in 21ms (next.js: 2ms, application-code: 19ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-completed/status 404 in 13ms (next.js: 2ms, application-code: 11ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-cancelled/status 404 in 28ms (next.js: 4ms, application-code: 25ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-expired/status 404 in 27ms (next.js: 4ms, application-code: 23ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-b-pending/status 200 in 27ms (next.js: 3ms, application-code: 24ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-b-completed/status 200 in 27ms (next.js: 3ms, application-code: 24ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-b-cancelled/status 200 in 29ms (next.js: 4ms, application-code: 25ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-b-expired/status 200 in 28ms (next.js: 3ms, application-code: 25ms)
+ GET /api/orders/7fa6732e-3e87-487f-bd24-c86203b37f3f-a-pending/status 307 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /dashboard/billing/history?status=completed 200 in 71ms (next.js: 4ms, proxy.ts: 3ms, application-code: 63ms)
+ GET /dashboard/billing/history?status=pending 200 in 69ms (next.js: 5ms, proxy.ts: 3ms, application-code: 61ms)
+ GET /dashboard/billing/history?status=completed 200 in 72ms (next.js: 5ms, proxy.ts: 3ms, application-code: 65ms)
+ GET /dashboard/billing/history 200 in 72ms (next.js: 5ms, proxy.ts: 4ms, application-code: 64ms)
+ GET /dashboard/billing/history?status= 200 in 62ms (next.js: 4ms, proxy.ts: 3ms, application-code: 55ms)
+2026-11-10T10:08:52.594Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history?status=unknown 200 in 64ms (next.js: 4ms, proxy.ts: 3ms, application-code: 57ms)
+ GET /dashboard/billing/history?status=pending&status=completed 200 in 62ms (next.js: 5ms, proxy.ts: 3ms, application-code: 54ms)
+ GET /dashboard/billing/history?status=pending 200 in 65ms (next.js: 4ms, proxy.ts: 3ms, application-code: 58ms)
+ POST /api/auth/sign-in/email 200 in 114ms (next.js: 9ms, application-code: 105ms)
+ POST /api/auth/sign-in/email 200 in 80ms (next.js: 3ms, application-code: 77ms)
+ POST /api/auth/sign-in/email 200 in 84ms (next.js: 2ms, application-code: 81ms)
+ GET /dashboard/billing/history 200 in 96ms (next.js: 5ms, proxy.ts: 3ms, application-code: 88ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-pending/status 200 in 27ms (next.js: 9ms, application-code: 18ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-completed/status 200 in 24ms (next.js: 3ms, application-code: 21ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-cancelled/status 200 in 33ms (next.js: 4ms, application-code: 29ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-expired/status 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-b-pending/status 404 in 31ms (next.js: 4ms, application-code: 27ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-b-completed/status 404 in 17ms (next.js: 5ms, application-code: 12ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-b-cancelled/status 404 in 16ms (next.js: 1979µs, application-code: 14ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-b-expired/status 404 in 16ms (next.js: 2ms, application-code: 14ms)
+ GET /dashboard/billing/history 200 in 89ms (next.js: 5ms, proxy.ts: 4ms, application-code: 80ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-pending/status 404 in 19ms (next.js: 4ms, application-code: 15ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-completed/status 404 in 29ms (next.js: 3ms, application-code: 26ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-cancelled/status 404 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-expired/status 404 in 14ms (next.js: 4ms, application-code: 10ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-b-pending/status 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-b-completed/status 200 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-b-cancelled/status 200 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-b-expired/status 200 in 18ms (next.js: 4ms, application-code: 14ms)
+2026-11-10T10:09:38.920Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /api/orders/7d605957-7552-4232-b399-b124b1bd0a8e-a-pending/status 307 in 14ms (next.js: 3ms, application-code: 11ms)
+ GET /dashboard/billing/history?status=completed 200 in 71ms (next.js: 7ms, proxy.ts: 4ms, application-code: 60ms)
+ GET /dashboard/billing/history?status= 200 in 65ms (next.js: 4ms, proxy.ts: 3ms, application-code: 59ms)
+2026-11-10T10:09:39.318Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history?status=pending 200 in 114ms (next.js: 7ms, proxy.ts: 4ms, application-code: 104ms)
+ GET /dashboard/billing/history?status=completed 200 in 63ms (next.js: 4ms, proxy.ts: 3ms, application-code: 56ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 58ms (next.js: 5ms, proxy.ts: 3ms, application-code: 50ms)
+ GET /dashboard/billing/history?status=expired 200 in 63ms (next.js: 5ms, proxy.ts: 3ms, application-code: 55ms)
+ GET /dashboard/billing/history?status=pending 200 in 66ms (next.js: 6ms, proxy.ts: 3ms, application-code: 57ms)
+ GET /dashboard/billing/history?status=completed 200 in 71ms (next.js: 5ms, proxy.ts: 3ms, application-code: 63ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 65ms (next.js: 7ms, proxy.ts: 5ms, application-code: 52ms)
+ GET /dashboard/billing/history?status=expired 200 in 59ms (next.js: 4ms, proxy.ts: 3ms, application-code: 52ms)
+ GET /dashboard/billing/history 200 in 60ms (next.js: 4ms, proxy.ts: 3ms, application-code: 53ms)
+ GET /dashboard/billing/history?status= 200 in 72ms (next.js: 5ms, proxy.ts: 3ms, application-code: 64ms)
+ GET /dashboard/billing/history?status=unknown 200 in 64ms (next.js: 4ms, proxy.ts: 3ms, application-code: 57ms)
+ GET /dashboard/billing/history?status=pending&status=completed 200 in 81ms (next.js: 5ms, proxy.ts: 3ms, application-code: 73ms)
+ GET /dashboard/billing/history?status=pending 200 in 64ms (next.js: 6ms, proxy.ts: 3ms, application-code: 56ms)
+✓ Compiled in 62ms
+2026-11-10T10:10:13.559Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 203ms (next.js: 105ms, application-code: 98ms)
+ POST /api/auth/sign-in/email 200 in 89ms (next.js: 4ms, application-code: 85ms)
+ POST /api/auth/sign-in/email 200 in 80ms (next.js: 3ms, application-code: 77ms)
+2026-11-10T10:10:13.954Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:10:14.119Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:10:14.188Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 390ms (next.js: 141ms, proxy.ts: 94ms, application-code: 155ms)
+2026-11-10T10:10:14.329Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-pending/status 200 in 76ms (next.js: 59ms, application-code: 17ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-completed/status 200 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-cancelled/status 200 in 18ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-expired/status 200 in 17ms (next.js: 4ms, application-code: 13ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-b-pending/status 404 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-b-completed/status 404 in 17ms (next.js: 2ms, application-code: 14ms)
+2026-11-10T10:10:14.526Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-b-cancelled/status 404 in 28ms (next.js: 2ms, application-code: 25ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-b-expired/status 404 in 32ms (next.js: 4ms, application-code: 29ms)
+ GET /dashboard/billing/history 200 in 75ms (next.js: 5ms, proxy.ts: 4ms, application-code: 66ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-pending/status 404 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-completed/status 404 in 16ms (next.js: 3ms, application-code: 12ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-cancelled/status 404 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-expired/status 404 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-b-pending/status 200 in 13ms (next.js: 3ms, application-code: 10ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-b-completed/status 200 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-b-cancelled/status 200 in 16ms (next.js: 3ms, application-code: 13ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-b-expired/status 200 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /api/orders/03129b56-2307-49c7-8dec-2a1f8b49cc84-a-pending/status 307 in 13ms (next.js: 4ms, application-code: 9ms)
+ GET /dashboard/billing/history?status=completed 200 in 61ms (next.js: 5ms, proxy.ts: 3ms, application-code: 52ms)
+ GET /dashboard/billing/history?status= 200 in 81ms (next.js: 4ms, proxy.ts: 3ms, application-code: 74ms)
+ GET /dashboard/billing/history?status=pending 200 in 68ms (next.js: 4ms, proxy.ts: 3ms, application-code: 61ms)
+2026-11-10T10:10:15.325Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history 200 in 89ms (next.js: 7ms, proxy.ts: 4ms, application-code: 78ms)
+ GET /dashboard/billing/history?status= 200 in 66ms (next.js: 5ms, proxy.ts: 3ms, application-code: 58ms)
+ GET /dashboard/billing/history?status=unknown 200 in 63ms (next.js: 4ms, proxy.ts: 3ms, application-code: 56ms)
+ GET /dashboard/billing/history?status=pending&status=completed 200 in 66ms (next.js: 4ms, proxy.ts: 3ms, application-code: 58ms)
+ GET /dashboard/billing/history?status=pending 200 in 75ms (next.js: 8ms, proxy.ts: 6ms, application-code: 61ms)
+✓ Compiled in 36ms
+2026-11-10T10:10:19.766Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 205ms (next.js: 102ms, application-code: 103ms)
+ POST /api/auth/sign-in/email 200 in 86ms (next.js: 4ms, application-code: 82ms)
+ POST /api/auth/sign-in/email 200 in 76ms (next.js: 2ms, application-code: 73ms)
+2026-11-10T10:10:20.157Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:10:20.318Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:10:20.401Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 456ms (next.js: 131ms, proxy.ts: 82ms, application-code: 243ms)
+2026-11-10T10:10:20.622Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-pending/status 200 in 83ms (next.js: 56ms, application-code: 26ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-completed/status 200 in 25ms (next.js: 3ms, application-code: 22ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-cancelled/status 200 in 16ms (next.js: 2ms, application-code: 14ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-expired/status 200 in 17ms (next.js: 2ms, application-code: 15ms)
+2026-11-10T10:10:20.725Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-b-pending/status 404 in 14ms (next.js: 3ms, application-code: 11ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-b-completed/status 404 in 14ms (next.js: 2ms, application-code: 12ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-b-cancelled/status 404 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-b-expired/status 404 in 17ms (next.js: 2ms, application-code: 15ms)
+ GET /dashboard/billing/history 200 in 70ms (next.js: 4ms, proxy.ts: 4ms, application-code: 62ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-pending/status 404 in 24ms (next.js: 2ms, application-code: 21ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-completed/status 404 in 15ms (next.js: 2ms, application-code: 13ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-cancelled/status 404 in 16ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-expired/status 404 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-b-pending/status 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-b-completed/status 200 in 10ms (next.js: 3ms, application-code: 7ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-b-cancelled/status 200 in 11ms (next.js: 3ms, application-code: 8ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-b-expired/status 200 in 20ms (next.js: 2ms, application-code: 17ms)
+ GET /api/orders/231322b6-7bb7-4449-b086-76dea851dd78-a-pending/status 307 in 28ms (next.js: 4ms, application-code: 24ms)
+ GET /dashboard/billing/history?status=completed 200 in 90ms (next.js: 6ms, proxy.ts: 3ms, application-code: 81ms)
+ GET /dashboard/billing/history?status= 200 in 112ms (next.js: 8ms, proxy.ts: 6ms, application-code: 98ms)
+2026-11-10T10:10:21.666Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history?status=pending 200 in 84ms (next.js: 9ms, proxy.ts: 6ms, application-code: 69ms)
+ GET /dashboard/billing/history 200 in 88ms (next.js: 4ms, proxy.ts: 4ms, application-code: 80ms)
+ GET /dashboard/billing/history?status=pending 200 in 66ms (next.js: 5ms, proxy.ts: 4ms, application-code: 56ms)
+✓ Compiled in 58ms
+2026-11-10T10:10:26.121Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 237ms (next.js: 125ms, application-code: 113ms)
+ POST /api/auth/sign-in/email 200 in 93ms (next.js: 4ms, application-code: 90ms)
+ POST /api/auth/sign-in/email 200 in 86ms (next.js: 3ms, application-code: 83ms)
+2026-11-10T10:10:26.552Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:10:26.737Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:10:26.808Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 496ms (next.js: 141ms, proxy.ts: 86ms, application-code: 269ms)
+2026-11-10T10:10:27.058Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-pending/status 200 in 82ms (next.js: 64ms, application-code: 18ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-completed/status 200 in 34ms (next.js: 5ms, application-code: 29ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-cancelled/status 200 in 33ms (next.js: 4ms, application-code: 29ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-expired/status 200 in 18ms (next.js: 4ms, application-code: 15ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-b-pending/status 404 in 25ms (next.js: 3ms, application-code: 23ms)
+2026-11-10T10:10:27.222Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-b-completed/status 404 in 17ms (next.js: 3ms, application-code: 13ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-b-cancelled/status 404 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-b-expired/status 404 in 13ms (next.js: 3ms, application-code: 10ms)
+ GET /dashboard/billing/history 200 in 73ms (next.js: 5ms, proxy.ts: 4ms, application-code: 65ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-pending/status 404 in 18ms (next.js: 3ms, application-code: 16ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-completed/status 404 in 16ms (next.js: 3ms, application-code: 13ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-cancelled/status 404 in 18ms (next.js: 2ms, application-code: 15ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-expired/status 404 in 28ms (next.js: 2ms, application-code: 25ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-b-pending/status 200 in 12ms (next.js: 3ms, application-code: 10ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-b-completed/status 200 in 17ms (next.js: 2ms, application-code: 15ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-b-cancelled/status 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-b-expired/status 200 in 17ms (next.js: 2ms, application-code: 14ms)
+ GET /api/orders/b2471564-3d9a-415e-8047-d94c300b1a58-a-pending/status 307 in 15ms (next.js: 2ms, application-code: 12ms)
+ GET /dashboard/billing/history?status=completed 200 in 70ms (next.js: 4ms, proxy.ts: 3ms, application-code: 64ms)
+ GET /dashboard/billing/history?status= 200 in 75ms (next.js: 4ms, proxy.ts: 4ms, application-code: 67ms)
+ GET /dashboard/billing/history?status=pending 200 in 80ms (next.js: 7ms, proxy.ts: 6ms, application-code: 67ms)
+2026-11-10T10:10:28.091Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history?status=completed 200 in 77ms (next.js: 4ms, proxy.ts: 3ms, application-code: 70ms)
+ GET /dashboard/billing/history 200 in 65ms (next.js: 5ms, proxy.ts: 3ms, application-code: 57ms)
+ GET /dashboard/billing/history?status= 200 in 62ms (next.js: 4ms, proxy.ts: 2ms, application-code: 55ms)
+ GET /dashboard/billing/history?status=unknown 200 in 61ms (next.js: 4ms, proxy.ts: 3ms, application-code: 53ms)
+ GET /dashboard/billing/history?status=pending&status=completed 200 in 68ms (next.js: 5ms, proxy.ts: 2ms, application-code: 61ms)
+ GET /dashboard/billing/history?status=pending 200 in 63ms (next.js: 6ms, proxy.ts: 4ms, application-code: 52ms)
+✓ Compiled in 71ms
+2026-11-10T10:10:32.760Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 167ms (next.js: 81ms, application-code: 87ms)
+ POST /api/auth/sign-in/email 200 in 73ms (next.js: 2ms, application-code: 70ms)
+ POST /api/auth/sign-in/email 200 in 82ms (next.js: 3ms, application-code: 80ms)
+2026-11-10T10:10:33.123Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:10:33.308Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:10:33.367Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 405ms (next.js: 163ms, proxy.ts: 94ms, application-code: 148ms)
+2026-11-10T10:10:33.528Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-pending/status 200 in 78ms (next.js: 53ms, application-code: 25ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-completed/status 200 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-cancelled/status 200 in 17ms (next.js: 2ms, application-code: 14ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-expired/status 200 in 17ms (next.js: 2ms, application-code: 15ms)
+2026-11-10T10:10:33.654Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-b-pending/status 404 in 15ms (next.js: 2ms, application-code: 12ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-b-completed/status 404 in 16ms (next.js: 2ms, application-code: 14ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-b-cancelled/status 404 in 16ms (next.js: 2ms, application-code: 14ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-b-expired/status 404 in 16ms (next.js: 3ms, application-code: 13ms)
+ GET /dashboard/billing/history 200 in 70ms (next.js: 4ms, proxy.ts: 3ms, application-code: 62ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-pending/status 404 in 25ms (next.js: 2ms, application-code: 23ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-completed/status 404 in 16ms (next.js: 3ms, application-code: 13ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-cancelled/status 404 in 12ms (next.js: 2ms, application-code: 9ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-expired/status 404 in 16ms (next.js: 3ms, application-code: 13ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-b-pending/status 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-b-completed/status 200 in 18ms (next.js: 3ms, application-code: 15ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-b-cancelled/status 200 in 11ms (next.js: 2ms, application-code: 9ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-b-expired/status 200 in 17ms (next.js: 2ms, application-code: 14ms)
+ GET /api/orders/1cdc08cd-d727-4643-ae0f-886c0dc3ecd6-a-pending/status 307 in 12ms (next.js: 3ms, application-code: 9ms)
+ GET /dashboard/billing/history?status=completed 200 in 56ms (next.js: 4ms, proxy.ts: 2ms, application-code: 50ms)
+ GET /dashboard/billing/history?status= 200 in 62ms (next.js: 5ms, proxy.ts: 2ms, application-code: 55ms)
+2026-11-10T10:10:34.421Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history?status=pending 200 in 58ms (next.js: 4ms, proxy.ts: 3ms, application-code: 51ms)
+ GET /dashboard/billing/history?status=completed 200 in 67ms (next.js: 4ms, proxy.ts: 3ms, application-code: 59ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 57ms (next.js: 5ms, proxy.ts: 3ms, application-code: 50ms)
+ GET /dashboard/billing/history?status=expired 200 in 60ms (next.js: 5ms, proxy.ts: 3ms, application-code: 52ms)
+ GET /dashboard/billing/history?status=pending 200 in 58ms (next.js: 5ms, proxy.ts: 3ms, application-code: 51ms)
+ GET /dashboard/billing/history?status=completed 200 in 63ms (next.js: 4ms, proxy.ts: 3ms, application-code: 56ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 59ms (next.js: 7ms, proxy.ts: 5ms, application-code: 48ms)
+ GET /dashboard/billing/history?status=expired 200 in 54ms (next.js: 5ms, proxy.ts: 3ms, application-code: 46ms)
+ GET /dashboard/billing/history 200 in 62ms (next.js: 6ms, proxy.ts: 3ms, application-code: 54ms)
+ GET /dashboard/billing/history?status= 200 in 72ms (next.js: 6ms, proxy.ts: 3ms, application-code: 63ms)
+ GET /dashboard/billing/history?status=unknown 200 in 56ms (next.js: 5ms, proxy.ts: 3ms, application-code: 49ms)
+ GET /dashboard/billing/history?status=pending&status=completed 200 in 62ms (next.js: 4ms, proxy.ts: 3ms, application-code: 55ms)
+ GET /dashboard/billing/history?status=pending 200 in 65ms (next.js: 7ms, proxy.ts: 3ms, application-code: 55ms)
+✓ Compiled in 54ms
+2026-11-10T10:11:02.848Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 223ms (next.js: 111ms, application-code: 113ms)
+ POST /api/auth/sign-in/email 200 in 85ms (next.js: 3ms, application-code: 82ms)
+ POST /api/auth/sign-in/email 200 in 92ms (next.js: 4ms, application-code: 87ms)
+2026-11-10T10:11:03.296Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:11:03.485Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T10:11:03.564Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 453ms (next.js: 165ms, proxy.ts: 125ms, application-code: 163ms)
+2026-11-10T10:11:03.693Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-pending/status 200 in 67ms (next.js: 55ms, application-code: 13ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-completed/status 200 in 16ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-cancelled/status 200 in 17ms (next.js: 2ms, application-code: 15ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-expired/status 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-b-pending/status 404 in 19ms (next.js: 2ms, application-code: 16ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-b-completed/status 404 in 17ms (next.js: 2ms, application-code: 15ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-b-cancelled/status 404 in 18ms (next.js: 2ms, application-code: 16ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-b-expired/status 404 in 10ms (next.js: 2ms, application-code: 8ms)
+2026-11-10T10:11:03.948Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history 200 in 90ms (next.js: 6ms, proxy.ts: 17ms, application-code: 68ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-pending/status 404 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-completed/status 404 in 11ms (next.js: 3ms, application-code: 8ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-cancelled/status 404 in 16ms (next.js: 3ms, application-code: 13ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-expired/status 404 in 17ms (next.js: 2ms, application-code: 15ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-b-pending/status 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-b-completed/status 200 in 16ms (next.js: 3ms, application-code: 12ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-b-cancelled/status 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-b-expired/status 200 in 18ms (next.js: 2ms, application-code: 15ms)
+ GET /api/orders/51d3cfaa-3a05-43e3-869d-fee4ab31e3c3-a-pending/status 307 in 14ms (next.js: 3ms, application-code: 11ms)
+ GET /dashboard/billing/history?status=completed 200 in 72ms (next.js: 5ms, proxy.ts: 3ms, application-code: 64ms)
+ GET /dashboard/billing/history?status= 200 in 78ms (next.js: 5ms, proxy.ts: 4ms, application-code: 69ms)
+2026-11-10T10:11:04.666Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /dashboard/billing/history?status=pending 200 in 59ms (next.js: 4ms, proxy.ts: 3ms, application-code: 52ms)
+ GET /dashboard/billing/history?status=completed 200 in 59ms (next.js: 5ms, proxy.ts: 3ms, application-code: 51ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 58ms (next.js: 4ms, proxy.ts: 3ms, application-code: 50ms)
+ GET /dashboard/billing/history?status=expired 200 in 62ms (next.js: 5ms, proxy.ts: 3ms, application-code: 55ms)
+ GET /dashboard/billing/history?status=pending 200 in 58ms (next.js: 5ms, proxy.ts: 3ms, application-code: 50ms)
+ GET /dashboard/billing/history?status=completed 200 in 65ms (next.js: 5ms, proxy.ts: 4ms, application-code: 56ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 65ms (next.js: 7ms, proxy.ts: 5ms, application-code: 53ms)
+ GET /dashboard/billing/history?status=expired 200 in 68ms (next.js: 4ms, proxy.ts: 3ms, application-code: 61ms)
+ GET /dashboard/billing/history 200 in 79ms (next.js: 4ms, proxy.ts: 3ms, application-code: 72ms)
+ GET /dashboard/billing/history?status= 200 in 105ms (next.js: 6ms, proxy.ts: 3ms, application-code: 97ms)
+ GET /dashboard/billing/history?status=unknown 200 in 59ms (next.js: 5ms, proxy.ts: 4ms, application-code: 51ms)
+ GET /dashboard/billing/history?status=pending&status=completed 200 in 59ms (next.js: 4ms, proxy.ts: 3ms, application-code: 52ms)
+ GET /dashboard/billing/history?status=pending 200 in 61ms (next.js: 4ms, proxy.ts: 3ms, application-code: 54ms)
+[?25h

@@ -1,0 +1,4 @@
+{"id":"preservation-standard-QR-mixed-case","pass":true}
+{"id":"acceptance-token-grammar","pass":false,"error":"Expected values to be strictly equal:\n\nnull !== 'AbC12345'\n"}
+{"id":"preservation-standard-payment-through-webhook","pass":true}
+{"id":"acceptance-embedded-payment-through-shared-processor","pass":false,"error":"Expected values to be strictly equal:\n+ actual - expected\n\n+ 'ignored'\n- 'completed'\n"}

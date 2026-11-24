@@ -1,0 +1,206 @@
+[
+  {
+    "kit": "smartkit",
+    "repeat": 1,
+    "variant": "baseline",
+    "confirm": {
+      "confirm_prompt": false,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": false,
+      "session_retained": false
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": false,
+      "session_retained": false
+    }
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 1,
+    "variant": "reference",
+    "confirm": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": true,
+      "session_retained": true
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": true,
+      "session_retained": true
+    }
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 1,
+    "variant": "fault",
+    "confirm": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": true,
+      "session_retained": false
+    }
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 2,
+    "variant": "baseline",
+    "confirm": {
+      "confirm_prompt": false,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": false,
+      "session_retained": false
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": false,
+      "session_retained": false
+    }
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 2,
+    "variant": "reference",
+    "confirm": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": true,
+      "session_retained": true
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": true,
+      "session_retained": true
+    }
+  },
+  {
+    "kit": "smartkit",
+    "repeat": 2,
+    "variant": "fault",
+    "confirm": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": true,
+      "session_retained": false
+    }
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 1,
+    "variant": "baseline",
+    "confirm": {
+      "confirm_prompt": false,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": false,
+      "session_retained": false
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": false,
+      "session_retained": false
+    }
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 1,
+    "variant": "reference",
+    "confirm": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": true,
+      "session_retained": true
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": true,
+      "session_retained": true
+    }
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 1,
+    "variant": "fault",
+    "confirm": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": true,
+      "session_retained": false
+    }
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 2,
+    "variant": "baseline",
+    "confirm": {
+      "confirm_prompt": false,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": false,
+      "session_retained": false
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": false,
+      "session_retained": false
+    }
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 2,
+    "variant": "reference",
+    "confirm": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": true,
+      "session_retained": true
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": true,
+      "session_retained": true
+    }
+  },
+  {
+    "kit": "nextjs-saas-starter",
+    "repeat": 2,
+    "variant": "fault",
+    "confirm": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel": {
+      "confirm_prompt": true,
+      "session_retained": false
+    },
+    "cancel-keyboard": {
+      "confirm_prompt": true,
+      "session_retained": false
+    }
+  }
+]

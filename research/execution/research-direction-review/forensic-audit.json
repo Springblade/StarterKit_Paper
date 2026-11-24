@@ -1,0 +1,54 @@
+{
+  "review_hashes": {
+    "reviewer-1.md": "afcb43f47da699eab12b58d556e3b27448c2f2379a537f8dae1546a22df8d604",
+    "reviewer-2.md": "a65ceecc2452579a83eaca505fe2d3a3ea4bf914d2c6807669a6a936a93a8aac",
+    "reviewer-3.md": "69716a48e9589b2ddde0d6c29c0ff3d265a9e79b7e7601c4b708423daac07b69"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "status": "passed",
+      "observation": "Immutable packet hash unchanged and 3 individual reports frozen before synthesis."
+    },
+    {
+      "id": "A2",
+      "status": "passed",
+      "observation": "Layout manifest contains 284 file records across 2 layouts, 47 moved modules. These are file counts, not agent observations."
+    },
+    {
+      "id": "A3",
+      "status": "passed",
+      "observation": "6 local behavioral stages, all exit 0; baseline/reference/restored-baseline in each layout. These are instrument stages, not main agent trials."
+    },
+    {
+      "id": "A4",
+      "status": "passed",
+      "observation": "Candidate audit has 6 unique IDs and 6 unique tasks, with 5 billing candidates and 1 admin candidate; historical status is unvalidated. One derivative development task does not make all candidates qualified."
+    },
+    {
+      "id": "A5",
+      "status": "passed",
+      "observation": "15 integration checks comprise 10 baseline plus 5 filter checks. Existing 14 unit/component checks are a different suite; neither denominator is agent task success."
+    },
+    {
+      "id": "A6",
+      "status": "provenance_gap",
+      "observation": "Proposal/protocol v0 retain historical not-yet-built statements; newer qualification reports supersede only bounded implementation status. Revision+baseline repairs+layout manifest required for paper provenance."
+    },
+    {
+      "id": "A7",
+      "status": "not_assessable",
+      "observation": "No main trial dataset, sample size, effect estimates, uncertainty intervals or inferential results are available."
+    },
+    {
+      "id": "A8",
+      "status": "unresolved_input_needed",
+      "observation": "API budget, target venue, author hours/deadline and independent human review availability are not specified."
+    },
+    {
+      "id": "A9",
+      "status": "provenance_gap",
+      "observation": "Primary papers were read in scoped passages; 3 public artifact landing pages/READMEs inspected, not complete code audits or reproductions. Mutable artifact README versions cannot establish exhaustive novelty."
+    }
+  ]
+}

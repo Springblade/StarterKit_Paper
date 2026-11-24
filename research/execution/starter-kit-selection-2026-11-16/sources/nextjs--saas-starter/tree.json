@@ -1,0 +1,92 @@
+{
+  "repo": "nextjs/saas-starter",
+  "checked_utc": "2026-11-16T08:31:08.829996+00:00",
+  "sha": "6e33e58b1e553a41fe22e6b941a7229a002de361",
+  "latest_commit_date": "2025-12-11T22:35:36Z",
+  "recent_commits": [
+    {
+      "sha": "6e33e58b1e553a41fe22e6b941a7229a002de361",
+      "date": "2025-12-11T22:35:36Z",
+      "message": "fix: upgrade Next.js to 15.6.0-canary.59 (CVE-2025-55182) (#235)"
+    },
+    {
+      "sha": "d42d42effa69288b39ce222921ddc9d68329fa4f",
+      "date": "2025-12-08T20:09:16Z",
+      "message": "Update Next in response to React2Shell (#232)"
+    },
+    {
+      "sha": "e0dc5d40ce26c01672557912b533d25e32957ad4",
+      "date": "2025-06-18T22:07:53Z",
+      "message": "fix: mutate instead of router.refresh (#164)"
+    },
+    {
+      "sha": "b4dc071413123cf23ed6d9a1059b143fdf83596b",
+      "date": "2025-06-11T15:29:31Z",
+      "message": "Refactor Radix UI imports to use unified package; remove individual component dependencies from package.json and pnpm-lock.yaml."
+    },
+    {
+      "sha": "be930693f2f830893f2902eecfed42b9a52f6aef",
+      "date": "2025-05-22T12:49:13Z",
+      "message": "Merge branch 'main' of github.com:nextjs/saas-starter"
+    }
+  ],
+  "tree_truncated": false,
+  "files": [
+    ".env.example",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "app/(dashboard)/dashboard/activity/loading.tsx",
+    "app/(dashboard)/dashboard/activity/page.tsx",
+    "app/(dashboard)/dashboard/general/page.tsx",
+    "app/(dashboard)/dashboard/layout.tsx",
+    "app/(dashboard)/dashboard/page.tsx",
+    "app/(dashboard)/dashboard/security/page.tsx",
+    "app/(dashboard)/layout.tsx",
+    "app/(dashboard)/page.tsx",
+    "app/(dashboard)/pricing/page.tsx",
+    "app/(dashboard)/pricing/submit-button.tsx",
+    "app/(dashboard)/terminal.tsx",
+    "app/(login)/actions.ts",
+    "app/(login)/login.tsx",
+    "app/(login)/sign-in/page.tsx",
+    "app/(login)/sign-up/page.tsx",
+    "app/api/stripe/checkout/route.ts",
+    "app/api/stripe/webhook/route.ts",
+    "app/api/team/route.ts",
+    "app/api/user/route.ts",
+    "app/favicon.ico",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/not-found.tsx",
+    "components.json",
+    "components/ui/avatar.tsx",
+    "components/ui/button.tsx",
+    "components/ui/card.tsx",
+    "components/ui/dropdown-menu.tsx",
+    "components/ui/input.tsx",
+    "components/ui/label.tsx",
+    "components/ui/radio-group.tsx",
+    "drizzle.config.ts",
+    "lib/auth/middleware.ts",
+    "lib/auth/session.ts",
+    "lib/db/drizzle.ts",
+    "lib/db/migrations/0000_soft_the_anarchist.sql",
+    "lib/db/migrations/meta/0000_snapshot.json",
+    "lib/db/migrations/meta/_journal.json",
+    "lib/db/queries.ts",
+    "lib/db/schema.ts",
+    "lib/db/seed.ts",
+    "lib/db/setup.ts",
+    "lib/payments/actions.ts",
+    "lib/payments/stripe.ts",
+    "lib/utils.ts",
+    "middleware.ts",
+    "next.config.ts",
+    "package.json",
+    "pnpm-lock.yaml",
+    "postcss.config.mjs",
+    "tsconfig.json"
+  ],
+  "test_files": []
+}

@@ -1,0 +1,57 @@
+Already up to date
+Done in 869ms using pnpm v11.7.0
+$ next build
+▲ Next.js 16.2.12 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 27.4s
+  Running TypeScript ...
+  Finished TypeScript in 30.3s ...
+  Collecting page data using 15 workers ...
+2026-11-16T02:48:20.598Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.603Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.640Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.671Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.680Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.683Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.696Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.709Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.724Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.735Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:20.742Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:21.882Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:22.006Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T02:48:22.031Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+  Generating static pages using 15 workers (0/14) ...
+2026-11-16T02:48:25.612Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+  Generating static pages using 15 workers (3/14) 
+  Generating static pages using 15 workers (6/14) 
+  Generating static pages using 15 workers (10/14) 
+✓ Generating static pages using 15 workers (14/14) in 4.8s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/auth/[...all]
+├ ƒ /api/cron/sepay-poll
+├ ƒ /api/orders/[orderId]/status
+├ ƒ /api/profile/display-name
+├ ƒ /api/sepay/webhook
+├ ƒ /auth/forgot-password
+├ ƒ /auth/reset-password
+├ ƒ /auth/sign-in
+├ ƒ /auth/sign-up
+├ ƒ /dashboard
+├ ƒ /dashboard/admin/users
+├ ƒ /dashboard/billing
+├ ƒ /dashboard/billing/history
+└ ƒ /dashboard/settings
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

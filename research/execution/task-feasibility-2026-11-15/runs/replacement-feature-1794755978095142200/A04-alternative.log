@@ -1,0 +1,5 @@
+{"id":"preservation-existing-short-password-login","pass":true}
+{"id":"acceptance-browser-minimums","pass":false,"error":"The expression evaluated to a falsy value:\n\n  assert.ok(await inputs.count()>0)\n"}
+{"id":"acceptance-registration-boundaries","pass":true}
+{"id":"acceptance-reset-boundaries-and-preservation-max128","pass":true}
+{"id":"preservation-invalid-token-no-write-and-identity","pass":true}

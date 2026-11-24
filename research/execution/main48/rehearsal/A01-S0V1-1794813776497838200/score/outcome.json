@@ -1,0 +1,171 @@
+{
+  "task": "A01",
+  "cell": "S0V1",
+  "completed": true,
+  "model_calls": 0,
+  "forbidden_dependency_changes": [],
+  "lockfile_changed": false,
+  "V1": {
+    "task": "DP03",
+    "completed": true,
+    "pass": true,
+    "browser": "Chromium / Playwright 1.58.2",
+    "elapsedSeconds": 4.165663577999999,
+    "results": [
+      {
+        "id": "VP-A1-existing-update-only-caller",
+        "pass": true,
+        "elapsedSeconds": 0.02374037800000008
+      },
+      {
+        "id": "VP-A2-protected-field-mass-assignment",
+        "pass": true,
+        "elapsedSeconds": 0.029252718000000073
+      },
+      {
+        "id": "VP-A2-anonymous-existing-write-denied",
+        "pass": true,
+        "elapsedSeconds": 0.011342343000000027
+      },
+      {
+        "id": "VP-A3-existing-update-and-settings-refresh",
+        "pass": true,
+        "elapsedSeconds": 1.9566913030000002
+      },
+      {
+        "id": "VP-A4-existing-display-name-is-text",
+        "pass": true,
+        "elapsedSeconds": 0.8518608759999997
+      },
+      {
+        "id": "VP-A5-settings-requires-authentication",
+        "pass": true,
+        "elapsedSeconds": 0.7290000059999998
+      },
+      {
+        "id": "VP-identity-and-order-preservation",
+        "pass": true,
+        "elapsedSeconds": 0.001182358000000022
+      },
+      {
+        "id": "fixture-cleanup",
+        "pass": true
+      }
+    ]
+  },
+  "E": {
+    "task": "DP03",
+    "completed": true,
+    "acceptance": true,
+    "preservation": true,
+    "jointSuccess": true,
+    "elapsedSeconds": 13.970913075,
+    "results": [
+      {
+        "id": "A-A1-labelled-form-submission-trim-and-refresh",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 1.629393751
+      },
+      {
+        "id": "A-A2-boundary-one",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 0.848705281
+      },
+      {
+        "id": "A-A2-boundary-eighty-unicode",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 0.8800413879999996
+      },
+      {
+        "id": "A-A3-server-rejects-empty",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 0.8524366019999998
+      },
+      {
+        "id": "A-A3-server-rejects-whitespace",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 0.8388102549999994
+      },
+      {
+        "id": "A-A3-server-rejects-81-bmp",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 0.8466798179999996
+      },
+      {
+        "id": "A-A3-server-rejects-81-unicode",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 0.8342412130000002
+      },
+      {
+        "id": "A-A4-own-target-and-protected-fields-through-actual-write",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 0.8758775160000005
+      },
+      {
+        "id": "A-A5-anonymous-new-write-denied",
+        "kind": "acceptance",
+        "pass": true,
+        "elapsedSeconds": 0.00836147600000004
+      },
+      {
+        "id": "A-P3-stored-name-safe-on-existing-settings",
+        "kind": "preservation",
+        "pass": true,
+        "elapsedSeconds": 0.7626897769999996
+      },
+      {
+        "id": "A-P4-identity-and-sign-in-preserved",
+        "kind": "preservation",
+        "pass": true,
+        "elapsedSeconds": 0.8201079250000003
+      },
+      {
+        "id": "A-P5-existing-settings-anonymous-denied",
+        "kind": "preservation",
+        "pass": true,
+        "elapsedSeconds": 0.7121612729999998
+      },
+      {
+        "id": "A-P6-existing-order-status-and-history-ownership",
+        "kind": "preservation",
+        "pass": true,
+        "elapsedSeconds": 3.454053141999999
+      },
+      {
+        "id": "P-orders-unchanged",
+        "kind": "preservation",
+        "pass": true,
+        "elapsedSeconds": 0.0016497469999994792
+      },
+      {
+        "id": "P-browser-no-uncaught-runtime-errors",
+        "kind": "preservation",
+        "pass": true,
+        "elapsedSeconds": 0.0009037159999988944
+      },
+      {
+        "id": "fixture-cleanup",
+        "kind": "instrument",
+        "pass": true
+      }
+    ]
+  },
+  "V0": {
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "check-types": 0,
+    "test:run": 0,
+    "build": 0
+  },
+  "V0_reused_from": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\ledger-A01-layered-reference-V30-E30-B1.json",
+  "assessable": true,
+  "jointSuccess": true
+}

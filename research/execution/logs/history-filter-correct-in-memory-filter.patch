@@ -1,0 +1,19 @@
+--- reference/page.tsx
++++ correct-in-memory-filter/page.tsx
+@@ -40,12 +40,14 @@
+   const status = STATUS_OPTIONS.find(option => option.value === requestedStatus)?.value;
+ 
+   // A status filter must always retain the ownership restriction.
+-  const userOrders = await db.query.orders.findMany({
+-    where: and(eq(orders.userId, userId), status ? eq(orders.status, status) : undefined),
++  const queriedOrders = await db.query.orders.findMany({
++    where: eq(orders.userId, userId),
+     with: { plan: true },
+     orderBy: [desc(orders.createdAt)],
+   });
+ 
++  const userOrders = queriedOrders.filter(order => !status || order.status === status);
++
+   return (
+     <div className="space-y-6">
+       <div>

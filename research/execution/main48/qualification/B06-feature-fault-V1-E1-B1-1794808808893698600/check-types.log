@@ -1,0 +1,6 @@
+Already up to date
+Done in 308ms using pnpm v11.7.0
+$ tsc --noEmit
+.next/dev/types/validator.ts(197,1): error TS1434: Unexpected keyword or identifier.
+.next/dev/types/validator.ts(200,1): error TS1128: Declaration or statement expected.
+[ELIFECYCLE] Command failed with exit code 2.

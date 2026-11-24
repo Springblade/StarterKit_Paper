@@ -1,0 +1,23 @@
+{
+  "layout": "feature",
+  "phase": "reference",
+  "task": "U03",
+  "model_calls": 0,
+  "started": "2026-11-15T09:45:48Z",
+  "runner_sha256": "52d2c14fc8ce05f9f5c02ba539637408a76c9da3971bdf1ba59eb8fc754562df",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "failed",
+  "db_volumes": [
+    "3969a8874f7ddc886e3d013a5fdd23fb2b02fe918270eecf076176849d5475df"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 320ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "probe_sha256": "39a8027c5594cdc1cf802e4660cc937751ec7b1e78afc1c0a816dcc63fe09b56",
+  "typecheck_exit": 0,
+  "probe_exit": 1,
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T09:46:28Z"
+}

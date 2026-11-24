@@ -1,0 +1,83 @@
+{
+  "task": "A04",
+  "layout": "feature",
+  "variant": "reference",
+  "binding": {
+    "package": "5f1472598751d75f4bb1345d0ef72003e6b88df38e2051f8baa4a8f446e24a4c",
+    "hidden": "42065c646e13d885be6394ddb7291936cf9400c8953759429050f0eb95757630",
+    "visible": "705ea9840aa3554e312f3c56364d3867e52a9c63679c91abe75ce605b8b2e0ae",
+    "runtime": "34255ad51c76cc88b341b5b4e23c669f7d4bfc053fb2b76b8fd17ddbb884d50e",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "13cbcdd727d302bfa5562a86e75a516f7aab2957ec4670070bdf9f48afea0718",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\A04-feature-reference-V1-E1-B1-1794757626517401100",
+  "visible": [
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "preservation-existing-short-password-login",
+          "pass": true
+        },
+        {
+          "id": "preservation-reset-maximum128",
+          "pass": true
+        },
+        {
+          "id": "preservation-invalid-token-no-write-and-identity",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "A04",
+      "completed": true,
+      "acceptance": true,
+      "preservation": true,
+      "jointSuccess": true,
+      "results": [
+        {
+          "id": "EA-old-short-credential-and-identity",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "EA-new-signup-boundaries-verification-no-autosignin",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-new-real-signup-form",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-new-reset-token-retention-on-short-and-single-use",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "EA-old-expired-reset-max-identity",
+          "kind": "preservation",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

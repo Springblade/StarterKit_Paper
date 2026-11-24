@@ -1,0 +1,18 @@
+const {createRequire}=require('node:module');const req=createRequire('/workspace/package.json');req('dotenv').config({path:'/workspace/.env',quiet:true});
+const {chromium}=require('/opt/behavior/node_modules/playwright');const {Pool}=req('pg');const assert=require('node:assert/strict');const {randomUUID}=require('node:crypto');
+async function main(){
+ assert.equal(new URL(process.env.DATABASE_URL).hostname,'pilot-db');const db=new Pool({connectionString:process.env.DATABASE_URL}),base='http://localhost:3107';const uid=randomUUID(),email=uid+'@local.invalid',old='Oldpass88',users=[],tokens=[],results=[];
+ const {hashPassword}=await import(req.resolve('better-auth/crypto'));const hash=await hashPassword(old);const browser=await chromium.launch({headless:true,args:['--no-sandbox']});const c=await browser.newContext();
+ async function check(id,fn){try{await fn();results.push({id,pass:true});}catch(e){results.push({id,pass:false,error:e.message});}console.log(JSON.stringify(results.at(-1)));}
+ const api=(p,data)=>c.request.post(base+'/api/auth/'+p,{headers:{Origin:base},data});
+ try{
+  await db.query('INSERT INTO "user"(id,name,email,email_verified,role) VALUES($1,\'Fixture\',$2,true,\'user\')',[uid,email]);await db.query('INSERT INTO account(id,user_id,account_id,provider_id,password) VALUES($1,$2,$2,\'credential\',$3)',[randomUUID(),uid,hash]);
+  await check('preservation-existing-short-password-login',async()=>{assert.equal((await api('sign-in/email',{email,password:old})).status(),200);});
+  await check('acceptance-browser-minimums',async()=>{const page=await c.newPage();for(const path of ['/auth/sign-up','/auth/reset-password?token=fixture']){await page.goto(base+path,{waitUntil:'networkidle'});const inputs=page.locator('input[type=password]');assert.ok(await inputs.count()>0);for(const input of await inputs.all())assert.equal(await input.getAttribute('minlength'),'12');}await page.close();});
+  await check('acceptance-registration-boundaries',async()=>{for(const n of [11,12,128,129]){const mail=randomUUID()+'@local.invalid';users.push(mail);const res=await api('sign-up/email',{name:'Fixture',email:mail,password:'p'.repeat(n)});assert.equal(res.ok(),n===12||n===128,'registration length '+n);}});
+  await check('acceptance-reset-boundaries-and-preservation-max128',async()=>{for(const n of [11,12,128,129]){const token=randomUUID();tokens.push(token);await db.query('INSERT INTO verification(id,identifier,value,expires_at) VALUES($1,$2,$3,now()+interval\'1 hour\')',[randomUUID(),'reset-password:'+token,uid]);const res=await api('reset-password',{token,newPassword:'p'.repeat(n)});assert.equal(res.ok(),n===12||n===128,'reset length '+n);}});
+  await check('preservation-invalid-token-no-write-and-identity',async()=>{const before=(await db.query('SELECT password FROM account WHERE user_id=$1',[uid])).rows;assert.ok(!(await api('reset-password',{token:randomUUID(),newPassword:'validlongpassword'})).ok());assert.deepEqual((await db.query('SELECT password FROM account WHERE user_id=$1',[uid])).rows,before);const u=(await db.query('SELECT name,email,role,email_verified FROM "user" WHERE id=$1',[uid])).rows[0];assert.deepEqual(u,{name:'Fixture',email,role:'user',email_verified:true});});
+ }finally{await browser.close();await db.query('DELETE FROM verification WHERE value=$1 OR identifier=ANY($2::text[])',[uid,tokens.map(t=>'reset-password:'+t)]);await db.query('DELETE FROM "user" WHERE id=$1 OR email=ANY($2::text[])',[uid,users]);await db.end();}
+ if(results.some(r=>!r.pass))process.exitCode=1;
+}
+main().catch(e=>{console.error(e.name+': '+e.message);process.exitCode=1;});

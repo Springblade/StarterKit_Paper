@@ -1,0 +1,158 @@
+[
+  {
+    "key": "gloaguen2026agents",
+    "url": "https://arxiv.org/html/2602.11988v3",
+    "characters": 71793,
+    "file": "gloaguen2026agents.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "zhu2026precedent",
+    "url": "https://arxiv.org/html/2610.38244v1",
+    "characters": 71860,
+    "file": "zhu2026precedent.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "dente2026constraint",
+    "url": "https://arxiv.org/html/2605.06445v2",
+    "characters": 81688,
+    "file": "dente2026constraint.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "patel2026codethread",
+    "url": "https://arxiv.org/html/2606.21804v2",
+    "characters": 66422,
+    "file": "patel2026codethread.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "zhao2026coverage",
+    "url": "https://arxiv.org/html/2607.22880v1",
+    "characters": 93535,
+    "file": "zhao2026coverage.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "jimenez2024swebench",
+    "url": "https://arxiv.org/html/2310.06770v3",
+    "characters": 156245,
+    "file": "jimenez2024swebench.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "yang2024sweagent",
+    "url": "https://arxiv.org/html/2405.15793v3",
+    "characters": 288478,
+    "file": "yang2024sweagent.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "xia2024agentless",
+    "url": "https://arxiv.org/html/2407.01489v2",
+    "characters": 97994,
+    "file": "xia2024agentless.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "deng2025swepro",
+    "url": "https://arxiv.org/html/2509.16941v2",
+    "characters": 60944,
+    "file": "deng2025swepro.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "liu2023evalplus",
+    "url": "https://arxiv.org/html/2305.01210v3",
+    "characters": 60341,
+    "file": "liu2023evalplus.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "shinn2023reflexion",
+    "url": "https://arxiv.org/html/2303.11366v4",
+    "characters": 59086,
+    "file": "shinn2023reflexion.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "wang2026featurearc",
+    "url": "https://arxiv.org/html/2610.37434v1",
+    "characters": 67269,
+    "file": "wang2026featurearc.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "mehta2026verification",
+    "url": "https://arxiv.org/pdf/2608.28795v2",
+    "characters": 184895,
+    "file": "mehta2026verification.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "borg2026echoes",
+    "status": "failed",
+    "errors": [
+      "Content too short for full-text review"
+    ]
+  },
+  {
+    "key": "parnas1972modules",
+    "status": "failed",
+    "errors": [
+      "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1028)>"
+    ]
+  },
+  {
+    "key": "barr2015oracle",
+    "url": "https://discovery.ucl.ac.uk/id/eprint/1471263/1/06963470.pdf",
+    "characters": 160272,
+    "file": "barr2015oracle.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "inozemtseva2014coverage",
+    "status": "failed",
+    "errors": [
+      "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)>"
+    ]
+  },
+  {
+    "key": "just2014mutants",
+    "url": "https://homes.cs.washington.edu/~mernst/pubs/mutation-effectiveness-fse2014.pdf",
+    "characters": 133485,
+    "file": "just2014mutants.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  },
+  {
+    "key": "arcuri2014statistics",
+    "status": "failed",
+    "errors": [
+      "HTTP Error 403: Forbidden"
+    ]
+  },
+  {
+    "key": "liu2024lost",
+    "url": "https://aclanthology.org/2024.tacl-1.9.pdf",
+    "characters": 76776,
+    "file": "liu2024lost.txt",
+    "status": "retrieved",
+    "review_status": "not automatically reviewed"
+  }
+]

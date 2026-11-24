@@ -1,0 +1,24 @@
+{
+  "checked": "2026-11-16",
+  "sources": [
+    {
+      "url": "https://www2.sigsoft.org/EmpiricalStandards/docs/standards",
+      "sections_read": [
+        "General",
+        "Benchmarking (of Software Systems)",
+        "Experiments (with Human Participants)",
+        "Case Study and Ethnography"
+      ],
+      "finding": "Use general and software benchmarking principles, not blanket human-subject experiment compliance; replication and negative results not inherently invalid; contribution and inferential scope required."
+    },
+    {
+      "url": "https://online.ucpress.edu/collabra/article/8/1/33267/120491/Sample-Size-Justification",
+      "sections_read": [
+        "Resource Constraints",
+        "The Value of Information",
+        "Plot a Sensitivity Power Analysis"
+      ],
+      "finding": "Resource bounds may justify sample size but informativeness depends on inferential goals; fixedN sensitivity scenarios needed; no effect assumption validated by helper code."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+Already up to date
+Done in 88ms using pnpm v11.7.0
+▲ Next.js 16.2.12
+- Local:         http://localhost:3107
+- Network:       http://172.25.0.1:3107
+✓ Ready in 248ms
+2026-11-10T09:04:35.858Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T09:04:53.173Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T09:04:53.214Z ERROR [Better Auth]: Invalid origin: http://localhost:3107
+2026-11-10T09:05:05.660Z ERROR [Better Auth]: Error Error: Failed query: select "id", "name", "email", "email_verified", "image", "created_at", "updated_at", "role", "banned", "ban_reason", "ban_expires" from "user" where "user"."email" = $1
+params: user@smartkit.local
+    at h.queryWithCache (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:40334)
+    at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:43883)
+    at async Object.findOne (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:93:60328)
+    at async Object.findOne (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\0wp7_@better-auth_core_dist_1tzfuzq._.js:1:34573)
+    at async Object.findUserByEmail (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:113:22859)
+    at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:462:37418)
+    at async d (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:93:4073)
+    at async u (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:64:49128)
+    at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:462:24423) {
+  query: 'select "id", "name", "email", "email_verified", "image", "created_at", "updated_at", "role", "banned", "ban_reason", "ban_expires" from "user" where "user"."email" = $1',
+  params: [ 'user@smartkit.local' ],
+  [cause]: Error: The server does not support SSL connections
+      at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:44098)
+      at async h.queryWithCache (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:40309)
+      at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:43883)
+      at async Object.findOne (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:93:60328)
+      at async Object.findOne (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\0wp7_@better-auth_core_dist_1tzfuzq._.js:1:34573)
+      at async Object.findUserByEmail (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:113:22859)
+      at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:462:37418)
+      at async d (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:93:4073)
+}
+# SERVER_ERROR:  Error: Failed query: select "id", "name", "email", "email_verified", "image", "created_at", "updated_at", "role", "banned", "ban_reason", "ban_expires" from "user" where "user"."email" = $1
+params: user@smartkit.local
+    at h.queryWithCache (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:40334)
+    at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:43883)
+    at async Object.findOne (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:93:60328)
+    at async Object.findOne (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\0wp7_@better-auth_core_dist_1tzfuzq._.js:1:34573)
+    at async Object.findUserByEmail (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:113:22859)
+    at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:462:37418)
+    at async d (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:93:4073)
+    at async u (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:64:49128)
+    at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:462:24423) {
+  query: 'select "id", "name", "email", "email_verified", "image", "created_at", "updated_at", "role", "banned", "ban_reason", "ban_expires" from "user" where "user"."email" = $1',
+  params: [ 'user@smartkit.local' ],
+  [cause]: Error: The server does not support SSL connections
+      at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:44098)
+      at async h.queryWithCache (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:40309)
+      at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:100:43883)
+      at async Object.findOne (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:93:60328)
+      at async Object.findOne (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\0wp7_@better-auth_core_dist_1tzfuzq._.js:1:34573)
+      at async Object.findUserByEmail (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:113:22859)
+      at async (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:462:37418)
+      at async d (C:\Users\wayad\Documents\Paper\research\SmartKit\.next\server\chunks\[root-of-the-server]__1a5t_1n._.js:93:4073)
+}

@@ -1,0 +1,9 @@
+{
+  "no_host_mounts": true,
+  "no_docker_socket": true,
+  "private_pid_namespace": true,
+  "fresh_single_commit": true,
+  "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+  "network": "smartkit-mainqual-290371906800-net",
+  "dev_bundler": "turbopack"
+}

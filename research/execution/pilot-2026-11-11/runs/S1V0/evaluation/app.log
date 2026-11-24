@@ -1,0 +1,54 @@
+Already up to date
+Done in 430ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.18.0.3:3107
+- Environments: .env
+✓ Ready in 294ms
+
+ GET / 200 in 1571ms (next.js: 1413ms, application-code: 158ms)
+2026-11-11T04:22:00.948Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-11T04:22:01.503Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 1949ms (next.js: 1816ms, application-code: 133ms)
+ POST /api/auth/sign-in/email 200 in 86ms (next.js: 8ms, application-code: 79ms)
+ POST /api/auth/sign-in/email 200 in 79ms (next.js: 2ms, application-code: 77ms)
+2026-11-11T04:22:01.997Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-11T04:22:02.421Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-11T04:22:03.718Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-11T04:22:03.788Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 2.5s (next.js: 1661ms, proxy.ts: 176ms, application-code: 692ms)
+ GET /dashboard/billing/history?status=pending 200 in 77ms (next.js: 7ms, proxy.ts: 9ms, application-code: 61ms)
+ GET /dashboard/billing/history?status=pending 200 in 77ms (next.js: 5ms, proxy.ts: 10ms, application-code: 62ms)
+ GET /dashboard/billing/history?status=completed 200 in 76ms (next.js: 3ms, proxy.ts: 4ms, application-code: 68ms)
+ GET /dashboard/billing/history?status=completed 200 in 49ms (next.js: 1855µs, proxy.ts: 3ms, application-code: 44ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 54ms (next.js: 1782µs, proxy.ts: 3ms, application-code: 50ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 51ms (next.js: 2ms, proxy.ts: 2ms, application-code: 47ms)
+ GET /dashboard/billing/history?status=expired 200 in 60ms (next.js: 4ms, proxy.ts: 4ms, application-code: 52ms)
+ GET /dashboard/billing/history?status=expired 200 in 50ms (next.js: 3ms, proxy.ts: 4ms, application-code: 43ms)
+ GET /dashboard/billing/history 200 in 45ms (next.js: 2ms, proxy.ts: 4ms, application-code: 39ms)
+ GET /dashboard/billing/history?status=pending 200 in 48ms (next.js: 2ms, proxy.ts: 5ms, application-code: 41ms)
+ GET /dashboard/billing/history?status=pending 200 in 55ms (next.js: 3ms, proxy.ts: 3ms, application-code: 49ms)
+ GET /dashboard/billing/history?status=completed 200 in 44ms (next.js: 1738µs, proxy.ts: 2ms, application-code: 40ms)
+ GET /dashboard/billing/history?status=completed 200 in 52ms (next.js: 1610µs, proxy.ts: 4ms, application-code: 46ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 44ms (next.js: 1839µs, proxy.ts: 3ms, application-code: 39ms)
+ GET /dashboard/billing/history?status=cancelled 200 in 59ms (next.js: 1587µs, proxy.ts: 2ms, application-code: 55ms)
+ GET /dashboard/billing/history?status=expired 200 in 56ms (next.js: 3ms, proxy.ts: 5ms, application-code: 48ms)
+ GET /dashboard/billing/history?status=expired 200 in 51ms (next.js: 2ms, proxy.ts: 3ms, application-code: 46ms)
+ GET /dashboard/billing/history?status=completed 200 in 48ms (next.js: 2ms, proxy.ts: 3ms, application-code: 43ms)
+ GET /dashboard/billing/history?status= 200 in 53ms (next.js: 1950µs, proxy.ts: 2ms, application-code: 49ms)
+ GET /dashboard/billing/history?status= 200 in 63ms (next.js: 11ms, proxy.ts: 3ms, application-code: 49ms)
+ GET /dashboard/billing/history?status=PENDING 200 in 52ms (next.js: 2ms, proxy.ts: 2ms, application-code: 48ms)
+ GET /dashboard/billing/history?status=__proto__ 200 in 50ms (next.js: 2ms, proxy.ts: 3ms, application-code: 44ms)
+ GET /dashboard/billing/history?status=completed&status=completed 200 in 47ms (next.js: 1923µs, proxy.ts: 4ms, application-code: 41ms)
+ GET /dashboard/billing/history?status=expired&status=pending 200 in 59ms (next.js: 3ms, proxy.ts: 15ms, application-code: 42ms)
+ GET /dashboard/billing/history?status=pending 200 in 43ms (next.js: 2ms, proxy.ts: 3ms, application-code: 38ms)
+ GET /dashboard/billing/history?status=pending 200 in 40ms (next.js: 1901µs, proxy.ts: 2ms, application-code: 36ms)
+2026-11-11T04:22:07.587Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-11T04:22:07.602Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/orders/a55b4799-9546-4bf1-8293-52952e3a4250/status 200 in 1251ms (next.js: 1237ms, application-code: 15ms)
+ GET /api/orders/20468838-a04c-4df5-a2fe-d9311a651149/status 200 in 15ms (next.js: 7ms, application-code: 8ms)
+ GET /api/orders/de91a3d2-7c6b-448f-96f0-5291cbe60630/status 200 in 8ms (next.js: 1804µs, application-code: 7ms)
+ GET /api/orders/960f97aa-728f-4b97-a478-2182f379f05e/status 404 in 12ms (next.js: 1556µs, application-code: 10ms)
+ GET /api/orders/8aec5583-9b61-4464-b045-cce5d8e3c404/status 404 in 9ms (next.js: 1836µs, application-code: 7ms)
+ GET /api/orders/a4dabd70-248e-4366-b134-aa82b3942d2b/status 404 in 8ms (next.js: 1440µs, application-code: 7ms)
+ GET /api/orders/a55b4799-9546-4bf1-8293-52952e3a4250/status 307 in 7ms (next.js: 1554µs, application-code: 5ms)

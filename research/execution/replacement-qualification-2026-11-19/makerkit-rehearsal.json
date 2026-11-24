@@ -1,0 +1,36 @@
+[
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "profile",
+    "variant": "baseline",
+    "basic": true,
+    "observed": {
+      "stored_normalized": false,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true,
+      "patch_sha256": null,
+      "public_package_checks": true,
+      "alternative": false
+    }
+  },
+  {
+    "layout": 1,
+    "repeat": 1,
+    "task": "profile",
+    "variant": "reference",
+    "basic": true,
+    "observed": {
+      "stored_normalized": true,
+      "visible_legacy_name_preserved": true,
+      "heldout_legacy_name_preserved": true,
+      "patch_sha256": {
+        "packages/features/accounts/src/hooks/use-update-account.ts": "bad683df145940099ebaead97045ffeba3a1932b891d4983a226306a7774af53",
+        "packages/features/accounts/src/components/personal-account-dropdown.tsx": "e501f31f9f1394afacafca0ec19b339cf797ec4c405f96811effda10e20585a8",
+        "packages/features/auth/src/account/password-sign-in-form.tsx": "95085208acb70b76c12e86a91696e08e8acd9a76e2360c1963edf290035befcf"
+      },
+      "public_package_checks": true,
+      "alternative": true
+    }
+  }
+]

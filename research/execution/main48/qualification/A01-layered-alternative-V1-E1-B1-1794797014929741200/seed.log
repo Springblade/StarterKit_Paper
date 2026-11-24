@@ -1,0 +1,14 @@
+Already up to date
+Done in 356ms using pnpm v11.7.0
+$ tsx scripts/seed.ts
+
+Seeding SmartKit dev data...
+
+✓ Plans: 3 created, 0 already existed
+  ✓ created admin@smartkit.local (role=admin)
+  ✓ created user@smartkit.local (role=user)
+
+Done. Test accounts:
+  admin | admin@smartkit.local         | Admin@123456
+  user  | user@smartkit.local          | User@123456
+

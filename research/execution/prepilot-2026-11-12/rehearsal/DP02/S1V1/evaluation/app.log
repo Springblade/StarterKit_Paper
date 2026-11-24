@@ -1,0 +1,43 @@
+Already up to date
+Done in 328ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (webpack)
+- Local:         http://localhost:3107
+- Network:       http://172.19.0.3:3107
+- Environments: .env
+✓ Ready in 229ms
+
+ GET / 200 in 3.0s (next.js: 2.9s, application-code: 114ms)
+○ Compiling /api/auth/[...all] ...
+2026-11-12T09:33:54.737Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-12T09:33:55.246Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 4.7s (next.js: 4.5s, application-code: 227ms)
+ POST /api/auth/sign-in/email 200 in 111ms (next.js: 12ms, application-code: 99ms)
+ POST /api/auth/sign-in/email 200 in 76ms (next.js: 3ms, application-code: 73ms)
+2026-11-12T09:33:56.098Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+○ Compiling proxy ...
+2026-11-12T09:34:00.617Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-12T09:34:01.701Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-12T09:34:01.768Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/admin/users?role=admin 307 in 1642ms (next.js: 942ms, proxy.ts: 416ms, application-code: 285ms)
+2026-11-12T09:34:02.500Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-12T09:34:02.564Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+2026-11-12T09:34:02.736Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/sign-in 307 in 929ms (next.js: 550ms, application-code: 379ms)
+2026-11-12T09:34:03.253Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-12T09:34:03.275Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard 200 in 719ms (next.js: 465ms, proxy.ts: 159ms, application-code: 95ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users?role=admin 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET /dashboard/admin/users 200 in 94ms (next.js: 14ms, proxy.ts: 4ms, application-code: 77ms)
+ GET /dashboard/admin/users?role=user 200 in 50ms (next.js: 1450µs, proxy.ts: 3ms, application-code: 45ms)
+ GET /dashboard/admin/users?role=admin 200 in 47ms (next.js: 1342µs, proxy.ts: 3ms, application-code: 42ms)
+ GET /dashboard/admin/users 200 in 53ms (next.js: 1514µs, proxy.ts: 3ms, application-code: 49ms)
+ GET /dashboard/admin/users?role=user 200 in 42ms (next.js: 1351µs, proxy.ts: 3ms, application-code: 38ms)
+ GET /dashboard/admin/users?role=user 200 in 42ms (next.js: 1499µs, proxy.ts: 3ms, application-code: 37ms)
+ GET /dashboard/admin/users?role= 200 in 43ms (next.js: 1474µs, proxy.ts: 3ms, application-code: 38ms)
+ GET /dashboard/admin/users?role=ADMIN 200 in 45ms (next.js: 1384µs, proxy.ts: 3ms, application-code: 40ms)
+ GET /dashboard/admin/users?role=invalid 200 in 41ms (next.js: 1447µs, proxy.ts: 3ms, application-code: 37ms)
+ GET /dashboard/admin/users?role=admin&role=user 200 in 40ms (next.js: 1287µs, proxy.ts: 3ms, application-code: 36ms)
+ GET /dashboard/admin/users?role=user&role=user 200 in 44ms (next.js: 1696µs, proxy.ts: 3ms, application-code: 40ms)
+ GET /dashboard/admin/users?role=user 200 in 46ms (next.js: 1420µs, proxy.ts: 3ms, application-code: 41ms)
+ GET /dashboard/admin/users 200 in 43ms (next.js: 1426µs, proxy.ts: 3ms, application-code: 39ms)
+ GET /dashboard/admin/users?role=admin 200 in 37ms (next.js: 1284µs, proxy.ts: 3ms, application-code: 33ms)

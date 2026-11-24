@@ -1,0 +1,1104 @@
+{
+  "jobs": {
+    "DP02/feature/baseline": {
+      "task": "DP02",
+      "layout": "feature",
+      "variant": "baseline",
+      "visible": [
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 7.938112068000001,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 4.712249261
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.9528382190000002
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7204090809999998
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0019027739999992264
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.525307052,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.5670183830000002
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7727687850000002
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7501157370000001
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0014603210000000218
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.4716163229999997,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.553696585
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.778083275
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.710232755
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0015886470000000372
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.4906470219999997,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.563604264
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7536552609999999
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7126527410000003
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0014085500000001047
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.511359996,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.5532166510000003
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7816103480000002
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7168687319999999
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0017409229999998388
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.484387527,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.555636756
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.761402419
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.711143415
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0015173460000000886
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.505234407,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.5940530059999996
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7665057829999996
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7198492809999998
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.001618586999999934
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.5039951339999997,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.5705666660000002
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.767138164
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7133631399999999
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0015467710000002625
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.50857819,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.545984872
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7581422980000002
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.764086475
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0014061409999999342
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.474120472,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.5503393790000002
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7550625710000004
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7235687419999999
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.002779712000000018
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.500541831,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.577558617
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7627904820000003
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7218390220000002
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0021535140000000863
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.4786439799999997,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.544703244
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7549254460000002
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7133277490000001
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0021132779999998093
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.482885276,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.569137459
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7536167769999997
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7301773429999998
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0015763349999997445
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.462450554,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.540195468
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7569334049999997
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7262080689999998
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0014801240000001598
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.478132984,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.565602014
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.765300945
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7095739010000002
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.00152571399999988
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.525932757,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.5692155879999998
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7579897340000002
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.7207063229999999
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0016441420000001016
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.5238159180000004,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.5495354509999997
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7576564229999999
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.714053738
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.002878616999999849
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.586433542,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.546235613
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.762656129
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.725167023
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0014770360000002257
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.65768867,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.5933778120000002
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.7607289610000002
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.71620739
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0017231050000000323
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "pass": true,
+          "browser": "Chromium / Playwright 1.58.2",
+          "elapsedSeconds": 3.47109038,
+          "results": [
+            {
+              "id": "VP-U1-admin-only-direct-route",
+              "pass": true,
+              "elapsedSeconds": 1.556504525
+            },
+            {
+              "id": "VP-U2-unfiltered-rows-counts-order",
+              "pass": true,
+              "elapsedSeconds": 0.763500689
+            },
+            {
+              "id": "VP-U3-no-session-token-disclosure",
+              "pass": true,
+              "elapsedSeconds": 0.749868046
+            },
+            {
+              "id": "VP-identity-and-order-preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0014413970000000517
+            },
+            {
+              "id": "fixture-cleanup",
+              "pass": true
+            }
+          ],
+          "check_sha256": "ee4cb144563b7f7a657dcf603d5b97027762fd4acc9fd640251b1a2b416d7329"
+        }
+      ],
+      "final": [
+        {
+          "task": "DP02",
+          "completed": true,
+          "acceptance": false,
+          "preservation": true,
+          "jointSuccess": false,
+          "elapsedSeconds": 11.824118395,
+          "results": [
+            {
+              "id": "U-P1-direct-route-non-admin-and-anonymous",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 1.558176543
+            },
+            {
+              "id": "U-A-role-all",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.7336390510000002
+            },
+            {
+              "id": "U-A-role-user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.7987270470000003
+            },
+            {
+              "id": "U-A-role-admin",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.7347190070000001
+            },
+            {
+              "id": "U-A-native-get-control-submit-and-reload",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:145:16",
+              "elapsedSeconds": 0.7349585589999997
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7427444880000003
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=ADMIN",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7453319979999996
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=invalid",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7857605700000003
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=admin&role=user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.8703212820000008
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=user&role=user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 1.0023494600000014
+            },
+            {
+              "id": "U-A-empty-selection-keeps-controls-and-zero-total",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:170:18",
+              "elapsedSeconds": 0.8782588160000014
+            },
+            {
+              "id": "U-P2-unfiltered-session-aggregates-and-date-order",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.8869308140000012
+            },
+            {
+              "id": "U-P3-no-token-in-admin-output",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.752846293999999
+            },
+            {
+              "id": "U-P4-read-only-directory",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.008214167999998608
+            },
+            {
+              "id": "P-orders-unchanged",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0015494199999993726
+            },
+            {
+              "id": "P-browser-no-uncaught-runtime-errors",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 3.8567999999941095e-05
+            },
+            {
+              "id": "fixture-cleanup",
+              "kind": "instrument",
+              "pass": true
+            }
+          ],
+          "check_sha256": "04ccddd2c1da65878e7a59d201824a76bfcf0312813e25670a240efe9ca3a561"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "acceptance": false,
+          "preservation": true,
+          "jointSuccess": false,
+          "elapsedSeconds": 11.354773142,
+          "results": [
+            {
+              "id": "U-P1-direct-route-non-admin-and-anonymous",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 1.545702711
+            },
+            {
+              "id": "U-A-role-all",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.732563565
+            },
+            {
+              "id": "U-A-role-user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.7737962590000002
+            },
+            {
+              "id": "U-A-role-admin",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.7365519220000005
+            },
+            {
+              "id": "U-A-native-get-control-submit-and-reload",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:145:16",
+              "elapsedSeconds": 0.7454081429999997
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7379037310000003
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=ADMIN",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7246863299999995
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=invalid",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7576090509999994
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=admin&role=user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.738218969999999
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=user&role=user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7303186269999987
+            },
+            {
+              "id": "U-A-empty-selection-keeps-controls-and-zero-total",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:170:18",
+              "elapsedSeconds": 0.8386424589999988
+            },
+            {
+              "id": "U-P2-unfiltered-session-aggregates-and-date-order",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.9198120139999992
+            },
+            {
+              "id": "U-P3-no-token-in-admin-output",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.7595437590000002
+            },
+            {
+              "id": "U-P4-read-only-directory",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0077418710000001735
+            },
+            {
+              "id": "P-orders-unchanged",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0014740249999995285
+            },
+            {
+              "id": "P-browser-no-uncaught-runtime-errors",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 3.977099999974598e-05
+            },
+            {
+              "id": "fixture-cleanup",
+              "kind": "instrument",
+              "pass": true
+            }
+          ],
+          "check_sha256": "04ccddd2c1da65878e7a59d201824a76bfcf0312813e25670a240efe9ca3a561"
+        },
+        {
+          "task": "DP02",
+          "completed": true,
+          "acceptance": false,
+          "preservation": true,
+          "jointSuccess": false,
+          "elapsedSeconds": 11.348961214,
+          "results": [
+            {
+              "id": "U-P1-direct-route-non-admin-and-anonymous",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 1.545028301
+            },
+            {
+              "id": "U-A-role-all",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.7453922769999999
+            },
+            {
+              "id": "U-A-role-user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.808489164
+            },
+            {
+              "id": "U-A-role-admin",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:133:18",
+              "elapsedSeconds": 0.7226443650000005
+            },
+            {
+              "id": "U-A-native-get-control-submit-and-reload",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:145:16",
+              "elapsedSeconds": 0.7714190980000003
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.737125924
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=ADMIN",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7315547200000001
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=invalid",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7444397410000001
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=admin&role=user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7659795979999999
+            },
+            {
+              "id": "U-A-invalid-or-repeated-?role=user&role=user",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:161:18",
+              "elapsedSeconds": 0.7344985590000015
+            },
+            {
+              "id": "U-A-empty-selection-keeps-controls-and-zero-total",
+              "kind": "acceptance",
+              "pass": false,
+              "errorClass": "AssertionError",
+              "location": "at /evaluator/final-check.cjs:170:18",
+              "elapsedSeconds": 0.7517702639999989
+            },
+            {
+              "id": "U-P2-unfiltered-session-aggregates-and-date-order",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.9184844520000006
+            },
+            {
+              "id": "U-P3-no-token-in-admin-output",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.7508808630000003
+            },
+            {
+              "id": "U-P4-read-only-directory",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.008776417000000947
+            },
+            {
+              "id": "P-orders-unchanged",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 0.0015149359999995795
+            },
+            {
+              "id": "P-browser-no-uncaught-runtime-errors",
+              "kind": "preservation",
+              "pass": true,
+              "elapsedSeconds": 3.747099999964121e-05
+            },
+            {
+              "id": "fixture-cleanup",
+              "kind": "instrument",
+              "pass": true
+            }
+          ],
+          "check_sha256": "04ccddd2c1da65878e7a59d201824a76bfcf0312813e25670a240efe9ca3a561"
+        }
+      ],
+      "basic": {
+        "check-types": 0,
+        "test:run": 0,
+        "build": 0,
+        "test:billing": 0,
+        "test:sepay-qr-url": 0
+      },
+      "instrument_version": "prepilot-v1",
+      "started": "2026-11-12T06:15:22Z",
+      "validated": true
+    }
+  },
+  "status": "running",
+  "versions": {
+    "visible": "81c16b966819d9aaa2628647639f404bc2af1f0e207c82efd52f2b887bc526be",
+    "final": "04ccddd2c1da65878e7a59d201824a76bfcf0312813e25670a240efe9ca3a561"
+  }
+}

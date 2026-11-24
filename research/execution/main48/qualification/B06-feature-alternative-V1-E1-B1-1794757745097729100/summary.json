@@ -1,0 +1,35 @@
+{
+  "task": "B06",
+  "layout": "feature",
+  "variant": "alternative",
+  "binding": {
+    "package": "9b0ac8f48d44cac85dde521e83a145fd9dad39ab540c7f9aa5ed6d7613e21260",
+    "hidden": "44488a5f17bdb28922c91c7143518873a708c013f6a39c42b58375682d160151",
+    "visible": "4ee31a8a34d125a79a06bfc542fc342badf8d0d9d53bb7efc8b82dc9a0578e8e",
+    "runtime": "34255ad51c76cc88b341b5b4e23c669f7d4bfc053fb2b76b8fd17ddbb884d50e",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "740353e91ca6712fe2ba132e922190056926b97198901c9cd84077fb30b7fbf8",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\B06-feature-alternative-V1-E1-B1-1794757745097729100",
+  "visible": [
+    {
+      "completed": true,
+      "pass": false,
+      "results": [
+        {
+          "id": "VP-standard-QR-payment-case-live-audit-retry",
+          "pass": false,
+          "errorClass": "AssertionError"
+        }
+      ]
+    }
+  ],
+  "hidden": [],
+  "basic": {},
+  "model_calls": 0,
+  "passed": false,
+  "cleanup_volumes_removed": true
+}

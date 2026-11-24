@@ -1,0 +1,42 @@
+{
+  "completed": true,
+  "runtime": "real HTTP authentication and PostgreSQL; no auth/cache mocks",
+  "baselineModified": false,
+  "browserInteractionTested": false,
+  "immediateInvalidationPass": false,
+  "observations": [
+    {
+      "check": "list-sessions-owner-isolation",
+      "pass": true
+    },
+    {
+      "check": "foreign-session-not-revoked",
+      "pass": true,
+      "responseStatus": 200
+    },
+    {
+      "check": "revoked-session-deleted-from-real-database",
+      "pass": true
+    },
+    {
+      "check": "current-and-foreign-protected-access-preserved",
+      "pass": true
+    },
+    {
+      "check": "immediate-next-protected-request-with-real-cached-cookies",
+      "requirementPass": false,
+      "nextProtectedRequest": {
+        "status": 200,
+        "redirectedToSignIn": false,
+        "renderedProfile": true
+      },
+      "cachedLookupStillAuthenticated": true,
+      "authoritativeLookupRejects": true,
+      "withoutSessionDataCookie": {
+        "status": 307,
+        "redirectedToSignIn": true,
+        "renderedProfile": false
+      }
+    }
+  ]
+}

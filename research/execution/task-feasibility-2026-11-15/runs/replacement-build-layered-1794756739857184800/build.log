@@ -1,0 +1,55 @@
+Already up to date
+Done in 462ms using pnpm v11.7.0
+$ next build
+▲ Next.js 16.2.12 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.9s
+  Running TypeScript ...
+  Finished TypeScript in 4.9s ...
+  Collecting page data using 15 workers ...
+2026-11-15T15:32:48.480Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.491Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.492Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.493Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.493Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.498Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.511Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.515Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.519Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.520Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.533Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.534Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-15T15:32:48.546Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+  Generating static pages using 15 workers (0/13) ...
+2026-11-15T15:32:48.843Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+  Generating static pages using 15 workers (3/13) 
+  Generating static pages using 15 workers (6/13) 
+  Generating static pages using 15 workers (9/13) 
+✓ Generating static pages using 15 workers (13/13) in 422ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/auth/[...all]
+├ ƒ /api/cron/sepay-poll
+├ ƒ /api/orders/[orderId]/status
+├ ƒ /api/sepay/webhook
+├ ƒ /auth/forgot-password
+├ ƒ /auth/reset-password
+├ ƒ /auth/sign-in
+├ ƒ /auth/sign-up
+├ ƒ /dashboard
+├ ƒ /dashboard/admin/users
+├ ƒ /dashboard/billing
+├ ƒ /dashboard/billing/history
+└ ƒ /dashboard/settings
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

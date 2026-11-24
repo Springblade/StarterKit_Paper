@@ -1,0 +1,153 @@
+{
+  "results": [
+    {
+      "name": "unfiltered-own-order-and-information-0",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "subset-0-pending",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "no-foreign-data-0-pending",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "subset-0-completed",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "no-foreign-data-0-completed",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "subset-0-cancelled",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "no-foreign-data-0-cancelled",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "subset-0-expired",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "no-foreign-data-0-expired",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "unfiltered-own-order-and-information-1",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "subset-1-pending",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "no-foreign-data-1-pending",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "subset-1-completed",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "no-foreign-data-1-completed",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "subset-1-cancelled",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "no-foreign-data-1-cancelled",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "subset-1-expired",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "no-foreign-data-1-expired",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "labelled-get-dropdown-submit-and-reset",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "fallback-?status=",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "fallback-?status=PENDING",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "fallback-?status=__proto__",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "fallback-?status=completed&status=completed",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "fallback-?status=expired&status=pending",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "empty-filter-with-controls-1",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "empty-filter-with-controls-2",
+      "kind": "acceptance",
+      "pass": true
+    },
+    {
+      "name": "status-endpoint-owner-and-foreign-order",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "anonymous-filter-and-status-denied",
+      "kind": "preservation",
+      "pass": true
+    },
+    {
+      "name": "filter-requests-do-not-mutate-orders",
+      "kind": "preservation",
+      "pass": true
+    }
+  ],
+  "acceptance": true,
+  "preservation": true,
+  "evaluator_completed": true,
+  "joint_success": true
+}

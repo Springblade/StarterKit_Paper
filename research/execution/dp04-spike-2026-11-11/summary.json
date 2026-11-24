@@ -1,0 +1,101 @@
+{
+  "purpose": "DP04 feasibility spike; no coding-agent invocation",
+  "script_sha256": "b6746b34cb64b5cff58b7ee7a103ead48f871d03618a84c255d4dd842e5deff1",
+  "baseline_changed": false,
+  "records": [
+    {
+      "layout": "feature",
+      "cell_source": "S1V0",
+      "head": "721642d589546ed208820fc358c694e141e42e70",
+      "result": {
+        "completed": true,
+        "runtime": "real HTTP authentication and PostgreSQL; no auth/cache mocks",
+        "baselineModified": false,
+        "browserInteractionTested": false,
+        "immediateInvalidationPass": false,
+        "observations": [
+          {
+            "check": "list-sessions-owner-isolation",
+            "pass": true
+          },
+          {
+            "check": "foreign-session-not-revoked",
+            "pass": true,
+            "responseStatus": 200
+          },
+          {
+            "check": "revoked-session-deleted-from-real-database",
+            "pass": true
+          },
+          {
+            "check": "current-and-foreign-protected-access-preserved",
+            "pass": true
+          },
+          {
+            "check": "immediate-next-protected-request-with-real-cached-cookies",
+            "requirementPass": false,
+            "nextProtectedRequest": {
+              "status": 200,
+              "redirectedToSignIn": false,
+              "renderedProfile": true
+            },
+            "cachedLookupStillAuthenticated": true,
+            "authoritativeLookupRejects": true,
+            "withoutSessionDataCookie": {
+              "status": 307,
+              "redirectedToSignIn": true,
+              "renderedProfile": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "layout": "layered",
+      "cell_source": "S0V0",
+      "head": "a8a7a29c2c7f04876de95d47251ded9c4fecb171",
+      "result": {
+        "completed": true,
+        "runtime": "real HTTP authentication and PostgreSQL; no auth/cache mocks",
+        "baselineModified": false,
+        "browserInteractionTested": false,
+        "immediateInvalidationPass": false,
+        "observations": [
+          {
+            "check": "list-sessions-owner-isolation",
+            "pass": true
+          },
+          {
+            "check": "foreign-session-not-revoked",
+            "pass": true,
+            "responseStatus": 200
+          },
+          {
+            "check": "revoked-session-deleted-from-real-database",
+            "pass": true
+          },
+          {
+            "check": "current-and-foreign-protected-access-preserved",
+            "pass": true
+          },
+          {
+            "check": "immediate-next-protected-request-with-real-cached-cookies",
+            "requirementPass": false,
+            "nextProtectedRequest": {
+              "status": 200,
+              "redirectedToSignIn": false,
+              "renderedProfile": true
+            },
+            "cachedLookupStillAuthenticated": true,
+            "authoritativeLookupRejects": true,
+            "withoutSessionDataCookie": {
+              "status": 307,
+              "redirectedToSignIn": true,
+              "renderedProfile": false
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

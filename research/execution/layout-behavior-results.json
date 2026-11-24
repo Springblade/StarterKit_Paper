@@ -1,0 +1,32 @@
+[
+  {
+    "layout": "feature",
+    "stage": "baseline",
+    "exit_code": 0
+  },
+  {
+    "layout": "feature",
+    "stage": "reference",
+    "exit_code": 0
+  },
+  {
+    "layout": "feature",
+    "stage": "restored-baseline",
+    "exit_code": 0
+  },
+  {
+    "layout": "layered",
+    "stage": "baseline",
+    "exit_code": 0
+  },
+  {
+    "layout": "layered",
+    "stage": "reference",
+    "exit_code": 0
+  },
+  {
+    "layout": "layered",
+    "stage": "restored-baseline",
+    "exit_code": 0
+  }
+]

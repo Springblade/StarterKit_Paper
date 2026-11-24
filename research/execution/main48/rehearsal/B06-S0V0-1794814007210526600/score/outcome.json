@@ -1,0 +1,72 @@
+{
+  "task": "B06",
+  "cell": "S0V0",
+  "completed": true,
+  "model_calls": 0,
+  "forbidden_dependency_changes": [],
+  "lockfile_changed": false,
+  "V1": {
+    "completed": true,
+    "pass": true,
+    "results": [
+      {
+        "id": "VP-standard-QR-payment-case-live-audit-retry",
+        "pass": true
+      }
+    ]
+  },
+  "E": {
+    "task": "B06",
+    "completed": true,
+    "acceptance": true,
+    "preservation": true,
+    "jointSuccess": true,
+    "results": [
+      {
+        "id": "E-old-standard-webhook-retry",
+        "kind": "preservation",
+        "pass": true
+      },
+      {
+        "id": "E-old-standard-cron-and-signature",
+        "kind": "preservation",
+        "pass": true
+      },
+      {
+        "id": "E-old-mismatch-terminal-outbound",
+        "kind": "preservation",
+        "pass": true
+      },
+      {
+        "id": "E-new-expired-webhook-linked-audit",
+        "kind": "acceptance",
+        "pass": true
+      },
+      {
+        "id": "E-new-equal-boundary-and-live-boundary",
+        "kind": "acceptance",
+        "pass": true
+      },
+      {
+        "id": "E-new-cleanup-concurrent-with-expired-webhooks",
+        "kind": "acceptance",
+        "pass": true
+      },
+      {
+        "id": "E-new-two-live-transaction-responses",
+        "kind": "acceptance",
+        "pass": true
+      }
+    ]
+  },
+  "V0": {
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "check-types": 0,
+    "test:run": 0,
+    "build": 0
+  },
+  "V0_reused_from": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\ledger-B06-layered-reference-V20-E20-B1.json",
+  "assessable": true,
+  "jointSuccess": true
+}

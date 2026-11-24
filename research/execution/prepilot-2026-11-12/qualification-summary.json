@@ -1,0 +1,15 @@
+{
+  "status": "technical-freeze-awaiting-author-release",
+  "model_invocations": 0,
+  "reliability_jobs": 12,
+  "visible_reliability_runs": 212,
+  "final_reliability_runs": 124,
+  "fault_layout_cases": 26,
+  "pipeline_rehearsals": 8,
+  "scheduled_pilot_sessions": 16,
+  "limits": [
+    "One earlier transient baseline visible-render Error was not reproduced; its precise cause remains unresolved and logs are retained.",
+    "Qualification is assistant self-check, not independent review.",
+    "No adequacy claim for main-study workload or statistical precision."
+  ]
+}

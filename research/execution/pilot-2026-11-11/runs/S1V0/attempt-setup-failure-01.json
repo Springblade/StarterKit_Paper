@@ -1,0 +1,10 @@
+{
+  "cell": "S1V0",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "speed": "standard-default",
+  "status": "infrastructure_error",
+  "started": "2026-11-11T04:18:37Z",
+  "limit_seconds": 900,
+  "error": "migrate.log failed"
+}

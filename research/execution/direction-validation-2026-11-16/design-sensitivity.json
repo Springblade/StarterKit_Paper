@@ -1,0 +1,228 @@
+{
+  "scope": "Illustrative exact sensitivity for two-sided paired sharp-null randomization test, alpha .05,24 pairs. Hypothetical joint-success probabilities, not estimates, guarantees or test of zero average effect. No sampling of task/kit populations.",
+  "new_proposal": {
+    "kits": 2,
+    "tasks_per_kit": 3,
+    "V_arms": 2,
+    "repetitions": 4,
+    "slots": 48,
+    "per_V": 24,
+    "per_kit_per_V": 12,
+    "per_task_per_V": 4
+  },
+  "old_factorial": {
+    "kits": 1,
+    "tasks": 6,
+    "S_arms": 2,
+    "V_arms": 2,
+    "repetitions": 2,
+    "slots": 48,
+    "per_V": 24,
+    "per_task_per_V": 4
+  },
+  "conditional_independent_slot_Hoeffding95_halfwidth": 0.3920501378498427,
+  "old_two_contrast_simultaneous95_halfwidth": 0.42729900902226736,
+  "scenarios": [
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.2,
+      "risk_difference": 0,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.018297470232411187
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.2,
+      "risk_difference": 0,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.010386607150500006
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.3,
+      "risk_difference": 0.1,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.06386433691244571
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.3,
+      "risk_difference": 0.1,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.0642080648826776
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.4,
+      "risk_difference": 0.2,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.21126685932162007
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.4,
+      "risk_difference": 0.2,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.2699175937362561
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.5,
+      "risk_difference": 0.3,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.45709345306823773
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.5,
+      "risk_difference": 0.3,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.6069357055640067
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.6,
+      "risk_difference": 0.4,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.7230349468177604
+    },
+    {
+      "p_V0": 0.2,
+      "p_V1": 0.6,
+      "risk_difference": 0.4,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.8876455140702028
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.5,
+      "risk_difference": 0,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.02429684123651299
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.5,
+      "risk_difference": 0,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.019959373544172505
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.6,
+      "risk_difference": 0.1,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.05902472836358134
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.6,
+      "risk_difference": 0.1,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.06470133127191223
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.7,
+      "risk_difference": 0.2,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.19014374208821838
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.7,
+      "risk_difference": 0.2,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.24748605546427194
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.8,
+      "risk_difference": 0.3,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.45709345306823757
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.8,
+      "risk_difference": 0.3,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.6069357055640059
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.9,
+      "risk_difference": 0.4,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.7993697193130307
+    },
+    {
+      "p_V0": 0.5,
+      "p_V1": 0.9,
+      "risk_difference": 0.4,
+      "within_pair_binary_correlation": 0.3,
+      "rejection_probability": 0.9424178764572028
+    }
+  ],
+  "heterogeneous_scenarios": [
+    {
+      "baseline_task_rates": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "common_difference": 0,
+      "pairs_per_task": 4,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.021937024885581836
+    },
+    {
+      "baseline_task_rates": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "common_difference": 0.1,
+      "pairs_per_task": 4,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.06195039671005799
+    },
+    {
+      "baseline_task_rates": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "common_difference": 0.2,
+      "pairs_per_task": 4,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.20461926048197965
+    },
+    {
+      "baseline_task_rates": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "common_difference": 0.3,
+      "pairs_per_task": 4,
+      "within_pair_binary_correlation": 0,
+      "rejection_probability": 0.469535076272161
+    }
+  ],
+  "script_sha256": "3e2037dba0dae0db6e85469ed32ea549a335f326cd9f949fb567ad37ba67bc39",
+  "model_calls": 0,
+  "selfcheck": "probability mass, null calibration, swap symmetry, exact sharp p boundaries passed"
+}

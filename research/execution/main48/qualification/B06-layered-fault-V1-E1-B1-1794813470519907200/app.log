@@ -1,0 +1,57 @@
+Already up to date
+Done in 334ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.20.0.3:3107
+- Environments: .env
+✓ Ready in 288ms
+
+ GET / 200 in 1595ms (next.js: 1460ms, application-code: 135ms)
+2026-11-16T07:18:03.160Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:18:03.771Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:18:03.793Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/auth/get-session 200 in 2.4s (next.js: 2.4s, application-code: 22ms)
+2026-11-16T07:18:05.181Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-16T07:18:05.287Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /auth/sign-in 200 in 1503ms (next.js: 1323ms, application-code: 180ms)
+ GET /auth/sign-up 200 in 502ms (next.js: 447ms, application-code: 56ms)
+2026-11-16T07:18:06.413Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ GET /auth/reset-password 200 in 612ms (next.js: 410ms, application-code: 202ms)
+ GET /auth/sign-in?redirectTo=/dashboard 200 in 58ms (next.js: 2ms, application-code: 56ms)
+ GET /auth/sign-in?redirectTo=/dashboard/settings 200 in 74ms (next.js: 1511µs, application-code: 73ms)
+ GET /auth/sign-in?redirectTo=/dashboard/admin/users 200 in 85ms (next.js: 2ms, application-code: 83ms)
+ GET /auth/sign-in?redirectTo=/dashboard/billing 200 in 37ms (next.js: 3ms, application-code: 34ms)
+ POST /api/sepay/webhook 200 in 895ms (next.js: 842ms, application-code: 53ms)
+ POST /api/sepay/webhook 200 in 11ms (next.js: 3ms, application-code: 8ms)
+ POST /api/sepay/webhook 200 in 22ms (next.js: 3ms, application-code: 19ms)
+ POST /api/sepay/webhook 401 in 9ms (next.js: 1677µs, application-code: 8ms)
+ GET /api/cron/sepay-poll 200 in 591ms (next.js: 563ms, application-code: 27ms)
+ POST /api/sepay/webhook 200 in 13ms (next.js: 2ms, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 12ms (next.js: 3ms, application-code: 9ms)
+ POST /api/sepay/webhook 200 in 20ms (next.js: 1515µs, application-code: 18ms)
+ POST /api/sepay/webhook 200 in 16ms (next.js: 1492µs, application-code: 14ms)
+ POST /api/sepay/webhook 200 in 13ms (next.js: 1403µs, application-code: 12ms)
+ POST /api/sepay/webhook 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ POST /api/sepay/webhook 200 in 13ms (next.js: 1553µs, application-code: 12ms)
+ POST /api/sepay/webhook 200 in 13ms (next.js: 1426µs, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 23ms (next.js: 1676µs, application-code: 22ms)
+ POST /api/sepay/webhook 200 in 34ms (next.js: 5ms, application-code: 30ms)
+ GET /api/cron/sepay-poll 200 in 43ms (next.js: 2ms, application-code: 41ms)
+ POST /api/sepay/webhook 200 in 16ms (next.js: 4ms, application-code: 12ms)
+ POST /api/sepay/webhook 200 in 21ms (next.js: 7ms, application-code: 14ms)
+ GET /api/cron/sepay-poll 200 in 25ms (next.js: 2ms, application-code: 23ms)
+ POST /api/sepay/webhook 200 in 23ms (next.js: 6ms, application-code: 16ms)
+ POST /api/sepay/webhook 200 in 27ms (next.js: 10ms, application-code: 16ms)
+ GET /api/cron/sepay-poll 200 in 32ms (next.js: 1896µs, application-code: 30ms)
+ POST /api/sepay/webhook 200 in 13ms (next.js: 1670µs, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 16ms (next.js: 4ms, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 14ms (next.js: 1877µs, application-code: 12ms)
+ POST /api/sepay/webhook 200 in 6ms (next.js: 2ms, application-code: 4ms)
+ POST /api/sepay/webhook 401 in 10ms (next.js: 2ms, application-code: 8ms)
+ POST /api/sepay/webhook 200 in 42ms (next.js: 20ms, application-code: 21ms)
+ POST /api/sepay/webhook 200 in 20ms (next.js: 1862µs, application-code: 18ms)
+ POST /api/sepay/webhook 200 in 10ms (next.js: 6ms, application-code: 4ms)
+ POST /api/sepay/webhook 200 in 17ms (next.js: 1655µs, application-code: 15ms)
+ POST /api/sepay/webhook 200 in 13ms (next.js: 2ms, application-code: 11ms)
+ POST /api/sepay/webhook 200 in 16ms (next.js: 6ms, application-code: 10ms)
+[?25h

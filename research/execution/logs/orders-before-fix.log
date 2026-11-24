@@ -1,0 +1,261 @@
+Already up to date
+Done in 85ms using pnpm v11.7.0
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.orders.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.11 C:/Users/wayad/Documents/Paper/research/SmartKit
+
+ ❯ scripts/check-order-baseline.integration.ts (10 tests | 2 failed) 5550ms
+     × rejects anonymous list, status and cancellation 11ms
+     × lists only own orders, including when a status filter is supplied 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/check-order-baseline.integration.ts > actual server actions and real SQL; session/cache boundaries stubbed > rejects anonymous list, status and cancellation
+AssertionError: promise resolved "[ { …(11) }, { …(11) }, …(6) ]" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+[
+  {
+    "amountVnd": "99000",
+    "code": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-pending",
+    "completedAt": null,
+    "createdAt": 2026-11-10T09:20:24.142Z,
+    "expiresAt": 2026-11-10T10:20:23.970Z,
+    "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-pending",
+    "plan": {
+      "createdAt": 2026-11-10T09:20:24.137Z,
+      "features": [],
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+      "isActive": true,
+      "name": "Order baseline fixture",
+      "priceVnd": "99000",
+    },
+    "planId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+    "status": "pending",
+    "user": {
+      "email": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a@smartkit.local",
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a",
+      "name": "Fixture a",
+    },
+    "userId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a",
+  },
+  {
+    "amountVnd": "99000",
+    "code": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-completed",
+    "completedAt": 2026-11-10T09:20:23.970Z,
+    "createdAt": 2026-11-10T09:20:24.142Z,
+    "expiresAt": 2026-11-10T10:20:23.970Z,
+    "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-completed",
+    "plan": {
+      "createdAt": 2026-11-10T09:20:24.137Z,
+      "features": [],
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+      "isActive": true,
+      "name": "Order baseline fixture",
+      "priceVnd": "99000",
+    },
+    "planId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+    "status": "completed",
+    "user": {
+      "email": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a@smartkit.local",
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a",
+      "name": "Fixture a",
+    },
+    "userId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a",
+  },
+  {
+    "amountVnd": "99000",
+    "code": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-cancelled",
+    "completedAt": null,
+    "createdAt": 2026-11-10T09:20:24.142Z,
+    "expiresAt": 2026-11-10T10:20:23.970Z,
+    "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-cancelled",
+    "plan": {
+      "createdAt": 2026-11-10T09:20:24.137Z,
+      "features": [],
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+      "isActive": true,
+      "name": "Order baseline fixture",
+      "priceVnd": "99000",
+    },
+    "planId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+    "status": "cancelled",
+    "user": {
+      "email": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a@smartkit.local",
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a",
+      "name": "Fixture a",
+    },
+    "userId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a",
+  },
+  {
+    "amountVnd": "99000",
+    "code": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-expired",
+    "completedAt": null,
+    "createdAt": 2026-11-10T09:20:24.142Z,
+    "expiresAt": 2026-11-10T10:20:23.970Z,
+    "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-expired",
+    "plan": {
+      "createdAt": 2026-11-10T09:20:24.137Z,
+      "features": [],
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+      "isActive": true,
+      "name": "Order baseline fixture",
+      "priceVnd": "99000",
+    },
+    "planId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+    "status": "expired",
+    "user": {
+      "email": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a@smartkit.local",
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a",
+      "name": "Fixture a",
+    },
+    "userId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a",
+  },
+  {
+    "amountVnd": "99000",
+    "code": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-pending",
+    "completedAt": null,
+    "createdAt": 2026-11-10T09:20:24.142Z,
+    "expiresAt": 2026-11-10T10:20:23.970Z,
+    "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-pending",
+    "plan": {
+      "createdAt": 2026-11-10T09:20:24.137Z,
+      "features": [],
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+      "isActive": true,
+      "name": "Order baseline fixture",
+      "priceVnd": "99000",
+    },
+    "planId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+    "status": "pending",
+    "user": {
+      "email": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b@smartkit.local",
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b",
+      "name": "Fixture b",
+    },
+    "userId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b",
+  },
+  {
+    "amountVnd": "99000",
+    "code": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-completed",
+    "completedAt": 2026-11-10T09:20:23.970Z,
+    "createdAt": 2026-11-10T09:20:24.142Z,
+    "expiresAt": 2026-11-10T10:20:23.970Z,
+    "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-completed",
+    "plan": {
+      "createdAt": 2026-11-10T09:20:24.137Z,
+      "features": [],
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+      "isActive": true,
+      "name": "Order baseline fixture",
+      "priceVnd": "99000",
+    },
+    "planId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+    "status": "completed",
+    "user": {
+      "email": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b@smartkit.local",
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b",
+      "name": "Fixture b",
+    },
+    "userId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b",
+  },
+  {
+    "amountVnd": "99000",
+    "code": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-cancelled",
+    "completedAt": null,
+    "createdAt": 2026-11-10T09:20:24.142Z,
+    "expiresAt": 2026-11-10T10:20:23.970Z,
+    "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-cancelled",
+    "plan": {
+      "createdAt": 2026-11-10T09:20:24.137Z,
+      "features": [],
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+      "isActive": true,
+      "name": "Order baseline fixture",
+      "priceVnd": "99000",
+    },
+    "planId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+    "status": "cancelled",
+    "user": {
+      "email": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b@smartkit.local",
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b",
+      "name": "Fixture b",
+    },
+    "userId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b",
+  },
+  {
+    "amountVnd": "99000",
+    "code": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-expired",
+    "completedAt": null,
+    "createdAt": 2026-11-10T09:20:24.142Z,
+    "expiresAt": 2026-11-10T10:20:23.970Z,
+    "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-expired",
+    "plan": {
+      "createdAt": 2026-11-10T09:20:24.137Z,
+      "features": [],
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+      "isActive": true,
+      "name": "Order baseline fixture",
+      "priceVnd": "99000",
+    },
+    "planId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-plan",
+    "status": "expired",
+    "user": {
+      "email": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b@smartkit.local",
+      "id": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b",
+      "name": "Fixture b",
+    },
+    "userId": "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b",
+  },
+]
+
+ ❯ scripts/check-order-baseline.integration.ts:116:29
+    114|     for (const action of [() => listOrders(), () => checkOrderStatus(f…
+    115|       () => cancelOrder(fixtures[0]!.id)]) {
+    116|       await expect(action()).rejects.toMatchObject({ code: 'UNAUTHORIZ…
+       |                             ^
+    117|     }
+    118|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  scripts/check-order-baseline.integration.ts > actual server actions and real SQL; session/cache boundaries stubbed > lists only own orders, including when a status filter is supplied
+AssertionError: expected [ …(8) ] to deeply equal [ …(4) ]
+
+- Expected
++ Received
+
+  [
+    "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-cancelled",
+    "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-completed",
+    "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-expired",
+    "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-a-pending",
++   "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-cancelled",
++   "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-completed",
++   "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-expired",
++   "51ae0eb6-e86b-499c-97dd-a97d8d00ebb3-b-pending",
+  ]
+
+ ❯ scripts/check-order-baseline.integration.ts:121:43
+    119|   it('lists only own orders, including when a status filter is supplie…
+    120|     const all = await listOrders();
+    121|     expect(all.map(row => row.id).sort()).toEqual(fixtures.filter(row …
+       |                                           ^
+    122|     const filtered = await listOrders({ status: 'pending' });
+    123|     expect(filtered.map(row => row.id)).toEqual([order(0, 'pending').i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 8 passed (10)
+   Start at  16:20:22
+   Duration  6.74s (transform 299ms, setup 0ms, import 957ms, tests 5.55s, environment 0ms)
+

@@ -1,0 +1,28 @@
+{
+  "layout": "layered",
+  "phase": "fault-foreign-receipt",
+  "task": "B04",
+  "model_calls": 0,
+  "started": "2026-11-15T10:56:10Z",
+  "runner_sha256": "3436e522f85ca1f949a41fdba34241585933b55eca675955a71218568d1a990f",
+  "runtime_sha256": "0242f256f357d87f434d706edf27acb179bfdae0b42deb96466ad541325e975b",
+  "status": "detected",
+  "db_volumes": [
+    "5564fd628e32117e1047a7d13b0a9e7d12974753afaaa0b0dfb40381f260e95e"
+  ],
+  "versions": [
+    "v24.22.2",
+    "11.7.0",
+    "Already up to date\nDone in 372ms using pnpm v11.7.0\nNext.js v16.2.12"
+  ],
+  "solution_files": {
+    "src/app/dashboard/billing/history/page.tsx": "30b3c5463099318fb28b0869ca8d25543b834b86cb60bf85a8e409b12b07bf14",
+    "src/app/api/orders/[orderId]/receipt/route.ts": "c16e0fdb513411e28905616321c521ea93237d4c42e5de3b72bebf60aa897683"
+  },
+  "probe_sha256": "7c6bdd4f0e5dbe59eeafd57ab030e28e1ad0ae391c157bb39f0659b8c4de60b7",
+  "typecheck_exit": 0,
+  "probe_exit": 1,
+  "expected_failure": "B04-ownership-and-status",
+  "cleanup_volumes_removed": true,
+  "finished": "2026-11-15T10:57:03Z"
+}

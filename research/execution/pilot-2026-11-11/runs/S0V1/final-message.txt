@@ -1,0 +1,5 @@
+Added a labelled native status dropdown to the authenticated payment history page. It submits via GET, keeps valid selections in the URL, and filters only the current user’s orders while preserving newest-first ordering. Invalid, empty, or repeated `status` parameters show all orders. A filtered empty result includes a link to all statuses.
+
+Checks passed: `pnpm check-types`, `pnpm test:run` (14 tests), `pnpm test:behavior` (10 tests), and `pnpm build`.
+
+Changed [history/page.tsx](/workspace/src/app/dashboard/billing/history/page.tsx).

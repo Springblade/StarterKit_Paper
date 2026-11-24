@@ -1,0 +1,358 @@
+{
+  "scope": "Fixed exploratory account workload, no agent outcomes or start release",
+  "qualified_cases": 72,
+  "evidence": {
+    "registration-qualification.json": "ef5a9471fd0ad141d58b51e58ee51d72f1095214c1a5709c7c27e6ecde8c4d40",
+    "registration-qualification-alternate.json": "90107700f49febdd468beffe01c17f70a8be71ad94733bee1a194db16a741044",
+    "signout-qualification.json": "60f591f37e77e27d5cc9eefe61447cd756b7d69e4bca7783d65947c33921127e",
+    "signout-qualification-alternate.json": "ba74814ab6c3806a6cf139ed11cc0db8c79783c1c48672e79e19fcc5883fd0fc",
+    "visibility-qualification.json": "a399ab00b8f4cfb8b875130b2f6ce4a8c87b15faa88f0c65d43b9c8fa1a4f79f",
+    "visibility-qualification-alternate.json": "14287910fbd87dde1825d929f84c0f7627ec8336e9213d9d39e60b5928cefeba"
+  },
+  "factor_mapping": {
+    "S0": "SmartKit layered / Next.js SaaS Starter native",
+    "S1": "SmartKit feature grouping / Next.js SaaS Starter relocated auth modules",
+    "V0": "Common basic checks",
+    "V1": "Common basic checks plus runnable task-specific preservation check"
+  },
+  "seed": 20261118,
+  "model_calls": 0,
+  "slots": [
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "signout",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "signout",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "signout",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "signout",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "signout",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "registration",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "registration",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "registration",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "registration",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "registration",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "registration",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "registration",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "registration",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "registration",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "registration",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "registration",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "registration",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "registration",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "registration",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "registration",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "registration",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "visibility",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "signout",
+      "repetition": 2,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "signout",
+      "repetition": 2,
+      "S": 1,
+      "V": 0
+    },
+    {
+      "kit": "smartkit",
+      "task": "signout",
+      "repetition": 2,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "smartkit",
+      "task": "signout",
+      "repetition": 2,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 0,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 1,
+      "V": 1
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 0,
+      "V": 0
+    },
+    {
+      "kit": "nextjs-saas-starter",
+      "task": "visibility",
+      "repetition": 1,
+      "S": 1,
+      "V": 0
+    }
+  ]
+}

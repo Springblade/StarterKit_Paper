@@ -1,0 +1,34 @@
+Already up to date
+Done in 82ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.25.0.1:3107
+- Environments: .env
+✓ Ready in 771ms
+
+2026-11-10T09:05:33.465Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T09:05:34.431Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T09:05:34.494Z ERROR [Better Auth]: Error Error: Invalid password hash
+    at ignore-listed frames
+# SERVER_ERROR:  Error: Invalid password hash
+    at ignore-listed frames
+ POST /api/auth/sign-in/email 500 in 2.4s (next.js: 2.1s, application-code: 223ms)
+  Reload env: .env
+2026-11-10T09:06:17.225Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+ POST /api/auth/sign-in/email 200 in 265ms (next.js: 165ms, application-code: 100ms)
+2026-11-10T09:06:17.366Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /api/auth/get-session 200 in 17ms (next.js: 4ms, application-code: 13ms)
+2026-11-10T09:06:17.647Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T09:06:18.216Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T09:06:20.152Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+2026-11-10T09:06:20.284Z WARN [Better Auth]: [better-auth] Cookie integration plugin "next-cookies" should be placed last in the plugins array. Plugins with `hooks.after` running after it may set cookies that are not forwarded to the framework cookie store. Move your cookie integration plugin to the end of the `plugins` array to avoid missing `Set-Cookie` headers.
+ GET /dashboard/billing/history 200 in 3.7s (next.js: 2.4s, proxy.ts: 226ms, application-code: 1030ms)
+ GET /dashboard/admin/users 307 in 514ms (next.js: 441ms, proxy.ts: 3ms, application-code: 70ms)
+ GET /auth/sign-in 307 in 674ms (next.js: 602ms, application-code: 72ms)
+ GET /dashboard 200 in 405ms (next.js: 353ms, proxy.ts: 3ms, application-code: 49ms)
+ POST /api/auth/sign-in/email 200 in 85ms (next.js: 8ms, application-code: 77ms)
+ GET /api/auth/get-session 200 in 11ms (next.js: 3ms, application-code: 8ms)
+ GET /dashboard/billing/history 200 in 80ms (next.js: 5ms, proxy.ts: 3ms, application-code: 72ms)
+ GET /dashboard/admin/users 200 in 168ms (next.js: 4ms, proxy.ts: 3ms, application-code: 161ms)
+2026-11-10T09:06:23.874Z WARN [Better Auth]: Social provider google is missing clientId or clientSecret
+[?25h

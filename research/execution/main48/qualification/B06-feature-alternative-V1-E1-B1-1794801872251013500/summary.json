@@ -1,0 +1,86 @@
+{
+  "task": "B06",
+  "layout": "feature",
+  "variant": "alternative",
+  "binding": {
+    "image_id": "sha256:84078b2856def0424695906813993d9ec707d77479a46eadffc0fdaafe374b17",
+    "package": "b7bbc9ade7df33f647ae9829e15ba4ab35980e3b2bb55dc43e48b09a7b7b1c3f",
+    "hidden": "7dbcb289501cf29a32f1b7be2d0c7d1c37c037ef3cf9541972410e57acf14cd9",
+    "visible": "4305f5d3e186c22af0298dac3ae84371d9b597c92669adb4a1096805d259a5b1",
+    "runtime": "edc893f6227fe07c937f178c48d5c20762329488ed2597e7489d0f6131d57db0",
+    "mock": "729e7a41b6311f9ba8592b202af84bc34f3c43153051eb410ef6a3ac3ef7aa46",
+    "solution": "6d3c4688e060848c02a2dbe5ac89d82e1f76698caf712e9445d822326887732c",
+    "visible_rounds": 1,
+    "hidden_rounds": 1,
+    "basic": true
+  },
+  "folder": "C:\\Users\\wayad\\Documents\\Paper\\research\\execution\\main48\\qualification\\B06-feature-alternative-V1-E1-B1-1794801872251013500",
+  "visible": [
+    {
+      "completed": true,
+      "pass": true,
+      "results": [
+        {
+          "id": "VP-standard-QR-payment-case-live-audit-retry",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "task": "B06",
+      "completed": true,
+      "acceptance": true,
+      "preservation": true,
+      "jointSuccess": true,
+      "results": [
+        {
+          "id": "E-old-standard-webhook-retry",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-standard-cron-and-signature",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-old-mismatch-terminal-outbound",
+          "kind": "preservation",
+          "pass": true
+        },
+        {
+          "id": "E-new-expired-webhook-linked-audit",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "E-new-equal-boundary-and-live-boundary",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "E-new-cleanup-concurrent-with-expired-webhooks",
+          "kind": "acceptance",
+          "pass": true
+        },
+        {
+          "id": "E-new-two-live-transaction-responses",
+          "kind": "acceptance",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "basic": {
+    "check-types": 0,
+    "test:run": 0,
+    "test:billing": 0,
+    "test:sepay-qr-url": 0,
+    "build": 0
+  },
+  "model_calls": 0,
+  "passed": true,
+  "cleanup_volumes_removed": true
+}

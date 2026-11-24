@@ -1,0 +1,144 @@
+{
+  "purpose": "development smoke pilot only; no main-study or comparative effect estimates",
+  "allocation": [
+    "S0V0",
+    "S1V0",
+    "S0V1",
+    "S1V1"
+  ],
+  "rows": [
+    {
+      "cell": "S0V0",
+      "status": "complete",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "speed": "standard-default",
+      "cli_version": "codex-cli 0.166.0",
+      "elapsed_seconds": 141.27,
+      "returncode": 0,
+      "timeout": false,
+      "acceptance": true,
+      "preservation": true,
+      "joint_success": true,
+      "usage_events": [
+        {
+          "input_tokens": 480087,
+          "cached_input_tokens": 432256,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5082,
+          "reasoning_output_tokens": 1642
+        }
+      ],
+      "checks": 29,
+      "failed_checks": [],
+      "acceptance_checks": 16,
+      "preservation_checks": 13,
+      "changed_paths": [
+        "src/app/dashboard/billing/history/page.tsx"
+      ],
+      "supplied_behavior_check_invocations": 0,
+      "nested_agent_events": 0
+    },
+    {
+      "cell": "S1V0",
+      "status": "complete",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "speed": "standard-default",
+      "cli_version": "codex-cli 0.166.0",
+      "elapsed_seconds": 101.61,
+      "returncode": 0,
+      "timeout": false,
+      "acceptance": true,
+      "preservation": true,
+      "joint_success": true,
+      "usage_events": [
+        {
+          "input_tokens": 306198,
+          "cached_input_tokens": 271744,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3887,
+          "reasoning_output_tokens": 1075
+        }
+      ],
+      "checks": 29,
+      "failed_checks": [],
+      "acceptance_checks": 16,
+      "preservation_checks": 13,
+      "changed_paths": [
+        "src/app/dashboard/billing/history/page.tsx"
+      ],
+      "supplied_behavior_check_invocations": 0,
+      "nested_agent_events": 0
+    },
+    {
+      "cell": "S0V1",
+      "status": "complete",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "speed": "standard-default",
+      "cli_version": "codex-cli 0.166.0",
+      "elapsed_seconds": 99.66,
+      "returncode": 0,
+      "timeout": false,
+      "acceptance": true,
+      "preservation": true,
+      "joint_success": true,
+      "usage_events": [
+        {
+          "input_tokens": 239507,
+          "cached_input_tokens": 223872,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3344,
+          "reasoning_output_tokens": 878
+        }
+      ],
+      "checks": 29,
+      "failed_checks": [],
+      "acceptance_checks": 16,
+      "preservation_checks": 13,
+      "changed_paths": [
+        "src/app/dashboard/billing/history/page.tsx"
+      ],
+      "supplied_behavior_check_invocations": 1,
+      "nested_agent_events": 0
+    },
+    {
+      "cell": "S1V1",
+      "status": "complete",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "speed": "standard-default",
+      "cli_version": "codex-cli 0.166.0",
+      "elapsed_seconds": 100.11,
+      "returncode": 0,
+      "timeout": false,
+      "acceptance": true,
+      "preservation": true,
+      "joint_success": true,
+      "usage_events": [
+        {
+          "input_tokens": 304367,
+          "cached_input_tokens": 262400,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3797,
+          "reasoning_output_tokens": 1122
+        }
+      ],
+      "checks": 29,
+      "failed_checks": [],
+      "acceptance_checks": 16,
+      "preservation_checks": 13,
+      "changed_paths": [
+        "src/app/dashboard/billing/history/page.tsx"
+      ],
+      "supplied_behavior_check_invocations": 1,
+      "nested_agent_events": 0
+    }
+  ],
+  "credential_material_detected_in_events": [],
+  "setup_failures": [
+    "runs\\S1V0\\attempt-setup-failure-01.json"
+  ],
+  "hidden_evaluator_unchanged_since_qualification": true
+}

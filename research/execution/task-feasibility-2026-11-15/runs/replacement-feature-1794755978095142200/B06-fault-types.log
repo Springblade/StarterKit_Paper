@@ -1,0 +1,9 @@
+Already up to date
+Done in 345ms using pnpm v11.7.0
+$ tsc --noEmit
+src/features/billing/process-order-completion.ts(64,32): error TS18048: 'order' is possibly 'undefined'.
+src/features/billing/process-order-completion.ts(68,23): error TS18048: 'order' is possibly 'undefined'.
+src/features/billing/process-order-completion.ts(71,42): error TS18048: 'order' is possibly 'undefined'.
+src/features/billing/process-order-completion.ts(71,60): error TS18048: 'order' is possibly 'undefined'.
+src/features/billing/process-order-completion.ts(71,82): error TS18048: 'order' is possibly 'undefined'.
+[ELIFECYCLE] Command failed with exit code 2.

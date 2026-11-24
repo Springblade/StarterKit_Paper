@@ -1,0 +1,9 @@
+Already up to date
+Done in 382ms using pnpm v11.7.0
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3107
+- Network:       http://172.18.0.3:3107
+- Environments: .env
+✓ Ready in 318ms
+
+ GET / 200 in 1630ms (next.js: 1477ms, application-code: 153ms)

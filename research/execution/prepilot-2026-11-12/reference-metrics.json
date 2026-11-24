@@ -1,0 +1,67 @@
+{
+  "DP02": {
+    "reference": {
+      "source_files_S0": 1,
+      "source_files_S1": 1,
+      "parent_directories_S0": 1,
+      "parent_directories_S1": 1,
+      "different_path_logical_modules": 0,
+      "relocated_existing_logical_modules": 0,
+      "new_layout_specific_modules": 0,
+      "changed_framework_routes_at_identical_paths": 1,
+      "root": "src",
+      "mapping": {
+        "src/app/dashboard/admin/users/page.tsx": "src/app/dashboard/admin/users/page.tsx"
+      }
+    },
+    "alternative": {
+      "source_files_S0": 1,
+      "source_files_S1": 1,
+      "parent_directories_S0": 1,
+      "parent_directories_S1": 1,
+      "different_path_logical_modules": 0,
+      "relocated_existing_logical_modules": 0,
+      "new_layout_specific_modules": 0,
+      "changed_framework_routes_at_identical_paths": 1,
+      "root": "src",
+      "mapping": {
+        "src/app/dashboard/admin/users/page.tsx": "src/app/dashboard/admin/users/page.tsx"
+      }
+    }
+  },
+  "DP03": {
+    "reference": {
+      "source_files_S0": 3,
+      "source_files_S1": 3,
+      "parent_directories_S0": 3,
+      "parent_directories_S1": 3,
+      "different_path_logical_modules": 2,
+      "relocated_existing_logical_modules": 0,
+      "new_layout_specific_modules": 2,
+      "changed_framework_routes_at_identical_paths": 1,
+      "root": "src",
+      "mapping": {
+        "src/app/dashboard/settings/page.tsx": "src/app/dashboard/settings/page.tsx",
+        "src/features/auth/actions/update-display-name.ts": "src/actions/auth/update-display-name.ts",
+        "src/features/auth/types/profile.ts": "src/types/auth/profile.ts"
+      }
+    },
+    "alternative": {
+      "source_files_S0": 4,
+      "source_files_S1": 4,
+      "parent_directories_S0": 4,
+      "parent_directories_S1": 4,
+      "different_path_logical_modules": 2,
+      "relocated_existing_logical_modules": 0,
+      "new_layout_specific_modules": 2,
+      "changed_framework_routes_at_identical_paths": 2,
+      "root": "src",
+      "mapping": {
+        "src/app/dashboard/settings/page.tsx": "src/app/dashboard/settings/page.tsx",
+        "src/features/auth/components/display-name-form.tsx": "src/components/auth/display-name-form.tsx",
+        "src/app/api/profile/display-name/route.ts": "src/app/api/profile/display-name/route.ts",
+        "src/features/auth/types/profile.ts": "src/types/auth/profile.ts"
+      }
+    }
+  }
+}

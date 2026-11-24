@@ -1,0 +1,5 @@
+{
+  "src/app/dashboard/settings/page.tsx": "cfc46947dfc190366ff70a7b51606ced168afecac65756f0d84b9a894fe20405",
+  "src/features/auth/actions/update-display-name.ts": "66556cafdf8d3bbf0f3d289296ca59f078d420ef33032b0bd98d2f8c226e2d18",
+  "src/features/auth/types/profile.ts": "8d05c946e01ee11d715eed72b3589cd4d5a8048949b64e48359ff3e88bb00be2"
+}

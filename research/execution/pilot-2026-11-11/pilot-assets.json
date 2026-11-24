@@ -1,0 +1,13 @@
+{
+  "purpose": "development pilot; not main protocol preregistration",
+  "files": {
+    "protocol.md": "86ef84ff0d4ac74324b392d6c31a8a73f7fed5b8fb70b69e2a005a4cd5c47f78",
+    "pilot.py": "46b18a01cc8e5ca8e580a6ba1b026fa43b2f7af31df196148c82090bf307d711",
+    "final-check.cjs": "86c34b113b983e7ec940c74b30dc951eb97f4e4fde52f7c529b2ebf1609d766f",
+    "allocation.json": "de843a16dc070ac7be376b6c4adaee875dd0702bf3ead006c7bcd21d630f466f",
+    "S0V0-manifest.json": "f7985461b42a0783ca5aa711eee2f50cb1a057429658e6d8b90d49589dd959da",
+    "S0V1-manifest.json": "ff7692cd35d88e7d9ff1a58bac9a3bc664757dbf01befc4f43c5c31f850618ce",
+    "S1V0-manifest.json": "e8e8b7cfd6ac5873a8e59d34bf935b60fe407533db8d45301fa7d6889232aaa5",
+    "S1V1-manifest.json": "3cf2db54b2dda19f46d8718c4e55cd1b81727375926579513c53005c394dcd42"
+  }
+}
