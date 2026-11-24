@@ -1,0 +1,39 @@
+# Local environment files
+.env
+.env.*
+!.env.example
+!.env.example.*
+!.env.sample
+!.env.template
+.envrc.local
+
+# Node.js dependencies and Next.js build cache
+node_modules/
+.next/
+.turbo/
+/research/SmartKit/**/*.tsbuildinfo
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# LaTeX auxiliary files. Keep PDFs and research logs.
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+/latex/*.log
+/research/paper-proposal/*.log
+
+# Local tool and OS files
+/.codex/
+.DS_Store
+Thumbs.db
+Desktop.ini
